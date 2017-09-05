@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary.ReceiptAgency;
+using EC_Endpoint_Client.ReceiptAgency;
+
+namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
+{
+    class ReceiptAgencyEndpointFunctionality : EndPointFunctionalityBase
+    {
+        private ReceiptAgencyExternalECClient GenerateProxy(BaseShipment shipment)
+        {
+            return base.GenerateProxy<ReceiptAgencyExternalECClient, IReceiptAgencyExternalEC>(shipment.EndpointName, shipment.Certificate);
+        }
+
+        public void Test(BaseShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyTest";
+            client.Test();
+        }
+
+        public ReceiptExternal GetReceipt(ReceiptSearchExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyGetReceipt";
+            return client.GetReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSearch);
+        }
+
+        public ReceiptAgency.Receipt GetReceiptV2(ReceiptV2SearchExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyGetReceiptV2";
+            return client.GetReceiptECV2(shipment.Username, shipment.Password, shipment.ReceiptSearch);
+        }
+
+        public ReceiptExternalList GetReceiptList(ReceiptListSearchExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyGetReceipts";
+            return client.GetReceiptListEC(shipment.Username, shipment.Password, shipment.ReceiptType, shipment.DateFrom, shipment.DateTo);
+        }
+
+        public ReceiptList GetReceiptListV2(ReceiptListV2SearchExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyGetReceiptsV2";
+            return client.GetReceiptListECV2(shipment.Username, shipment.Password, shipment.ReceiptType, shipment.DateFrom, shipment.DateTo);
+        }
+
+        public ReceiptExternal SaveReceipt(ReceiptSaveExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencySaveReceipt";
+            return client.SaveReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSave);
+        }
+
+        public ReceiptAgency.Receipt UpdateReceipt(ReceiptUpdateExternalShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "ReceiptAgencyUpdateReceipt";
+            return client.UpdateReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSave);
+        }
+                
+    }
+}

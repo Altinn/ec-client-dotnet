@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.altinn.no/services/ServiceEngine/Broker/2015/06" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="BrokerServiceExternalECStreamedSF" targetNamespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IBrokerServiceExternalECStreamed_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireDerivedKeys />
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpToken />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefThumbprint />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/2009/10">
+      <xsd:element name="Test">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/common/fault/2009/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/common/fault/2009/10">
+      <xsd:complexType name="AltinnFault">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Represents a SOAP fault message used by Altinn to convey exception information to the caller.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AltinnErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnExtendedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the verbose version of the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnLocalizedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the localized version of the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the unique GUID for the specific fault.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the error type id.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the GUID of the user.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the id of the user.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AltinnFault" nillable="true" type="tns:AltinnFault" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06">
+      <xsd:import namespace="http://schemas.microsoft.com/Message" />
+      <xsd:element name="StreamedPayloadECBE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://schemas.microsoft.com/Message" name="DataStream" type="q1:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="FileName" nillable="true" type="xsd:string" />
+      <xsd:element name="Password" nillable="true" type="xsd:string" />
+      <xsd:element name="Reference" nillable="true" type="xsd:string" />
+      <xsd:element name="Reportee" nillable="true" type="xsd:string" />
+      <xsd:element name="UserName" nillable="true" type="xsd:string" />
+      <xsd:element name="ReceiptExternalStreamedBE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="LastChanged" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="ParentReceiptId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="ReceiptHistory" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="ReceiptId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="ReceiptStatusCode" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="ReceiptText" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="ReceiptTypeName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadFileStreamedEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="1" name="fileReference" type="xsd:string" />
+            <xsd:element minOccurs="1" name="reportee" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DownloadFileStreamedECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q2="http://schemas.microsoft.com/Message" name="DownloadFileStreamedECResult" type="q2:StreamBody" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Message">
+      <xsd:simpleType name="StreamBody">
+        <xsd:restriction base="xsd:base64Binary" />
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_Test_InputMessage">
+    <wsdl:part xmlns:q3="http://www.altinn.no/services/2009/10" name="parameters" element="q3:Test" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_Test_OutputMessage">
+    <wsdl:part xmlns:q4="http://www.altinn.no/services/2009/10" name="parameters" element="q4:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_Test_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q5:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="StreamedPayloadECBE">
+    <wsdl:part name="parameters" element="tns:StreamedPayloadECBE" />
+  </wsdl:message>
+  <wsdl:message name="StreamedPayloadECBE_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Password" element="tns:Password" />
+    <wsdl:part name="Reference" element="tns:Reference" />
+    <wsdl:part name="Reportee" element="tns:Reportee" />
+    <wsdl:part name="UserName" element="tns:UserName" />
+  </wsdl:message>
+  <wsdl:message name="ReceiptExternalStreamedBE">
+    <wsdl:part name="parameters" element="tns:ReceiptExternalStreamedBE" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_UploadFileStreamedEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q6:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileStreamedEC" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadFileStreamedECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q7:AltinnFault" />
+  </wsdl:message>
+  <wsdl:portType name="IBrokerServiceExternalECStreamed">
+    <wsdl:documentation>&lt;summary&gt;
+            External interface for exposing service operations for Broker Service with certificates.
+            Used for end user systems to handle file operations.
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IBrokerServiceExternalECStreamed_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IBrokerServiceExternalECStreamed_Test_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IBrokerServiceExternalECStreamed_Test_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileStreamedEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Operation for uploading a file to a broker service.
+            &lt;/summary&gt;
+            &lt;param name="payload"&gt;
+            contains stream and authentication information
+            Will contain all the data for submitting a Broker Service Payload to Altinn from the EndUserSystem using certificates
+            &lt;/param&gt;
+            &lt;returns&gt;
+            A ReceiptBE entity for the initiated broker service
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/UploadFileStreamedEC" name="StreamedPayloadECBE" message="tns:StreamedPayloadECBE" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/UploadFileStreamedECResponse" name="ReceiptExternalStreamedBE" message="tns:ReceiptExternalStreamedBE" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/UploadFileStreamedECAltinnFaultFault" name="AltinnFaultFault" message="tns:IBrokerServiceExternalECStreamed_UploadFileStreamedEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileStreamedEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Operation for downloading a file from a broker service.
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            Password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="fileReference"&gt;
+            The file reference value of the file that should be downloaded.
+            &lt;/param&gt;
+            &lt;param name="reportee"&gt;
+            The social security number or organization number of the reportee.
+            &lt;/param&gt;
+            &lt;returns&gt;
+            A stream with the content of the file.
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/DownloadFileStreamedEC" message="tns:IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/DownloadFileStreamedECResponse" message="tns:IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/DownloadFileStreamedECAltinnFaultFault" name="AltinnFaultFault" message="tns:IBrokerServiceExternalECStreamed_DownloadFileStreamedEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IBrokerServiceExternalECStreamed" type="tns:IBrokerServiceExternalECStreamed">
+    <wsp:PolicyReference URI="#CustomBinding_IBrokerServiceExternalECStreamed_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileStreamedEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/UploadFileStreamedEC" style="document" />
+      <wsdl:input name="StreamedPayloadECBE">
+        <soap12:header message="tns:StreamedPayloadECBE_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:StreamedPayloadECBE_Headers" part="Password" use="literal" />
+        <soap12:header message="tns:StreamedPayloadECBE_Headers" part="Reference" use="literal" />
+        <soap12:header message="tns:StreamedPayloadECBE_Headers" part="Reportee" use="literal" />
+        <soap12:header message="tns:StreamedPayloadECBE_Headers" part="UserName" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ReceiptExternalStreamedBE">
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFileStreamedEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternalECStreamed/DownloadFileStreamedEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BrokerServiceExternalECStreamedSF">
+    <wsdl:port name="CustomBinding_IBrokerServiceExternalECStreamed" binding="tns:CustomBinding_IBrokerServiceExternalECStreamed">
+      <soap12:address location="http://st03.altinn.basefarm.net/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://st03.altinn.basefarm.net/ServiceEngineExternal/BrokerServiceExternalECStreamed.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

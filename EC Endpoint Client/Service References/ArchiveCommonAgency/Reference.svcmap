@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6719f63d-a077-440b-8744-f1f488adff4e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://st01.altinn.basefarm.net/ArchiveExternal/ArchiveCommonAgencyExternalEC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ArchiveCommonAgencyExternalEC.wsdl" MetadataType="Wsdl" ID="e910247c-f755-4924-a6aa-b7f032a135ee" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ArchiveCommonAgencyExternalEC.svc?wsdl" />
+    <MetadataFile FileName="ArchiveCommonAgencyExternalEC.disco" MetadataType="Disco" ID="7157c5b1-b7d3-4aad-a836-5f38b3f774d6" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ArchiveCommonAgencyExternalEC.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

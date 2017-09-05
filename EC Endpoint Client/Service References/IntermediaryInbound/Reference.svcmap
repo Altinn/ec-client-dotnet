@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24b87d7a-3211-4e34-b2ff-796ec5977d54" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IntermediaryInboundExternalEC.wsdl" MetadataType="Wsdl" ID="af3d86f9-ce66-4266-9565-ed6f202064a1" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl" />
+    <MetadataFile FileName="IntermediaryInboundExternalEC1.wsdl" MetadataType="Wsdl" ID="080dbdd2-b46b-4557-8a1b-cc8673e1cf6d" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="IntermediaryInboundExternalEC.disco" MetadataType="Disco" ID="0658cb5a-5318-40ed-ba54-7263d445022d" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.altinn.no/services/ServiceEngine/Case/2010/10" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CaseAgencySystemECSF" targetNamespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ICaseAgencySystemEC_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireDerivedKeys />
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpToken />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefThumbprint />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/2009/10">
+      <xsd:element name="Test">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/common/fault/2009/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/common/fault/2009/10">
+      <xsd:complexType name="AltinnFault">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Fault Contract to be used by FaultContractAttribute in a WCF service
+            to return a fault Soap Message to the Caller
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author : Vijay Singh
+            Date : 18/12/08
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AltinnErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnExtendedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnLocalizedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message in localized text
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error GUID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User Guid
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AltinnFault" nillable="true" type="tns:AltinnFault" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" />
+      <xsd:element name="GetCaseListAgencySystemEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="systemUserName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="systemPassword" type="xsd:string" />
+            <xsd:element minOccurs="0" name="caseID" type="xsd:int" />
+            <xsd:element minOccurs="0" name="externalServiceCode" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="externalServiceEditionCode" type="xsd:int" />
+            <xsd:element minOccurs="0" name="languageID" type="xsd:int" />
+            <xsd:element minOccurs="0" name="reporteeNumber" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetCaseListAgencySystemECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" minOccurs="0" name="GetCaseListAgencySystemECResult" nillable="true" type="q1:ExternalCaseBEList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InstantiateCollaborationAgencySystemEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="systemUserName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="systemPassword" type="xsd:string" />
+            <xsd:element minOccurs="1" name="externalServiceCode" type="xsd:string" />
+            <xsd:element minOccurs="1" name="externalServiceEditionCode" type="xsd:int" />
+            <xsd:element minOccurs="1" name="reporteeNumber" type="xsd:string" />
+            <xsd:element minOccurs="0" name="visibleDateTime" type="xsd:dateTime" />
+            <xsd:element minOccurs="0" name="dueDate" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="InstantiateCollaborationAgencySystemECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="InstantiateCollaborationAgencySystemECResult" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NotifyEventAgencySystemEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="systemUserName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="systemPassword" type="xsd:string" />
+            <xsd:element xmlns:q2="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" minOccurs="1" name="notificationInfo" type="q2:StateMachineEventNotificationBE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NotifyEventAgencySystemECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q3="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" minOccurs="0" name="NotifyEventAgencySystemECResult" nillable="true" type="q3:StateMachineNotificationResultBEList" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SetNoticeAgencySystemEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="systemUserName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="systemPassword" type="xsd:string" />
+            <xsd:element minOccurs="1" name="reporteeElementID" type="xsd:string" />
+            <xsd:element xmlns:q4="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" minOccurs="1" name="noticeInfo" type="q4:NoticeBE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="NoticeTokenBEList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="NoticeTokenBE" nillable="true" type="tns:NoticeTokenBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="NoticeTokenBEList" nillable="true" type="tns:NoticeTokenBEList" />
+      <xsd:complexType name="NoticeTokenBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            NoticeTokenBE entity contains properties of Notice Tokens
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="TokenKey" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Token Key
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="TokenValue" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Token Value
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="NoticeTokenBE" nillable="true" type="tns:NoticeTokenBE" />
+      <xsd:element name="SetNoticeAgencySystemECResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10">
+      <xsd:import namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10" />
+      <xsd:complexType name="ExternalCaseBEList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of CaseBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ExternalCaseBE" nillable="true" type="tns:ExternalCaseBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ExternalCaseBEList" nillable="true" type="tns:ExternalCaseBEList" />
+      <xsd:complexType name="ExternalCaseBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Provides an encapsulation of the Case Information For Agency.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CaseID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Case Identifier
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CaseName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Name of the Case.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateFriendlyName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Translated Name of the Current State
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ID of the Current State
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Current State name for the Agency
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="DueDate" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Due Date of the case
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsArchived" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Flag for Active/Archive collaboration
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="NoticeTemplateID" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            NoticeTemplateID of the particular case
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="VisibleDateTime" nillable="true" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Visible date time of the case
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ExternalCaseBE" nillable="true" type="tns:ExternalCaseBE" />
+      <xsd:complexType name="StateMachineEventNotificationBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Business entity representing the information required for State
+            Machine Notification.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CaseID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ID of the Associated Case
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Event" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            State Machine Recognizable Event
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalServiceCode" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Associated Service Code
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalServiceEditionCode" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Associated Service Edition Code
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReporteeElementID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ID of the Reportee Element.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="StateMachineEventNotificationBE" nillable="true" type="tns:StateMachineEventNotificationBE" />
+      <xsd:complexType name="StateMachineNotificationResultBEList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of StateMachineEventNotificationBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="StateMachineNotificationResultBE" nillable="true" type="tns:StateMachineNotificationResultBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="StateMachineNotificationResultBEList" nillable="true" type="tns:StateMachineNotificationResultBEList" />
+      <xsd:complexType name="StateMachineNotificationResultBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Business entity representing the result for State
+            Machine Notification.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CaseID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Case ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ConditionEvaluationResult" nillable="true" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            If condition was involved, what did it evaluate to
+            (True ,in case of no condition was involved)
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ConditionName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Name of the condition method associated.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateFriendlyName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Translated Name of the Current State
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ID of the Current State
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CurrentStateName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Current State Name
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorCode" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Specifies the associated Error Code
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExceptionDetail" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Specifies the WorkFlow Exception
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="HasException" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Indicates whether WorkFlow Exception is encountered
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsStateChanged" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+             Indicates whether state transition happened
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="StateMachineNotificationResultBE" nillable="true" type="tns:StateMachineNotificationResultBE" />
+      <xsd:complexType name="NoticeBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            NoticeBE entity contains properties of Notice
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="NoticeTemplateID" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ID of NoticeTemplate
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q5="http://www.altinn.no/services/ServiceEngine/Case/2010/10" minOccurs="0" name="NoticeTokens" nillable="true" type="q5:NoticeTokenBEList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            NoticeTokens
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="NoticeBE" nillable="true" type="tns:NoticeBE" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICaseAgencySystemEC_Test_InputMessage">
+    <wsdl:part xmlns:q6="http://www.altinn.no/services/2009/10" name="parameters" element="q6:Test" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_Test_OutputMessage">
+    <wsdl:part xmlns:q7="http://www.altinn.no/services/2009/10" name="parameters" element="q7:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_Test_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q8:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_GetCaseListAgencySystemEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseListAgencySystemEC" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_GetCaseListAgencySystemEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCaseListAgencySystemECResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_GetCaseListAgencySystemEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q9:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:InstantiateCollaborationAgencySystemEC" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InstantiateCollaborationAgencySystemECResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q10:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_NotifyEventAgencySystemEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyEventAgencySystemEC" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_NotifyEventAgencySystemEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NotifyEventAgencySystemECResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_NotifyEventAgencySystemEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q11:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_SetNoticeAgencySystemEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetNoticeAgencySystemEC" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_SetNoticeAgencySystemEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetNoticeAgencySystemECResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICaseAgencySystemEC_SetNoticeAgencySystemEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q12:AltinnFault" />
+  </wsdl:message>
+  <wsdl:portType name="ICaseAgencySystemEC">
+    <wsdl:documentation>&lt;summary&gt;
+            This interface defines the service contract for the Enterprise Certificate
+            interface pertaining to Collaboration Services.
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:ICaseAgencySystemEC_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:ICaseAgencySystemEC_Test_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:ICaseAgencySystemEC_Test_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCaseListAgencySystemEC">
+      <wsdl:documentation>&lt;summary&gt;
+            This operation can be used to retrieve information either about a single instance of a collaboration service,
+            or a list for a specific collaboration service type.
+            &lt;/summary&gt;
+            &lt;param name="systemUserName"&gt;
+            System user name is the relevant system user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="systemPassword"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="caseID"&gt;
+            Identificator for a single Case, used to get one specific collaboration service instance - mandatory paremeter
+            (if CaseID is provided then externalServiceCode and externalServiceEditionCode are not required)
+            &lt;/param&gt;
+            &lt;param name="externalServiceCode"&gt;
+            Unique Identification Code for the Service as defined in TUL, used together with externalServiceEditionCode to get multiple
+            instances of the collaboration service - mandatory paremeter (if CaseID is not provided)
+            &lt;/param&gt;
+            &lt;param name="externalServiceEditionCode"&gt;
+            Unique Identification Code for the Service Edition as defined in TUL, used together with externalServiceCode to get multiple
+            instances of the collaboration service - mandatory paremeter(if CaseID is not provided)
+            &lt;/param&gt;
+            &lt;param name="languageID"&gt;
+            Localization Language (English 1033, Bokmål 1044, Nynorsk 2068)
+            &lt;/param&gt;
+            &lt;param name="reporteeNumber"&gt;
+            SSN (11 digits)/Org Number (9 digits) to limit the result for only this Reportee
+            &lt;/param&gt;
+            &lt;returns&gt;
+            One or more occurrences of the entity ExternalCaseBE - one occurrence for each instance of the
+            collaboration service edition that matched the request. For each occurrence:
+            -CaseID identifies the collaboration service instance in question.
+            -CaseName is the collaboration service's name as defined in TUL.
+            -CurrentStateID is the identifyer of the collaboration service's current state.
+            -CurrentStateFriendlyName contains the localized state name.
+            -CurrentStateName contains the current state name as defined in the state machine
+            -NoticeTemplateID contains any uniquely identified notice set on the collaboration service instance
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetCaseListAgencySystemEC" message="tns:ICaseAgencySystemEC_GetCaseListAgencySystemEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetCaseListAgencySystemECResponse" message="tns:ICaseAgencySystemEC_GetCaseListAgencySystemEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetCaseListAgencySystemECAltinnFaultFault" name="AltinnFaultFault" message="tns:ICaseAgencySystemEC_GetCaseListAgencySystemEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InstantiateCollaborationAgencySystemEC">
+      <wsdl:documentation>&lt;summary&gt;
+            This operation can be used to instantiate a Collaboration Service for a given reportee.
+            &lt;/summary&gt;
+            &lt;param name="systemUserName"&gt;
+            System user name is the relevant agency system name that is registered in Altinn - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="systemPassword"&gt;
+            System password is the password for the corresponding registered agency system - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="externalServiceCode"&gt;
+            Unique Identification Code for the Service as defined in TUL - mandatory paremeter
+            &lt;/param&gt;
+            &lt;param name="externalServiceEditionCode"&gt;
+            Unique Identification Code for the Service Edition as defined in TUL - mandatory paremeter
+            &lt;/param&gt;
+            &lt;param name="reporteeNumber"&gt;
+            SSN (11 digits)/Org Number (9 digits) of the Reportee for which the service is to be instantiated for - mandatory paremeter
+            &lt;/param&gt;
+            &lt;param name="visibleDateTime"&gt;
+            Indicates when this Service Instance would be visible to the end user in SBL (yyyy-MM-dd / yyy-MM-ddThh:mm:ss)
+            &lt;/param&gt;
+            &lt;param name="dueDate"&gt;
+            Due Date for the Collaboration Service indicted for the end user in SBL (yyyy-MM-dd / yyy-MM-ddThh:mm:ss)
+            &lt;/param&gt;
+            &lt;returns&gt;
+            Unique identificator for the instantiated collaboration service (CaseID)
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/InstantiateCollaborationAgencySystemEC" message="tns:ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/InstantiateCollaborationAgencySystemECResponse" message="tns:ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/InstantiateCollaborationAgencySystemECAltinnFaultFault" name="AltinnFaultFault" message="tns:ICaseAgencySystemEC_InstantiateCollaborationAgencySystemEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NotifyEventAgencySystemEC">
+      <wsdl:documentation>&lt;summary&gt;
+            This Operation can be used to notify an event pertaining to an instance of a
+            collaboration service edition or all instances of a collaboration service edition.
+            &lt;/summary&gt;
+            &lt;param name="systemUserName"&gt;
+            System user name is the relevant system user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="systemPassword"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="notificationInfo"&gt;
+            A notificationInfo entity that contains information about the event and its scope;
+            It contains CaseId if one specific instance of a collaboration service is to be notified by the event
+            OR ExternalServiceCode and ExternalServiceEditionCode if all instances of a collaboration service edition shall be
+            notified by the event. One of these alternatives are mandatory.
+            In addition Event is mandatory and it contains the event name in question to be triggered. The Event must correspond to event name in the relevant
+            xoml-file.
+            ReporteeElementID is optional and only used for logging, can be used if the event was triggered by a specific element
+            &lt;/param&gt;
+            &lt;returns&gt;
+            One or more occurrences of the entity StateMachineNotificationResultBE - one occurrence for each instance of the
+            collaboration service edition that was the target of the request. For each occurrence:
+            -CaseId identifies the collaboration service instance in question.
+            -IsStateChanged is true or false depending on whether the state transition happened or not.
+            -ConditionName contains the condition name (if any) that is relevant for the state transition
+            -ConditionEvaluationResult is true or false depending on the result of the condition in question (true if no condition is relevant).
+            -CurrentStateName contains the name of the state that the collaboration service instance has after it was notifed by this event.
+            -HasException indicates whether a WorkFlow Exception was encountered.
+            -ErrorCode denotes the error code that was thrown.
+            -ExceptionDetail contains more information about the exception that occured.
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/NotifyEventAgencySystemEC" message="tns:ICaseAgencySystemEC_NotifyEventAgencySystemEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/NotifyEventAgencySystemECResponse" message="tns:ICaseAgencySystemEC_NotifyEventAgencySystemEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/NotifyEventAgencySystemECAltinnFaultFault" name="AltinnFaultFault" message="tns:ICaseAgencySystemEC_NotifyEventAgencySystemEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNoticeAgencySystemEC">
+      <wsdl:documentation>&lt;summary&gt;
+            This operation can be used to set notice on an instance of a correspondence, reporting or collaboration service.
+            &lt;/summary&gt;
+            &lt;param name="systemUserName"&gt;
+            System user name is the relevant system user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="systemPassword"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="reporteeElementID"&gt;
+            Identifier of the element (service instance) on which a notice is intended to be set - mandatory parameter.
+            Permissible Values:
+            1.Valid Archive Reference [Starting with AR] of an archived instance of SubService
+            associated to a case.
+            2.Valid CaseID (Identifier of a Collaboration Service instance)
+            3.Valid ReporteeElementID of an active instance of SubService associated to a case.
+            &lt;/param&gt;
+            &lt;param name="noticeInfo"&gt;
+            Business Entity representing the metdata identifiers for the notice to be set - mandatory parameter. This
+            includes a NoticeTemplateID [As available in Service Development Solution(TUL)] and
+            0 or more occurences of a valid combination of case insensitive TokenKey and TokenValue
+            replacement value for the input NoticeTemplateID.
+            [Error Conditions]-
+            1.NoticeTemplateID is not available for the associated Case for sub service instances
+            or the input case.
+            2.One or more TokenKeys provided are not applicable for the NoticeTemplateID.
+            3.The associated Case for sub service instances or the input case is unavailable.[It
+            is deleted/archived]
+            &lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetNoticeAgencySystemEC" message="tns:ICaseAgencySystemEC_SetNoticeAgencySystemEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetNoticeAgencySystemECResponse" message="tns:ICaseAgencySystemEC_SetNoticeAgencySystemEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetNoticeAgencySystemECAltinnFaultFault" name="AltinnFaultFault" message="tns:ICaseAgencySystemEC_SetNoticeAgencySystemEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_ICaseAgencySystemEC" type="tns:ICaseAgencySystemEC">
+    <wsp:PolicyReference URI="#CustomBinding_ICaseAgencySystemEC_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaseListAgencySystemEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetCaseListAgencySystemEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="InstantiateCollaborationAgencySystemEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/InstantiateCollaborationAgencySystemEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NotifyEventAgencySystemEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/NotifyEventAgencySystemEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SetNoticeAgencySystemEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetNoticeAgencySystemEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CaseAgencySystemECSF">
+    <wsdl:port name="CustomBinding_ICaseAgencySystemEC" binding="tns:CustomBinding_ICaseAgencySystemEC">
+      <soap12:address location="http://st01.altinn.basefarm.net/ServiceEngineExternal/CaseAgencySystemEC.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://st01.altinn.basefarm.net/ServiceEngineExternal/CaseAgencySystemEC.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

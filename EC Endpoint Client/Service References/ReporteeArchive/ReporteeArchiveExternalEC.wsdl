@@ -1,0 +1,1980 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReporteeArchiveExternalEC" targetNamespace="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IReporteeArchiveExternalEC_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireDerivedKeys />
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpToken />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefThumbprint />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/2009/10">
+      <xsd:element name="Test">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/common/fault/2009/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/common/fault/2009/10">
+      <xsd:complexType name="AltinnFault">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Fault Contract to be used by FaultContractAttribute in a WCF service
+            to return a fault Soap Message to the Caller
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author : Vijay Singh
+            Date : 18/12/08
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AltinnErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnExtendedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnLocalizedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message in localized text
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error GUID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User Guid
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AltinnFault" nillable="true" type="tns:AltinnFault" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2010/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/Archive/ArchiveCommon/2010/10" />
+      <xsd:import namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" />
+      <xsd:element name="GetArchivedFormTaskEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="1" name="reporteeElementId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="languageID" nillable="true" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetArchivedFormTaskECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://schemas.altinn.no/services/Archive/ReporteeArchive/2010/10" minOccurs="0" name="GetArchivedFormTaskECResult" nillable="true" type="q1:ArchivedFormTaskV2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetArchivedLookupEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="userName" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string" />
+            <xsd:element minOccurs="0" name="reporteeElementId" type="xsd:int" />
+            <xsd:element minOccurs="0" name="languageID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetArchivedLookupECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q2="http://schemas.altinn.no/services/Archive/ArchiveCommon/2010/10" minOccurs="0" name="GetArchivedLookupECResult" nillable="true" type="q2:ArchivedLookupExternal" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAttachmentDataEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="1" name="attachmentId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAttachmentDataECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q3="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" minOccurs="0" name="GetAttachmentDataECResult" nillable="true" type="q3:AttachmentBEV2" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Archive/ReporteeArchive/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2010/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2009/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2010/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/serviceEntity/2009/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/ServiceEngine/Workflow/2010/10" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:complexType name="ArchivedFormTaskV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Entity for representing Archived Form Task
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: nitin.v.gupta
+            Date: 3/24/2009 8:28:53 AM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ArchiveTaskList" nillable="true" type="tns:ArchiveTaskBEV2List">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Represents the archived task BE list.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ArchivedAttachmentList" nillable="true" type="tns:ArchivedAttachmentBEV2List">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier represents the archived attachment BE list.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ArchivedDateTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier represents the form task archived date time.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q4="http://schemas.altinn.no/services/Archive/ReporteeArchive/2009/10" minOccurs="0" name="ArchivedFormList" nillable="true" type="q4:ArchivedFormBEList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier represents the archived form task BE list.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ArchivedFormTaskSigningStepList" nillable="true" type="tns:ArchivedFormTaskSigningStepBEV2List">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier represents the archived form task signing step BE list.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalServiceCode" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Code for the external service.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ExternalServiceEditionCode" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Code for the edition of the external service.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="InvoiceInformation" type="xsd:double">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets and sets the InvoiceInformation attached with this FormTask
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="LastChanged" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify Last Changed By
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q5="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10" minOccurs="0" name="PasswordEncryptedSymmetricKey" nillable="true" type="q5:KeyExternalBE">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Added for V2 .If form contain sensitive data then the key will be used to encrypt the sensitive data
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReporteeElementID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify ReporteeElementID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReporteeID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify ReporteeID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q6="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10" minOccurs="0" name="SOEncryptedSymmetricdKey" nillable="true" type="q6:KeyExternalBE">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            If the form has sensitive information, then this has the encrypted symmetric key with SO
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ServiceOwner" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Service Owner Code
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ssnOrgNumber" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Holds either the ssn number or organisation number
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedFormTaskV2" nillable="true" type="tns:ArchivedFormTaskV2" />
+      <xsd:complexType name="ArchiveTaskBEV2List">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Collection of FormBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArchiveTaskV2" nillable="true" type="tns:ArchiveTaskV2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchiveTaskBEV2List" nillable="true" type="tns:ArchiveTaskBEV2List" />
+      <xsd:complexType name="ArchiveTaskV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Entity for representing the Form in ReporteeArchive database
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="EndUserSystemID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Provides the End user system ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="LastChanged" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Provides when this task was last changed
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="NumberOfSignaturesAdded" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Number of Signatures Added
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ProcessStepID_FK" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifies the Process step
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SentComplete" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Checks whether the Task is sent or not.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="TaskID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Uniquely identifies a Task
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserDefinedNumberOfSignaturesRequired" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            User Defined Number of Signatures Required
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="WorkflowReference" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Provides the Workflow reference
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchiveTaskV2" nillable="true" type="tns:ArchiveTaskV2" />
+      <xsd:complexType name="ArchivedAttachmentBEV2List">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Collection of ArchivedAttachmentBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArchivedAttachmentBEV2" nillable="true" type="tns:ArchivedAttachmentBEV2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedAttachmentBEV2List" nillable="true" type="tns:ArchivedAttachmentBEV2List" />
+      <xsd:complexType name="ArchivedAttachmentBEV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Class description
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: nitin.v.gupta
+            Date: 3/24/2009 10:53:27 AM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element xmlns:q7="http://schemas.altinn.no/services/ServiceEngine/Subscription/2010/10" minOccurs="0" name="AttachmentFunctionType" type="q7:AttachmentFunctionTypeV2">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify Attachment Function Type
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AttachmentID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify AttachmentID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AttachmentName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Attachment Name
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CreatedByUserID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            UserID of the creator of Attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CreatedDateTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Date and Time of creating Attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsAddedAfterFormFillin" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Check if attachment is added after Form Fillin or not
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsEncrypted" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Check if attachment is encrypted or not
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q8="http://schemas.altinn.no/services/serviceEntity/2009/10" minOccurs="0" name="MimeTypeName" type="q8:AttachmentType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Mime type of the Attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedAttachmentBEV2" nillable="true" type="tns:ArchivedAttachmentBEV2" />
+      <xsd:complexType name="ArchivedFormTaskSigningStepBEV2List">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Collection of ArchivedFormTaskSigningStepBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArchivedFormTaskSigningStepBEV2" nillable="true" type="tns:ArchivedFormTaskSigningStepBEV2" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedFormTaskSigningStepBEV2List" nillable="true" type="tns:ArchivedFormTaskSigningStepBEV2List" />
+      <xsd:complexType name="ArchivedFormTaskSigningStepBEV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Contains information about the Archived Signing steps involved FormTask
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: nitin.v.gupta
+            Date: 3/24/2009 8:30:14 AM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AuthenticationLevelID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The authentication level attached with that signature.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AuthenticationMethod" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A Key that represents what level the user has when the enty was made
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CertificateIssuedByName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The name by which certificate was issued.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CertificateIssuedForName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The name for whom the signature was issued.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CertificateValidFrom" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Date and time from which the signature will be valid.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CertificateValidTo" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Date and time till which the signature will be valid.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CreatedDateTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The date and time at which the signature was created.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q9="http://schemas.altinn.no/services/ServiceEngine/Workflow/2010/10" minOccurs="0" name="IsSigningAllRequired" type="q9:WorkFlowGroupSigningType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Tells whether this signing is done for all the items in  the form
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ProcessStepID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Step for which the Signature is added
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Signature" nillable="true" type="xsd:base64Binary">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The signature stored in binary format.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SignatureID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The unique identifier for Signature.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SignatureText" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The text for that signature.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SignedAttachmentList" nillable="true" type="q10:ArrayOfint">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of signed attachments.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SignedByUser" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The party id for the person who has signed.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SignedByUserName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The user name for the person who has signed.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SignedByUserSSN" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The user ssn/org number for the signee.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SignedFromList" nillable="true" type="q11:ArrayOfint">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of signed forms.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedFormTaskSigningStepBEV2" nillable="true" type="tns:ArchivedFormTaskSigningStepBEV2" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Archive/ReporteeArchive/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2009/10">
+      <xsd:complexType name="ArchivedFormBEList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Collection of ArchivedFormBE
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ArchivedFormBE" nillable="true" type="tns:ArchivedFormBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedFormBEList" nillable="true" type="tns:ArchivedFormBEList" />
+      <xsd:complexType name="ArchivedFormBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Entity for representing Archived Form
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: nitin.v.gupta
+            Date: 3/24/2009 8:12:50 AM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DataFormatId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier for the data format.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="DataFormatVersion" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Version of data format
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormDataXML" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of the form data XML
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify FormID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to identify Form Name
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormPaymentInfo" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The payment information attached with the form.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormPresentationFieldValue" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of the presentation field value list
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FormSummary" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The FormSummary information attached with the form.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ParentReference" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The parent information of the form
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="PaymentInformationE2B" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            PaymentInformationE2B HTML for the payment information of the form.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="PaymentInformationHTML" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            PaymentInformation HTML for the payment information of the form.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedFormBE" nillable="true" type="tns:ArchivedFormBE" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10">
+      <xsd:complexType name="KeyExternalBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            This class forms the data contract for KeyManagement instances for external usage.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: abhilash.k.nair
+            Date: 3/13/2009 2:12:12 PM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="CertificateThumbprint" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The thumbrpint for the certificate used for decryption
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="Key" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Aescrypto key
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="KeyID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Security Key ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="KeyExternalBE" nillable="true" type="tns:KeyExternalBE" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/ServiceEngine/Subscription/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2010/10">
+      <xsd:simpleType name="AttachmentFunctionTypeV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+             Enum types for Attachment function.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+             Author: Abhishek.Prasad
+             Date: 18/03/2009 3:20:04 PM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="3" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">Default</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            Default Value
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">Unspecified</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            When the function of the attachment is not specified.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">Invoice</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            When the function of attachment is for Legacy system.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Default" />
+          <xsd:enumeration value="Unspecified" />
+          <xsd:enumeration value="Invoice" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AttachmentFunctionTypeV2" nillable="true" type="tns:AttachmentFunctionTypeV2" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/serviceEntity/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/serviceEntity/2009/10">
+      <xsd:simpleType name="AttachmentType">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+             Attachment type is used to provide information about the type of the attachment.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+             Author: Abhishek.Prasad
+             Date: 3/18/2009 14:32:49 PM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="23" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">application_None</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            When there is no attachment.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">application_pdf</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            When the attachment is of pdf type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">application_msword</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            When the attachment is of Microsoft word type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="10">application_vnd_ms_excel</d2p1:Key>
+                  <d2p1:Value z:Id="11">&lt;summary&gt;
+            When the attachment is of Microsoft excel type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="12">application_vnd_oasis_opendocument_text</d2p1:Key>
+                  <d2p1:Value z:Id="13">&lt;summary&gt;
+            When the attachment is of Open document of Text type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="14">application_vnd_oasis_opendocument_presentation</d2p1:Key>
+                  <d2p1:Value z:Id="15">&lt;summary&gt;
+            When the attachment is of Open document of Presentation type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="16">application_vnd_oasis_opendocument_spreadsheet</d2p1:Key>
+                  <d2p1:Value z:Id="17">&lt;summary&gt;
+            When the attachment is of Open document of Spreadsheet type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="18">application_rtf</d2p1:Key>
+                  <d2p1:Value z:Id="19">&lt;summary&gt;
+            When the attachment is of Rich text format type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="20">application_vnd_ms_powerpoint</d2p1:Key>
+                  <d2p1:Value z:Id="21">&lt;summary&gt;
+             When the attachment is of Microsoft power point type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="22">application_postscript</d2p1:Key>
+                  <d2p1:Value z:Id="23">&lt;summary&gt;
+            When the attachment is of Postscript type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="24">application_zip</d2p1:Key>
+                  <d2p1:Value z:Id="25">&lt;summary&gt;
+            When the attachment is a zip type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="26">text_plain</d2p1:Key>
+                  <d2p1:Value z:Id="27">&lt;summary&gt;
+            When the attachment is a plain text.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="28">text_html</d2p1:Key>
+                  <d2p1:Value z:Id="29">&lt;summary&gt;
+            When the attachment is a html text.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="30">text_xml</d2p1:Key>
+                  <d2p1:Value z:Id="31">&lt;summary&gt;
+            When the attachment is a xml text.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="32">text_rtf</d2p1:Key>
+                  <d2p1:Value z:Id="33">&lt;summary&gt;
+            When the attachment is of rich text format type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="34">text_richtext</d2p1:Key>
+                  <d2p1:Value z:Id="35">&lt;summary&gt;
+             When the attachment is a rich text.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="36">binary_octet_stream</d2p1:Key>
+                  <d2p1:Value z:Id="37">&lt;summary&gt;
+             When the attachment is a binary.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="38">not_Applicable</d2p1:Key>
+                  <d2p1:Value z:Id="39">&lt;summary&gt;
+             When the attachment is not of any type.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="40">MTOM</d2p1:Key>
+                  <d2p1:Value z:Id="41">&lt;summary&gt;
+            Mtom
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="42">BASE64</d2p1:Key>
+                  <d2p1:Value z:Id="43">&lt;summary&gt;
+            base64
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="44">image_jpeg</d2p1:Key>
+                  <d2p1:Value z:Id="45">&lt;summary&gt;
+            Jpeg
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="46">image_gif</d2p1:Key>
+                  <d2p1:Value z:Id="47">&lt;summary&gt;
+            Gif
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="48">image_bmp</d2p1:Key>
+                  <d2p1:Value z:Id="49">&lt;summary&gt;
+            Image
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="application_None" />
+          <xsd:enumeration value="application_pdf" />
+          <xsd:enumeration value="application_msword" />
+          <xsd:enumeration value="application_vnd_ms_excel" />
+          <xsd:enumeration value="application_vnd_oasis_opendocument_text" />
+          <xsd:enumeration value="application_vnd_oasis_opendocument_presentation" />
+          <xsd:enumeration value="application_vnd_oasis_opendocument_spreadsheet" />
+          <xsd:enumeration value="application_rtf" />
+          <xsd:enumeration value="application_vnd_ms_powerpoint" />
+          <xsd:enumeration value="application_postscript" />
+          <xsd:enumeration value="application_zip" />
+          <xsd:enumeration value="text_plain" />
+          <xsd:enumeration value="text_html" />
+          <xsd:enumeration value="text_xml" />
+          <xsd:enumeration value="text_rtf" />
+          <xsd:enumeration value="text_richtext" />
+          <xsd:enumeration value="binary_octet_stream" />
+          <xsd:enumeration value="not_Applicable" />
+          <xsd:enumeration value="MTOM" />
+          <xsd:enumeration value="BASE64" />
+          <xsd:enumeration value="image_jpeg" />
+          <xsd:enumeration value="image_gif" />
+          <xsd:enumeration value="image_bmp" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AttachmentType" nillable="true" type="tns:AttachmentType" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/ServiceEngine/Workflow/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/ServiceEngine/Workflow/2010/10">
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:simpleType name="WorkFlowGroupSigningType">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+            GroupSigningType enum for Workflow module
+            &lt;/summary&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="3" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">YES</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            Group signing is set
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">NO</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            Group signing not set
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">SET_PER_FORM</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            Group signing defined at each form level
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="YES">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="NO">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="SET_PER_FORM">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="WorkFlowGroupSigningType" nillable="true" type="tns:WorkFlowGroupSigningType" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+      <xsd:complexType name="ArrayOfint">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="int" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Archive/ArchiveCommon/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Archive/ArchiveCommon/2010/10">
+      <xsd:import namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" />
+      <xsd:complexType name="ArchivedLookupExternal">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            The ArchiveLookupExternalBE contains the information about archived lookup.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AllowForwarding" nillable="true" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Allow Forwading
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ArchiveDateTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The Saved Correspondence Date
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="LanguageTypeId" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The identifier used to uniquely identify the language.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="LookupID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Identifier used to uniquely identify the lookup.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q12="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" minOccurs="0" name="LookupPDF" nillable="true" type="q12:AttachmentBEV2">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The Lookup as a PDF
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ArchivedLookupExternal" nillable="true" type="tns:ArchivedLookupExternal" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/serviceEntity/2009/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10" />
+      <xsd:complexType name="AttachmentBEV2">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            The AttachmentBE contains the information about an Attachment.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: Deepak M
+            Date: 3/3/2009
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AttachmentData" nillable="true" type="xsd:base64Binary">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The Attachment data to be inserted into the Attachment table
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q13="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10" minOccurs="0" name="AttachmentFunctionTypeID" type="q13:AttachmentFunctionType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AttachmentID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A unique identifier for an Attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AttachmentName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A logical name for the Attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q14="http://schemas.altinn.no/services/serviceEntity/2009/10" minOccurs="0" name="AttachmentTypeID" type="q14:AttachmentType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CreatedByUserID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The ID of the User who has added the attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="CreatedDateTime" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The date on which this attachment is created
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element xmlns:q15="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10" minOccurs="0" name="DestinationType" type="q15:UserTypeRestriction">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+             The destination type for display for the binary attachment
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="FileName" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            String containing the name of the Attachment file
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsAddedAfterFormFillin" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A flag to indicate whether attachment is added after Form Filling
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsAssociatedToFormSet" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A flag to indicate if attachment is included in the formset
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="IsEncrypted" type="xsd:boolean">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            A bit value to indicate whether the Attachment is encrypted or not
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReporteeElementID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The unique identifier for a ReporteeElement
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SendersReference" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Reference of the Sender
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AttachmentBEV2" nillable="true" type="tns:AttachmentBEV2" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10">
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:simpleType name="AttachmentFunctionType">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+             Enum types for Attachment function.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+             Author: Abhishek.Prasad
+             Date: 18/03/2009 3:20:04 PM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="2" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">Unspecified</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            When the function of the attachment is not specified.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">Invoice</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            When the function of attachment is for Legacy system.
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Unspecified">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+          <xsd:enumeration value="Invoice">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:enumeration>
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="AttachmentFunctionType" nillable="true" type="tns:AttachmentFunctionType" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10">
+      <xsd:simpleType name="UserTypeRestriction">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="4" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">Default</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">PortalOnly</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">EndUserSystemOnly</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="10">ShowToAll</d2p1:Key>
+                  <d2p1:Value z:Id="11">&lt;summary&gt;
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Default" />
+          <xsd:enumeration value="PortalOnly" />
+          <xsd:enumeration value="EndUserSystemOnly" />
+          <xsd:enumeration value="ShowToAll" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="UserTypeRestriction" nillable="true" type="tns:UserTypeRestriction" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReporteeArchiveExternalEC_Test_InputMessage">
+    <wsdl:part xmlns:q16="http://www.altinn.no/services/2009/10" name="parameters" element="q16:Test" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_Test_OutputMessage">
+    <wsdl:part xmlns:q17="http://www.altinn.no/services/2009/10" name="parameters" element="q17:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_Test_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q18:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedFormTaskEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArchivedFormTaskEC" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedFormTaskEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArchivedFormTaskECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedFormTaskEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q19:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedLookupEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArchivedLookupEC" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedLookupEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArchivedLookupECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetArchivedLookupEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q20:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetAttachmentDataEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDataEC" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetAttachmentDataEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentDataECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReporteeArchiveExternalEC_GetAttachmentDataEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q21:AltinnFault" />
+  </wsdl:message>
+  <wsdl:portType name="IReporteeArchiveExternalEC">
+    <wsdl:documentation>&lt;summary&gt;
+            Service contract for Reportee Archive with enterprise certificate retrieves form task data belonging to reportees.
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IReporteeArchiveExternalEC_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IReporteeArchiveExternalEC_Test_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IReporteeArchiveExternalEC_Test_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArchivedFormTaskEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves an ArchivedFormTaskBE object containing all forms and attachments
+            for the specific form task based on the reportee elementId provided.
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="reporteeElementId"&gt;
+            Identifier for a Reportee Element to get - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="languageID"&gt;
+            Localization Language (English 1033, Bokmål 1044, Nynorsk 2068) -optional parameter
+            &lt;/param&gt;
+            &lt;returns&gt;
+            return the ArchivedFormTask containing all forms and attachments
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedFormTaskEC" message="tns:IReporteeArchiveExternalEC_GetArchivedFormTaskEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedFormTaskECResponse" message="tns:IReporteeArchiveExternalEC_GetArchivedFormTaskEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedFormTaskECAltinnFaultFault" name="AltinnFaultFault" message="tns:IReporteeArchiveExternalEC_GetArchivedFormTaskEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArchivedLookupEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves an ArchivedLookupExternalBE object containing lookup details
+            for the specific lookup based on the reportee elementId provided.
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="reporteeElementId"&gt;
+            Identifier for a Reportee Element to get - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="languageID"&gt;
+            Localization Language (English 1033, Bokmål 1044, Nynorsk 2068)
+            &lt;/param&gt;
+            &lt;returns&gt;
+            Returns an ArchivedLookupExternalBE object containing lookup PDF and metadata
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedLookupEC" message="tns:IReporteeArchiveExternalEC_GetArchivedLookupEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedLookupECResponse" message="tns:IReporteeArchiveExternalEC_GetArchivedLookupEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedLookupECAltinnFaultFault" name="AltinnFaultFault" message="tns:IReporteeArchiveExternalEC_GetArchivedLookupEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDataEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Retrieves one attachmentBE entity based on the attachmentId provided.
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="attachmentId"&gt;
+            The unique identifier for the attachement to get - optional parameter
+            &lt;/param&gt;
+            &lt;returns&gt;
+            return the Attachment
+            &lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetAttachmentDataEC" message="tns:IReporteeArchiveExternalEC_GetAttachmentDataEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetAttachmentDataECResponse" message="tns:IReporteeArchiveExternalEC_GetAttachmentDataEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetAttachmentDataECAltinnFaultFault" name="AltinnFaultFault" message="tns:IReporteeArchiveExternalEC_GetAttachmentDataEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IReporteeArchiveExternalEC" type="tns:IReporteeArchiveExternalEC">
+    <wsp:PolicyReference URI="#CustomBinding_IReporteeArchiveExternalEC_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArchivedFormTaskEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedFormTaskEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetArchivedLookupEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetArchivedLookupEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentDataEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Archive/ReporteeArchive/2010/10/IReporteeArchiveExternalEC/GetAttachmentDataEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReporteeArchiveExternalEC">
+    <wsdl:port name="CustomBinding_IReporteeArchiveExternalEC" binding="tns:CustomBinding_IReporteeArchiveExternalEC">
+      <soap12:address location="http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="345c6067-85bd-46cd-956c-8a40f6bd9457" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://st01.altinn.basefarm.net/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceOwnerArchiveExternalStreamedECSF.wsdl" MetadataType="Wsdl" ID="18699b88-8a1c-4cfa-960d-0b214a82d1ba" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC.svc?wsdl" />
+    <MetadataFile FileName="ServiceOwnerArchiveExternalStreamedEC.disco" MetadataType="Disco" ID="dfca3c5c-5ba9-42c6-993d-ed4e2e23319c" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ServiceOwnerArchiveExternalStreamedEC.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

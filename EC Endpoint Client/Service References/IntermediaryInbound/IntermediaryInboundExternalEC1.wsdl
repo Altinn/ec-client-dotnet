@@ -1,0 +1,1253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IIntermediaryInboundExternalEC_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:RequireDerivedKeys />
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpToken />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefKeyIdentifier />
+                        <sp:MustSupportRefIssuerSerial />
+                        <sp:MustSupportRefThumbprint />
+                        <sp:MustSupportRefEncryptedKey />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+            <sp:SignedParts>
+              <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+            </sp:SignedParts>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportRefKeyIdentifier />
+            <sp:MustSupportRefIssuerSerial />
+            <sp:MustSupportRefThumbprint />
+            <sp:MustSupportRefEncryptedKey />
+          </wsp:Policy>
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/2009/10">
+      <xsd:element name="Test">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/common/fault/2009/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/common/fault/2009/10">
+      <xsd:complexType name="AltinnFault">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Fault Contract to be used by FaultContractAttribute in a WCF service
+            to return a fault Soap Message to the Caller
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author : Vijay Singh
+            Date : 18/12/08
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AltinnErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnExtendedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnLocalizedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Extended Error Message in localized text
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error GUID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn Error ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User Guid
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Altinn User ID
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AltinnFault" nillable="true" type="tns:AltinnFault" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2009/10" />
+      <xsd:import namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10" />
+      <xsd:element name="CompleteAndSignShipmentEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="0" name="reporteeElementId" type="xsd:int" />
+            <xsd:element xmlns:q1="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2009/10" minOccurs="0" name="signature" nillable="true" type="q1:SignatureList" />
+            <xsd:element minOccurs="0" name="languageId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="CompleteAndSignShipmentECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q2="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10" minOccurs="0" name="CompleteAndSignShipmentECResult" nillable="true" type="q2:ReceiptExternal" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAltinnSubmissionStatusEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAltinnSubmissionStatusECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" name="GetAltinnSubmissionStatusECResult" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="SubmitFormTaskEC">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="formTaskShipment" type="tns:FormTaskShipmentBE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="FormTaskShipmentBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Reportee" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ExternalShipmentReference" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="FormTasks" type="tns:FormTask" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Attachments" type="tns:ArrayOfAttachment" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Signatures" type="tns:Signature" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="IsUserDelegationLocked" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="UserDefinedNumberOfSignaturesRequired" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Users" type="tns:ArrayOfDelegatedUserBE" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EncryptedKey" type="tns:EncryptedKeyBE" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CaseID" nillable="true" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="FormTask">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ServiceCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ServiceEdition" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Forms" type="tns:ArrayOfForm" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfForm">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Form" nillable="true" type="tns:Form" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Form">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Completed" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DataFormatId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="DataFormatVersion" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemReference" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ParentReference" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="FormData" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfAttachment">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Attachment" nillable="true" type="tns:Attachment" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Attachment">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemReference" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ParentReference" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="FileName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Encrypted" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="AttachementData" type="xsd:base64Binary" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="AttachmentTypeName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Checksum" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Signature">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemReference" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemUserId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemLoginDateTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemSignatureDateTime" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemVersion" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="EndUserSystemSignatureLogId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDelegatedUserBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DelegatedUserBE" nillable="true" type="tns:DelegatedUserBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DelegatedUserBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="SSN" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="NumberOfSignaturesAllowed" type="xsd:unsignedInt" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EncryptedKeyBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReporteeSymmetricKey" type="tns:ReporteeSymmetricKeyBE" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ServiceOwnerSymmetricKeys" type="tns:ArrayOfServiceOwnerSymmetricKeyBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReporteeSymmetricKeyBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReporteeId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfServiceOwnerSymmetricKeyBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ServiceOwnerSymmetricKeyBE" nillable="true" type="tns:ServiceOwnerSymmetricKeyBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ServiceOwnerSymmetricKeyBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ServiceOwnerCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="CertificateId" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SubmitFormTaskECResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="SubmitFormTaskECResult" type="tns:ReceiptExternalBE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ReceiptExternalBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReceiptId" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReceiptText" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReceiptHistory" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LastChanged" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReceiptTypeName" type="tns:ReceiptType" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReceiptStatusCode" type="tns:ReceiptStatus" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ParentReceiptId" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="References" type="tns:ArrayOfReferenceBE" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="SubReceipts" type="tns:ArrayOfReceiptExternalBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="ReceiptType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="FormTask" />
+          <xsd:enumeration value="Correspondence" />
+          <xsd:enumeration value="PINCODE" />
+          <xsd:enumeration value="Subscription" />
+          <xsd:enumeration value="Outbound" />
+          <xsd:enumeration value="PreFill" />
+          <xsd:enumeration value="RegisterDLS" />
+          <xsd:enumeration value="RegisterDSF" />
+          <xsd:enumeration value="RegisterER" />
+          <xsd:enumeration value="RegisterDSFProperty" />
+          <xsd:enumeration value="RegisterDSFStreet" />
+          <xsd:enumeration value="RegisterDSFCountry" />
+          <xsd:enumeration value="RegisterDSFUser" />
+          <xsd:enumeration value="LookUp" />
+          <xsd:enumeration value="RegisterDSFStreetAdd" />
+          <xsd:enumeration value="RegisterDSFPropertyAdd" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ReceiptStatus">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="OK" />
+          <xsd:enumeration value="UnExpectedError" />
+          <xsd:enumeration value="ValidationFailed" />
+          <xsd:enumeration value="Rejected" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ArrayOfReferenceBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReferenceBE" nillable="true" type="tns:ReferenceBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReferenceBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReferenceValue" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReferenceTypeName" type="tns:ReferenceType" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ReporteeID" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="ReferenceType">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="ExternalShipmentReference" />
+          <xsd:enumeration value="EndUserSystemReference" />
+          <xsd:enumeration value="ParentReference" />
+          <xsd:enumeration value="SendersReference" />
+          <xsd:enumeration value="WorkFlowReference" />
+          <xsd:enumeration value="BatchReference" />
+          <xsd:enumeration value="OutboundShipmentReference" />
+          <xsd:enumeration value="ReceiversReference" />
+          <xsd:enumeration value="Altinn1Reference" />
+          <xsd:enumeration value="OwnerPartyReference" />
+          <xsd:enumeration value="PartyReference" />
+          <xsd:enumeration value="ArchiveReference" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ArrayOfReceiptExternalBE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReceiptExternalBE" nillable="true" type="tns:ReceiptExternalBE" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2009/10">
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.Entities.SBL.Intermediary" />
+      <xsd:complexType name="SignatureList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Collection of SignatureList
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element xmlns:q3="http://schemas.datacontract.org/2004/07/Altinn.Common.Entities.SBL.Intermediary" minOccurs="0" maxOccurs="unbounded" name="Signature" nillable="true" type="q3:Signature" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SignatureList" nillable="true" type="tns:SignatureList" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Altinn.Common.Entities.SBL.Intermediary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Altinn.Common.Entities.SBL.Intermediary">
+      <xsd:complexType name="Signature">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+             Holds the information of signatures for a formtask.
+            &lt;/summary&gt;
+            Date: 2/20/2009 8:45:11 AM</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element name="_x003C_EndUserSystemLoginDateTime_x003E_k__BackingField" type="xsd:dateTime" />
+          <xsd:element name="_x003C_EndUserSystemReference_x003E_k__BackingField" nillable="true" type="xsd:string" />
+          <xsd:element name="_x003C_EndUserSystemSignatureDateTime_x003E_k__BackingField" type="xsd:dateTime" />
+          <xsd:element name="_x003C_EndUserSystemSignatureLogId_x003E_k__BackingField" nillable="true" type="xsd:string" />
+          <xsd:element name="_x003C_EndUserSystemUserId_x003E_k__BackingField" nillable="true" type="xsd:string" />
+          <xsd:element name="_x003C_EndUserSystemVersion_x003E_k__BackingField" nillable="true" type="xsd:string" />
+          <xsd:element name="endUserSystemLoginDateTimeSpecified" type="xsd:boolean" />
+          <xsd:element name="endUserSystemSignatureDateTimeSpecified" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Signature" nillable="true" type="tns:Signature" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10">
+      <xsd:import namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10" />
+      <xsd:complexType name="ReceiptExternal">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            ReceiptExternal Entity represents a receipt which generates when data received or sent.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: rajesh.charagandla
+            Date: 2/11/2009 7:52:11 AM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="LastChanged" type="xsd:dateTime">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Time stamp when the receipt was last modified (date and time)
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ParentReceiptId" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReceiptHistory" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Receipt Text contains Description of the Receipt
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReceiptId" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Unique Receipt Id generates when data received or sent.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReceiptStatusCode" type="tns:ReceiptStatusEnum">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReceiptText" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Receipt Text contains Description of the Receipt
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReceiptTypeName" type="tns:ReceiptTypeEnum">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Type of the Receipt
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="References" nillable="true" type="tns:ReferenceList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Holds list of references
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SubReceipts" nillable="true" type="tns:ReceiptExternalList">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Holds one or more subreceipts
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ReceiptExternal" nillable="true" type="tns:ReceiptExternal" />
+      <xsd:simpleType name="ReceiptStatusEnum">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+            Represents the collection of Receipt status
+            &lt;/summary&gt;
+            Receipt Status can be like ValidationFailed,UnExpectedError,OK etc...
+            &lt;remarks&gt;
+            NOTE: DO NOT MODIFY THE ORDER OF THE MEMBERS; NEW MEMBERS TO BE ADDED AT THE END
+            Author: rajesh.charagandla
+            Date: 3/9/2009 8:01:19 AM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="5" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">NotSet</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+             SHOULD NOT BE USED(For Enum error handling)
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">OK</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            when vallidation failed
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">UnExpectedError</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            when an unexpected Error failed
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="10">ValidationFailed</d2p1:Key>
+                  <d2p1:Value z:Id="11">&lt;summary&gt;
+             When the element this receipt regards is ok
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="12">Rejected</d2p1:Key>
+                  <d2p1:Value z:Id="13">&lt;summary&gt;
+             When the element this receipt regards is rejected
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="OK" />
+          <xsd:enumeration value="UnExpectedError" />
+          <xsd:enumeration value="ValidationFailed" />
+          <xsd:enumeration value="Rejected" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ReceiptStatusEnum" nillable="true" type="tns:ReceiptStatusEnum" />
+      <xsd:simpleType name="ReceiptTypeEnum">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+            Represents the collection of Receipt types
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: rajesh.charagandla
+            Date: 3/7/2009 8:01:19 AM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="17" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">NotSet</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+             SHOULD NOT BE USED(For Enum error handling)
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">FormTask</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+             Should be used to represent a Receipt for FormTask
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">Correspondence</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            Should be used to represent a Receipt for Correspondence
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="10">PINCODE</d2p1:Key>
+                  <d2p1:Value z:Id="11">&lt;summary&gt;
+            Should be used to represent a Receipt for PINCODE
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="12">Subscription</d2p1:Key>
+                  <d2p1:Value z:Id="13">&lt;summary&gt;
+            Should be used to represent a Subscription Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="14">Outbound</d2p1:Key>
+                  <d2p1:Value z:Id="15">&lt;summary&gt;
+            Should be used to represent a Outbound Shipments Receipt
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="16">PreFill</d2p1:Key>
+                  <d2p1:Value z:Id="17">&lt;summary&gt;
+            Should be used to represent a Prefill Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="18">RegisterDLS</d2p1:Key>
+                  <d2p1:Value z:Id="19">&lt;summary&gt;
+            Should be used to represent a RegisterDLS Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="20">RegisterDSF</d2p1:Key>
+                  <d2p1:Value z:Id="21">&lt;summary&gt;
+            Should be used to represent a RegisterDSF Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="22">RegisterER</d2p1:Key>
+                  <d2p1:Value z:Id="23">&lt;summary&gt;
+            Should be used to represent a RegisterER Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="24">RegisterDSFProperty</d2p1:Key>
+                  <d2p1:Value z:Id="25">&lt;summary&gt;
+            Should be used to represent a RegisterDSFProperty Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="26">RegisterDSFStreet</d2p1:Key>
+                  <d2p1:Value z:Id="27">&lt;summary&gt;
+            Should be used to represent a RegisterDSFStreet Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="28">RegisterDSFCountry</d2p1:Key>
+                  <d2p1:Value z:Id="29">&lt;summary&gt;
+            Should be used to represent a RegisterDSFCountry Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="30">RegisterDSFUser</d2p1:Key>
+                  <d2p1:Value z:Id="31">&lt;summary&gt;
+            Should be used to represent a RegisterDSFUser Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="32">LookUp</d2p1:Key>
+                  <d2p1:Value z:Id="33">&lt;summary&gt;
+            Should be used to represent a LookUp Shipment
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="34">RegisterDSFStreetAdd</d2p1:Key>
+                  <d2p1:Value z:Id="35">&lt;summary&gt;
+            DSF street address batch
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="36">RegisterDSFPropertyAdd</d2p1:Key>
+                  <d2p1:Value z:Id="37">&lt;summary&gt;
+            DSF property address batch
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="FormTask" />
+          <xsd:enumeration value="Correspondence" />
+          <xsd:enumeration value="PINCODE" />
+          <xsd:enumeration value="Subscription" />
+          <xsd:enumeration value="Outbound" />
+          <xsd:enumeration value="PreFill" />
+          <xsd:enumeration value="RegisterDLS" />
+          <xsd:enumeration value="RegisterDSF" />
+          <xsd:enumeration value="RegisterER" />
+          <xsd:enumeration value="RegisterDSFProperty" />
+          <xsd:enumeration value="RegisterDSFStreet" />
+          <xsd:enumeration value="RegisterDSFCountry" />
+          <xsd:enumeration value="RegisterDSFUser" />
+          <xsd:enumeration value="LookUp" />
+          <xsd:enumeration value="RegisterDSFStreetAdd" />
+          <xsd:enumeration value="RegisterDSFPropertyAdd" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ReceiptTypeEnum" nillable="true" type="tns:ReceiptTypeEnum" />
+      <xsd:complexType name="ReferenceList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of Reference Entities
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Reference" nillable="true" type="tns:Reference" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ReferenceList" nillable="true" type="tns:ReferenceList" />
+      <xsd:complexType name="Reference">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Reference Entity which holds a unique reference (by reference type) for the receipt.
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Author: rajesh.charagandla
+            Date: 3/3/2009 11:00:12 PM
+            &lt;/remarks&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element xmlns:q4="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10" minOccurs="0" name="ReferenceTypeName" type="q4:ReferenceType">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            ReferenceType name should hold value from ReferenceTypeEnum
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ReferenceValue" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            The value of the reference (referred to as the reference)
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Reference" nillable="true" type="tns:Reference" />
+      <xsd:complexType name="ReceiptExternalList">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            List of ReceiptEntities
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReceiptExternal" nillable="true" type="tns:ReceiptExternal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ReceiptExternalList" nillable="true" type="tns:ReceiptExternalList" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10">
+      <xsd:simpleType name="ReferenceType">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:EnumAnnotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:EnumText z:Id="2">&lt;summary&gt;
+            Represents the collection of Reference types
+            &lt;/summary&gt;
+            Reference types can be like ExternalShipmentReference, EndUserSystemReference, etc...
+            &lt;remarks&gt;
+            NOTE: DO NOT MODIFY THE ORDER OF THE MEMBERS; NEW MEMBERS TO BE ADDED AT THE END
+            Author: lakshmi.r.narayanan
+            Date: 3/7/2009 8:01:19 AM
+            &lt;/remarks&gt;</d1p1:EnumText>
+              <d1p1:Members z:Id="3" z:Size="13" xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="4">NotSet</d2p1:Key>
+                  <d2p1:Value z:Id="5">&lt;summary&gt;
+            SHOULD NOT BE USED(For Enum error handling)
+            &lt;/summary&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="6">ExternalShipmentReference</d2p1:Key>
+                  <d2p1:Value z:Id="7">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent the EndUserSystemReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="8">EndUserSystemReference</d2p1:Key>
+                  <d2p1:Value z:Id="9">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to  represent the ExternalShipmentReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="10">ParentReference</d2p1:Key>
+                  <d2p1:Value z:Id="11">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent WorkFlowReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="12">SendersReference</d2p1:Key>
+                  <d2p1:Value z:Id="13">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent SendersReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="14">WorkFlowReference</d2p1:Key>
+                  <d2p1:Value z:Id="15">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent ParentReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="16">BatchReference</d2p1:Key>
+                  <d2p1:Value z:Id="17">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent BatchReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="18">OutboundShipmentReference</d2p1:Key>
+                  <d2p1:Value z:Id="19">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent OutboundShipmentReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="20">ReceiversReference</d2p1:Key>
+                  <d2p1:Value z:Id="21">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent ReceiversReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="22">Altinn1Reference</d2p1:Key>
+                  <d2p1:Value z:Id="23">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent references located in Altinn 1
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="24">OwnerPartyReference</d2p1:Key>
+                  <d2p1:Value z:Id="25">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent the owner of a receipt, value should be SSN or Org.number
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="26">PartyReference</d2p1:Key>
+                  <d2p1:Value z:Id="27">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent a party on a receipt, value should be SSN or Org.number
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+                <d2p1:KeyValueOfstringstring>
+                  <d2p1:Key z:Id="28">ArchiveReference</d2p1:Key>
+                  <d2p1:Value z:Id="29">&lt;summary&gt;
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+            Enum to be used to represent ArchiveReference
+            &lt;/remarks&gt;</d2p1:Value>
+                </d2p1:KeyValueOfstringstring>
+              </d1p1:Members>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NotSet" />
+          <xsd:enumeration value="ExternalShipmentReference" />
+          <xsd:enumeration value="EndUserSystemReference" />
+          <xsd:enumeration value="ParentReference" />
+          <xsd:enumeration value="SendersReference" />
+          <xsd:enumeration value="WorkFlowReference" />
+          <xsd:enumeration value="BatchReference" />
+          <xsd:enumeration value="OutboundShipmentReference" />
+          <xsd:enumeration value="ReceiversReference" />
+          <xsd:enumeration value="Altinn1Reference" />
+          <xsd:enumeration value="OwnerPartyReference" />
+          <xsd:enumeration value="PartyReference" />
+          <xsd:enumeration value="ArchiveReference" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ReferenceType" nillable="true" type="tns:ReferenceType" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntermediaryInboundExternalEC_Test_InputMessage">
+    <wsdl:part xmlns:q5="http://www.altinn.no/services/2009/10" name="parameters" element="q5:Test" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_Test_OutputMessage">
+    <wsdl:part xmlns:q6="http://www.altinn.no/services/2009/10" name="parameters" element="q6:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_Test_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q7:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteAndSignShipmentEC" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteAndSignShipmentECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q8:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltinnSubmissionStatusEC" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAltinnSubmissionStatusECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q9:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_SubmitFormTaskEC_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitFormTaskEC" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_SubmitFormTaskEC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitFormTaskECResponse" />
+  </wsdl:message>
+  <wsdl:message name="IIntermediaryInboundExternalEC_SubmitFormTaskEC_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q10:AltinnFault" />
+  </wsdl:message>
+  <wsdl:portType name="IIntermediaryInboundExternalEC">
+    <wsdl:documentation>&lt;summary&gt;
+            Service Contract of Intermediary Inbound
+            &lt;/summary&gt;
+            &lt;remarks&gt;
+             The two services that are as the part of this contract is
+                &lt;list&gt;
+             SubmitFormTask-Will allow EndUserSystem to submit Formtask and a receipt is generated
+             GetAltinnSubmissionStatus-Retrieve the estimated time for the processing of the submitted
+             form task.
+                &lt;/list&gt;
+            &lt;/remarks&gt;</wsdl:documentation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IIntermediaryInboundExternalEC_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IIntermediaryInboundExternalEC_Test_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IIntermediaryInboundExternalEC_Test_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteAndSignShipmentEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Service Operation to complete and sign formtasks from endusersystems after uploads.
+            &lt;/summary&gt;
+            &lt;returns&gt;
+            Returns a receipt describing the processing
+            &lt;/returns&gt;
+            &lt;param name="userName"&gt;
+            Social security number of user
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            The user's  pin code
+            &lt;/param&gt;
+            &lt;param name="reporteeElementId"&gt;
+            ReporteeElementId (workflow reference) to be set to completed and signed
+            &lt;/param&gt;
+            &lt;param name="signature"&gt;
+            &lt;/param&gt;
+            &lt;param name="languageId"&gt;
+            &lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/CompleteAndSignShipmentEC" message="tns:IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/CompleteAndSignShipmentECResponse" message="tns:IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/CompleteAndSignShipmentECAltinnFaultFault" name="AltinnFaultFault" message="tns:IIntermediaryInboundExternalEC_CompleteAndSignShipmentEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAltinnSubmissionStatusEC">
+      <wsdl:documentation>&lt;summary&gt;
+            Service Operation to provide the estimated processing time to the EndUserSystem.
+            &lt;/summary&gt;
+            &lt;returns&gt;
+            Returns the estimated processing time in minutes
+            &lt;/returns&gt;
+            &lt;remarks&gt;
+            This operation will look into the asynchronous queues handling FormTask submissions
+            The QueueDepth and the configurable factor returns an estimated average leadtime
+            in minutes.
+            The response of this operation will help EndUserSystems give
+            their users a help in determining how long they must expect to wait
+            after the formtask submission
+            &lt;/remarks&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/GetAltinnSubmissionStatusEC" message="tns:IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/GetAltinnSubmissionStatusECResponse" message="tns:IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/GetAltinnSubmissionStatusECAltinnFaultFault" name="AltinnFaultFault" message="tns:IIntermediaryInboundExternalEC_GetAltinnSubmissionStatusEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitFormTaskEC">
+      <wsdl:documentation>&lt;summary&gt;
+            This Service Operation to SubmitFormTask lets EndUserSystem to Submit a
+            formtask to Altinn
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;
+            User name is the relevant user name for the enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="password"&gt;
+            System password is the password for the corresponding enterprise certificate user - mandatory parameter
+            &lt;/param&gt;
+            &lt;param name="formTaskShipment"&gt;
+            Will contain all the data for submitting a FormTask to Altinn from the EndUserSystem
+            &lt;/param&gt;
+            &lt;returns&gt;
+            Returns ReceiptBE
+            &lt;/returns&gt;
+            &lt;remarks&gt;
+            This operation will handle binary attachments to the FormTask and will be able to send
+            the signing information with the Formtask
+            The form task can be send in many ways like complete or not,
+            with or without subformtask,with or without attachments, with or with signature
+            Any Validation failure needs to be reported back to EndUserSystem
+            &lt;/remarks&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/SubmitFormTaskEC" message="tns:IIntermediaryInboundExternalEC_SubmitFormTaskEC_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/SubmitFormTaskECResponse" message="tns:IIntermediaryInboundExternalEC_SubmitFormTaskEC_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/SubmitFormTaskECAltinnFaultFault" name="AltinnFaultFault" message="tns:IIntermediaryInboundExternalEC_SubmitFormTaskEC_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IIntermediaryInboundExternalEC" type="tns:IIntermediaryInboundExternalEC">
+    <wsp:PolicyReference URI="#CustomBinding_IIntermediaryInboundExternalEC_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CompleteAndSignShipmentEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/CompleteAndSignShipmentEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAltinnSubmissionStatusEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/GetAltinnSubmissionStatusEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitFormTaskEC">
+      <soap12:operation soapAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/IIntermediaryInboundExternalEC/SubmitFormTaskEC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

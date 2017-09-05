@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2a59baec-72d5-45f6-89de-6d0bf4d5cece" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC.xsd" MetadataType="Schema" ID="ca7a48d8-f830-4540-88bf-2abeae288fce" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC1.xsd" MetadataType="Schema" ID="e87f64e2-bc6a-407f-8210-5c0c64284dd4" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?xsd=xsd4" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC2.xsd" MetadataType="Schema" ID="ff6a01ba-4b5c-4d5b-b36d-428b060f08c4" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?xsd=xsd3" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC.wsdl" MetadataType="Wsdl" ID="089c3f02-3ff9-433c-868e-51f831598cb7" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?wsdl" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC3.xsd" MetadataType="Schema" ID="89d44465-5c6a-4e9b-a77e-876133921462" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC.disco" MetadataType="Disco" ID="7e95ae76-7922-44df-9bbc-3108aa53712c" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?disco" />
+    <MetadataFile FileName="ReporteeArchiveExternalStreamedEC4.xsd" MetadataType="Schema" ID="09d9c72f-2d8a-40a0-bb11-7f52ac45e769" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalStreamedEC.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
