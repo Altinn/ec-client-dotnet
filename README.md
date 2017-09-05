@@ -1,35 +1,3 @@
-# ec-client-dotnet
-Test client for web services using enterprise certificate
-
-EC Client Manual
-
-Innholdsfortegnelse
-
-Formål for klient        2
-
-Bruk av klient        2
-
-Valg av endepunkt og tjeneste        2
-
-Bruk av klient mot tjenester        3
-
-Miljø        3
-
-Sertifikat        4
-
-Shipment        6
-
-Bruker-informasjon        6
-
-Utfør tjenestekall        7
-
-Resultat        7
-
-Soap Data        8
-
-REST        8
-
-
 
 # Formål for klient
 
@@ -64,14 +32,16 @@ For å velge hvilket miljø bruker skal gjøre kall mot, klikk på Endpoints dro
 Dersom man vil teste mot et miljø som ikke finnes i EndPoints listen, må man gjøre en endring i «EC EndPoint Client.exe.config» filen.
 Under &lt;client&gt; er det en liste med endpoints som ser slik ut:
 
-| &lt;endpoint address=&quot;https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc&quot;binding=&quot;customBinding&quot; bindingConfiguration=&quot;X509Binding&quot; contract=&quot;ReporteeArchive.IReporteeArchiveExternalEC&quot;name=&quot;ST01&quot; /&gt; |
-| --- |
+```
+<endpoint address="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" binding="customBinding"  bindingConfiguration="X509Binding" contract="ReporteeArchive.IReporteeArchiveExternalEC" name="ST01"/> 
+```
 
 Denne konfigurasjonen beskriver et tjeneste endpoint for et spesifikt miljø, som er beskrevet i «address». «Name» beskriver hva som vil vises i EndPoints dropdown listen.
 Dersom bruker for eksempel vil gjøre et kall til ReporteeArchiveExternalEC.svc i AT05 miljøet, må han kopiere denne konfigurasjonen, og endre den til følgende:
 
-| &lt;endpoint address=&quot;https://at05.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc&quot;binding=&quot;customBinding&quot; bindingConfiguration=&quot;X509Binding&quot; contract=&quot;ReporteeArchive.IReporteeArchiveExternalEC&quot;name=&quot;AT05&quot; /&gt; |
-| --- |
+```
+<endpoint address="https://at05.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" binding="customBinding"  bindingConfiguration="X509Binding" contract="ReporteeArchive.IReporteeArchiveExternalEC" name="AT05"/> 
+```
 
 Når bruker så starter klienten og åpner ReporteeArchiveExternalEC endepunktet, vil AT05 være blant valgene i EndPoints listen.
 Dette endringen må gjøres for hvert service-endepunkt bruker ønsker å gjøre kall mot.
