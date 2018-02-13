@@ -19,7 +19,9 @@ namespace EC_Endpoint_Client.Forms
 {
     public partial class ApiForm : SelectorBaseForm
     {
-        
+
+        private const string AuthenticationURI = "api/authentication/authenticatewithpassword?ForceEIAuthentication";
+
         public new string Thumbprint
         {
             get { return base.Thumbprint; }
@@ -92,7 +94,10 @@ namespace EC_Endpoint_Client.Forms
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            DoLogin();
+            if (!cbxServiceOwner.Checked)
+                DoLogin();
+            else
+                errorProvider.SetError(cbxServiceOwner, "No login required for the serviceowner api");
         }
 
         private void DoLogin()
@@ -131,7 +136,7 @@ namespace EC_Endpoint_Client.Forms
             string body = "{UserName: \"" + txtUsername.Text + "\",UserPassword:\"" + txtPassword.Text + "\"}";
 
             DoRequest(((DropDownItem)ddlEnvironment.SelectedItem).Value.ToString()
-                        + "api/serviceowner/authentication/authenticatewithpassword?ForceEIAuthentication",
+                        + AuthenticationURI,
                     HttpMethod.Post.ToString(),
                     string.Empty,
                     body,
@@ -211,10 +216,12 @@ namespace EC_Endpoint_Client.Forms
                 hasError = true;
             }
 
-            if (AuthCookie == null)
+            if (AuthCookie == null && cbxServiceOwner.Checked == false)
             {
                 errorProvider.SetError(lblLoginInfo, "Must be logged in");
             }
+            if (SelectedCertificate == null)
+                errorProvider.SetError(btnCertificate, "Select certificate");
 
             if (hasError)
             {

@@ -55,6 +55,7 @@
             this.lsResponseHeaders = new System.Windows.Forms.ListView();
             this.btnRun = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cbxServiceOwner = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // txtAppKey
@@ -278,11 +279,22 @@
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
+            // cbxServiceOwner
+            // 
+            this.cbxServiceOwner.AutoSize = true;
+            this.cbxServiceOwner.Location = new System.Drawing.Point(13, 190);
+            this.cbxServiceOwner.Name = "cbxServiceOwner";
+            this.cbxServiceOwner.Size = new System.Drawing.Size(84, 17);
+            this.cbxServiceOwner.TabIndex = 34;
+            this.cbxServiceOwner.Text = "Tjenesteeier";
+            this.cbxServiceOwner.UseVisualStyleBackColor = true;
+            // 
             // ApiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 565);
+            this.Controls.Add(this.cbxServiceOwner);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.lsResponseHeaders);
             this.Controls.Add(this.lblLoginInfo);
@@ -344,6 +356,7 @@
         private System.Windows.Forms.ListView lsResponseHeaders;
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.CheckBox cbxServiceOwner;
     }
 }
 
