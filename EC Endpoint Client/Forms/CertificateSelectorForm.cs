@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EC_Endpoint_Client.Forms
 {
+    internal class CertInfo
+    {
+        public string Thumbprint;
+        public string Description;
+        public DateTime ValidTo;
+    }
+
     public partial class CertificateSelectorForm : Form
     {
         private X509Store _store;
-        private List<string> _thumbPrints;
-        private Dictionary<string, string> _certInfo;
+        private List<CertInfo> _certs;
         private X509Certificate2 _selectedCertificate;
         public X509Certificate2 SelectedCertificate 
         { 
@@ -43,20 +45,33 @@ namespace EC_Endpoint_Client.Forms
         {
             _store = new X509Store("My", StoreLocation.CurrentUser);
             _store.Open(OpenFlags.ReadOnly);
-            _thumbPrints = new List<string>();
-            _certInfo = new Dictionary<string, string>();
+            _certs = new List<CertInfo>();
             foreach (X509Certificate2 cert in _store.Certificates)
             {
-                _thumbPrints.Add(cert.Thumbprint);
-                _certInfo.Add(cert.Thumbprint, cert.FriendlyName != "" ? cert.FriendlyName : cert.IssuerName.Name);
+                _certs.Add(new CertInfo
+                {
+                    Description = !string.IsNullOrWhiteSpace(cert.FriendlyName) ? cert.FriendlyName : cert.IssuerName.Name,
+                    Thumbprint = cert.Thumbprint,
+                    ValidTo = cert.NotAfter
+
+                });
             }
-            dgv_certificates.DataSource = (from d in _certInfo
-                                           orderby d.Value
-                                           select new { d.Value, d.Key }).ToList();
+            dgv_certificates.DataSource =  (from d in _certs
+                                           orderby d.Description
+                                            select new { d.Description, d.Thumbprint, d.ValidTo }).ToList();
             dgv_certificates.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_certificates.MultiSelect = false;
-            dgv_certificates.Columns["Value"].Name = "Description";
-            dgv_certificates.Columns["Key"].Name = "Thumbprint";
+            dgv_certificates.Columns["Description"].Name = "Description";
+            dgv_certificates.Columns["Thumbprint"].Name = "Thumbprint";
+            dgv_certificates.Columns["ValidTo"].Name = "ValidTo";
+
+            foreach (DataGridViewRow row in dgv_certificates.Rows)
+            {
+                if ((DateTime)row.Cells["ValidTo"].Value > DateTime.Now)
+                {
+                    row.DefaultCellStyle.BackColor = Color.DarkRed;
+                }
+            }
         }
 
         private void dgv_certificates_SelectionChanged(object sender, EventArgs e)
@@ -86,14 +101,7 @@ namespace EC_Endpoint_Client.Forms
 
         private void SetCertificateByThumbprint(string thumbprint)
         {
-            foreach (X509Certificate2 cert in _store.Certificates)
-            {
-                if (cert.Thumbprint == thumbprint)
-                {
-                    _selectedCertificate = cert;
-                    break;
-                }
-            }
+            _selectedCertificate = _store.Certificates.Find(X509FindType.FindByThumbprint, thumbprint, false)[0];
         }
     }
 }

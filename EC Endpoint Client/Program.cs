@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EC_Endpoint_Client.Functionality;
 
 namespace EC_Endpoint_Client
 {
@@ -19,7 +17,7 @@ namespace EC_Endpoint_Client
             //ServicePointManager.ServerCertificateValidationCallback = ((o, ce, ch, s) => true);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ECEndPointClient());
+            Application.Run(new EcEndPointClient());
         }
     }
 }

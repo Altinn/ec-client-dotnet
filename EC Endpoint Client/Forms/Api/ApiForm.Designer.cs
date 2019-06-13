@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms
+﻿namespace EC_Endpoint_Client.Forms.Api
 {
     partial class ApiForm
     {
@@ -285,7 +285,7 @@
             this.cbxServiceOwner.Location = new System.Drawing.Point(13, 190);
             this.cbxServiceOwner.Name = "cbxServiceOwner";
             this.cbxServiceOwner.Size = new System.Drawing.Size(84, 17);
-            this.cbxServiceOwner.TabIndex = 34;
+            this.cbxServiceOwner.TabIndex = 35;
             this.cbxServiceOwner.Text = "Tjenesteeier";
             this.cbxServiceOwner.UseVisualStyleBackColor = true;
             // 

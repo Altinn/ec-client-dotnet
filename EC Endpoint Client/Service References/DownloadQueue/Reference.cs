@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.DownloadQueue {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.DownloadQueue {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,50 +155,50 @@ namespace EC_Endpoint_Client.DownloadQueue {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ArchivedFormTaskDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ArchivedFormTaskDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
+    [Serializable()]
     public partial class ArchivedFormTaskDQBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.ApproverListDQBE ApproversField;
+        [OptionalField()]
+        private ApproverListDQBE ApproversField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ArchiveTimeStampField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.ArchivedAttachmentExternalListDQBE AttachmentsField;
+        [OptionalField()]
+        private ArchivedAttachmentExternalListDQBE AttachmentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int AttachmentsInResponseField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private long CorrelationReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.ArchivedFormListDQBE FormsField;
+        [OptionalField()]
+        private ArchivedFormListDQBE FormsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int FormsInResponseField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.SOEncryptedSymmetricKeyExternalDQBE SOEncryptedSymmetricKeyField;
+        [OptionalField()]
+        private SOEncryptedSymmetricKeyExternalDQBE SOEncryptedSymmetricKeyField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceEditionCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -212,8 +211,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.ApproverListDQBE Approvers {
+        [DataMember()]
+        public ApproverListDQBE Approvers {
             get {
                 return this.ApproversField;
             }
@@ -225,7 +224,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -238,7 +237,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ArchiveTimeStamp {
             get {
                 return this.ArchiveTimeStampField;
@@ -251,8 +250,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.ArchivedAttachmentExternalListDQBE Attachments {
+        [DataMember()]
+        public ArchivedAttachmentExternalListDQBE Attachments {
             get {
                 return this.AttachmentsField;
             }
@@ -264,7 +263,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int AttachmentsInResponse {
             get {
                 return this.AttachmentsInResponseField;
@@ -277,7 +276,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CaseID {
             get {
                 return this.CaseIDField;
@@ -290,7 +289,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public long CorrelationReference {
             get {
                 return this.CorrelationReferenceField;
@@ -303,8 +302,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.ArchivedFormListDQBE Forms {
+        [DataMember()]
+        public ArchivedFormListDQBE Forms {
             get {
                 return this.FormsField;
             }
@@ -316,7 +315,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int FormsInResponse {
             get {
                 return this.FormsInResponseField;
@@ -329,7 +328,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -342,8 +341,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.SOEncryptedSymmetricKeyExternalDQBE SOEncryptedSymmetricKey {
+        [DataMember()]
+        public SOEncryptedSymmetricKeyExternalDQBE SOEncryptedSymmetricKey {
             get {
                 return this.SOEncryptedSymmetricKeyField;
             }
@@ -355,7 +354,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -368,7 +367,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -393,17 +392,17 @@ namespace EC_Endpoint_Client.DownloadQueue {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SOEncryptedSymmetricKeyExternalDQBE", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SOEncryptedSymmetricKeyExternalDQBE", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08")]
+    [Serializable()]
     public partial class SOEncryptedSymmetricKeyExternalDQBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CertificateThumbprintField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private byte[] EncryptedKeyField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -416,7 +415,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CertificateThumbprint {
             get {
                 return this.CertificateThumbprintField;
@@ -429,7 +428,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public byte[] EncryptedKey {
             get {
                 return this.EncryptedKeyField;
@@ -454,42 +453,42 @@ namespace EC_Endpoint_Client.DownloadQueue {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ApproverListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ApproverDQBE")]
-    [System.SerializableAttribute()]
-    public class ApproverListDQBE : System.Collections.Generic.List<EC_Endpoint_Client.DownloadQueue.ApproverDQBE> {
+    [CollectionDataContract(Name="ApproverListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ApproverDQBE")]
+    [Serializable()]
+    public class ApproverListDQBE : System.Collections.Generic.List<ApproverDQBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArchivedAttachmentExternalListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ArchivedAttachmentDQBE")]
-    [System.SerializableAttribute()]
-    public class ArchivedAttachmentExternalListDQBE : System.Collections.Generic.List<EC_Endpoint_Client.DownloadQueue.ArchivedAttachmentDQBE> {
+    [CollectionDataContract(Name="ArchivedAttachmentExternalListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ArchivedAttachmentDQBE")]
+    [Serializable()]
+    public class ArchivedAttachmentExternalListDQBE : System.Collections.Generic.List<ArchivedAttachmentDQBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArchivedFormListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ArchivedFormDQBE")]
-    [System.SerializableAttribute()]
-    public class ArchivedFormListDQBE : System.Collections.Generic.List<EC_Endpoint_Client.DownloadQueue.ArchivedFormDQBE> {
+    [CollectionDataContract(Name="ArchivedFormListDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08", ItemName="ArchivedFormDQBE")]
+    [Serializable()]
+    public class ArchivedFormListDQBE : System.Collections.Generic.List<ArchivedFormDQBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ApproverDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ApproverDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
+    [Serializable()]
     public partial class ApproverDQBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ApprovedTimeStampField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ApproverIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.ApproverSecurityLevel SecurityLevelField;
+        [OptionalField()]
+        private ApproverSecurityLevel SecurityLevelField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -501,7 +500,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ApprovedTimeStamp {
             get {
                 return this.ApprovedTimeStampField;
@@ -514,7 +513,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ApproverID {
             get {
                 return this.ApproverIDField;
@@ -527,8 +526,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.ApproverSecurityLevel SecurityLevel {
+        [DataMember()]
+        public ApproverSecurityLevel SecurityLevel {
             get {
                 return this.SecurityLevelField;
             }
@@ -551,56 +550,56 @@ namespace EC_Endpoint_Client.DownloadQueue {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ApproverSecurityLevel", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Enums.Archive")]
+    [DataContract(Name="ApproverSecurityLevel", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Enums.Archive")]
     public enum ApproverSecurityLevel : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         selfIdentifiedUser = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         notSensitive = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         lessSensitive = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         sensitive = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         verySensitive = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ArchivedAttachmentDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ArchivedAttachmentDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
+    [Serializable()]
     public partial class ArchivedAttachmentDQBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private byte[] AttachmentDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AttachmentTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsEncryptedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int AttachmentIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AttachmentTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AttachmentTypeNameLanguageField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -613,7 +612,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -626,7 +625,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public byte[] AttachmentData {
             get {
                 return this.AttachmentDataField;
@@ -639,7 +638,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AttachmentType {
             get {
                 return this.AttachmentTypeField;
@@ -652,7 +651,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -665,7 +664,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsEncrypted {
             get {
                 return this.IsEncryptedField;
@@ -678,7 +677,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public int AttachmentId {
             get {
                 return this.AttachmentIdField;
@@ -691,7 +690,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public string AttachmentTypeName {
             get {
                 return this.AttachmentTypeNameField;
@@ -704,7 +703,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        [DataMember(Order=7)]
         public string AttachmentTypeNameLanguage {
             get {
                 return this.AttachmentTypeNameLanguageField;
@@ -729,26 +728,26 @@ namespace EC_Endpoint_Client.DownloadQueue {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ArchivedFormDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ArchivedFormDQBE", Namespace="http://schemas.altinn.no/services/Archive/ReporteeArchive/2012/08")]
+    [Serializable()]
     public partial class ArchivedFormDQBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string DataFormatIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int DataFormatVersionIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FormDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ParentReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -761,7 +760,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string DataFormatID {
             get {
                 return this.DataFormatIDField;
@@ -774,7 +773,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int DataFormatVersionID {
             get {
                 return this.DataFormatVersionIDField;
@@ -787,7 +786,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FormData {
             get {
                 return this.FormDataField;
@@ -800,7 +799,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ParentReference {
             get {
                 return this.ParentReferenceField;
@@ -813,7 +812,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reference {
             get {
                 return this.ReferenceField;
@@ -838,36 +837,36 @@ namespace EC_Endpoint_Client.DownloadQueue {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="DownloadQueueItemBEList", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08", ItemName="DownloadQueueItemBE")]
-    [System.SerializableAttribute()]
-    public class DownloadQueueItemBEList : System.Collections.Generic.List<EC_Endpoint_Client.DownloadQueue.DownloadQueueItemBE> {
+    [CollectionDataContract(Name="DownloadQueueItemBEList", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08", ItemName="DownloadQueueItemBE")]
+    [Serializable()]
+    public class DownloadQueueItemBEList : System.Collections.Generic.List<DownloadQueueItemBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DownloadQueueItemBE", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="DownloadQueueItemBE", Namespace="http://schemas.altinn.no/services/Archive/DownloadQueue/2012/08")]
+    [Serializable()]
     public partial class DownloadQueueItemBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ArchivedDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.DownloadQueue.DownloadQueueReporteeType ReporteeTypeField;
+        [OptionalField()]
+        private DownloadQueueReporteeType ReporteeTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceEditionCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -880,7 +879,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -893,7 +892,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ArchivedDate {
             get {
                 return this.ArchivedDateField;
@@ -906,7 +905,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReporteeID {
             get {
                 return this.ReporteeIDField;
@@ -919,8 +918,8 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.DownloadQueue.DownloadQueueReporteeType ReporteeType {
+        [DataMember()]
+        public DownloadQueueReporteeType ReporteeType {
             get {
                 return this.ReporteeTypeField;
             }
@@ -932,7 +931,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -945,7 +944,7 @@ namespace EC_Endpoint_Client.DownloadQueue {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -969,16 +968,16 @@ namespace EC_Endpoint_Client.DownloadQueue {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DownloadQueueReporteeType", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Enums.Archive")]
+    [DataContract(Name="DownloadQueueReporteeType", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Enums.Archive")]
     public enum DownloadQueueReporteeType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Organisation = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Person = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Selfregistereduser = 2,
     }
     
@@ -988,27 +987,27 @@ namespace EC_Endpoint_Client.DownloadQueue {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Archive/DownloadQueue/2012/08)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.DownloadQueue.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.DownloadQueue.TestResponse Test(EC_Endpoint_Client.DownloadQueue.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetArchivedFormTaskECDQ", ReplyAction="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetArchivedFormTaskECDQResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.DownloadQueue.AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetArchivedFormTaskECDQAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.DownloadQueue.ArchivedFormTaskDQBE GetArchivedFormTaskECDQ(string systemUserName, string systemPassword, string archiveReference, System.Nullable<int> languageID);
+        ArchivedFormTaskDQBE GetArchivedFormTaskECDQ(string systemUserName, string systemPassword, string archiveReference, System.Nullable<int> languageID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetDownloadQueueItems", ReplyAction="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetDownloadQueueItemsResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.DownloadQueue.AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetDownloadQueueItemsAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.DownloadQueue.DownloadQueueItemBEList GetDownloadQueueItems(string systemUserName, string systemPassword, string serviceCode);
+        DownloadQueueItemBEList GetDownloadQueueItems(string systemUserName, string systemPassword, string serviceCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/PurgeItem", ReplyAction="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/PurgeItemResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.DownloadQueue.AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/PurgeItemAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
         string PurgeItem(string systemUserName, string systemPassword, string archiveReference);
         
@@ -1016,9 +1015,9 @@ namespace EC_Endpoint_Client.DownloadQueue {
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetFormSetPdfEc", ReplyAction="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetFormSetPdfEcResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.DownloadQueue.AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/DownloadQueue/2012/08/IDownloadQueueExterna" +
             "lEC/GetFormSetPdfEcAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcResponse GetFormSetPdfEc(EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequest request);
+        GetFormSetPdfEcResponse GetFormSetPdfEc(GetFormSetPdfEcRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1048,12 +1047,12 @@ namespace EC_Endpoint_Client.DownloadQueue {
     public partial class GetFormSetPdfEcRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFormSetPdfEc", Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08", Order=0)]
-        public EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequestBody Body;
+        public GetFormSetPdfEcRequestBody Body;
         
         public GetFormSetPdfEcRequest() {
         }
         
-        public GetFormSetPdfEcRequest(EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequestBody Body) {
+        public GetFormSetPdfEcRequest(GetFormSetPdfEcRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1061,19 +1060,19 @@ namespace EC_Endpoint_Client.DownloadQueue {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08")]
     public partial class GetFormSetPdfEcRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string userPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string archiveReference;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int languageId;
         
         public GetFormSetPdfEcRequestBody() {
@@ -1094,12 +1093,12 @@ namespace EC_Endpoint_Client.DownloadQueue {
     public partial class GetFormSetPdfEcResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetFormSetPdfEcResponse", Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08", Order=0)]
-        public EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcResponseBody Body;
+        public GetFormSetPdfEcResponseBody Body;
         
         public GetFormSetPdfEcResponse() {
         }
         
-        public GetFormSetPdfEcResponse(EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcResponseBody Body) {
+        public GetFormSetPdfEcResponse(GetFormSetPdfEcResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1107,10 +1106,10 @@ namespace EC_Endpoint_Client.DownloadQueue {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/DownloadQueue/2012/08")]
     public partial class GetFormSetPdfEcResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public byte[] GetFormSetPdfEcResult;
         
         public GetFormSetPdfEcResponseBody() {
@@ -1122,12 +1121,12 @@ namespace EC_Endpoint_Client.DownloadQueue {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IDownloadQueueExternalECChannel : EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC, System.ServiceModel.IClientChannel {
+    public interface IDownloadQueueExternalECChannel : IDownloadQueueExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class DownloadQueueExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC>, EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC {
+    public partial class DownloadQueueExternalECClient : System.ServiceModel.ClientBase<IDownloadQueueExternalEC>, IDownloadQueueExternalEC {
         
         public DownloadQueueExternalECClient() {
         }
@@ -1149,20 +1148,20 @@ namespace EC_Endpoint_Client.DownloadQueue {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.DownloadQueue.TestResponse EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC.Test(EC_Endpoint_Client.DownloadQueue.TestRequest request) {
+        TestResponse IDownloadQueueExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.DownloadQueue.TestRequest inValue = new EC_Endpoint_Client.DownloadQueue.TestRequest();
-            EC_Endpoint_Client.DownloadQueue.TestResponse retVal = ((EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IDownloadQueueExternalEC)(this)).Test(inValue);
         }
         
-        public EC_Endpoint_Client.DownloadQueue.ArchivedFormTaskDQBE GetArchivedFormTaskECDQ(string systemUserName, string systemPassword, string archiveReference, System.Nullable<int> languageID) {
+        public ArchivedFormTaskDQBE GetArchivedFormTaskECDQ(string systemUserName, string systemPassword, string archiveReference, System.Nullable<int> languageID) {
             return base.Channel.GetArchivedFormTaskECDQ(systemUserName, systemPassword, archiveReference, languageID);
         }
         
-        public EC_Endpoint_Client.DownloadQueue.DownloadQueueItemBEList GetDownloadQueueItems(string systemUserName, string systemPassword, string serviceCode) {
+        public DownloadQueueItemBEList GetDownloadQueueItems(string systemUserName, string systemPassword, string serviceCode) {
             return base.Channel.GetDownloadQueueItems(systemUserName, systemPassword, serviceCode);
         }
         
@@ -1171,18 +1170,18 @@ namespace EC_Endpoint_Client.DownloadQueue {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcResponse EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC.GetFormSetPdfEc(EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequest request) {
+        GetFormSetPdfEcResponse IDownloadQueueExternalEC.GetFormSetPdfEc(GetFormSetPdfEcRequest request) {
             return base.Channel.GetFormSetPdfEc(request);
         }
         
         public byte[] GetFormSetPdfEc(string userName, string userPassword, string archiveReference, int languageId) {
-            EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequest inValue = new EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequest();
-            inValue.Body = new EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcRequestBody();
+            GetFormSetPdfEcRequest inValue = new GetFormSetPdfEcRequest();
+            inValue.Body = new GetFormSetPdfEcRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.archiveReference = archiveReference;
             inValue.Body.languageId = languageId;
-            EC_Endpoint_Client.DownloadQueue.GetFormSetPdfEcResponse retVal = ((EC_Endpoint_Client.DownloadQueue.IDownloadQueueExternalEC)(this)).GetFormSetPdfEc(inValue);
+            GetFormSetPdfEcResponse retVal = ((IDownloadQueueExternalEC)(this)).GetFormSetPdfEc(inValue);
             return retVal.Body.GetFormSetPdfEcResult;
         }
     }

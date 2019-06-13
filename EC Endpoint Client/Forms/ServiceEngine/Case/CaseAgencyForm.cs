@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using EC_Endpoint_Client.BaseForms;
-using EC_Endpoint_Client.CaseAgencySystem;
-using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case;
+using EC_Endpoint_Client.Service_References.CaseAgencySystem;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 {
     public partial class CaseAgencyForm : AgencyBaseForm
     {
-        private CaseAgencySystemEndPointFunction funcCasep { get; set; }
+        private CaseAgencySystemEndPointFunction FuncCasep { get; set; }
         public CaseListShipment ShipmentCaseList { get; set; }
         public ExternalCaseBEList ResultGetCaseList { get; set; }
         public ExternalCaseBE[] ResultGetCaseArray { get { return ResultGetCaseList.ToArray(); } }
@@ -31,8 +24,8 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         public CaseAgencyForm()
         {
             InitializeComponent();
-            funcCasep = new CaseAgencySystemEndPointFunction();
-            funcCasep.ReturnMessageXml += ReturnMessageXmlHandler;
+            FuncCasep = new CaseAgencySystemEndPointFunction();
+            FuncCasep.ReturnMessageXml += ReturnMessageXmlHandler;
             ShipmentTest = new BaseShipment();
             ShipmentCaseList = new CaseListShipment();
             ShipmentSetNotice = new SetNoticeShipment();
@@ -54,33 +47,33 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         public void Test()
         {
             SetBasicShipmentSettings(ShipmentTest);
-            funcCasep.Test(ShipmentTest);
+            FuncCasep.Test(ShipmentTest);
         }
 
         public void GetCaseList()
         {
             SetBasicShipmentSettings(ShipmentCaseList);
-            ResultGetCaseList = funcCasep.GetCaseList(ShipmentCaseList);
+            ResultGetCaseList = FuncCasep.GetCaseList(ShipmentCaseList);
             
         }
 
         public void InstantiateCollaboration()
         {
             SetBasicShipmentSettings(ShipmentInstantiateCollaboration);
-            ResultInstantiateCollaboration = funcCasep.InstantiateCollaboration(ShipmentInstantiateCollaboration);
+            ResultInstantiateCollaboration = FuncCasep.InstantiateCollaboration(ShipmentInstantiateCollaboration);
             
         }
 
         public void NotifyEvent()
         {
             SetBasicShipmentSettings(ShipmentNotifyEvent);
-            ResultNotifyEvent = funcCasep.NotifyEvent(ShipmentNotifyEvent);
+            ResultNotifyEvent = FuncCasep.NotifyEvent(ShipmentNotifyEvent);
         }
 
         public void SetNotice()
         {
             SetBasicShipmentSettings(ShipmentSetNotice);
-            funcCasep.SetNotice(ShipmentSetNotice);
+            FuncCasep.SetNotice(ShipmentSetNotice);
         }
         #endregion
         #region ShowShipments
@@ -149,18 +142,18 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 
         private void btn_GetCaseListLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentCaseList = (CaseListShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentCaseList);
+            ShipmentCaseList = (CaseListShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentCaseList);
         }
 
         private void btn_GetCaseListSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentCaseList);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentCaseList);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentCaseList);
         }
 
         private void btn_GetCaseListSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultGetCaseList);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultGetCaseList);
         }
 #endregion
         #region InstantiateCollaboration
@@ -171,13 +164,13 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 
         private void btn_ICLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentInstantiateCollaboration = (InstantiateCollaborationShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentInstantiateCollaboration);
+            ShipmentInstantiateCollaboration = (InstantiateCollaborationShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentInstantiateCollaboration);
         }
 
         private void btn_ICSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentInstantiateCollaboration);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentInstantiateCollaboration);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentInstantiateCollaboration);
         }
 
         private void btn_ICInvoke_Click(object sender, EventArgs e)
@@ -201,12 +194,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 
         private void btn_NotifyEventSaveShipment_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentNotifyEvent.NotificationInfo);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentNotifyEvent.NotificationInfo);
         }
 
         private void btn_NotifyEventLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentNotifyEvent.NotificationInfo = (StateMachineEventNotificationBE)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentNotifyEvent.NotificationInfo);
+            ShipmentNotifyEvent.NotificationInfo = (StateMachineEventNotificationBE)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentNotifyEvent.NotificationInfo);
         }
 
         private void btn_NotifyEventInvoke_Click(object sender, EventArgs e)
@@ -229,7 +222,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 
         private void btn_NotifyEventSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultNotifyEvent);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultNotifyEvent);
         }
 
 #endregion
@@ -242,12 +235,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         private void btn_SetNoticeSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentSetNotice);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentSetNotice);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentSetNotice);
         }
 
         private void btn_SetNoticeLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentSetNotice = (SetNoticeShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentSetNotice);
+            ShipmentSetNotice = (SetNoticeShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentSetNotice);
         }
 
         private void btn_SetNoticeInvoke_Click(object sender, EventArgs e)

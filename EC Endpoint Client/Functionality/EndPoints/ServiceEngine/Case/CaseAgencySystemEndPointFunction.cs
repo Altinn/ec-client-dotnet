@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.CaseAgencySystem;
-using EC_Endpoint_Client.Classes;
+﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency;
+using EC_Endpoint_Client.Service_References.CaseAgencySystem;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case
 {
     class CaseAgencySystemEndPointFunction : EndPointFunctionalityBase
     {
@@ -17,9 +12,9 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
                 shipment.Certificate);
         }
 
-        public void Test(BaseShipment Shipment)
+        public void Test(BaseShipment shipment)
         {
-            var client = GenerateProxy(Shipment);
+            var client = GenerateProxy(shipment);
             OperationContext = "CaseAgencyTest";
             client.Test();
         }
@@ -28,7 +23,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         {
             var client = GenerateProxy(shipment);
             OperationContext = "CaseAgencyGetCaseList";
-            return client.GetCaseListAgencySystemEC(shipment.Username, shipment.Password, shipment.CaseID, shipment.ExternalServiceCode, shipment.ExternalServiceEditionCode, shipment.LanguageID, shipment.ReporteeNumber);
+            return client.GetCaseListAgencySystemEC(shipment.Username, shipment.Password, shipment.CaseId, shipment.ExternalServiceCode, shipment.ExternalServiceEditionCode, shipment.LanguageId, shipment.ReporteeNumber);
         }
 
         public int InstantiateCollaboration(InstantiateCollaborationShipment shipment)
@@ -49,7 +44,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         {
             var client = GenerateProxy(shipment);
             OperationContext = "CaseAgencySetNotice";
-            client.SetNoticeAgencySystemEC(shipment.Username, shipment.Password, shipment.ReporteeElementID, shipment.NoticeInfo);
+            client.SetNoticeAgencySystemEC(shipment.Username, shipment.Password, shipment.ReporteeElementId, shipment.NoticeInfo);
         }
     }
 }

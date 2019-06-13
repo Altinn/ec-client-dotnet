@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace EC_Endpoint_Client.Classes
+namespace EC_Endpoint_Client.Classes.Shipments
 {
     /// <summary>
     /// This is the base shipment class.
@@ -17,6 +12,10 @@ namespace EC_Endpoint_Client.Classes
     /// </summary>
     public class BaseShipment
     {
+        public BaseShipment()
+        {
+        }
+
         [Browsable(false)]
         [XmlIgnore]
         public string Username { get; set; }
@@ -67,5 +66,6 @@ namespace EC_Endpoint_Client.Classes
         /// Gets or sets the ReporteeElemenetId
         /// </summary>
         public int ReporteeElementId { get; set; }
+        public int LanguageId { get; set; }
     }
 }

@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.PrefillEUS {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.PrefillEUS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,18 +155,18 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillDataBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillDataBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillDataBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PreFillFormTaskBEList PreFillFormTaskBEListField;
+        [OptionalField()]
+        private PreFillFormTaskBEList PreFillFormTaskBEListField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PrefillStatus StatusField;
+        [OptionalField()]
+        private PrefillStatus StatusField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -179,8 +178,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PreFillFormTaskBEList PreFillFormTaskBEList {
+        [DataMember()]
+        public PreFillFormTaskBEList PreFillFormTaskBEList {
             get {
                 return this.PreFillFormTaskBEListField;
             }
@@ -192,8 +191,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PrefillStatus Status {
+        [DataMember()]
+        public PrefillStatus Status {
             get {
                 return this.StatusField;
             }
@@ -217,35 +216,35 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PreFillFormTaskBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTask")]
-    [System.SerializableAttribute()]
-    public class PreFillFormTaskBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.PrefillFormTask> {
+    [CollectionDataContract(Name="PreFillFormTaskBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTask")]
+    [Serializable()]
+    public class PreFillFormTaskBEList : System.Collections.Generic.List<PrefillFormTask> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillStatus", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
+    [DataContract(Name="PrefillStatus", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
     public enum PrefillStatus : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         INVALIDINPUT = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PREFILLDATANOTFOUND = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PREFILLDATAFOUND = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SERVICEOWNERPREFILLDATANOTFOUND = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillFormTask", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillFormTask", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillFormTask : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string ExternalServiceCodeField;
@@ -254,30 +253,30 @@ namespace EC_Endpoint_Client.PrefillEUS {
         
         private string ExternalShipmentReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string IdentityFieldHashCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Guid LargeInboundReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PrefillAttachmentBEList PreFillAttachmentsField;
+        [OptionalField()]
+        private PrefillAttachmentBEList PreFillAttachmentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PrefillFormBEList PreFillFormsField;
+        [OptionalField()]
+        private PrefillFormBEList PreFillFormsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PreFillIdentityFieldBEList PreFillIdentityFieldsField;
+        [OptionalField()]
+        private PreFillIdentityFieldBEList PreFillIdentityFieldsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.NotificationBEList PrefillNotificationsField;
+        [OptionalField()]
+        private NotificationBEList PrefillNotificationsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiversReferenceField;
         
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         private string ServiceOwnerCodeField;
@@ -296,7 +295,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -309,7 +308,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -322,7 +321,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalShipmentReference {
             get {
                 return this.ExternalShipmentReferenceField;
@@ -335,7 +334,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string IdentityFieldHashCode {
             get {
                 return this.IdentityFieldHashCodeField;
@@ -348,7 +347,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Guid LargeInboundReference {
             get {
                 return this.LargeInboundReferenceField;
@@ -361,8 +360,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PrefillAttachmentBEList PreFillAttachments {
+        [DataMember()]
+        public PrefillAttachmentBEList PreFillAttachments {
             get {
                 return this.PreFillAttachmentsField;
             }
@@ -374,8 +373,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PrefillFormBEList PreFillForms {
+        [DataMember()]
+        public PrefillFormBEList PreFillForms {
             get {
                 return this.PreFillFormsField;
             }
@@ -387,8 +386,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PreFillIdentityFieldBEList PreFillIdentityFields {
+        [DataMember()]
+        public PreFillIdentityFieldBEList PreFillIdentityFields {
             get {
                 return this.PreFillIdentityFieldsField;
             }
@@ -400,8 +399,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.NotificationBEList PrefillNotifications {
+        [DataMember()]
+        public NotificationBEList PrefillNotifications {
             get {
                 return this.PrefillNotificationsField;
             }
@@ -413,7 +412,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiversReference {
             get {
                 return this.ReceiversReferenceField;
@@ -426,7 +425,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -439,7 +438,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -452,7 +451,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceOwnerCode {
             get {
                 return this.ServiceOwnerCodeField;
@@ -465,7 +464,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime ValidFromDate {
             get {
                 return this.ValidFromDateField;
@@ -478,7 +477,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime ValidToDate {
             get {
                 return this.ValidToDateField;
@@ -503,55 +502,55 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PrefillAttachmentBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTaskAttachment")]
-    [System.SerializableAttribute()]
-    public class PrefillAttachmentBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.PrefillFormTaskAttachment> {
+    [CollectionDataContract(Name="PrefillAttachmentBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTaskAttachment")]
+    [Serializable()]
+    public class PrefillAttachmentBEList : System.Collections.Generic.List<PrefillFormTaskAttachment> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PrefillFormBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillForm")]
-    [System.SerializableAttribute()]
-    public class PrefillFormBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.PrefillForm> {
+    [CollectionDataContract(Name="PrefillFormBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillForm")]
+    [Serializable()]
+    public class PrefillFormBEList : System.Collections.Generic.List<PrefillForm> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PreFillIdentityFieldBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PreFillIdentityFieldBE")]
-    [System.SerializableAttribute()]
-    public class PreFillIdentityFieldBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.PreFillIdentityFieldBE> {
+    [CollectionDataContract(Name="PreFillIdentityFieldBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PreFillIdentityFieldBE")]
+    [Serializable()]
+    public class PreFillIdentityFieldBEList : System.Collections.Generic.List<PreFillIdentityFieldBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="NotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="Notification")]
-    [System.SerializableAttribute()]
-    public class NotificationBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.Notification> {
+    [CollectionDataContract(Name="NotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="Notification")]
+    [Serializable()]
+    public class NotificationBEList : System.Collections.Generic.List<Notification> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillFormTaskAttachment", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillFormTaskAttachment", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillFormTaskAttachment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private byte[] AttachmentDataField;
         
         private string AttachmentNameField;
         
-        private EC_Endpoint_Client.PrefillEUS.AttachmentType AttachmentTypeField;
+        private AttachmentType AttachmentTypeField;
         
         private string FileNameField;
         
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> SignedByDefaultField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> SigningLockedField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -564,7 +563,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public byte[] AttachmentData {
             get {
                 return this.AttachmentDataField;
@@ -577,7 +576,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string AttachmentName {
             get {
                 return this.AttachmentNameField;
@@ -590,8 +589,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.PrefillEUS.AttachmentType AttachmentType {
+        [DataMember(IsRequired=true)]
+        public AttachmentType AttachmentType {
             get {
                 return this.AttachmentTypeField;
             }
@@ -603,7 +602,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -616,7 +615,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -629,7 +628,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> SignedByDefault {
             get {
                 return this.SignedByDefaultField;
@@ -642,7 +641,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> SigningLocked {
             get {
                 return this.SigningLockedField;
@@ -666,89 +665,89 @@ namespace EC_Endpoint_Client.PrefillEUS {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachmentType", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
+    [DataContract(Name="AttachmentType", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
     public enum AttachmentType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_None = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_pdf = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_msword = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_vnd_ms_excel = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_vnd_oasis_opendocument_text = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_vnd_oasis_opendocument_presentation = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_vnd_oasis_opendocument_spreadsheet = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_rtf = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_vnd_ms_powerpoint = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_postscript = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         application_zip = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         text_plain = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         text_html = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         text_xml = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         text_rtf = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         text_richtext = 15,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         binary_octet_stream = 16,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         not_Applicable = 17,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         MTOM = 18,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         BASE64 = 19,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         image_jpeg = 20,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         image_gif = 21,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         image_bmp = 22,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         formtask_pdf = 23,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillForm", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillForm", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillForm : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string DataFormatIDField;
@@ -759,10 +758,10 @@ namespace EC_Endpoint_Client.PrefillEUS {
         
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> SignedByDefaultField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> SigningLockedField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -775,7 +774,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string DataFormatID {
             get {
                 return this.DataFormatIDField;
@@ -788,7 +787,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int DataFormatVersion {
             get {
                 return this.DataFormatVersionField;
@@ -801,7 +800,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string FormDataXML {
             get {
                 return this.FormDataXMLField;
@@ -814,7 +813,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -827,7 +826,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> SignedByDefault {
             get {
                 return this.SignedByDefaultField;
@@ -840,7 +839,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> SigningLocked {
             get {
                 return this.SigningLockedField;
@@ -865,17 +864,17 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PreFillIdentityFieldBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PreFillIdentityFieldBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PreFillIdentityFieldBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FieldValueField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string IndexField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -888,7 +887,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FieldValue {
             get {
                 return this.FieldValueField;
@@ -901,7 +900,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Index {
             get {
                 return this.IndexField;
@@ -926,36 +925,36 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class Notification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FromAddressField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int NotificationIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReporteeElementIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ShipmentDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LanguageCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NotificationTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.TextTokenSubstitutionBEList TextTokensField;
+        [OptionalField()]
+        private TextTokenSubstitutionBEList TextTokensField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.ReceiverEndPointBEList ReceiverEndPointsField;
+        [OptionalField()]
+        private ReceiverEndPointBEList ReceiverEndPointsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -967,7 +966,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FromAddress {
             get {
                 return this.FromAddressField;
@@ -980,7 +979,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int NotificationID {
             get {
                 return this.NotificationIDField;
@@ -993,7 +992,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReporteeElementID {
             get {
                 return this.ReporteeElementIDField;
@@ -1006,7 +1005,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ShipmentDateTime {
             get {
                 return this.ShipmentDateTimeField;
@@ -1019,7 +1018,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public string LanguageCode {
             get {
                 return this.LanguageCodeField;
@@ -1032,7 +1031,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public string NotificationType {
             get {
                 return this.NotificationTypeField;
@@ -1045,8 +1044,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public EC_Endpoint_Client.PrefillEUS.TextTokenSubstitutionBEList TextTokens {
+        [DataMember(Order=6)]
+        public TextTokenSubstitutionBEList TextTokens {
             get {
                 return this.TextTokensField;
             }
@@ -1058,8 +1057,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public EC_Endpoint_Client.PrefillEUS.ReceiverEndPointBEList ReceiverEndPoints {
+        [DataMember(Order=7)]
+        public ReceiverEndPointBEList ReceiverEndPoints {
             get {
                 return this.ReceiverEndPointsField;
             }
@@ -1083,31 +1082,31 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
-    [System.SerializableAttribute()]
-    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.TextToken> {
+    [CollectionDataContract(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
+    [Serializable()]
+    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<TextToken> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
-    [System.SerializableAttribute()]
-    public class ReceiverEndPointBEList : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.ReceiverEndPoint> {
+    [CollectionDataContract(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
+    [Serializable()]
+    public class ReceiverEndPointBEList : System.Collections.Generic.List<ReceiverEndPoint> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class TextToken : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int TokenNumField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string TokenValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1120,7 +1119,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int TokenNum {
             get {
                 return this.TokenNumField;
@@ -1133,7 +1132,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string TokenValue {
             get {
                 return this.TokenValueField;
@@ -1158,17 +1157,17 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class ReceiverEndPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<EC_Endpoint_Client.PrefillEUS.TransportType> TransportTypeField;
+        [OptionalField()]
+        private System.Nullable<TransportType> TransportTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiverAddressField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1181,8 +1180,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<EC_Endpoint_Client.PrefillEUS.TransportType> TransportType {
+        [DataMember()]
+        public System.Nullable<TransportType> TransportType {
             get {
                 return this.TransportTypeField;
             }
@@ -1194,7 +1193,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public string ReceiverAddress {
             get {
                 return this.ReceiverAddressField;
@@ -1218,48 +1217,48 @@ namespace EC_Endpoint_Client.PrefillEUS {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
+    [DataContract(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
     public enum TransportType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SMS = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Email = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         IM = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Both = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PreFillRequestBEList", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", ItemName="DataFormatID")]
-    [System.SerializableAttribute()]
+    [CollectionDataContract(Name="PreFillRequestBEList", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", ItemName="DataFormatID")]
+    [Serializable()]
     public class PreFillRequestBEList : System.Collections.Generic.List<string> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillDataBEv2", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillDataBEv2", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillDataBEv2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PreFillFormTaskBEv2List PreFillFormTaskBEListField;
+        [OptionalField()]
+        private PreFillFormTaskBEv2List PreFillFormTaskBEListField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool PrefillDataFoundField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool RegisterPrefillDataFoundField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool SOPrefillDataFoundField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1272,8 +1271,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PreFillFormTaskBEv2List PreFillFormTaskBEList {
+        [DataMember()]
+        public PreFillFormTaskBEv2List PreFillFormTaskBEList {
             get {
                 return this.PreFillFormTaskBEListField;
             }
@@ -1285,7 +1284,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool PrefillDataFound {
             get {
                 return this.PrefillDataFoundField;
@@ -1298,7 +1297,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool RegisterPrefillDataFound {
             get {
                 return this.RegisterPrefillDataFoundField;
@@ -1311,7 +1310,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool SOPrefillDataFound {
             get {
                 return this.SOPrefillDataFoundField;
@@ -1336,18 +1335,18 @@ namespace EC_Endpoint_Client.PrefillEUS {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="PreFillFormTaskBEv2List", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTaskv2")]
-    [System.SerializableAttribute()]
-    public class PreFillFormTaskBEv2List : System.Collections.Generic.List<EC_Endpoint_Client.PrefillEUS.PrefillFormTaskv2> {
+    [CollectionDataContract(Name="PreFillFormTaskBEv2List", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10", ItemName="PrefillFormTaskv2")]
+    [Serializable()]
+    public class PreFillFormTaskBEv2List : System.Collections.Generic.List<PrefillFormTaskv2> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PrefillFormTaskv2", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="PrefillFormTaskv2", Namespace="http://schemas.altinn.no/services/ServiceEngine/PreFill/2009/10")]
+    [Serializable()]
     public partial class PrefillFormTaskv2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string ExternalServiceCodeField;
@@ -1356,30 +1355,30 @@ namespace EC_Endpoint_Client.PrefillEUS {
         
         private string ExternalShipmentReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string IdentityFieldHashCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Guid LargeInboundReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PrefillAttachmentBEList PreFillAttachmentsField;
+        [OptionalField()]
+        private PrefillAttachmentBEList PreFillAttachmentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PrefillFormBEList PreFillFormsField;
+        [OptionalField()]
+        private PrefillFormBEList PreFillFormsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.PreFillIdentityFieldBEList PreFillIdentityFieldsField;
+        [OptionalField()]
+        private PreFillIdentityFieldBEList PreFillIdentityFieldsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.PrefillEUS.NotificationBEList PrefillNotificationsField;
+        [OptionalField()]
+        private NotificationBEList PrefillNotificationsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiversReferenceField;
         
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         private string ServiceOwnerCodeField;
@@ -1394,7 +1393,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -1407,7 +1406,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -1420,7 +1419,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalShipmentReference {
             get {
                 return this.ExternalShipmentReferenceField;
@@ -1433,7 +1432,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string IdentityFieldHashCode {
             get {
                 return this.IdentityFieldHashCodeField;
@@ -1446,7 +1445,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Guid LargeInboundReference {
             get {
                 return this.LargeInboundReferenceField;
@@ -1459,8 +1458,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PrefillAttachmentBEList PreFillAttachments {
+        [DataMember()]
+        public PrefillAttachmentBEList PreFillAttachments {
             get {
                 return this.PreFillAttachmentsField;
             }
@@ -1472,8 +1471,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PrefillFormBEList PreFillForms {
+        [DataMember()]
+        public PrefillFormBEList PreFillForms {
             get {
                 return this.PreFillFormsField;
             }
@@ -1485,8 +1484,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.PreFillIdentityFieldBEList PreFillIdentityFields {
+        [DataMember()]
+        public PreFillIdentityFieldBEList PreFillIdentityFields {
             get {
                 return this.PreFillIdentityFieldsField;
             }
@@ -1498,8 +1497,8 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.PrefillEUS.NotificationBEList PrefillNotifications {
+        [DataMember()]
+        public NotificationBEList PrefillNotifications {
             get {
                 return this.PrefillNotificationsField;
             }
@@ -1511,7 +1510,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiversReference {
             get {
                 return this.ReceiversReferenceField;
@@ -1524,7 +1523,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -1537,7 +1536,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -1550,7 +1549,7 @@ namespace EC_Endpoint_Client.PrefillEUS {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceOwnerCode {
             get {
                 return this.ServiceOwnerCodeField;
@@ -1579,37 +1578,37 @@ namespace EC_Endpoint_Client.PrefillEUS {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/PreFill/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.PrefillEUS.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.PrefillEUS.TestResponse Test(EC_Endpoint_Client.PrefillEUS.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.TestResponse> TestAsync(EC_Endpoint_Client.PrefillEUS.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/PreFill/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.PrefillEUS.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse GetPrefillDataEC(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest request);
+        GetPrefillDataECResponse GetPrefillDataEC(GetPrefillDataECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse> GetPrefillDataECAsync(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest request);
+        System.Threading.Tasks.Task<GetPrefillDataECResponse> GetPrefillDataECAsync(GetPrefillDataECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/PreFill/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECV2", ReplyAction="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECV2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.PrefillEUS.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECV2AltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response GetPrefillDataECV2(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request request);
+        GetPrefillDataECV2Response GetPrefillDataECV2(GetPrefillDataECV2Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECV2", ReplyAction="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10/IPreFillEUSExternalEC" +
             "/GetPrefillDataECV2Response")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response> GetPrefillDataECV2Async(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request request);
+        System.Threading.Tasks.Task<GetPrefillDataECV2Response> GetPrefillDataECV2Async(GetPrefillDataECV2Request request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1639,12 +1638,12 @@ namespace EC_Endpoint_Client.PrefillEUS {
     public partial class GetPrefillDataECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPrefillDataEC", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequestBody Body;
+        public GetPrefillDataECRequestBody Body;
         
         public GetPrefillDataECRequest() {
         }
         
-        public GetPrefillDataECRequest(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequestBody Body) {
+        public GetPrefillDataECRequest(GetPrefillDataECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1652,22 +1651,22 @@ namespace EC_Endpoint_Client.PrefillEUS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
     public partial class GetPrefillDataECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string ReporteeNumber;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string ExternalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public int ExternalServiceEditionCode;
         
         public GetPrefillDataECRequestBody() {
@@ -1689,12 +1688,12 @@ namespace EC_Endpoint_Client.PrefillEUS {
     public partial class GetPrefillDataECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPrefillDataECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponseBody Body;
+        public GetPrefillDataECResponseBody Body;
         
         public GetPrefillDataECResponse() {
         }
         
-        public GetPrefillDataECResponse(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponseBody Body) {
+        public GetPrefillDataECResponse(GetPrefillDataECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1702,16 +1701,16 @@ namespace EC_Endpoint_Client.PrefillEUS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
     public partial class GetPrefillDataECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.PrefillDataBE GetPrefillDataECResult;
+        [DataMember(Order=0)]
+        public PrefillDataBE GetPrefillDataECResult;
         
         public GetPrefillDataECResponseBody() {
         }
         
-        public GetPrefillDataECResponseBody(EC_Endpoint_Client.PrefillEUS.PrefillDataBE GetPrefillDataECResult) {
+        public GetPrefillDataECResponseBody(PrefillDataBE GetPrefillDataECResult) {
             this.GetPrefillDataECResult = GetPrefillDataECResult;
         }
     }
@@ -1723,12 +1722,12 @@ namespace EC_Endpoint_Client.PrefillEUS {
     public partial class GetPrefillDataECV2Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPrefillDataECV2", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2RequestBody Body;
+        public GetPrefillDataECV2RequestBody Body;
         
         public GetPrefillDataECV2Request() {
         }
         
-        public GetPrefillDataECV2Request(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2RequestBody Body) {
+        public GetPrefillDataECV2Request(GetPrefillDataECV2RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1736,31 +1735,31 @@ namespace EC_Endpoint_Client.PrefillEUS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
     public partial class GetPrefillDataECV2RequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string ReporteeNumber;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string ExternalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public int ExternalServiceEditionCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public EC_Endpoint_Client.PrefillEUS.PreFillRequestBEList PreFillList;
+        [DataMember(Order=5)]
+        public PreFillRequestBEList PreFillList;
         
         public GetPrefillDataECV2RequestBody() {
         }
         
-        public GetPrefillDataECV2RequestBody(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, EC_Endpoint_Client.PrefillEUS.PreFillRequestBEList PreFillList) {
+        public GetPrefillDataECV2RequestBody(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, PreFillRequestBEList PreFillList) {
             this.userName = userName;
             this.password = password;
             this.ReporteeNumber = ReporteeNumber;
@@ -1777,12 +1776,12 @@ namespace EC_Endpoint_Client.PrefillEUS {
     public partial class GetPrefillDataECV2Response {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPrefillDataECV2Response", Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10", Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2ResponseBody Body;
+        public GetPrefillDataECV2ResponseBody Body;
         
         public GetPrefillDataECV2Response() {
         }
         
-        public GetPrefillDataECV2Response(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2ResponseBody Body) {
+        public GetPrefillDataECV2Response(GetPrefillDataECV2ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1790,27 +1789,27 @@ namespace EC_Endpoint_Client.PrefillEUS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/PreFill/2010/10")]
     public partial class GetPrefillDataECV2ResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.PrefillEUS.PrefillDataBEv2 GetPrefillDataECV2Result;
+        [DataMember(Order=0)]
+        public PrefillDataBEv2 GetPrefillDataECV2Result;
         
         public GetPrefillDataECV2ResponseBody() {
         }
         
-        public GetPrefillDataECV2ResponseBody(EC_Endpoint_Client.PrefillEUS.PrefillDataBEv2 GetPrefillDataECV2Result) {
+        public GetPrefillDataECV2ResponseBody(PrefillDataBEv2 GetPrefillDataECV2Result) {
             this.GetPrefillDataECV2Result = GetPrefillDataECV2Result;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPreFillEUSExternalECChannel : EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC, System.ServiceModel.IClientChannel {
+    public interface IPreFillEUSExternalECChannel : IPreFillEUSExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PreFillEUSExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC>, EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC {
+    public partial class PreFillEUSExternalECClient : System.ServiceModel.ClientBase<IPreFillEUSExternalEC>, IPreFillEUSExternalEC {
         
         public PreFillEUSExternalECClient() {
         }
@@ -1832,91 +1831,91 @@ namespace EC_Endpoint_Client.PrefillEUS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.PrefillEUS.TestResponse EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.Test(EC_Endpoint_Client.PrefillEUS.TestRequest request) {
+        TestResponse IPreFillEUSExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.PrefillEUS.TestRequest inValue = new EC_Endpoint_Client.PrefillEUS.TestRequest();
-            EC_Endpoint_Client.PrefillEUS.TestResponse retVal = ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IPreFillEUSExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.TestResponse> EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.TestAsync(EC_Endpoint_Client.PrefillEUS.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IPreFillEUSExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.TestResponse> TestAsync() {
-            EC_Endpoint_Client.PrefillEUS.TestRequest inValue = new EC_Endpoint_Client.PrefillEUS.TestRequest();
-            return ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IPreFillEUSExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.GetPrefillDataEC(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest request) {
+        GetPrefillDataECResponse IPreFillEUSExternalEC.GetPrefillDataEC(GetPrefillDataECRequest request) {
             return base.Channel.GetPrefillDataEC(request);
         }
         
-        public EC_Endpoint_Client.PrefillEUS.PrefillDataBE GetPrefillDataEC(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode) {
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest inValue = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest();
-            inValue.Body = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequestBody();
+        public PrefillDataBE GetPrefillDataEC(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode) {
+            GetPrefillDataECRequest inValue = new GetPrefillDataECRequest();
+            inValue.Body = new GetPrefillDataECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.ReporteeNumber = ReporteeNumber;
             inValue.Body.ExternalServiceCode = ExternalServiceCode;
             inValue.Body.ExternalServiceEditionCode = ExternalServiceEditionCode;
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse retVal = ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).GetPrefillDataEC(inValue);
+            GetPrefillDataECResponse retVal = ((IPreFillEUSExternalEC)(this)).GetPrefillDataEC(inValue);
             return retVal.Body.GetPrefillDataECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse> EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.GetPrefillDataECAsync(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest request) {
+        System.Threading.Tasks.Task<GetPrefillDataECResponse> IPreFillEUSExternalEC.GetPrefillDataECAsync(GetPrefillDataECRequest request) {
             return base.Channel.GetPrefillDataECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse> GetPrefillDataECAsync(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode) {
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest inValue = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequest();
-            inValue.Body = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECRequestBody();
+        public System.Threading.Tasks.Task<GetPrefillDataECResponse> GetPrefillDataECAsync(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode) {
+            GetPrefillDataECRequest inValue = new GetPrefillDataECRequest();
+            inValue.Body = new GetPrefillDataECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.ReporteeNumber = ReporteeNumber;
             inValue.Body.ExternalServiceCode = ExternalServiceCode;
             inValue.Body.ExternalServiceEditionCode = ExternalServiceEditionCode;
-            return ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).GetPrefillDataECAsync(inValue);
+            return ((IPreFillEUSExternalEC)(this)).GetPrefillDataECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.GetPrefillDataECV2(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request request) {
+        GetPrefillDataECV2Response IPreFillEUSExternalEC.GetPrefillDataECV2(GetPrefillDataECV2Request request) {
             return base.Channel.GetPrefillDataECV2(request);
         }
         
-        public EC_Endpoint_Client.PrefillEUS.PrefillDataBEv2 GetPrefillDataECV2(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, EC_Endpoint_Client.PrefillEUS.PreFillRequestBEList PreFillList) {
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request inValue = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request();
-            inValue.Body = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2RequestBody();
+        public PrefillDataBEv2 GetPrefillDataECV2(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, PreFillRequestBEList PreFillList) {
+            GetPrefillDataECV2Request inValue = new GetPrefillDataECV2Request();
+            inValue.Body = new GetPrefillDataECV2RequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.ReporteeNumber = ReporteeNumber;
             inValue.Body.ExternalServiceCode = ExternalServiceCode;
             inValue.Body.ExternalServiceEditionCode = ExternalServiceEditionCode;
             inValue.Body.PreFillList = PreFillList;
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response retVal = ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).GetPrefillDataECV2(inValue);
+            GetPrefillDataECV2Response retVal = ((IPreFillEUSExternalEC)(this)).GetPrefillDataECV2(inValue);
             return retVal.Body.GetPrefillDataECV2Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response> EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC.GetPrefillDataECV2Async(EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request request) {
+        System.Threading.Tasks.Task<GetPrefillDataECV2Response> IPreFillEUSExternalEC.GetPrefillDataECV2Async(GetPrefillDataECV2Request request) {
             return base.Channel.GetPrefillDataECV2Async(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Response> GetPrefillDataECV2Async(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, EC_Endpoint_Client.PrefillEUS.PreFillRequestBEList PreFillList) {
-            EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request inValue = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2Request();
-            inValue.Body = new EC_Endpoint_Client.PrefillEUS.GetPrefillDataECV2RequestBody();
+        public System.Threading.Tasks.Task<GetPrefillDataECV2Response> GetPrefillDataECV2Async(string userName, string password, string ReporteeNumber, string ExternalServiceCode, int ExternalServiceEditionCode, PreFillRequestBEList PreFillList) {
+            GetPrefillDataECV2Request inValue = new GetPrefillDataECV2Request();
+            inValue.Body = new GetPrefillDataECV2RequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.ReporteeNumber = ReporteeNumber;
             inValue.Body.ExternalServiceCode = ExternalServiceCode;
             inValue.Body.ExternalServiceEditionCode = ExternalServiceEditionCode;
             inValue.Body.PreFillList = PreFillList;
-            return ((EC_Endpoint_Client.PrefillEUS.IPreFillEUSExternalEC)(this)).GetPrefillDataECV2Async(inValue);
+            return ((IPreFillEUSExternalEC)(this)).GetPrefillDataECV2Async(inValue);
         }
     }
 }

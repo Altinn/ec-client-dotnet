@@ -1,32 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.Correspondence;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.Correspondence;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence;
+using EC_Endpoint_Client.Service_References.Correspondence;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 {
-    public partial class CorrespondenceForm : ClientBaseForm
+    public partial class CorrespondenceForm : BaseForms.ClientBaseForm
     {
-        private CorrespondenceEndPointFunction cepFunc;
-        public CorrespondenceShipmentBase ShipmentAC { get; set; }
+        private CorrespondenceEndPointFunction _cepFunc;
+        public CorrespondenceShipmentBase ShipmentAc { get; set; }
         public CorrespondenceShipmentBase ShipmentSaveCorrConf { get; set; }
-        private EC_Endpoint_Client.Correspondence.Receipt ResultAC { get; set; }
+        private Receipt ResultAc { get; set; }
         public GetCorrespondenceShipment ShipmentGetCorr { get; set; }
-        private EC_Endpoint_Client.Correspondence.CorrespondenceForEndUserSystemV2 ResultGetCorr { get; set; }
+        private CorrespondenceForEndUserSystemV2 ResultGetCorr { get; set; }
         public CorrespondenceForm()
         {
             InitializeComponent();
-            cepFunc = new CorrespondenceEndPointFunction();
-            cepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
-            ShipmentAC = new CorrespondenceShipmentBase();
+            _cepFunc = new CorrespondenceEndPointFunction();
+            _cepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            ShipmentAc = new CorrespondenceShipmentBase();
             ShipmentGetCorr = new GetCorrespondenceShipment();
             ResultGetCorr = new CorrespondenceForEndUserSystemV2();
             ShipmentSaveCorrConf = new CorrespondenceShipmentBase();
@@ -34,7 +27,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void SetupObjForPropGrid()
         {
-            TypeDescriptor.AddAttributes(typeof(EC_Endpoint_Client.Correspondence.Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CorrespondenceForEndUserSystemV2), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
 
@@ -43,7 +36,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                cepFunc.Test(ShipmentTest);
+                _cepFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -54,11 +47,11 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void ArchiveCorrespondence()
         {
-            SetBasicShipmentSettings(ShipmentAC);
+            SetBasicShipmentSettings(ShipmentAc);
             try
             {
-                ResultAC = cepFunc.ArchiveCorrespondence(ShipmentAC);
-                SetViewedItem(ResultAC, "Result from ArchiveCorrespondence");
+                ResultAc = _cepFunc.ArchiveCorrespondence(ShipmentAc);
+                SetViewedItem(ResultAc, "Result from ArchiveCorrespondence");
             }
             catch (Exception ex)
             {
@@ -71,7 +64,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             SetBasicShipmentSettings(ShipmentGetCorr);
             try
             {
-                ResultGetCorr = cepFunc.GetCorrespondence(ShipmentGetCorr);
+                ResultGetCorr = _cepFunc.GetCorrespondence(ShipmentGetCorr);
                 SetViewedItem(ShipmentGetCorr, "Result from GetCorrespondence");
             }
             catch (Exception ex)
@@ -85,7 +78,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             SetBasicShipmentSettings(ShipmentSaveCorrConf);
             try
             {
-                cepFunc.SaveCorrespondenceConfirmation(ShipmentSaveCorrConf);
+                _cepFunc.SaveCorrespondenceConfirmation(ShipmentSaveCorrConf);
                 SetViewedItem("OK", "SaveCorrespondenceConfirmation ran OK");
             }
             catch (Exception ex)
@@ -96,7 +89,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         #region ArchiveCorrespondenceClicks
         private void btn_ICShowShipment_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentAC, "Shipment for ArchiveCorrespondence");
+            SetViewedItem(ShipmentAc, "Shipment for ArchiveCorrespondence");
         }
 
         private void btn_ICInvoke_Click(object sender, EventArgs e)
@@ -106,12 +99,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void btn_ICShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultAC, "Receipt from ArchiveCorrespondence");
+            SetViewedItem(ResultAc, "Receipt from ArchiveCorrespondence");
         }
 
         private void btn_ICSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultAC);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultAc);
         }
         #endregion
         #region GetCorrespondenceClicks
@@ -132,7 +125,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void btn_GCSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultGetCorr);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultGetCorr);
         }
 #endregion
         #region SaveCorrespondenceConfirmation

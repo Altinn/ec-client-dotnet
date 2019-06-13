@@ -1,6 +1,6 @@
-﻿namespace EC_Endpoint_Client
+﻿namespace EC_Endpoint_Client.BaseForms
 {
-    partial class CertificateFunctionality
+    public partial class CertificateFunctionality
     {
         /// <summary>
         /// Required designer variable.

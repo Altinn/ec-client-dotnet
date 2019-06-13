@@ -1,6 +1,6 @@
-﻿namespace EC_Endpoint_Client.Forms
+﻿namespace EC_Endpoint_Client.BaseForms
 {
-    partial class SelectorBaseForm
+    public partial class SelectorBaseForm
     {
         /// <summary>
         /// Required designer variable.

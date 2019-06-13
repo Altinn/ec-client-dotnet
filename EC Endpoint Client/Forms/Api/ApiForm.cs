@@ -1,25 +1,17 @@
-﻿using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.Configuration;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using EC_Endpoint_Client.Configuration;
 
-namespace EC_Endpoint_Client.Forms
+namespace EC_Endpoint_Client.Forms.Api
 {
-    public partial class ApiForm : SelectorBaseForm
+    public partial class ApiForm : BaseForms.SelectorBaseForm
     {
-
         private const string AuthenticationURI = "api/authentication/authenticatewithpassword?ForceEIAuthentication";
 
         public new string Thumbprint
@@ -32,32 +24,19 @@ namespace EC_Endpoint_Client.Forms
             }
         }
 
-        private ErrorProvider errorProvider = new ErrorProvider();
-        private string _thumbPrint = string.Empty;
+        private ErrorProvider _errorProvider = new ErrorProvider();
         private Cookie AuthCookie { get; set; }
-        private List<DropDownItem> Environments = new List<DropDownItem>(); /* {
-            new DropDownItem("DEV", "http://devenv.altinntest.no.accenture.com:85/"),
-            new DropDownItem("DEV Https", "https://localhostapi:44/"),
-            new DropDownItem("ST1", "https://st01.ai.basefarm.net/"),
-            new DropDownItem("ST2", "https://st02.ai.basefarm.net/"),
-            new DropDownItem("ST3", "https://st03.ai.basefarm.net/"),
-            new DropDownItem("AT5", "https://at05.ai.basefarm.net/"),
-            new DropDownItem("AT6", "https://at06.ai.basefarm.net/"),
-            new DropDownItem("AT7", "https://at07.ai.basefarm.net/"),
-            new DropDownItem("TT1", "https://tt01.altinn.no/"),
-            new DropDownItem("TT2", "https://tt02.altinn.no/"),
-            new DropDownItem("PROD", "https://www.altinn.no/")
-        };*/
+        private List<DropDownItem> _environments = new List<DropDownItem>();
 
         private class DropDownItem
         {
-            public string Text { get; set; }
-            public object Value { get; set; }
+            public string Text { get; }
+            public object Value { get; }
 
-            public DropDownItem(string Text, object Value)
+            public DropDownItem(string text, object value)
             {
-                this.Text = Text;
-                this.Value = Value;
+                Text = text;
+                Value = value;
             }
 
             public override string ToString()
@@ -68,11 +47,11 @@ namespace EC_Endpoint_Client.Forms
 
         public ApiForm()
         {
-            assignEnvironmentsFromConfig();
+            AssignEnvironmentsFromConfig();
             InitializeComponent();
-            errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            _errorProvider.BlinkStyle = ErrorBlinkStyle.NeverBlink;
 
-            foreach (DropDownItem value in Environments)
+            foreach (DropDownItem value in _environments)
             {
                 ddlEnvironment.Items.Add(value);
             }
@@ -83,12 +62,12 @@ namespace EC_Endpoint_Client.Forms
             ddlMethod.Items.Add(HttpMethod.Delete);
         }
 
-        private void assignEnvironmentsFromConfig()
+        private void AssignEnvironmentsFromConfig()
         {
-            Environments = new List<DropDownItem>();
-            foreach (ApiEnvironment apiEnvironment in EcClientConfiguration.GetConfig().ApiEnvironmentCollection)
+            _environments = new List<DropDownItem>();
+            foreach (EnvironmentUrl apiEnvironment in EcClientConfiguration.GetConfig().EnvironmentUrlCollection)
             {
-                Environments.Add(new DropDownItem(apiEnvironment.Name, apiEnvironment.Environment));
+                _environments.Add(new DropDownItem(apiEnvironment.Name, apiEnvironment.Environment));
             }
         }
 
@@ -97,34 +76,34 @@ namespace EC_Endpoint_Client.Forms
             if (!cbxServiceOwner.Checked)
                 DoLogin();
             else
-                errorProvider.SetError(cbxServiceOwner, "No login required for the serviceowner api");
+                _errorProvider.SetError(cbxServiceOwner, "No login required for the serviceowner api");
         }
 
         private void DoLogin()
         {
-            errorProvider.Clear();
+            _errorProvider.Clear();
             bool hasError = false;
             if (string.IsNullOrEmpty(txtUsername.Text))
             {
-                errorProvider.SetError(txtUsername, "Username is required");
+                _errorProvider.SetError(txtUsername, "Username is required");
                 hasError = true;
             }
 
             if (string.IsNullOrEmpty(txtPassword.Text))
             {
-                errorProvider.SetError(txtPassword, "Password is required");
+                _errorProvider.SetError(txtPassword, "Password is required");
                 hasError = true;
             }
 
             if (ddlEnvironment.SelectedIndex < 0)
             {
-                errorProvider.SetError(ddlEnvironment, "Environment must be selected");
+                _errorProvider.SetError(ddlEnvironment, "Environment must be selected");
                 hasError = true;
             }
 
             if (string.IsNullOrEmpty(txtCertificate.Text))
             {
-                errorProvider.SetError(txtCertificate, "Certificate must be selected");
+                _errorProvider.SetError(txtCertificate, "Certificate must be selected");
                 hasError = true;
             }
 
@@ -135,12 +114,10 @@ namespace EC_Endpoint_Client.Forms
 
             string body = "{UserName: \"" + txtUsername.Text + "\",UserPassword:\"" + txtPassword.Text + "\"}";
 
-            DoRequest(((DropDownItem)ddlEnvironment.SelectedItem).Value.ToString()
-                        + AuthenticationURI,
-                    HttpMethod.Post.ToString(),
-                    string.Empty,
-                    body,
-                    true);
+            DoRequest(((DropDownItem) ddlEnvironment.SelectedItem).Value + AuthenticationURI,
+                HttpMethod.Post.ToString(),
+                string.Empty,
+                body);
         }
 
         private void btnCertificate_Click(object sender, EventArgs e)
@@ -190,49 +167,51 @@ namespace EC_Endpoint_Client.Forms
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            errorProvider.Clear();
+            _errorProvider.Clear();
             bool hasError = false;
             if (string.IsNullOrEmpty(txtAppKey.Text))
             {
-                errorProvider.SetError(txtAppKey, "AppKey is required");
+                _errorProvider.SetError(txtAppKey, "AppKey is required");
                 hasError = true;
             }
 
             if (string.IsNullOrEmpty(txtTargetMethod.Text))
             {
-                errorProvider.SetError(txtTargetMethod, "Target method is required");
+                _errorProvider.SetError(txtTargetMethod, "Target method is required");
                 hasError = true;
             }
 
             if (ddlEnvironment.SelectedIndex < 0)
             {
-                errorProvider.SetError(ddlEnvironment, "Environment must be selected");
+                _errorProvider.SetError(ddlEnvironment, "Environment must be selected");
                 hasError = true;
             }
 
             if (ddlMethod.SelectedIndex < 0)
             {
-                errorProvider.SetError(ddlMethod, "Method must be selected");
+                _errorProvider.SetError(ddlMethod, "Method must be selected");
                 hasError = true;
             }
 
             if (AuthCookie == null && cbxServiceOwner.Checked == false)
             {
-                errorProvider.SetError(lblLoginInfo, "Must be logged in");
+                _errorProvider.SetError(lblLoginInfo, "Must be logged in");
             }
+
             if (SelectedCertificate == null)
-                errorProvider.SetError(btnCertificate, "Select certificate");
+            {
+                _errorProvider.SetError(btnCertificate, "Select certificate");
+            }
 
             if (hasError)
             {
                 return;
             }
 
-            DoRequest(((DropDownItem)ddlEnvironment.SelectedItem).Value.ToString()
-                        + txtTargetMethod.Text,
-                    ((HttpMethod)ddlMethod.SelectedItem).ToString(),
-                    txtAppKey.Text,
-                    txtBody.Text);
+            DoRequest(((DropDownItem) ddlEnvironment.SelectedItem).Value + txtTargetMethod.Text,
+                ((HttpMethod) ddlMethod.SelectedItem).ToString(),
+                txtAppKey.Text,
+                txtBody.Text);
         }
 
         private void DoRequest(string target, string method, string appKey = null, string body = null, bool useCertificate = true)
@@ -260,7 +239,8 @@ namespace EC_Endpoint_Client.Forms
 
                 if (method == HttpMethod.Post.ToString() || method == HttpMethod.Put.ToString())
                 {
-                    byte[] bodyEncoded = UTF8Encoding.UTF8.GetBytes(body);
+                    // ReSharper disable once AssignNullToNotNullAttribute
+                    byte[] bodyEncoded = Encoding.UTF8.GetBytes(body);
                     using (Stream requestStream = request.GetRequestStream())
                     {
                         requestStream.Write(bodyEncoded, 0, bodyEncoded.Length);
@@ -274,10 +254,12 @@ namespace EC_Endpoint_Client.Forms
                 for (int i = 0; i < headers.Count; ++i)
                 {
                     string header = headers.GetKey(i);
-                    foreach (string value in headers.GetValues(i))
-                    {
-                        lsResponseHeaders.Items.Add(new ListViewItem(String.Format("{0}: {1}", header, value)));
-                    }
+                    var enumerable = headers.GetValues(i);
+                    if (enumerable != null)
+                        foreach (string value in enumerable)
+                        {
+                            lsResponseHeaders.Items.Add(new ListViewItem(String.Format("{0}: {1}", header, value)));
+                        }
                 }
 
                 FixCookies(request, response);
@@ -285,10 +267,11 @@ namespace EC_Endpoint_Client.Forms
                 if (response.Cookies[".ASPXAUTH"] != null)
                 {
                     AuthCookie = response.Cookies[".ASPXAUTH"];
-                    lblLoginInfo.Text = "Logged in";
+                    lblLoginInfo.Text = @"Logged in";
                 }
 
-                using (var reader = new System.IO.StreamReader(response.GetResponseStream(), UTF8Encoding.UTF8))
+                // ReSharper disable once AssignNullToNotNullAttribute
+                using (var reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8))
                 {
                     txtResponse.Text = reader.ReadToEnd();
                 }
@@ -304,7 +287,7 @@ namespace EC_Endpoint_Client.Forms
                     Stream responseStream = webResponse.GetResponseStream();
                     if (responseStream != null)
                     {
-                        using (var reader = new System.IO.StreamReader(responseStream, UTF8Encoding.UTF8))
+                        using (var reader = new StreamReader(responseStream, Encoding.UTF8))
                         {
                             txtResponse.Text += Environment.NewLine + reader.ReadToEnd();
                         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.PrefillEUS;
+﻿using EC_Endpoint_Client.Service_References.PrefillEUS;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillEUS
 {
@@ -16,11 +11,11 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillEUS
 
     public class GetPrefillDataV2Shipment : GetPrefillDataShipmentBase
     {
-        public PreFillRequestBEList PrefillBEList { get; set; }
+        public PreFillRequestBEList PrefillBeList { get; set; }
     }
 
     public class GetPrefillDataV2ShipmentExt : GetPrefillDataShipmentBase
     {
-        public string[] PrefillBEList { get; set; }
+        public string[] PrefillBeList { get; set; }
     }
 }

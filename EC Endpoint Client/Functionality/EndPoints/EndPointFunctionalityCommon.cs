@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel.Security;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
 using System.ServiceModel;
+using System.ServiceModel.Security;
+using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Configuration;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints
 {
     /// <summary>
     /// This base class contains som functionality that every endpoint function uses for its proxy generation.
@@ -21,10 +19,21 @@ namespace EC_Endpoint_Client.Functionality
         public event EventHandler ReturnMessageXml;
         public string OperationContext { get; set; }
 
-        protected T GenerateProxy<T, T1>(string EndpointName, X509Certificate2 SelectedCertificate, bool setInspectorBehavior = true) where T : ClientBase<T1>, T1 where T1 : class
+        protected T GenerateProxy<T, T1, TShipment>(TShipment shipment, bool setInspectorBehavior = true)
+            where T : ClientBase<T1>, T1 where T1 : class where TShipment : BaseShipment
         {
-            T proxy = Activator.CreateInstance(typeof(T), EndpointName) as T;
-            proxy.ClientCredentials.ClientCertificate.Certificate = SelectedCertificate;
+            return GenerateProxy<T, T1>(shipment.EndpointName, shipment.Certificate, setInspectorBehavior);
+        }
+
+        protected T GenerateProxy<T, T1>(string endpointName, X509Certificate2 selectedCertificate, bool setInspectorBehavior = true) 
+            where T : ClientBase<T1>, T1 where T1 : class
+        {
+            var proxy = Activator.CreateInstance(typeof(T)) as T;
+            if (proxy?.ClientCredentials == null)
+                return null;
+            proxy.ClientCredentials.ClientCertificate.Certificate = selectedCertificate;
+            var builder = new UriBuilder(proxy.Endpoint.Address.Uri) {Host = GetHostForEnvironment(endpointName)};
+            proxy.Endpoint.Address = new EndpointAddress(builder.Uri);
             GetCredentialsForServiceCertificate(proxy.ClientCredentials.ServiceCertificate);
             if (setInspectorBehavior)
             {
@@ -55,7 +64,7 @@ namespace EC_Endpoint_Client.Functionality
         protected void ReturnMessageXMLHandler(object sender, EventArgs e)
         {
             ((BaseSoapHolder)sender).Call = OperationContext;
-            ReturnMessageXml(sender, e);
+            ReturnMessageXml?.Invoke(sender, e);
         }
 
         /// <summary>
@@ -65,8 +74,24 @@ namespace EC_Endpoint_Client.Functionality
         protected void SetInspectorBehavior(System.Collections.ObjectModel.KeyedCollection<Type, System.ServiceModel.Description.IEndpointBehavior> endpointBehaviors)
         {
             InspectorBehavior inspectorBehavior = new InspectorBehavior();
-            inspectorBehavior.ReturnMessageXML += ReturnMessageXMLHandler;
+            inspectorBehavior.ReturnMessageXml += ReturnMessageXMLHandler;
             endpointBehaviors.Add(inspectorBehavior);
+        }
+
+        private string GetHostForEnvironment(string environment)
+        {
+            UriBuilder builder = new UriBuilder();
+            builder.Host = "localhost";
+            foreach (EnvironmentUrl eu in EcClientConfiguration.GetConfig().EnvironmentUrlCollection)
+            {
+                if (eu.Name == environment)
+                {
+                    builder = new UriBuilder(eu.Environment);
+                    break;
+                }
+            }
+
+            return builder.Host;
         }
     }
 }

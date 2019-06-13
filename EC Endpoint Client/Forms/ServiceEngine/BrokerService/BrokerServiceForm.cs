@@ -1,44 +1,37 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.BrokerService;
-using EC_Endpoint_Client.BrokerServiceStreamed;
-using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService;
+using EC_Endpoint_Client.Service_References.BrokerService;
+using EC_Endpoint_Client.Service_References.BrokerServiceStreamed;
 
-namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
+namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerService
 {
-    public partial class BrokerServiceForm : ClientBaseForm
+    public partial class BrokerServiceForm : BaseForms.ClientBaseForm
     {
-        private BrokerServiceEndPointFunction brokerServiceEPFunc;
-        private BrokerServiceStreamedEndPointFunction brokerServiceStreanedEPFunc;
+        private readonly BrokerServiceEndPointFunction _brokerServiceEpFunc;
+        private readonly BrokerServiceStreamedEndPointFunction _brokerServiceStreanedEpFunc;
 
         public InitiateBrokerServiceShipment InitiateBrokerServiceShipment;
         public GetAvailableFilesShipment GetAvailableFilesShipment;
         public UploadFileStreamedShipment UploadFileStreamedShipment;
         public DownloadFileStreamedShipment DownloadFileStreamedShipment;
 
-        public string InitiateFileReferenceResult { get; set; }
-        public BrokerServiceAvailableFile[] GetAvailableFileListResult { get; set; }
-        public UploadFileStreamedResult UploadFileStreamedReceiptResult { get; set; }
-        public byte[] DownloadFileStreamedResult { get; set; }
+        public string InitiateFileReferenceResult;
+        public BrokerServiceAvailableFile[] GetAvailableFileListResult;
+        public UploadFileStreamedResult UploadFileStreamedReceiptResult;
+        public byte[] DownloadFileStreamedResult;
         public string SavedFilePath { get; set; }
 
         public BrokerServiceForm()
         {
             InitializeComponent();
-            brokerServiceEPFunc = new BrokerServiceEndPointFunction();
-            brokerServiceEPFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _brokerServiceEpFunc = new BrokerServiceEndPointFunction();
+            _brokerServiceEpFunc.ReturnMessageXml += ReturnMessageXmlHandler;
 
-            brokerServiceStreanedEPFunc = new BrokerServiceStreamedEndPointFunction();
-            brokerServiceStreanedEPFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _brokerServiceStreanedEpFunc = new BrokerServiceStreamedEndPointFunction();
+            _brokerServiceStreanedEpFunc.ReturnMessageXml += ReturnMessageXmlHandler;
 
             ShipmentTest = new BaseShipment();
             InitiateBrokerServiceShipment = new InitiateBrokerServiceShipment();
@@ -51,7 +44,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
             SetupObjForPropertyGrid();
         }
 
-        private void SetupObjForPropertyGrid()
+        private static void SetupObjForPropertyGrid()
         {
             TypeDescriptor.AddAttributes(typeof(BrokerServiceInitiation), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(Manifest), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
@@ -60,7 +53,6 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
             TypeDescriptor.AddAttributes(typeof(Recipient), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(BrokerServiceSearch), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(StreamedPayloadECBE), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
-
             TypeDescriptor.AddAttributes(typeof(BrokerServiceAvailableFile), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
         #region serviceInvocations
@@ -69,7 +61,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                brokerServiceEPFunc.Test(ShipmentTest);
+                _brokerServiceEpFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -83,7 +75,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                brokerServiceStreanedEPFunc.Test(ShipmentTest);
+                _brokerServiceStreanedEpFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Streamed test ran OK");
             }
             catch (Exception ex)
@@ -94,93 +86,29 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void InitiateBrokerServiceInvoke()
         {
-            SetBasicShipmentSettings(InitiateBrokerServiceShipment);
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                InitiateFileReferenceResult = brokerServiceEPFunc.InitiateBrokerService(InitiateBrokerServiceShipment);
-                SetViewedItem(InitiateFileReferenceResult, "Initiated Broker Service File Reference");
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error during InitiateBrokerService");
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
+            InvokeService(_brokerServiceEpFunc.InitiateBrokerService, InitiateBrokerServiceShipment, ref InitiateFileReferenceResult, "Broker Service File");
         }
 
         private void GetAvailableFilesInvoke()
         {
-            SetBasicShipmentSettings(GetAvailableFilesShipment);
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                GetAvailableFileListResult = brokerServiceEPFunc.GetAvailableFiles(GetAvailableFilesShipment);
-                SetViewedItem(GetAvailableFileListResult, "List of available files");
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error during GetAvailableFiles");
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
+            InvokeService(_brokerServiceEpFunc.GetAvailableFiles, GetAvailableFilesShipment, ref GetAvailableFileListResult, "Get Avilable Files");
         }
 
         private void UploadFileStreamedInvoke()
         {
-            SetBasicShipmentSettings(UploadFileStreamedShipment);
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                UploadFileStreamedReceiptResult = brokerServiceStreanedEPFunc.UploadFileStreamed(UploadFileStreamedShipment);
-                SetViewedItem(UploadFileStreamedReceiptResult, "ReceiptExternalStreamed");
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error during UploadFileStreamed");
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
+            InvokeService(_brokerServiceStreanedEpFunc.UploadFileStreamed, UploadFileStreamedShipment, ref UploadFileStreamedReceiptResult, "ReceiptExternalStreamed");
         }
 
         private void DownloadFileStreamedInvoke()
         {
-            SetBasicShipmentSettings(DownloadFileStreamedShipment);
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-                DownloadFileStreamedResult = brokerServiceStreanedEPFunc.DownloadFileStreamed(DownloadFileStreamedShipment);
-                Cursor.Current = Cursors.Default;
-
-                SavedFilePath = Functionality.IOFunctionality.WriteBytesToFile(DownloadFileStreamedResult);
-                if (!string.IsNullOrEmpty(SavedFilePath))
-                {
-                    SetViewedItem(SavedFilePath, "Downloaded file saved successfully");
-                }
-                else
-                {
-                    SetViewedItem("Result not saved", "File downloaded, but not saved");
-                }
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error during DownloadFileStreamed");
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
+            InvokeService(_brokerServiceStreanedEpFunc.DownloadFileStreamed, DownloadFileStreamedShipment, ref DownloadFileStreamedResult, "Downloaded file saved successfully");
+            SavedFilePath = Functionality.IoFunctionality.WriteBytesToFile(DownloadFileStreamedResult);
+            SetViewedItem(SavedFilePath, "Downloaded file saved successfully");
         }
 
         private void SelectPayloadData(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GetStreamedPayloadFromFile(UploadFileStreamedShipment);
+            Functionality.IoFunctionality.GetStreamedPayloadFromFile(UploadFileStreamedShipment);
             SetViewedItem(UploadFileStreamedShipment, "Shipment for UploadFileStreamedShipment");
         }
         #endregion
@@ -203,14 +131,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_InitiateBrokerServiceSaveShipment_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(InitiateBrokerServiceShipment);
-            Functionality.IOFunctionality.GeneralizedSaveFile(InitiateBrokerServiceShipment);
+            InvokeSaveShipment(InitiateBrokerServiceShipment);
         }
 
         private void btn_InitiateBrokerServiceLoadShipment_Click(object sender, EventArgs e)
         {
-            InitiateBrokerServiceShipment = (InitiateBrokerServiceShipment)Functionality.IOFunctionality.GeneralizedLoadFile(InitiateBrokerServiceShipment);
-            SetViewedItem(InitiateBrokerServiceShipment, "Shipment for InitiateBrokerServiceShipment");
+            InvokeLoadShipment(InitiateBrokerServiceShipment, "Shipment for InitiateBrokerServiceShipment");
         }
 
         private void btn_InitiateBrokerServiceInvoke_Click(object sender, EventArgs e)
@@ -225,7 +151,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_InitiateBrokerServiceSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(InitiateFileReferenceResult);
+            Functionality.IoFunctionality.GeneralizedSaveFile(InitiateFileReferenceResult);
         }
         #endregion
         #region GetAvailableFilesClicks
@@ -236,14 +162,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_GetAvailableFilesSaveShipment_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(GetAvailableFilesShipment);
-            Functionality.IOFunctionality.GeneralizedSaveFile(GetAvailableFilesShipment);
+            InvokeSaveShipment(GetAvailableFilesShipment);
         }
 
         private void btn_GetAvailableFilesLoadShipment_Click(object sender, EventArgs e)
         {
-            GetAvailableFilesShipment = (GetAvailableFilesShipment)Functionality.IOFunctionality.GeneralizedLoadFile(GetAvailableFilesShipment);
-            SetViewedItem(GetAvailableFilesShipment, "Shipment for GetAvailableFilesShipment");
+            InvokeLoadShipment(GetAvailableFilesShipment, "Shipment for GetAvailableFilesShipment");
         }
 
         private void btn_GetAvailableFilesInvokeService_Click(object sender, EventArgs e)
@@ -258,7 +182,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_GetAvailableFilesSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(GetAvailableFileListResult);
+            Functionality.IoFunctionality.GeneralizedSaveFile(GetAvailableFileListResult);
         }
         #endregion
         #region UploadStreamedClicks
@@ -269,14 +193,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_UploadFileStreamedSaveShipment_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(UploadFileStreamedShipment);
-            Functionality.IOFunctionality.GeneralizedSaveFile(UploadFileStreamedShipment);
+            InvokeSaveShipment(UploadFileStreamedShipment);
         }
 
         private void btn_UploadFileStreamedLoadShipment_Click(object sender, EventArgs e)
         {
-            UploadFileStreamedShipment = (UploadFileStreamedShipment)Functionality.IOFunctionality.GeneralizedLoadFile(UploadFileStreamedShipment);
-            SetViewedItem(UploadFileStreamedShipment, "Shipment for UploadFileStreamedShipment");
+            InvokeLoadShipment(UploadFileStreamedShipment, "Shipment for UploadFileStreamedShipment");
         }
 
         private void btn_UploadFileStreamedInvokeService_Click(object sender, EventArgs e)
@@ -291,7 +213,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_UploadFileStreamedSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(UploadFileStreamedReceiptResult);
+            InvokeSave(UploadFileStreamedReceiptResult);
         }
         #endregion
         #region DownloadStreamedClicks
@@ -303,12 +225,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
         private void btn_DownloadFileStreamedSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(DownloadFileStreamedShipment);
-            Functionality.IOFunctionality.GeneralizedSaveFile(DownloadFileStreamedShipment);
+            Functionality.IoFunctionality.GeneralizedSaveFile(DownloadFileStreamedShipment);
         }
 
         private void btn_DownloadFileStreamedLoadShipment_Click(object sender, EventArgs e)
         {
-            DownloadFileStreamedShipment = (DownloadFileStreamedShipment)Functionality.IOFunctionality.GeneralizedLoadFile(DownloadFileStreamedShipment);
+            DownloadFileStreamedShipment = Functionality.IoFunctionality.GeneralizedLoadFile(DownloadFileStreamedShipment);
             SetViewedItem(DownloadFileStreamedShipment, "Shipment for DownloadFileStreamedShipment");
         }
 
@@ -331,13 +253,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
 
         private void btn_DownloadFileStreamedSaveResult_Click(object sender, EventArgs e)
         {
-            SavedFilePath = Functionality.IOFunctionality.WriteBytesToFile(DownloadFileStreamedResult);
+            SavedFilePath = Functionality.IoFunctionality.WriteBytesToFile(DownloadFileStreamedResult);
             if (!string.IsNullOrEmpty(SavedFilePath))
             {
                 SetViewedItem(SavedFilePath, "Downloaded file saved successfully");
             }
         }
         #endregion
-
     }
 }

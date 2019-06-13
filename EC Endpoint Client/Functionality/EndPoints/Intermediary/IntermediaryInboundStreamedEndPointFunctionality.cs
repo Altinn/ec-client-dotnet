@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using EC_Endpoint_Client.Classes.Shipments;
-using EC_Endpoint_Client.IntermediaryInboundStreamed;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary;
+using EC_Endpoint_Client.Service_References.IntermediaryInboundStreamed;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {
     public class IntermediaryInboundStreamedEndPointFunctionality : EndPointFunctionalityBase
     {
-        private IntermediaryInboundExternalECStreamedClient GenerateProxy(string EndpointName, X509Certificate2 SelectedCertificate)
+        private IntermediaryInboundExternalECStreamedClient GenerateProxy(string endpointName, X509Certificate2 selectedCertificate)
         {
-            var proxy = new IntermediaryInboundExternalECStreamedClient(EndpointName);
-            proxy.ClientCredentials.ClientCertificate.Certificate = SelectedCertificate;
+            var proxy = new IntermediaryInboundExternalECStreamedClient(endpointName);
+            proxy.ClientCredentials.ClientCertificate.Certificate = selectedCertificate;
             GetCredentialsForServiceCertificate(proxy.ClientCredentials.ServiceCertificate);
             
             SetInspectorBehavior(proxy.Endpoint.EndpointBehaviors);
             return proxy;
         }
 
-        public void Test(Classes.BaseShipment shipment)
+        public void Test(BaseShipment shipment)
         {
             var client = GenerateProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "IntStreamedTest";
@@ -37,8 +33,8 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             {
                 OperationContext = "IntStreamedSubmitAttachment";
                 client.SubmitAttachmentStreamedEC(shipment.AttachmentTypeName, shipment.CheckSum, shipment.EndUserSystemReference, shipment.FileName,
-                    shipment.Name, shipment.ReporteeElementID, shipment.Password, shipment.Username, fs,
-                    out result._ParentReceiptID,out result._ReceiptHistory, out result._ReceiptID, out result._ReceiptStatusCode, out result._ReceiptText, out result._ReceiptTypeName);
+                    shipment.Name, shipment.ReporteeElementId, shipment.Password, shipment.Username, fs,
+                    out result.ParentReceiptId,out result.ReceiptHistory, out result.ReceiptId, out result.ReceiptStatusCode, out result.ReceiptText, out result.ReceiptTypeName);
             }
             return result;
         }

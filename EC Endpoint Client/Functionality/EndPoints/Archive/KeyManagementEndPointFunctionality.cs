@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.KeyManagement;
+﻿using System.Security.Cryptography.X509Certificates;
+using EC_Endpoint_Client.Classes.Shipments.Archive;
+using EC_Endpoint_Client.Service_References.KeyManagement;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {
     public class KeyManagementEndPointFunctionality : EndPointFunctionalityBase
     {
         #region KeyManagement
-        private KeyManagementExternalECClient GenerateKeyManangementProxy(string selectedEndpointname, X509Certificate2 SelectedCertificate)
+        private KeyManagementExternalECClient GenerateKeyManangementProxy(string selectedEndpointname, X509Certificate2 selectedCertificate)
         {
             return GenerateProxy<KeyManagementExternalECClient, IKeyManagementExternalEC>(selectedEndpointname,
-                SelectedCertificate);
+                selectedCertificate);
         }
 
-        public CertificateBEList GetKeyManagementCertificatesBEList(KeyManagementShipmentClass shipment)
+        public CertificateBEList GetKeyManagementCertificatesBeList(KeyManagementShipmentClass shipment)
         {
             var client = GenerateKeyManangementProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "GetKeyMgmtCertBEList";
             return client.GetCertificatesEC(shipment.Username, shipment.Password, shipment.ExternalServiceCode, shipment.ExternalServiceEditionCode);
         }
 
-        public void TestKeyManagement(string selectedEnpointname, X509Certificate2 SelectedCertificate)
+        public void TestKeyManagement(string selectedEnpointname, X509Certificate2 selectedCertificate)
         {
-            var client = GenerateKeyManangementProxy(selectedEnpointname, SelectedCertificate);
+            var client = GenerateKeyManangementProxy(selectedEnpointname, selectedCertificate);
             OperationContext = "KeyMgmTest";
             client.Test();
         }

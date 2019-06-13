@@ -1,59 +1,40 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.ServiceModel.Configuration;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.ArchiveCommonAgency;
-using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel;
-using System.ServiceModel.Description;
-using System.Xml;
-using EC_Endpoint_Client.Classes;
+using System.ServiceModel.Security;
 using EC_Endpoint_Client.BaseForms;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Functionality.EndPoints.Archive;
+using EC_Endpoint_Client.Service_References.ArchiveCommonAgency;
+using EC_Endpoint_Client.UserControls;
 
-namespace EC_Endpoint_Client.Forms
+namespace EC_Endpoint_Client.Forms.Archive
 {
     public partial class ArchiveCommonAgencyForm : AgencyBaseForm
     {
-        private Functionality.ArchiveCommonAgencyEndPointFunctionality archiveFunc; 
-        private ExternalSOASearchBE soaSearchBE;
-        private ServiceOwnerArchiveReporteeElementBEV2List soaREBEV2List;
-        private ServiceOwnerArchiveReporteeElementBEV2[] soaREBEV2ListArray
-        {
-            get
-            {
-                return soaREBEV2List.ToArray();
-            }
-            set
-            {
-                soaREBEV2List = new ServiceOwnerArchiveReporteeElementBEV2List();
-                foreach (ServiceOwnerArchiveReporteeElementBEV2 element in value)
-                {
-                    soaREBEV2List.Add(element);
-                }
-                
-            }
-        }
+        private ArchiveCommonAgencyEndPointFunctionality _archiveFunc;
+        private ArchiveCommonAgencyShipment _acaShipment;
+        private ServiceOwnerArchiveReporteeElementBEV2List _soaRebev2List;
+        private ServiceOwnerArchiveReporteeElementBEV2[] SoaRebev2ListArray => _soaRebev2List.ToArray();
+
         public ArchiveCommonAgencyForm()
         {
             InitializeComponent();
+            // ReSharper disable once VirtualMemberCallInConstructor
             SetUpObjectsForUse();
         }
 
         public virtual void SetUpObjectsForUse()
         {
-            soaSearchBE = new ExternalSOASearchBE();
-            soaREBEV2List = new ServiceOwnerArchiveReporteeElementBEV2List();
-            SetViewedItem(soaSearchBE, "ExternalSOASearchBE");
-            archiveFunc = new Functionality.ArchiveCommonAgencyEndPointFunctionality();
-            archiveFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _acaShipment = new ArchiveCommonAgencyShipment()
+            {
+                SoaSearch = new ExternalSOASearchBE()
+            };
+            _soaRebev2List = new ServiceOwnerArchiveReporteeElementBEV2List();
+            SetViewedItem(_acaShipment.SoaSearch, "ExternalSOASearchBE");
+            _archiveFunc = new ArchiveCommonAgencyEndPointFunctionality();
+            _archiveFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             SetUpObjectsForPropertyGrid();
+            SetUpServices();
         }
 
         public virtual void SetUpObjectsForPropertyGrid()
@@ -63,75 +44,24 @@ namespace EC_Endpoint_Client.Forms
             TypeDescriptor.AddAttributes(typeof(ServiceOwnerArchiveReporteeElementBEV2), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
 
-        void Test()
+        private void SetUpServices()
         {
-            try
-            {
-                archiveFunc.TestArchiveCommonAgency(SelectedEndpointName, SelectedCertificate);
-            }
-            catch(Exception ex)
-            {
-                SetViewedItem(ex, "Test Error");
-            }
+            getServiceOwnerArchiveReporteeElements.AssignActions(
+            () => { InvokeService(_archiveFunc.GetArchiveCommonAgencyReporteeElementsEc, _acaShipment, ref _soaRebev2List,
+                    "GetArchiveReporteeElements");},
+            () => { SetViewedItem(_acaShipment, "SOA Search BE"); }, 
+            () => { InvokeSaveShipment(_acaShipment);}, 
+            () => { _acaShipment = InvokeLoad<ArchiveCommonAgencyShipment>(); },
+            () => { SetViewedItem(SoaRebev2ListArray, "Result"); },
+            () => { InvokeSave(_soaRebev2List);} 
+            );
+            testController.AssignActions(() => { InvokeService(_archiveFunc.TestArchiveCommonAgency, new BaseShipment(), "Test"); });
         }
+    }
 
-        private void GetArchiveCommonAgencyReporteeElementsEC()
-        {
-            try
-            {
-                soaREBEV2List = archiveFunc.GetArchiveCommonAgencyReporteeElementsEC(SystemUsername, SystemPassword, soaSearchBE, LanguageID, SelectedEndpointName, SelectedCertificate);
-                SetViewedItem(soaREBEV2ListArray, "SOA ReporteeElement BE V2 List"); 
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error from GetArchiveCommonAgencyReporteeElementsEC");
-            }
-        }
-
-        private void btn_GetServiceOwnerArchiveReporteeElementsEC_Click(object sender, EventArgs e)
-        {
-            GetArchiveCommonAgencyReporteeElementsEC();
-        }
-
-        private void btn_showShipment_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(soaSearchBE, "SOA Search BE");
-        }
-
-        private void btn_showReturnedList_Click(object sender, EventArgs e)
-        {
-            SetViewedItem( soaREBEV2ListArray ,"SOA ReporteeElement BE V2 List");
-        }
-
-        public override void GenerateMenu()
-        {
-            base.GenerateMenu();
-        }
-
-        private void btn_SaveShip_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(soaSearchBE);
-        }
-
-        private void btn_loadShip_Click(object sender, EventArgs e)
-        {
-            soaSearchBE = (ExternalSOASearchBE)Functionality.IOFunctionality.GeneralizedLoadFile(soaSearchBE);
-        }
-
-        private void btn_SaveResult_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(soaREBEV2List);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ReplySoap.XmlDocument);
-            Functionality.IOFunctionality.GeneralizedSaveFile(RequestSoap.XmlDocument);
-        }
-
-        private void btn_Test_Click(object sender, EventArgs e)
-        {
-            Test();
-        }
+    public class ArchiveCommonAgencyShipment : BaseShipment
+    {
+        public ExternalSOASearchBE SoaSearch { get; set; }
+        public int LanguageId { get; set; }
     }
 }

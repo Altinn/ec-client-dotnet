@@ -1,30 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.NotificationAgency;
+using EC_Endpoint_Client.Service_References.NotificationAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine
 {
     public partial class NotificationAgencyForm : AgencyBaseForm
     {
-        private NotificationAgencyEndpointFunction naepFunc;
-        public SendStandaloneNotificationShipment ShipmentSSN { get; set; }
+        private NotificationAgencyEndpointFunction _naepFunc;
+        public SendStandaloneNotificationShipment ShipmentSsn { get; set; }
         public NotificationAgencyForm()
         {
             InitializeComponent();
-            naepFunc = new NotificationAgencyEndpointFunction();
-            naepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
-            ShipmentSSN = new SendStandaloneNotificationShipment();
-            ShipmentSSN.NotificationList = new StandaloneNotificationBEList();
+            _naepFunc = new NotificationAgencyEndpointFunction();
+            _naepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            ShipmentSsn = new SendStandaloneNotificationShipment();
+            ShipmentSsn.NotificationList = new StandaloneNotificationBEList();
         }
 
         private void SetupObjForPropGrid()
@@ -42,7 +35,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                naepFunc.Test(ShipmentTest);
+                _naepFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -53,10 +46,10 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine
 
         private void SendStandaloneNotification()
         {
-            SetBasicShipmentSettings(ShipmentSSN);
+            SetBasicShipmentSettings(ShipmentSsn);
             try
             {
-                naepFunc.SendStandAloneNotification(ShipmentSSN);
+                _naepFunc.SendStandAloneNotification(ShipmentSsn);
                 SetViewedItem("OK", "SendStandAloneNotification ran OK");
             }
             catch (Exception ex)
@@ -68,19 +61,19 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine
         #region Clicks
         private void btn_SSNShowShip_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentSSN, "Shipment for SendStandAloneNotification");
+            SetViewedItem(ShipmentSsn, "Shipment for SendStandAloneNotification");
         }
 
         private void btn_SSNSaveShip_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentSSN);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentSSN);
+            ClearBasicShipmentsettings(ShipmentSsn);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentSsn);
         }
 
         private void btn_SSNLoadShip_Click(object sender, EventArgs e)
         {
-            ShipmentSSN = (SendStandaloneNotificationShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentSSN);
-            SetViewedItem(ShipmentSSN, "Shipment for SendStandAloneNotification");
+            ShipmentSsn = (SendStandaloneNotificationShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentSsn);
+            SetViewedItem(ShipmentSsn, "Shipment for SendStandAloneNotification");
         }
 
         private void btn_SSNInvoke_Click(object sender, EventArgs e)

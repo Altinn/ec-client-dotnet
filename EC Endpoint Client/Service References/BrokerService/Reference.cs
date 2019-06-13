@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.BrokerService {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.BrokerService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,16 +155,16 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerServiceInitiation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BrokerServiceInitiation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class BrokerServiceInitiation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private EC_Endpoint_Client.BrokerService.Manifest ManifestField;
+        private Manifest ManifestField;
         
-        private EC_Endpoint_Client.BrokerService.Recipient[] RecipientListField;
+        private Recipient[] RecipientListField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -177,8 +176,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.BrokerService.Manifest Manifest {
+        [DataMember(IsRequired=true)]
+        public Manifest Manifest {
             get {
                 return this.ManifestField;
             }
@@ -190,8 +189,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.BrokerService.Recipient[] RecipientList {
+        [DataMember(IsRequired=true)]
+        public Recipient[] RecipientList {
             get {
                 return this.RecipientListField;
             }
@@ -215,22 +214,22 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Manifest", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Manifest", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class Manifest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string ExternalServiceCodeField;
         
         private int ExternalServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BrokerService.File[] FileListField;
+        [OptionalField()]
+        private File[] FileListField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BrokerService.Property[] PropertyListField;
+        [OptionalField()]
+        private Property[] PropertyListField;
         
         private string ReporteeField;
         
@@ -246,7 +245,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -259,7 +258,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -272,8 +271,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BrokerService.File[] FileList {
+        [DataMember()]
+        public File[] FileList {
             get {
                 return this.FileListField;
             }
@@ -285,8 +284,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BrokerService.Property[] PropertyList {
+        [DataMember()]
+        public Property[] PropertyList {
             get {
                 return this.PropertyListField;
             }
@@ -298,7 +297,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -311,7 +310,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -336,11 +335,11 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Recipient", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Recipient", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class Recipient : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string PartyNumberField;
@@ -355,7 +354,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string PartyNumber {
             get {
                 return this.PartyNumberField;
@@ -380,14 +379,14 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="File", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="File", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class File : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CheckSumField;
         
         private string FileNameField;
@@ -402,7 +401,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CheckSum {
             get {
                 return this.CheckSumField;
@@ -415,7 +414,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -440,11 +439,11 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Property", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Property", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class Property : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string PropertyKeyField;
@@ -461,7 +460,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string PropertyKey {
             get {
                 return this.PropertyKeyField;
@@ -474,7 +473,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string PropertyValue {
             get {
                 return this.PropertyValueField;
@@ -499,25 +498,25 @@ namespace EC_Endpoint_Client.BrokerService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerServiceSearch", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BrokerServiceSearch", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class BrokerServiceSearch : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ExternalServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ExternalServiceEditionCodeField;
         
-        private EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileStatus FileStatusField;
+        private BrokerServiceAvailableFileStatus FileStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime MaxSentDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime MinSentDateTimeField;
         
         private string ReporteeField;
@@ -532,7 +531,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -545,7 +544,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -558,8 +557,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileStatus FileStatus {
+        [DataMember(IsRequired=true)]
+        public BrokerServiceAvailableFileStatus FileStatus {
             get {
                 return this.FileStatusField;
             }
@@ -571,7 +570,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime MaxSentDateTime {
             get {
                 return this.MaxSentDateTimeField;
@@ -584,7 +583,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime MinSentDateTime {
             get {
                 return this.MinSentDateTimeField;
@@ -597,7 +596,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -621,63 +620,63 @@ namespace EC_Endpoint_Client.BrokerService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerServiceAvailableFileStatus", Namespace="http://schemas.altinn.no/services/serviceEntity/2015/06")]
+    [DataContract(Name="BrokerServiceAvailableFileStatus", Namespace="http://schemas.altinn.no/services/serviceEntity/2015/06")]
     public enum BrokerServiceAvailableFileStatus : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Uploaded = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Downloaded = 1,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BrokerServiceAvailableFileList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06", ItemName="BrokerServiceAvailableFile")]
-    [System.SerializableAttribute()]
-    public class BrokerServiceAvailableFileList : System.Collections.Generic.List<EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFile> {
+    [CollectionDataContract(Name="BrokerServiceAvailableFileList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06", ItemName="BrokerServiceAvailableFile")]
+    [Serializable()]
+    public class BrokerServiceAvailableFileList : System.Collections.Generic.List<BrokerServiceAvailableFile> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BrokerServiceAvailableFile", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BrokerServiceAvailableFile", Namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [Serializable()]
     public partial class BrokerServiceAvailableFile : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ExternalServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ExternalServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Guid FileReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private long FileSizeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileStatus FileStatusField;
+        [OptionalField()]
+        private BrokerServiceAvailableFileStatus FileStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsSftpDownloadOnlyField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime SentDateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -690,7 +689,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -703,7 +702,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -716,7 +715,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -729,7 +728,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Guid FileReference {
             get {
                 return this.FileReferenceField;
@@ -742,7 +741,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public long FileSize {
             get {
                 return this.FileSizeField;
@@ -755,8 +754,8 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileStatus FileStatus {
+        [DataMember()]
+        public BrokerServiceAvailableFileStatus FileStatus {
             get {
                 return this.FileStatusField;
             }
@@ -768,7 +767,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsSftpDownloadOnly {
             get {
                 return this.IsSftpDownloadOnlyField;
@@ -781,7 +780,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptID {
             get {
                 return this.ReceiptIDField;
@@ -794,7 +793,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -807,7 +806,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -820,7 +819,7 @@ namespace EC_Endpoint_Client.BrokerService {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime SentDate {
             get {
                 return this.SentDateField;
@@ -849,37 +848,37 @@ namespace EC_Endpoint_Client.BrokerService {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Broker/2015/06)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerService.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerService.TestResponse Test(EC_Endpoint_Client.BrokerService.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.TestResponse> TestAsync(EC_Endpoint_Client.BrokerService.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Broker/2015/06 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/InitiateBrokerServiceEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/InitiateBrokerServiceECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerService.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/InitiateBrokerServiceECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse InitiateBrokerServiceEC(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest request);
+        InitiateBrokerServiceECResponse InitiateBrokerServiceEC(InitiateBrokerServiceECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/InitiateBrokerServiceEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/InitiateBrokerServiceECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse> InitiateBrokerServiceECAsync(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest request);
+        System.Threading.Tasks.Task<InitiateBrokerServiceECResponse> InitiateBrokerServiceECAsync(InitiateBrokerServiceECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Broker/2015/06 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/GetAvailableFilesEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/GetAvailableFilesECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerService.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/GetAvailableFilesECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse GetAvailableFilesEC(EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest request);
+        GetAvailableFilesECResponse GetAvailableFilesEC(GetAvailableFilesECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/GetAvailableFilesEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "EC/GetAvailableFilesECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse> GetAvailableFilesECAsync(EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest request);
+        System.Threading.Tasks.Task<GetAvailableFilesECResponse> GetAvailableFilesECAsync(GetAvailableFilesECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -909,12 +908,12 @@ namespace EC_Endpoint_Client.BrokerService {
     public partial class InitiateBrokerServiceECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InitiateBrokerServiceEC", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequestBody Body;
+        public InitiateBrokerServiceECRequestBody Body;
         
         public InitiateBrokerServiceECRequest() {
         }
         
-        public InitiateBrokerServiceECRequest(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequestBody Body) {
+        public InitiateBrokerServiceECRequest(InitiateBrokerServiceECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -922,22 +921,22 @@ namespace EC_Endpoint_Client.BrokerService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class InitiateBrokerServiceECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.BrokerService.BrokerServiceInitiation brokerServiceInitiation;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public BrokerServiceInitiation brokerServiceInitiation;
         
         public InitiateBrokerServiceECRequestBody() {
         }
         
-        public InitiateBrokerServiceECRequestBody(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceInitiation brokerServiceInitiation) {
+        public InitiateBrokerServiceECRequestBody(string userName, string password, BrokerServiceInitiation brokerServiceInitiation) {
             this.userName = userName;
             this.password = password;
             this.brokerServiceInitiation = brokerServiceInitiation;
@@ -951,12 +950,12 @@ namespace EC_Endpoint_Client.BrokerService {
     public partial class InitiateBrokerServiceECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InitiateBrokerServiceECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponseBody Body;
+        public InitiateBrokerServiceECResponseBody Body;
         
         public InitiateBrokerServiceECResponse() {
         }
         
-        public InitiateBrokerServiceECResponse(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponseBody Body) {
+        public InitiateBrokerServiceECResponse(InitiateBrokerServiceECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -964,10 +963,10 @@ namespace EC_Endpoint_Client.BrokerService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class InitiateBrokerServiceECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public string InitiateBrokerServiceECResult;
         
         public InitiateBrokerServiceECResponseBody() {
@@ -985,12 +984,12 @@ namespace EC_Endpoint_Client.BrokerService {
     public partial class GetAvailableFilesECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAvailableFilesEC", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequestBody Body;
+        public GetAvailableFilesECRequestBody Body;
         
         public GetAvailableFilesECRequest() {
         }
         
-        public GetAvailableFilesECRequest(EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequestBody Body) {
+        public GetAvailableFilesECRequest(GetAvailableFilesECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -998,22 +997,22 @@ namespace EC_Endpoint_Client.BrokerService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class GetAvailableFilesECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.BrokerService.BrokerServiceSearch searchParameters;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public BrokerServiceSearch searchParameters;
         
         public GetAvailableFilesECRequestBody() {
         }
         
-        public GetAvailableFilesECRequestBody(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceSearch searchParameters) {
+        public GetAvailableFilesECRequestBody(string userName, string password, BrokerServiceSearch searchParameters) {
             this.userName = userName;
             this.password = password;
             this.searchParameters = searchParameters;
@@ -1027,12 +1026,12 @@ namespace EC_Endpoint_Client.BrokerService {
     public partial class GetAvailableFilesECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAvailableFilesECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponseBody Body;
+        public GetAvailableFilesECResponseBody Body;
         
         public GetAvailableFilesECResponse() {
         }
         
-        public GetAvailableFilesECResponse(EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponseBody Body) {
+        public GetAvailableFilesECResponse(GetAvailableFilesECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1040,27 +1039,27 @@ namespace EC_Endpoint_Client.BrokerService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class GetAvailableFilesECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileList GetAvailableFilesECResult;
+        [DataMember(Order=0)]
+        public BrokerServiceAvailableFileList GetAvailableFilesECResult;
         
         public GetAvailableFilesECResponseBody() {
         }
         
-        public GetAvailableFilesECResponseBody(EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileList GetAvailableFilesECResult) {
+        public GetAvailableFilesECResponseBody(BrokerServiceAvailableFileList GetAvailableFilesECResult) {
             this.GetAvailableFilesECResult = GetAvailableFilesECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBrokerServiceExternalECChannel : EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC, System.ServiceModel.IClientChannel {
+    public interface IBrokerServiceExternalECChannel : IBrokerServiceExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BrokerServiceExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC>, EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC {
+    public partial class BrokerServiceExternalECClient : System.ServiceModel.ClientBase<IBrokerServiceExternalEC>, IBrokerServiceExternalEC {
         
         public BrokerServiceExternalECClient() {
         }
@@ -1082,81 +1081,81 @@ namespace EC_Endpoint_Client.BrokerService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerService.TestResponse EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.Test(EC_Endpoint_Client.BrokerService.TestRequest request) {
+        TestResponse IBrokerServiceExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.BrokerService.TestRequest inValue = new EC_Endpoint_Client.BrokerService.TestRequest();
-            EC_Endpoint_Client.BrokerService.TestResponse retVal = ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IBrokerServiceExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.TestResponse> EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.TestAsync(EC_Endpoint_Client.BrokerService.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IBrokerServiceExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.TestResponse> TestAsync() {
-            EC_Endpoint_Client.BrokerService.TestRequest inValue = new EC_Endpoint_Client.BrokerService.TestRequest();
-            return ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IBrokerServiceExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.InitiateBrokerServiceEC(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest request) {
+        InitiateBrokerServiceECResponse IBrokerServiceExternalEC.InitiateBrokerServiceEC(InitiateBrokerServiceECRequest request) {
             return base.Channel.InitiateBrokerServiceEC(request);
         }
         
-        public string InitiateBrokerServiceEC(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceInitiation brokerServiceInitiation) {
-            EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest inValue = new EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequestBody();
+        public string InitiateBrokerServiceEC(string userName, string password, BrokerServiceInitiation brokerServiceInitiation) {
+            InitiateBrokerServiceECRequest inValue = new InitiateBrokerServiceECRequest();
+            inValue.Body = new InitiateBrokerServiceECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.brokerServiceInitiation = brokerServiceInitiation;
-            EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse retVal = ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).InitiateBrokerServiceEC(inValue);
+            InitiateBrokerServiceECResponse retVal = ((IBrokerServiceExternalEC)(this)).InitiateBrokerServiceEC(inValue);
             return retVal.Body.InitiateBrokerServiceECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse> EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.InitiateBrokerServiceECAsync(EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest request) {
+        System.Threading.Tasks.Task<InitiateBrokerServiceECResponse> IBrokerServiceExternalEC.InitiateBrokerServiceECAsync(InitiateBrokerServiceECRequest request) {
             return base.Channel.InitiateBrokerServiceECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECResponse> InitiateBrokerServiceECAsync(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceInitiation brokerServiceInitiation) {
-            EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest inValue = new EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerService.InitiateBrokerServiceECRequestBody();
+        public System.Threading.Tasks.Task<InitiateBrokerServiceECResponse> InitiateBrokerServiceECAsync(string userName, string password, BrokerServiceInitiation brokerServiceInitiation) {
+            InitiateBrokerServiceECRequest inValue = new InitiateBrokerServiceECRequest();
+            inValue.Body = new InitiateBrokerServiceECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.brokerServiceInitiation = brokerServiceInitiation;
-            return ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).InitiateBrokerServiceECAsync(inValue);
+            return ((IBrokerServiceExternalEC)(this)).InitiateBrokerServiceECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.GetAvailableFilesEC(EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest request) {
+        GetAvailableFilesECResponse IBrokerServiceExternalEC.GetAvailableFilesEC(GetAvailableFilesECRequest request) {
             return base.Channel.GetAvailableFilesEC(request);
         }
         
-        public EC_Endpoint_Client.BrokerService.BrokerServiceAvailableFileList GetAvailableFilesEC(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceSearch searchParameters) {
-            EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest inValue = new EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequestBody();
+        public BrokerServiceAvailableFileList GetAvailableFilesEC(string userName, string password, BrokerServiceSearch searchParameters) {
+            GetAvailableFilesECRequest inValue = new GetAvailableFilesECRequest();
+            inValue.Body = new GetAvailableFilesECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.searchParameters = searchParameters;
-            EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse retVal = ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).GetAvailableFilesEC(inValue);
+            GetAvailableFilesECResponse retVal = ((IBrokerServiceExternalEC)(this)).GetAvailableFilesEC(inValue);
             return retVal.Body.GetAvailableFilesECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse> EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC.GetAvailableFilesECAsync(EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest request) {
+        System.Threading.Tasks.Task<GetAvailableFilesECResponse> IBrokerServiceExternalEC.GetAvailableFilesECAsync(GetAvailableFilesECRequest request) {
             return base.Channel.GetAvailableFilesECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerService.GetAvailableFilesECResponse> GetAvailableFilesECAsync(string userName, string password, EC_Endpoint_Client.BrokerService.BrokerServiceSearch searchParameters) {
-            EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest inValue = new EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerService.GetAvailableFilesECRequestBody();
+        public System.Threading.Tasks.Task<GetAvailableFilesECResponse> GetAvailableFilesECAsync(string userName, string password, BrokerServiceSearch searchParameters) {
+            GetAvailableFilesECRequest inValue = new GetAvailableFilesECRequest();
+            inValue.Body = new GetAvailableFilesECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.searchParameters = searchParameters;
-            return ((EC_Endpoint_Client.BrokerService.IBrokerServiceExternalEC)(this)).GetAvailableFilesECAsync(inValue);
+            return ((IBrokerServiceExternalEC)(this)).GetAvailableFilesECAsync(inValue);
         }
     }
 }

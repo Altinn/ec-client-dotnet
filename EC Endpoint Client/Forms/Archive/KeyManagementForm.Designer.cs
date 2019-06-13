@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms
+﻿namespace EC_Endpoint_Client.Forms.Archive
 {
     partial class KeyManagementForm
     {
@@ -30,12 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_SaveCertificateBEList = new System.Windows.Forms.Button();
-            this.btn_ShowCertificateBEList = new System.Windows.Forms.Button();
-            this.btn_showShipment = new System.Windows.Forms.Button();
-            this.btn_getCertificateBEList = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
+            this.GetCertificateList = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.servicePanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -59,10 +56,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btn_SaveCertificateBEList);
-            this.tabPage1.Controls.Add(this.btn_ShowCertificateBEList);
-            this.tabPage1.Controls.Add(this.btn_showShipment);
-            this.tabPage1.Controls.Add(this.btn_getCertificateBEList);
+            this.tabPage1.Controls.Add(this.GetCertificateList);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -70,47 +64,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GetCertificateBEList";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // btn_SaveCertificateBEList
-            // 
-            this.btn_SaveCertificateBEList.Location = new System.Drawing.Point(277, 64);
-            this.btn_SaveCertificateBEList.Name = "btn_SaveCertificateBEList";
-            this.btn_SaveCertificateBEList.Size = new System.Drawing.Size(135, 23);
-            this.btn_SaveCertificateBEList.TabIndex = 0;
-            this.btn_SaveCertificateBEList.Text = "SaveCertificateBEList";
-            this.btn_SaveCertificateBEList.UseVisualStyleBackColor = true;
-            this.btn_SaveCertificateBEList.Click += new System.EventHandler(this.btn_SaveCertificateBEList_Click);
-            // 
-            // btn_ShowCertificateBEList
-            // 
-            this.btn_ShowCertificateBEList.Location = new System.Drawing.Point(277, 35);
-            this.btn_ShowCertificateBEList.Name = "btn_ShowCertificateBEList";
-            this.btn_ShowCertificateBEList.Size = new System.Drawing.Size(135, 23);
-            this.btn_ShowCertificateBEList.TabIndex = 0;
-            this.btn_ShowCertificateBEList.Text = "ShowCertificateBEList";
-            this.btn_ShowCertificateBEList.UseVisualStyleBackColor = true;
-            this.btn_ShowCertificateBEList.Click += new System.EventHandler(this.btn_ShowCertificateBEList_Click);
-            // 
-            // btn_showShipment
-            // 
-            this.btn_showShipment.Location = new System.Drawing.Point(6, 6);
-            this.btn_showShipment.Name = "btn_showShipment";
-            this.btn_showShipment.Size = new System.Drawing.Size(135, 23);
-            this.btn_showShipment.TabIndex = 0;
-            this.btn_showShipment.Text = "Show Shipment";
-            this.btn_showShipment.UseVisualStyleBackColor = true;
-            this.btn_showShipment.Click += new System.EventHandler(this.btn_showShipment_Click);
-            // 
-            // btn_getCertificateBEList
-            // 
-            this.btn_getCertificateBEList.Location = new System.Drawing.Point(277, 6);
-            this.btn_getCertificateBEList.Name = "btn_getCertificateBEList";
-            this.btn_getCertificateBEList.Size = new System.Drawing.Size(135, 23);
-            this.btn_getCertificateBEList.TabIndex = 0;
-            this.btn_getCertificateBEList.Text = "Invoke Service";
-            this.btn_getCertificateBEList.UseVisualStyleBackColor = true;
-            this.btn_getCertificateBEList.Click += new System.EventHandler(this.btn_getCertificateBEList_Click);
             // 
             // tabPage2
             // 
@@ -133,6 +86,14 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // GetCertificateList
+            // 
+            this.GetCertificateList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GetCertificateList.Location = new System.Drawing.Point(3, 3);
+            this.GetCertificateList.Name = "GetCertificateList";
+            this.GetCertificateList.Size = new System.Drawing.Size(411, 337);
+            this.GetCertificateList.TabIndex = 0;
+            // 
             // KeyManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,10 +115,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button btn_getCertificateBEList;
-        private System.Windows.Forms.Button btn_SaveCertificateBEList;
-        private System.Windows.Forms.Button btn_ShowCertificateBEList;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_showShipment;
+        private EC_Endpoint_Client.UserControls.ActionHolderControl GetCertificateList;
     }
 }

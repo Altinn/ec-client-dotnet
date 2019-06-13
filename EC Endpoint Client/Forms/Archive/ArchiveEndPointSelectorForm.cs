@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace EC_Endpoint_Client.Forms
+namespace EC_Endpoint_Client.Forms.Archive
 {
-    public partial class ArchiveEndPointSelectorForm : SelectorBaseForm
+    public partial class ArchiveEndPointSelectorForm : BaseForms.SelectorBaseForm
     {
 
         public ArchiveEndPointSelectorForm()
@@ -28,19 +20,19 @@ namespace EC_Endpoint_Client.Forms
 
         private void btn_ArchiveCommonAgency_Click(object sender, EventArgs e)
         {
-            EC_Endpoint_Client.Forms.ArchiveCommonAgencyForm acaForm = new Forms.ArchiveCommonAgencyForm();
+            Archive.ArchiveCommonAgencyForm acaForm = new Archive.ArchiveCommonAgencyForm();
             SetClientValues(acaForm, "ArchiveCommonAgency.IArchiveCommonAgencyExternalEC");
-            acaForm.SelectedCertificate = this.SelectedCertificate;
-            acaForm.Thumbprint = this.Thumbprint;
+            acaForm.SelectedCertificate = SelectedCertificate;
+            acaForm.Thumbprint = Thumbprint;
             acaForm.EndPointConfigurationNameList = GetEndPoints("ArchiveCommonAgency.IArchiveCommonAgencyExternalEC");
             ShowMethod1(acaForm);
         }
 
         private void btn_DownloadQueue_Click(object sender, EventArgs e)
         {
-            EC_Endpoint_Client.Forms.DownloadQueueForm dqForm = new DownloadQueueForm();
-            dqForm.Thumbprint = this.Thumbprint;
-            dqForm.SelectedCertificate = this.SelectedCertificate;
+            DownloadQueueForm dqForm = new DownloadQueueForm();
+            dqForm.Thumbprint = Thumbprint;
+            dqForm.SelectedCertificate = SelectedCertificate;
             dqForm.EndPointConfigurationNameList = GetEndPoints("DownloadQueue.IDownloadQueueExternalEC");
             SetClientValues(dqForm, "DownloadQueue.IDownloadQueueExternalEC");
             ShowMethod1(dqForm);
@@ -48,9 +40,9 @@ namespace EC_Endpoint_Client.Forms
 
         private void btn_KeyManangement_Click(object sender, EventArgs e)
         {
-            EC_Endpoint_Client.Forms.KeyManagementForm keyForm = new KeyManagementForm();
-            keyForm.Thumbprint = this.Thumbprint;
-            keyForm.SelectedCertificate = this.SelectedCertificate;
+            KeyManagementForm keyForm = new KeyManagementForm();
+            keyForm.Thumbprint = Thumbprint;
+            keyForm.SelectedCertificate = SelectedCertificate;
             keyForm.EndPointConfigurationNameList = GetEndPoints("KeyManagement.IKeyManagementExternalEC");
             SetClientValues(keyForm, "KeyManagement.IKeyManagementExternalEC");
             ShowMethod1(keyForm);
@@ -58,9 +50,9 @@ namespace EC_Endpoint_Client.Forms
 
         private void btn_ReporteeArchive_Click(object sender, EventArgs e)
         {
-            EC_Endpoint_Client.Forms.ReporteeArchiveForm repForm = new ReporteeArchiveForm();
-            repForm.Thumbprint = this.Thumbprint;
-            repForm.SelectedCertificate = this.SelectedCertificate;
+            ReporteeArchiveForm repForm = new ReporteeArchiveForm();
+            repForm.Thumbprint = Thumbprint;
+            repForm.SelectedCertificate = SelectedCertificate;
             repForm.EndPointConfigurationNameList = GetEndPoints("ReporteeArchive.IReporteeArchiveExternalEC");
             SetClientValues(repForm, "ReporteeArchive.IReporteeArchiveExternalEC");
             ShowMethod1(repForm);
@@ -69,8 +61,8 @@ namespace EC_Endpoint_Client.Forms
         private void btn_ReporteeArchiveStreamed_Click(object sender, EventArgs e)
         {
             ReporteeArchiveStreamedForm repStreamForm = new ReporteeArchiveStreamedForm();
-            repStreamForm.Thumbprint = this.Thumbprint;
-            repStreamForm.SelectedCertificate = this.SelectedCertificate;
+            repStreamForm.Thumbprint = Thumbprint;
+            repStreamForm.SelectedCertificate = SelectedCertificate;
             repStreamForm.EndPointConfigurationNameList = GetEndPoints("ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC");
             SetClientValues(repStreamForm, "ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC");
             ShowMethod1(repStreamForm);
@@ -79,8 +71,8 @@ namespace EC_Endpoint_Client.Forms
         private void btn_ServiceOwnerArchive_Click(object sender, EventArgs e)
         {
             ServiceOwnerArchiveForm soaForm = new ServiceOwnerArchiveForm();
-            soaForm.Thumbprint = this.Thumbprint;
-            soaForm.SelectedCertificate = this.SelectedCertificate;
+            soaForm.Thumbprint = Thumbprint;
+            soaForm.SelectedCertificate = SelectedCertificate;
             soaForm.EndPointConfigurationNameList = GetEndPoints("SOArchive.IServiceOwnerArchiveExternalEC");
             SetClientValues(soaForm, "SOArchive.IServiceOwnerArchiveExternalEC");
             ShowMethod1(soaForm);
@@ -89,8 +81,8 @@ namespace EC_Endpoint_Client.Forms
         private void btn_ServiceOwnerArchiveStreamed_Click(object sender, EventArgs e)
         {
             ServiceOwnerArchiveStreamedForm soaStreamForm = new ServiceOwnerArchiveStreamedForm();
-            soaStreamForm.Thumbprint = this.Thumbprint;
-            soaStreamForm.SelectedCertificate = this.SelectedCertificate;
+            soaStreamForm.Thumbprint = Thumbprint;
+            soaStreamForm.SelectedCertificate = SelectedCertificate;
             soaStreamForm.EndPointConfigurationNameList = GetEndPoints("SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC");
             SetClientValues(soaStreamForm, "SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC");
             ShowMethod1(soaStreamForm);

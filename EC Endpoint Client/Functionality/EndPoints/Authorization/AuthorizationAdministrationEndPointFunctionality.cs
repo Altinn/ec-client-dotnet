@@ -1,41 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Administration;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Authorization;
+using EC_Endpoint_Client.Service_References.Administration;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Authorization
 {
     public class AuthorizationAdministrationEndPointFunctionality : EndPointFunctionalityBase
     {
-        public void TestAuthorizationAdministration(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestAuthorizationAdministration(BaseShipment shipment)
         {
-            var client = GenerateAuthorizationAdministrationProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateAuthorizationAdministrationProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "AuthAdminTest";
             client.Test();
         }
 
-        public ExternalReporteeBE GetReporteeByTempKeyEC(string username, string password, Guid tempKey, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ExternalReporteeBE GetReporteeByTempKeyEc(GetReporteeByTempKeyShipment shipment)
         {
-            var client = GenerateAuthorizationAdministrationProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateAuthorizationAdministrationProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "AuthAdminGetReportee";
-            return client.GetReporteeByTempKeyEC(username, password, tempKey);
+            return client.GetReporteeByTempKeyEC(shipment.Username, shipment.Password, shipment.TempKey);
         }
 
-        public ExternalReporteeBEList GetReporteesEC(GetReporteesShipment shipment)
+        public ExternalReporteeBEList GetReporteesEc(GetReporteesShipment shipment)
         {
             var client = GenerateAuthorizationAdministrationProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "AuthAtminGetReportees";
-            return client.GetReporteesEC(shipment.Username, shipment.Password, shipment.SSN, shipment.RetrieveInactiveReportee, shipment.RetrieveSubEntity, shipment.MaximumReporteeCount);
+            return client.GetReporteesEC(shipment.Username, shipment.Password, shipment.Ssn, shipment.RetrieveInactiveReportee, shipment.RetrieveSubEntity, shipment.MaximumReporteeCount);
         }
 
-        public AuthorizationAdministrationECClient GenerateAuthorizationAdministrationProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public AuthorizationAdministrationECClient GenerateAuthorizationAdministrationProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
             return
                 GenerateProxy<AuthorizationAdministrationECClient, IAuthorizationAdministrationEC>(
-                    selectedEndpointName, SelectedCertificate);
+                    selectedEndpointName, selectedCertificate);
         }
     }
 }

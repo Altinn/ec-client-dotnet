@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
+using System.ComponentModel;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 
-namespace EC_Endpoint_Client
+namespace EC_Endpoint_Client.Classes.Shipments.Authorization
 {
     public class GetReporteesShipment : BaseShipment
     {
-        public string SSN { get; set; }
+        public string Ssn { get; set; }
         public bool RetrieveInactiveReportee { get; set; }
         public bool RetrieveSubEntity { get; set; }
         public int? MaximumReporteeCount { get; set; }
@@ -24,5 +22,8 @@ namespace EC_Endpoint_Client
     {
         public bool SelfContainedToken { get; set; }
         public Guid AuthorizationCode { get; set; }
+        [Browsable(false)]
+        [XmlIgnore]
+        public X509Certificate2 SpiCertificate { get; set; }
     }
 }

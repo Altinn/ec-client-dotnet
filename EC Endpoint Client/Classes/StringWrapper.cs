@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EC_Endpoint_Client.Classes
+﻿namespace EC_Endpoint_Client.Classes
 {
     public class StringWrapper
     {

@@ -30,12 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btn_showTempKey = new System.Windows.Forms.Button();
-            this.btn_GetToken = new System.Windows.Forms.Button();
             this.btn_SaveReporteeList = new System.Windows.Forms.Button();
             this.btn_showReporteeArray = new System.Windows.Forms.Button();
             this.btn_getReporteeList = new System.Windows.Forms.Button();
             this.btn_ShowShipment = new System.Windows.Forms.Button();
+            this.controllerGetRightsByToken = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.servicePanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -57,8 +56,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.btn_showTempKey);
-            this.tabPage1.Controls.Add(this.btn_GetToken);
+            this.tabPage1.Controls.Add(this.controllerGetRightsByToken);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -66,26 +64,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "GetRightsByToken";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btn_showTempKey
-            // 
-            this.btn_showTempKey.Location = new System.Drawing.Point(15, 27);
-            this.btn_showTempKey.Name = "btn_showTempKey";
-            this.btn_showTempKey.Size = new System.Drawing.Size(112, 23);
-            this.btn_showTempKey.TabIndex = 4;
-            this.btn_showTempKey.Text = "Show Shipment";
-            this.btn_showTempKey.UseVisualStyleBackColor = true;
-            this.btn_showTempKey.Click += new System.EventHandler(this.btn_showTempKey_Click);
-            // 
-            // btn_GetToken
-            // 
-            this.btn_GetToken.Location = new System.Drawing.Point(281, 27);
-            this.btn_GetToken.Name = "btn_GetToken";
-            this.btn_GetToken.Size = new System.Drawing.Size(112, 23);
-            this.btn_GetToken.TabIndex = 0;
-            this.btn_GetToken.Text = "Get token";
-            this.btn_GetToken.UseVisualStyleBackColor = true;
-            this.btn_GetToken.Click += new System.EventHandler(this.btn_GetToken_Click);
             // 
             // btn_SaveReporteeList
             // 
@@ -115,6 +93,14 @@
             this.btn_ShowShipment.Size = new System.Drawing.Size(75, 23);
             this.btn_ShowShipment.TabIndex = 0;
             // 
+            // controllerGetRightsByToken
+            // 
+            this.controllerGetRightsByToken.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controllerGetRightsByToken.Location = new System.Drawing.Point(3, 3);
+            this.controllerGetRightsByToken.Name = "controllerGetRightsByToken";
+            this.controllerGetRightsByToken.Size = new System.Drawing.Size(411, 337);
+            this.controllerGetRightsByToken.TabIndex = 0;
+            // 
             // AuthorizationTokenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +124,6 @@
         private System.Windows.Forms.Button btn_showReporteeArray;
         private System.Windows.Forms.Button btn_getReporteeList;
         private System.Windows.Forms.Button btn_ShowShipment;
-        private System.Windows.Forms.Button btn_GetToken;
-        private System.Windows.Forms.Button btn_showTempKey;
+        private UserControls.ActionHolderControl controllerGetRightsByToken;
     }
 }

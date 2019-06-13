@@ -1,25 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
+using System.ServiceModel.Dispatcher;
+using System.Xml;
+using EC_Endpoint_Client.Classes;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.ServiceModel;
-    using System.ServiceModel.Channels;
-    using System.ServiceModel.Description;
-    using System.ServiceModel.Dispatcher;
-    using System.Xml;
-    using EC_Endpoint_Client.Classes;
-
-
     public class CustomMessageInspector : IClientMessageInspector
     {
-        public void AfterReceiveReply(ref System.ServiceModel.Channels.Message reply, object correlationState)
+        public void AfterReceiveReply(ref Message reply, object correlationState)
         {
             MessageBuffer buffer = reply.CreateBufferedCopy(int.MaxValue);
             Message mess = buffer.CreateMessage();
@@ -35,9 +26,9 @@ namespace EC_Endpoint_Client.Functionality
             BaseSoapHolder holder = new BaseSoapHolder();
             holder.SoapContext = SoapContext.Reply;
             holder.XmlDocument = xmlDoc;
-            ReturnMessageXML(holder, new EventArgs());
+            ReturnMessageXml?.Invoke(holder, new EventArgs());
         }
-        public object BeforeSendRequest(ref System.ServiceModel.Channels.Message request, System.ServiceModel.IClientChannel channel)
+        public object BeforeSendRequest(ref Message request, System.ServiceModel.IClientChannel channel)
         {
             MessageBuffer buffer = request.CreateBufferedCopy(int.MaxValue);
             Message mess = buffer.CreateMessage();
@@ -53,33 +44,33 @@ namespace EC_Endpoint_Client.Functionality
             holder.SoapContext = SoapContext.Request;
             holder.XmlDocument = xmlDoc;
             request = buffer.CreateMessage() ;
-            ReturnMessageXML(holder, new EventArgs());
+            ReturnMessageXml?.Invoke(holder, new EventArgs());
             return null;
         }
-        public event EventHandler ReturnMessageXML;
+        public event EventHandler ReturnMessageXml;
     }
 
     public class InspectorBehavior : IEndpointBehavior
     {
-        public event EventHandler ReturnMessageXML;
-        public void AddBindingParameters(ServiceEndpoint serviceEndpoint, System.ServiceModel.Channels.BindingParameterCollection bindingParameters)
+        public event EventHandler ReturnMessageXml;
+        public void AddBindingParameters(ServiceEndpoint serviceEndpoint, BindingParameterCollection bindingParameters)
         {
         }
 
-        public void ApplyClientBehavior(ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.ClientRuntime behavior)
+        public void ApplyClientBehavior(ServiceEndpoint serviceEndpoint, ClientRuntime behavior)
         {
             //Add the inspector
             CustomMessageInspector cmi = new CustomMessageInspector();
-            cmi.ReturnMessageXML += cmi_ReturnMessageXML;
+            cmi.ReturnMessageXml += cmi_ReturnMessageXML;
             behavior.MessageInspectors.Add(cmi);
         }
 
         void cmi_ReturnMessageXML(object sender, EventArgs e)
         {
-            ReturnMessageXML(sender, e);
+            ReturnMessageXml?.Invoke(sender, e);
         }
 
-        public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, System.ServiceModel.Dispatcher.EndpointDispatcher endpointDispatcher)
+        public void ApplyDispatchBehavior(ServiceEndpoint serviceEndpoint, EndpointDispatcher endpointDispatcher)
         {
         }
         public void Validate(ServiceEndpoint serviceEndpoint)

@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://st01.altinn.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://at01.ai.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReporteeElementListEC.disco" MetadataType="Disco" ID="b2682741-10d1-493f-86ca-e7a7847a2f7e" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc?disco" />
-    <MetadataFile FileName="ReporteeElementListECSF.wsdl" MetadataType="Wsdl" ID="3149c64c-675a-4439-96f6-07c0173e5a50" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc?wsdl" />
+    <MetadataFile FileName="ReporteeElementListECSF1.wsdl" MetadataType="Wsdl" ID="5a1524af-a166-4f4a-8985-37fcc57ebefd" SourceId="1" SourceUrl="https://at01.ai.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc?wsdl" />
+    <MetadataFile FileName="ReporteeElementListEC1.disco" MetadataType="Disco" ID="769e8236-be95-4af8-91b0-a435b90a720d" SourceId="1" SourceUrl="https://at01.ai.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

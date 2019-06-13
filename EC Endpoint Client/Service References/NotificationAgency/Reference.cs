@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.NotificationAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.NotificationAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,44 +155,44 @@ namespace EC_Endpoint_Client.NotificationAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="StandaloneNotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/StandaloneNotificationBE/2009/10", ItemName="StandaloneNotification")]
-    [System.SerializableAttribute()]
-    public class StandaloneNotificationBEList : System.Collections.Generic.List<EC_Endpoint_Client.NotificationAgency.StandaloneNotification> {
+    [CollectionDataContract(Name="StandaloneNotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/StandaloneNotificationBE/2009/10", ItemName="StandaloneNotification")]
+    [Serializable()]
+    public class StandaloneNotificationBEList : System.Collections.Generic.List<StandaloneNotification> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StandaloneNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StandaloneNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class StandaloneNotification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         public StandaloneNotification()
         {
             this.TextTokens = new TextTokenSubstitutionBEList();
             this.ReceiverEndPoints = new ReceiverEndPointBEList();
         }
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FromAddressField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int LanguageIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NotificationTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.NotificationAgency.ReceiverEndPointBEList ReceiverEndPointsField;
+        [OptionalField()]
+        private ReceiverEndPointBEList ReceiverEndPointsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeNumberField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ShipmentDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.NotificationAgency.TextTokenSubstitutionBEList TextTokensField;
+        [OptionalField()]
+        private TextTokenSubstitutionBEList TextTokensField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -205,7 +204,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FromAddress {
             get {
                 return this.FromAddressField;
@@ -218,7 +217,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int LanguageID {
             get {
                 return this.LanguageIDField;
@@ -231,7 +230,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string NotificationType {
             get {
                 return this.NotificationTypeField;
@@ -244,8 +243,8 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.NotificationAgency.ReceiverEndPointBEList ReceiverEndPoints {
+        [DataMember()]
+        public ReceiverEndPointBEList ReceiverEndPoints {
             get {
                 return this.ReceiverEndPointsField;
             }
@@ -257,7 +256,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReporteeNumber {
             get {
                 return this.ReporteeNumberField;
@@ -270,7 +269,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ShipmentDateTime {
             get {
                 return this.ShipmentDateTimeField;
@@ -283,8 +282,8 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.NotificationAgency.TextTokenSubstitutionBEList TextTokens {
+        [DataMember()]
+        public TextTokenSubstitutionBEList TextTokens {
             get {
                 return this.TextTokensField;
             }
@@ -308,31 +307,31 @@ namespace EC_Endpoint_Client.NotificationAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
-    [System.SerializableAttribute()]
-    public class ReceiverEndPointBEList : System.Collections.Generic.List<EC_Endpoint_Client.NotificationAgency.ReceiverEndPoint> {
+    [CollectionDataContract(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
+    [Serializable()]
+    public class ReceiverEndPointBEList : System.Collections.Generic.List<ReceiverEndPoint> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
-    [System.SerializableAttribute()]
-    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<EC_Endpoint_Client.NotificationAgency.TextToken> {
+    [CollectionDataContract(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
+    [Serializable()]
+    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<TextToken> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class ReceiverEndPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<EC_Endpoint_Client.NotificationAgency.TransportType> TransportTypeField;
+        [OptionalField()]
+        private System.Nullable<TransportType> TransportTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiverAddressField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -345,8 +344,8 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<EC_Endpoint_Client.NotificationAgency.TransportType> TransportType {
+        [DataMember()]
+        public System.Nullable<TransportType> TransportType {
             get {
                 return this.TransportTypeField;
             }
@@ -358,7 +357,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public string ReceiverAddress {
             get {
                 return this.ReceiverAddressField;
@@ -382,35 +381,35 @@ namespace EC_Endpoint_Client.NotificationAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
+    [DataContract(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
     public enum TransportType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SMS = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Email = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         IM = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Both = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class TextToken : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int TokenNumField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string TokenValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -423,7 +422,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int TokenNum {
             get {
                 return this.TokenNumField;
@@ -436,7 +435,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string TokenValue {
             get {
                 return this.TokenValueField;
@@ -465,24 +464,24 @@ namespace EC_Endpoint_Client.NotificationAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Notification/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.NotificationAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.NotificationAgency.TestResponse Test(EC_Endpoint_Client.NotificationAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.TestResponse> TestAsync(EC_Endpoint_Client.NotificationAgency.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Notification/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
             "ncyExternalEC/SendStandaloneNotificationEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
             "ncyExternalEC/SendStandaloneNotificationECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.NotificationAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
             "ncyExternalEC/SendStandaloneNotificationECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse SendStandaloneNotificationEC(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest request);
+        SendStandaloneNotificationECResponse SendStandaloneNotificationEC(SendStandaloneNotificationECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
             "ncyExternalEC/SendStandaloneNotificationEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Notification/2010/10/INotificationAge" +
             "ncyExternalEC/SendStandaloneNotificationECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse> SendStandaloneNotificationECAsync(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest request);
+        System.Threading.Tasks.Task<SendStandaloneNotificationECResponse> SendStandaloneNotificationECAsync(SendStandaloneNotificationECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -512,12 +511,12 @@ namespace EC_Endpoint_Client.NotificationAgency {
     public partial class SendStandaloneNotificationECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SendStandaloneNotificationEC", Namespace="http://www.altinn.no/services/ServiceEngine/Notification/2010/10", Order=0)]
-        public EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequestBody Body;
+        public SendStandaloneNotificationECRequestBody Body;
         
         public SendStandaloneNotificationECRequest() {
         }
         
-        public SendStandaloneNotificationECRequest(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequestBody Body) {
+        public SendStandaloneNotificationECRequest(SendStandaloneNotificationECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -525,22 +524,22 @@ namespace EC_Endpoint_Client.NotificationAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Notification/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Notification/2010/10")]
     public partial class SendStandaloneNotificationECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.NotificationAgency.StandaloneNotificationBEList standaloneNotifications;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public StandaloneNotificationBEList standaloneNotifications;
         
         public SendStandaloneNotificationECRequestBody() {
         }
         
-        public SendStandaloneNotificationECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.NotificationAgency.StandaloneNotificationBEList standaloneNotifications) {
+        public SendStandaloneNotificationECRequestBody(string systemUserName, string systemPassword, StandaloneNotificationBEList standaloneNotifications) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.standaloneNotifications = standaloneNotifications;
@@ -554,12 +553,12 @@ namespace EC_Endpoint_Client.NotificationAgency {
     public partial class SendStandaloneNotificationECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SendStandaloneNotificationECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Notification/2010/10", Order=0)]
-        public EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponseBody Body;
+        public SendStandaloneNotificationECResponseBody Body;
         
         public SendStandaloneNotificationECResponse() {
         }
         
-        public SendStandaloneNotificationECResponse(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponseBody Body) {
+        public SendStandaloneNotificationECResponse(SendStandaloneNotificationECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -567,7 +566,7 @@ namespace EC_Endpoint_Client.NotificationAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class SendStandaloneNotificationECResponseBody {
         
         public SendStandaloneNotificationECResponseBody() {
@@ -575,12 +574,12 @@ namespace EC_Endpoint_Client.NotificationAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface INotificationAgencyExternalECChannel : EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface INotificationAgencyExternalECChannel : INotificationAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NotificationAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC>, EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC {
+    public partial class NotificationAgencyExternalECClient : System.ServiceModel.ClientBase<INotificationAgencyExternalEC>, INotificationAgencyExternalEC {
         
         public NotificationAgencyExternalECClient() {
         }
@@ -602,51 +601,51 @@ namespace EC_Endpoint_Client.NotificationAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.NotificationAgency.TestResponse EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC.Test(EC_Endpoint_Client.NotificationAgency.TestRequest request) {
+        TestResponse INotificationAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.NotificationAgency.TestRequest inValue = new EC_Endpoint_Client.NotificationAgency.TestRequest();
-            EC_Endpoint_Client.NotificationAgency.TestResponse retVal = ((EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((INotificationAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.TestResponse> EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC.TestAsync(EC_Endpoint_Client.NotificationAgency.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> INotificationAgencyExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.TestResponse> TestAsync() {
-            EC_Endpoint_Client.NotificationAgency.TestRequest inValue = new EC_Endpoint_Client.NotificationAgency.TestRequest();
-            return ((EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((INotificationAgencyExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC.SendStandaloneNotificationEC(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest request) {
+        SendStandaloneNotificationECResponse INotificationAgencyExternalEC.SendStandaloneNotificationEC(SendStandaloneNotificationECRequest request) {
             return base.Channel.SendStandaloneNotificationEC(request);
         }
         
-        public void SendStandaloneNotificationEC(string systemUserName, string systemPassword, EC_Endpoint_Client.NotificationAgency.StandaloneNotificationBEList standaloneNotifications) {
-            EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest inValue = new EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest();
-            inValue.Body = new EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequestBody();
+        public void SendStandaloneNotificationEC(string systemUserName, string systemPassword, StandaloneNotificationBEList standaloneNotifications) {
+            SendStandaloneNotificationECRequest inValue = new SendStandaloneNotificationECRequest();
+            inValue.Body = new SendStandaloneNotificationECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.standaloneNotifications = standaloneNotifications;
-            EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse retVal = ((EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC)(this)).SendStandaloneNotificationEC(inValue);
+            SendStandaloneNotificationECResponse retVal = ((INotificationAgencyExternalEC)(this)).SendStandaloneNotificationEC(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse> EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC.SendStandaloneNotificationECAsync(EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest request) {
+        System.Threading.Tasks.Task<SendStandaloneNotificationECResponse> INotificationAgencyExternalEC.SendStandaloneNotificationECAsync(SendStandaloneNotificationECRequest request) {
             return base.Channel.SendStandaloneNotificationECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse> SendStandaloneNotificationECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.NotificationAgency.StandaloneNotificationBEList standaloneNotifications) {
-            EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest inValue = new EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequest();
-            inValue.Body = new EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECRequestBody();
+        public System.Threading.Tasks.Task<SendStandaloneNotificationECResponse> SendStandaloneNotificationECAsync(string systemUserName, string systemPassword, StandaloneNotificationBEList standaloneNotifications) {
+            SendStandaloneNotificationECRequest inValue = new SendStandaloneNotificationECRequest();
+            inValue.Body = new SendStandaloneNotificationECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.standaloneNotifications = standaloneNotifications;
-            return ((EC_Endpoint_Client.NotificationAgency.INotificationAgencyExternalEC)(this)).SendStandaloneNotificationECAsync(inValue);
+            return ((INotificationAgencyExternalEC)(this)).SendStandaloneNotificationECAsync(inValue);
         }
     }
 }

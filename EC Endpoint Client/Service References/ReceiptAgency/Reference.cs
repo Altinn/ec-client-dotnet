@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.ReceiptAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,18 +155,18 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptSearchExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiptSearchExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class ReceiptSearchExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -179,7 +178,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -192,8 +191,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -217,24 +216,24 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
-    [System.SerializableAttribute()]
-    public class ReferenceList : System.Collections.Generic.List<EC_Endpoint_Client.ReceiptAgency.Reference> {
+    [CollectionDataContract(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
+    [Serializable()]
+    public class ReferenceList : System.Collections.Generic.List<Reference> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class Reference : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReferenceType ReferenceTypeNameField;
+        [OptionalField()]
+        private ReferenceType ReferenceTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -247,8 +246,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReferenceType ReferenceTypeName {
+        [DataMember()]
+        public ReferenceType ReferenceTypeName {
             get {
                 return this.ReferenceTypeNameField;
             }
@@ -260,7 +259,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReferenceValue {
             get {
                 return this.ReferenceValueField;
@@ -284,84 +283,84 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
+    [DataContract(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
     public enum ReferenceType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ExternalShipmentReference = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         EndUserSystemReference = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ParentReference = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SendersReference = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         WorkFlowReference = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         BatchReference = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OutboundShipmentReference = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ReceiversReference = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Altinn1Reference = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OwnerPartyReference = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PartyReference = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ArchiveReference = 12,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class ReceiptExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ParentReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptHistoryField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatusCodeField;
+        [OptionalField()]
+        private ReceiptStatusEnum ReceiptStatusCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum ReceiptTypeNameField;
+        [OptionalField()]
+        private ReceiptTypeEnum ReceiptTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptExternalList SubReceiptsField;
+        [OptionalField()]
+        private ReceiptExternalList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -373,7 +372,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChanged {
             get {
                 return this.LastChangedField;
@@ -386,7 +385,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ParentReceiptId {
             get {
                 return this.ParentReceiptIdField;
@@ -399,7 +398,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptHistory {
             get {
                 return this.ReceiptHistoryField;
@@ -412,7 +411,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -425,8 +424,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatusCode {
+        [DataMember()]
+        public ReceiptStatusEnum ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -438,7 +437,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptText {
             get {
                 return this.ReceiptTextField;
@@ -451,8 +450,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum ReceiptTypeName {
+        [DataMember()]
+        public ReceiptTypeEnum ReceiptTypeName {
             get {
                 return this.ReceiptTypeNameField;
             }
@@ -464,8 +463,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -477,8 +476,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternalList SubReceipts {
+        [DataMember()]
+        public ReceiptExternalList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -501,126 +500,126 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptStatusEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OK = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         UnExpectedError = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ValidationFailed = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Rejected = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptTypeEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FormTask = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PINCODE = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Subscription = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Outbound = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PreFill = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDLS = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSF = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterER = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFProperty = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreet = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFCountry = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFUser = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LookUp = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreetAdd = 15,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFPropertyAdd = 16,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
-    [System.SerializableAttribute()]
-    public class ReceiptExternalList : System.Collections.Generic.List<EC_Endpoint_Client.ReceiptAgency.ReceiptExternal> {
+    [CollectionDataContract(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
+    [Serializable()]
+    public class ReceiptExternalList : System.Collections.Generic.List<ReceiptExternal> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Receipt", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2015/06")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Receipt", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2015/06")]
+    [Serializable()]
     public partial class Receipt : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ParentReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptHistoryField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatusField;
+        [OptionalField()]
+        private ReceiptStatusEnum ReceiptStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTemplateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptType ReceiptTypeField;
+        [OptionalField()]
+        private ReceiptType ReceiptTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptList SubReceiptsField;
+        [OptionalField()]
+        private ReceiptList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -632,7 +631,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChanged {
             get {
                 return this.LastChangedField;
@@ -645,7 +644,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ParentReceiptId {
             get {
                 return this.ParentReceiptIdField;
@@ -658,7 +657,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptHistory {
             get {
                 return this.ReceiptHistoryField;
@@ -671,7 +670,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -684,8 +683,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatus {
+        [DataMember()]
+        public ReceiptStatusEnum ReceiptStatus {
             get {
                 return this.ReceiptStatusField;
             }
@@ -697,7 +696,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptTemplate {
             get {
                 return this.ReceiptTemplateField;
@@ -710,7 +709,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptText {
             get {
                 return this.ReceiptTextField;
@@ -723,8 +722,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptType ReceiptType {
+        [DataMember()]
+        public ReceiptType ReceiptType {
             get {
                 return this.ReceiptTypeField;
             }
@@ -736,8 +735,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -749,8 +748,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptList SubReceipts {
+        [DataMember()]
+        public ReceiptList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -773,97 +772,97 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptType", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2015/06")]
+    [DataContract(Name="ReceiptType", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2015/06")]
     public enum ReceiptType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FormTask = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PINCODE = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Subscription = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Outbound = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PreFill = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDLS = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSF = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterER = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFProperty = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreet = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFCountry = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFUser = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LookUp = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreetAdd = 15,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFPropertyAdd = 16,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         BrokerService = 17,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Receipt")]
-    [System.SerializableAttribute()]
-    public class ReceiptList : System.Collections.Generic.List<EC_Endpoint_Client.ReceiptAgency.Receipt> {
+    [CollectionDataContract(Name="ReceiptList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Receipt")]
+    [Serializable()]
+    public class ReceiptList : System.Collections.Generic.List<Receipt> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptSaveExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiptSaveExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class ReceiptSaveExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatusCodeField;
+        [OptionalField()]
+        private ReceiptStatusEnum ReceiptStatusCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternalList SubReceiptsField;
+        [OptionalField()]
+        private ReceiptSaveExternalList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -875,7 +874,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -888,7 +887,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -901,8 +900,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptStatusEnum ReceiptStatusCode {
+        [DataMember()]
+        public ReceiptStatusEnum ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -914,7 +913,7 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptText {
             get {
                 return this.ReceiptTextField;
@@ -927,8 +926,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -940,8 +939,8 @@ namespace EC_Endpoint_Client.ReceiptAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternalList SubReceipts {
+        [DataMember()]
+        public ReceiptSaveExternalList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -965,9 +964,9 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptSaveExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptSaveExternal")]
-    [System.SerializableAttribute()]
-    public class ReceiptSaveExternalList : System.Collections.Generic.List<EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal> {
+    [CollectionDataContract(Name="ReceiptSaveExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptSaveExternal")]
+    [Serializable()]
+    public class ReceiptSaveExternalList : System.Collections.Generic.List<ReceiptSaveExternal> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -976,89 +975,89 @@ namespace EC_Endpoint_Client.ReceiptAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Intermediary/Receipt/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.TestResponse Test(EC_Endpoint_Client.ReceiptAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.TestResponse> TestAsync(EC_Endpoint_Client.ReceiptAgency.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse GetReceiptEC(EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest request);
+        GetReceiptECResponse GetReceiptEC(GetReceiptECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse> GetReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest request);
+        System.Threading.Tasks.Task<GetReceiptECResponse> GetReceiptECAsync(GetReceiptECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECV2", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECV2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECV2AltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response GetReceiptECV2(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request request);
+        GetReceiptECV2Response GetReceiptECV2(GetReceiptECV2Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECV2", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptECV2Response")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response> GetReceiptECV2Async(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request request);
+        System.Threading.Tasks.Task<GetReceiptECV2Response> GetReceiptECV2Async(GetReceiptECV2Request request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse GetReceiptListEC(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest request);
+        GetReceiptListECResponse GetReceiptListEC(GetReceiptListECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse> GetReceiptListECAsync(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest request);
+        System.Threading.Tasks.Task<GetReceiptListECResponse> GetReceiptListECAsync(GetReceiptListECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECV2", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECV2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECV2AltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response GetReceiptListECV2(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request request);
+        GetReceiptListECV2Response GetReceiptListECV2(GetReceiptListECV2Request request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECV2", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/GetReceiptListECV2Response")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response> GetReceiptListECV2Async(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request request);
+        System.Threading.Tasks.Task<GetReceiptListECV2Response> GetReceiptListECV2Async(GetReceiptListECV2Request request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/SaveReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/SaveReceiptECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/SaveReceiptECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse SaveReceiptEC(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest request);
+        SaveReceiptECResponse SaveReceiptEC(SaveReceiptECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/SaveReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/SaveReceiptECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse> SaveReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest request);
+        System.Threading.Tasks.Task<SaveReceiptECResponse> SaveReceiptECAsync(SaveReceiptECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Intermediary/Receipt/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/UpdateReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/UpdateReceiptECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReceiptAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/UpdateReceiptECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse UpdateReceiptEC(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest request);
+        UpdateReceiptECResponse UpdateReceiptEC(UpdateReceiptECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/UpdateReceiptEC", ReplyAction="http://www.altinn.no/services/Intermediary/Receipt/2010/10/IReceiptAgencyExternal" +
             "EC/UpdateReceiptECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse> UpdateReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest request);
+        System.Threading.Tasks.Task<UpdateReceiptECResponse> UpdateReceiptECAsync(UpdateReceiptECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1088,12 +1087,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptEC", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequestBody Body;
+        public GetReceiptECRequestBody Body;
         
         public GetReceiptECRequest() {
         }
         
-        public GetReceiptECRequest(EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequestBody Body) {
+        public GetReceiptECRequest(GetReceiptECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1101,22 +1100,22 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ReceiptSearchExternal receipt;
         
         public GetReceiptECRequestBody() {
         }
         
-        public GetReceiptECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
+        public GetReceiptECRequestBody(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receipt = receipt;
@@ -1130,12 +1129,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptECResponse", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponseBody Body;
+        public GetReceiptECResponseBody Body;
         
         public GetReceiptECResponse() {
         }
         
-        public GetReceiptECResponse(EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponseBody Body) {
+        public GetReceiptECResponse(GetReceiptECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1143,16 +1142,16 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternal GetReceiptECResult;
+        [DataMember(Order=0)]
+        public ReceiptExternal GetReceiptECResult;
         
         public GetReceiptECResponseBody() {
         }
         
-        public GetReceiptECResponseBody(EC_Endpoint_Client.ReceiptAgency.ReceiptExternal GetReceiptECResult) {
+        public GetReceiptECResponseBody(ReceiptExternal GetReceiptECResult) {
             this.GetReceiptECResult = GetReceiptECResult;
         }
     }
@@ -1164,12 +1163,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptECV2Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptECV2", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2RequestBody Body;
+        public GetReceiptECV2RequestBody Body;
         
         public GetReceiptECV2Request() {
         }
         
-        public GetReceiptECV2Request(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2RequestBody Body) {
+        public GetReceiptECV2Request(GetReceiptECV2RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1177,22 +1176,22 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptECV2RequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ReceiptSearchExternal receipt;
         
         public GetReceiptECV2RequestBody() {
         }
         
-        public GetReceiptECV2RequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
+        public GetReceiptECV2RequestBody(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receipt = receipt;
@@ -1206,12 +1205,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptECV2Response {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptECV2Response", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2ResponseBody Body;
+        public GetReceiptECV2ResponseBody Body;
         
         public GetReceiptECV2Response() {
         }
         
-        public GetReceiptECV2Response(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2ResponseBody Body) {
+        public GetReceiptECV2Response(GetReceiptECV2ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1219,16 +1218,16 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptECV2ResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.Receipt GetReceiptECV2Result;
+        [DataMember(Order=0)]
+        public Receipt GetReceiptECV2Result;
         
         public GetReceiptECV2ResponseBody() {
         }
         
-        public GetReceiptECV2ResponseBody(EC_Endpoint_Client.ReceiptAgency.Receipt GetReceiptECV2Result) {
+        public GetReceiptECV2ResponseBody(Receipt GetReceiptECV2Result) {
             this.GetReceiptECV2Result = GetReceiptECV2Result;
         }
     }
@@ -1240,12 +1239,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptListECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptListEC", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequestBody Body;
+        public GetReceiptListECRequestBody Body;
         
         public GetReceiptListECRequest() {
         }
         
-        public GetReceiptListECRequest(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequestBody Body) {
+        public GetReceiptListECRequest(GetReceiptListECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1253,28 +1252,28 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptListECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum receiptTypeName;
+        [DataMember(Order=2)]
+        public ReceiptTypeEnum receiptTypeName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public System.DateTime dateFrom;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public System.DateTime dateTo;
         
         public GetReceiptListECRequestBody() {
         }
         
-        public GetReceiptListECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+        public GetReceiptListECRequestBody(string systemUserName, string systemPassword, ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receiptTypeName = receiptTypeName;
@@ -1290,12 +1289,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptListECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptListECResponse", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponseBody Body;
+        public GetReceiptListECResponseBody Body;
         
         public GetReceiptListECResponse() {
         }
         
-        public GetReceiptListECResponse(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponseBody Body) {
+        public GetReceiptListECResponse(GetReceiptListECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1303,16 +1302,16 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptListECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternalList GetReceiptListECResult;
+        [DataMember(Order=0)]
+        public ReceiptExternalList GetReceiptListECResult;
         
         public GetReceiptListECResponseBody() {
         }
         
-        public GetReceiptListECResponseBody(EC_Endpoint_Client.ReceiptAgency.ReceiptExternalList GetReceiptListECResult) {
+        public GetReceiptListECResponseBody(ReceiptExternalList GetReceiptListECResult) {
             this.GetReceiptListECResult = GetReceiptListECResult;
         }
     }
@@ -1324,12 +1323,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptListECV2Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptListECV2", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2RequestBody Body;
+        public GetReceiptListECV2RequestBody Body;
         
         public GetReceiptListECV2Request() {
         }
         
-        public GetReceiptListECV2Request(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2RequestBody Body) {
+        public GetReceiptListECV2Request(GetReceiptListECV2RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1337,28 +1336,28 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptListECV2RequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptType receiptTypeName;
+        [DataMember(Order=2)]
+        public ReceiptType receiptTypeName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public System.DateTime dateFrom;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public System.DateTime dateTo;
         
         public GetReceiptListECV2RequestBody() {
         }
         
-        public GetReceiptListECV2RequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+        public GetReceiptListECV2RequestBody(string systemUserName, string systemPassword, ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receiptTypeName = receiptTypeName;
@@ -1374,12 +1373,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class GetReceiptListECV2Response {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReceiptListECV2Response", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2ResponseBody Body;
+        public GetReceiptListECV2ResponseBody Body;
         
         public GetReceiptListECV2Response() {
         }
         
-        public GetReceiptListECV2Response(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2ResponseBody Body) {
+        public GetReceiptListECV2Response(GetReceiptListECV2ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1387,16 +1386,16 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class GetReceiptListECV2ResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptList GetReceiptListECV2Result;
+        [DataMember(Order=0)]
+        public ReceiptList GetReceiptListECV2Result;
         
         public GetReceiptListECV2ResponseBody() {
         }
         
-        public GetReceiptListECV2ResponseBody(EC_Endpoint_Client.ReceiptAgency.ReceiptList GetReceiptListECV2Result) {
+        public GetReceiptListECV2ResponseBody(ReceiptList GetReceiptListECV2Result) {
             this.GetReceiptListECV2Result = GetReceiptListECV2Result;
         }
     }
@@ -1408,12 +1407,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class SaveReceiptECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReceiptEC", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequestBody Body;
+        public SaveReceiptECRequestBody Body;
         
         public SaveReceiptECRequest() {
         }
         
-        public SaveReceiptECRequest(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequestBody Body) {
+        public SaveReceiptECRequest(SaveReceiptECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1421,22 +1420,22 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class SaveReceiptECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ReceiptSaveExternal receipt;
         
         public SaveReceiptECRequestBody() {
         }
         
-        public SaveReceiptECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
+        public SaveReceiptECRequestBody(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receipt = receipt;
@@ -1450,12 +1449,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class SaveReceiptECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SaveReceiptECResponse", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponseBody Body;
+        public SaveReceiptECResponseBody Body;
         
         public SaveReceiptECResponse() {
         }
         
-        public SaveReceiptECResponse(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponseBody Body) {
+        public SaveReceiptECResponse(SaveReceiptECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1463,16 +1462,16 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class SaveReceiptECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternal SaveReceiptECResult;
+        [DataMember(Order=0)]
+        public ReceiptExternal SaveReceiptECResult;
         
         public SaveReceiptECResponseBody() {
         }
         
-        public SaveReceiptECResponseBody(EC_Endpoint_Client.ReceiptAgency.ReceiptExternal SaveReceiptECResult) {
+        public SaveReceiptECResponseBody(ReceiptExternal SaveReceiptECResult) {
             this.SaveReceiptECResult = SaveReceiptECResult;
         }
     }
@@ -1484,12 +1483,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class UpdateReceiptECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateReceiptEC", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequestBody Body;
+        public UpdateReceiptECRequestBody Body;
         
         public UpdateReceiptECRequest() {
         }
         
-        public UpdateReceiptECRequest(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequestBody Body) {
+        public UpdateReceiptECRequest(UpdateReceiptECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1497,22 +1496,22 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class UpdateReceiptECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ReceiptSaveExternal receipt;
         
         public UpdateReceiptECRequestBody() {
         }
         
-        public UpdateReceiptECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
+        public UpdateReceiptECRequestBody(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.receipt = receipt;
@@ -1526,12 +1525,12 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     public partial class UpdateReceiptECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateReceiptECResponse", Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10", Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponseBody Body;
+        public UpdateReceiptECResponseBody Body;
         
         public UpdateReceiptECResponse() {
         }
         
-        public UpdateReceiptECResponse(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponseBody Body) {
+        public UpdateReceiptECResponse(UpdateReceiptECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1539,27 +1538,27 @@ namespace EC_Endpoint_Client.ReceiptAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/Receipt/2010/10")]
     public partial class UpdateReceiptECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ReceiptAgency.Receipt UpdateReceiptECResult;
+        [DataMember(Order=0)]
+        public Receipt UpdateReceiptECResult;
         
         public UpdateReceiptECResponseBody() {
         }
         
-        public UpdateReceiptECResponseBody(EC_Endpoint_Client.ReceiptAgency.Receipt UpdateReceiptECResult) {
+        public UpdateReceiptECResponseBody(Receipt UpdateReceiptECResult) {
             this.UpdateReceiptECResult = UpdateReceiptECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IReceiptAgencyExternalECChannel : EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface IReceiptAgencyExternalECChannel : IReceiptAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ReceiptAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC>, EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC {
+    public partial class ReceiptAgencyExternalECClient : System.ServiceModel.ClientBase<IReceiptAgencyExternalEC>, IReceiptAgencyExternalEC {
         
         public ReceiptAgencyExternalECClient() {
         }
@@ -1581,205 +1580,205 @@ namespace EC_Endpoint_Client.ReceiptAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.TestResponse EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.Test(EC_Endpoint_Client.ReceiptAgency.TestRequest request) {
+        TestResponse IReceiptAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.ReceiptAgency.TestRequest inValue = new EC_Endpoint_Client.ReceiptAgency.TestRequest();
-            EC_Endpoint_Client.ReceiptAgency.TestResponse retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IReceiptAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.TestResponse> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.TestAsync(EC_Endpoint_Client.ReceiptAgency.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IReceiptAgencyExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.TestResponse> TestAsync() {
-            EC_Endpoint_Client.ReceiptAgency.TestRequest inValue = new EC_Endpoint_Client.ReceiptAgency.TestRequest();
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IReceiptAgencyExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptEC(EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest request) {
+        GetReceiptECResponse IReceiptAgencyExternalEC.GetReceiptEC(GetReceiptECRequest request) {
             return base.Channel.GetReceiptEC(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternal GetReceiptEC(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequestBody();
+        public ReceiptExternal GetReceiptEC(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
+            GetReceiptECRequest inValue = new GetReceiptECRequest();
+            inValue.Body = new GetReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptEC(inValue);
+            GetReceiptECResponse retVal = ((IReceiptAgencyExternalEC)(this)).GetReceiptEC(inValue);
             return retVal.Body.GetReceiptECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest request) {
+        System.Threading.Tasks.Task<GetReceiptECResponse> IReceiptAgencyExternalEC.GetReceiptECAsync(GetReceiptECRequest request) {
             return base.Channel.GetReceiptECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse> GetReceiptECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECRequestBody();
+        public System.Threading.Tasks.Task<GetReceiptECResponse> GetReceiptECAsync(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
+            GetReceiptECRequest inValue = new GetReceiptECRequest();
+            inValue.Body = new GetReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptECAsync(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).GetReceiptECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptECV2(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request request) {
+        GetReceiptECV2Response IReceiptAgencyExternalEC.GetReceiptECV2(GetReceiptECV2Request request) {
             return base.Channel.GetReceiptECV2(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.Receipt GetReceiptECV2(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2RequestBody();
+        public Receipt GetReceiptECV2(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
+            GetReceiptECV2Request inValue = new GetReceiptECV2Request();
+            inValue.Body = new GetReceiptECV2RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptECV2(inValue);
+            GetReceiptECV2Response retVal = ((IReceiptAgencyExternalEC)(this)).GetReceiptECV2(inValue);
             return retVal.Body.GetReceiptECV2Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptECV2Async(EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request request) {
+        System.Threading.Tasks.Task<GetReceiptECV2Response> IReceiptAgencyExternalEC.GetReceiptECV2Async(GetReceiptECV2Request request) {
             return base.Channel.GetReceiptECV2Async(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Response> GetReceiptECV2Async(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSearchExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2Request();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptECV2RequestBody();
+        public System.Threading.Tasks.Task<GetReceiptECV2Response> GetReceiptECV2Async(string systemUserName, string systemPassword, ReceiptSearchExternal receipt) {
+            GetReceiptECV2Request inValue = new GetReceiptECV2Request();
+            inValue.Body = new GetReceiptECV2RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptECV2Async(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).GetReceiptECV2Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptListEC(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest request) {
+        GetReceiptListECResponse IReceiptAgencyExternalEC.GetReceiptListEC(GetReceiptListECRequest request) {
             return base.Channel.GetReceiptListEC(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternalList GetReceiptListEC(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequestBody();
+        public ReceiptExternalList GetReceiptListEC(string systemUserName, string systemPassword, ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+            GetReceiptListECRequest inValue = new GetReceiptListECRequest();
+            inValue.Body = new GetReceiptListECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receiptTypeName = receiptTypeName;
             inValue.Body.dateFrom = dateFrom;
             inValue.Body.dateTo = dateTo;
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptListEC(inValue);
+            GetReceiptListECResponse retVal = ((IReceiptAgencyExternalEC)(this)).GetReceiptListEC(inValue);
             return retVal.Body.GetReceiptListECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptListECAsync(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest request) {
+        System.Threading.Tasks.Task<GetReceiptListECResponse> IReceiptAgencyExternalEC.GetReceiptListECAsync(GetReceiptListECRequest request) {
             return base.Channel.GetReceiptListECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECResponse> GetReceiptListECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECRequestBody();
+        public System.Threading.Tasks.Task<GetReceiptListECResponse> GetReceiptListECAsync(string systemUserName, string systemPassword, ReceiptTypeEnum receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+            GetReceiptListECRequest inValue = new GetReceiptListECRequest();
+            inValue.Body = new GetReceiptListECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receiptTypeName = receiptTypeName;
             inValue.Body.dateFrom = dateFrom;
             inValue.Body.dateTo = dateTo;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptListECAsync(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).GetReceiptListECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptListECV2(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request request) {
+        GetReceiptListECV2Response IReceiptAgencyExternalEC.GetReceiptListECV2(GetReceiptListECV2Request request) {
             return base.Channel.GetReceiptListECV2(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptList GetReceiptListECV2(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2RequestBody();
+        public ReceiptList GetReceiptListECV2(string systemUserName, string systemPassword, ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+            GetReceiptListECV2Request inValue = new GetReceiptListECV2Request();
+            inValue.Body = new GetReceiptListECV2RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receiptTypeName = receiptTypeName;
             inValue.Body.dateFrom = dateFrom;
             inValue.Body.dateTo = dateTo;
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptListECV2(inValue);
+            GetReceiptListECV2Response retVal = ((IReceiptAgencyExternalEC)(this)).GetReceiptListECV2(inValue);
             return retVal.Body.GetReceiptListECV2Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.GetReceiptListECV2Async(EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request request) {
+        System.Threading.Tasks.Task<GetReceiptListECV2Response> IReceiptAgencyExternalEC.GetReceiptListECV2Async(GetReceiptListECV2Request request) {
             return base.Channel.GetReceiptListECV2Async(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Response> GetReceiptListECV2Async(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
-            EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request inValue = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2Request();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.GetReceiptListECV2RequestBody();
+        public System.Threading.Tasks.Task<GetReceiptListECV2Response> GetReceiptListECV2Async(string systemUserName, string systemPassword, ReceiptType receiptTypeName, System.DateTime dateFrom, System.DateTime dateTo) {
+            GetReceiptListECV2Request inValue = new GetReceiptListECV2Request();
+            inValue.Body = new GetReceiptListECV2RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receiptTypeName = receiptTypeName;
             inValue.Body.dateFrom = dateFrom;
             inValue.Body.dateTo = dateTo;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).GetReceiptListECV2Async(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).GetReceiptListECV2Async(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.SaveReceiptEC(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest request) {
+        SaveReceiptECResponse IReceiptAgencyExternalEC.SaveReceiptEC(SaveReceiptECRequest request) {
             return base.Channel.SaveReceiptEC(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.ReceiptExternal SaveReceiptEC(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequestBody();
+        public ReceiptExternal SaveReceiptEC(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
+            SaveReceiptECRequest inValue = new SaveReceiptECRequest();
+            inValue.Body = new SaveReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).SaveReceiptEC(inValue);
+            SaveReceiptECResponse retVal = ((IReceiptAgencyExternalEC)(this)).SaveReceiptEC(inValue);
             return retVal.Body.SaveReceiptECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.SaveReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest request) {
+        System.Threading.Tasks.Task<SaveReceiptECResponse> IReceiptAgencyExternalEC.SaveReceiptECAsync(SaveReceiptECRequest request) {
             return base.Channel.SaveReceiptECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.SaveReceiptECResponse> SaveReceiptECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.SaveReceiptECRequestBody();
+        public System.Threading.Tasks.Task<SaveReceiptECResponse> SaveReceiptECAsync(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
+            SaveReceiptECRequest inValue = new SaveReceiptECRequest();
+            inValue.Body = new SaveReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).SaveReceiptECAsync(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).SaveReceiptECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.UpdateReceiptEC(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest request) {
+        UpdateReceiptECResponse IReceiptAgencyExternalEC.UpdateReceiptEC(UpdateReceiptECRequest request) {
             return base.Channel.UpdateReceiptEC(request);
         }
         
-        public EC_Endpoint_Client.ReceiptAgency.Receipt UpdateReceiptEC(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequestBody();
+        public Receipt UpdateReceiptEC(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
+            UpdateReceiptECRequest inValue = new UpdateReceiptECRequest();
+            inValue.Body = new UpdateReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse retVal = ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).UpdateReceiptEC(inValue);
+            UpdateReceiptECResponse retVal = ((IReceiptAgencyExternalEC)(this)).UpdateReceiptEC(inValue);
             return retVal.Body.UpdateReceiptECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse> EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC.UpdateReceiptECAsync(EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest request) {
+        System.Threading.Tasks.Task<UpdateReceiptECResponse> IReceiptAgencyExternalEC.UpdateReceiptECAsync(UpdateReceiptECRequest request) {
             return base.Channel.UpdateReceiptECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECResponse> UpdateReceiptECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.ReceiptAgency.ReceiptSaveExternal receipt) {
-            EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest inValue = new EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequest();
-            inValue.Body = new EC_Endpoint_Client.ReceiptAgency.UpdateReceiptECRequestBody();
+        public System.Threading.Tasks.Task<UpdateReceiptECResponse> UpdateReceiptECAsync(string systemUserName, string systemPassword, ReceiptSaveExternal receipt) {
+            UpdateReceiptECRequest inValue = new UpdateReceiptECRequest();
+            inValue.Body = new UpdateReceiptECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.receipt = receipt;
-            return ((EC_Endpoint_Client.ReceiptAgency.IReceiptAgencyExternalEC)(this)).UpdateReceiptECAsync(inValue);
+            return ((IReceiptAgencyExternalEC)(this)).UpdateReceiptECAsync(inValue);
         }
     }
 }

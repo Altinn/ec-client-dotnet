@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
+﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine;
-using EC_Endpoint_Client.NotificationAgency;
+using EC_Endpoint_Client.Service_References.NotificationAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
 {
     class NotificationAgencyEndpointFunction : EndPointFunctionalityBase
     {
-        private string Context = "NotificationAgency";
+        private string _context = "NotificationAgency";
         /// <summary>
         /// It's worth noting that in this file, as well as  most of the later files, I've generated shipment classes, so that the GenerateProxy functions are more 
         /// easily replicated between each endpoint. (Still has to return different clients, though.)
@@ -30,14 +25,14 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         public void Test(BaseShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "Test";
+            OperationContext = _context + "Test";
             client.Test();
         }
 
         public void SendStandAloneNotification(SendStandaloneNotificationShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "SendStandAloneNotification";
+            OperationContext = _context + "SendStandAloneNotification";
             client.SendStandaloneNotificationEC(shipment.Username, shipment.Password, shipment.NotificationList);
         }
     }

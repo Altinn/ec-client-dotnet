@@ -1,77 +1,69 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.Classes;
 using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary;
 using EC_Endpoint_Client.Functionality.EndPoints.Intermediary;
 
 namespace EC_Endpoint_Client.Forms.Intermediary
 {
-    public partial class IntermediaryInboundStreamedForm : ClientBaseForm
+    public partial class IntermediaryInboundStreamedForm : BaseForms.ClientBaseForm
     {
-        public IntermediaryStreamedAttachmentResult result { get; set; }
+        public IntermediaryStreamedAttachmentResult Result { get; set; }
         public Stream DataStream { get; set; }
-        public IntermediaryStreamedSubmitAttachmentShipment shipment { get; set; }
-        public BaseShipment testShipment { get; set; }
-        public IntermediaryInboundStreamedEndPointFunctionality iisepFunc { get; set; }
+        public IntermediaryStreamedSubmitAttachmentShipment Shipment { get; set; }
+        public BaseShipment TestShipment { get; set; }
+        public IntermediaryInboundStreamedEndPointFunctionality IisepFunc { get; set; }
         public IntermediaryInboundStreamedForm()
         {
             InitializeComponent();
-            iisepFunc = new IntermediaryInboundStreamedEndPointFunctionality();
-            iisepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
-            shipment = new IntermediaryStreamedSubmitAttachmentShipment();
-            testShipment = new Classes.BaseShipment();
-            result = new IntermediaryStreamedAttachmentResult();
+            IisepFunc = new IntermediaryInboundStreamedEndPointFunctionality();
+            IisepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            Shipment = new IntermediaryStreamedSubmitAttachmentShipment();
+            TestShipment = new BaseShipment();
+            Result = new IntermediaryStreamedAttachmentResult();
         }
 
         private void Test()
         {
-            SetBasicShipmentSettings(testShipment);
-            iisepFunc.Test(testShipment);
+            SetBasicShipmentSettings(TestShipment);
+            IisepFunc.Test(TestShipment);
         }
 
         private void ShowShipment()
         {
-            SetViewedItem(shipment, "Shipment for SubmitAttachment");
+            SetViewedItem(Shipment, "Shipment for SubmitAttachment");
         }
 
         private void ShowResult()
         {
-            SetViewedItem(result, "Result from SubmitAttachment");
+            SetViewedItem(Result, "Result from SubmitAttachment");
         }
 
         private void LoadAttachmentData()
         {
-            Functionality.IOFunctionality.GetStreamedattachmentFromFile(shipment);
+            Functionality.IoFunctionality.GetStreamedattachmentFromFile(Shipment);
             ShowShipment();
         }
 
         public void SaveShipment()
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(shipment);
+            Functionality.IoFunctionality.GeneralizedSaveFile(Shipment);
         }
 
         public void LoadShipment()
         {
-            shipment = (IntermediaryStreamedSubmitAttachmentShipment)Functionality.IOFunctionality.GeneralizedLoadFile(shipment);
+            Shipment = (IntermediaryStreamedSubmitAttachmentShipment)Functionality.IoFunctionality.GeneralizedLoadFile(Shipment);
         }
 
         public void SaveResult()
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(result);
+            Functionality.IoFunctionality.GeneralizedSaveFile(Result);
         }
 
         private void SubmitAttachmentData()
         {
-            SetBasicShipmentSettings(shipment);
-            result = iisepFunc.SubmitAttachmentStreamed(shipment);
+            SetBasicShipmentSettings(Shipment);
+            Result = IisepFunc.SubmitAttachmentStreamed(Shipment);
             //shipment.DataStream.Close();
         }
 

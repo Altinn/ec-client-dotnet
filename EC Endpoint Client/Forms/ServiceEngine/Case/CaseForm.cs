@@ -1,22 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.Case;
-using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.Case;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case;
+using EC_Endpoint_Client.Service_References.Case;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 {
-    public partial class CaseForm : ClientBaseForm
+    public partial class CaseForm : BaseForms.ClientBaseForm
     {
-        private CaseEndPointFunction caseEPFunc;
+        private CaseEndPointFunction _caseEpFunc;
         public int ArchiveCase { get; set; }
         public ArchiveCaseShipment ShipmentArchiveCase { get; set; }
         public InstantiateCollaborationShipment ShipmentInstantiateCollaboration { get; set; }
@@ -32,8 +25,8 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         public CaseForm()
         {
             InitializeComponent();
-            caseEPFunc = new CaseEndPointFunction();
-            caseEPFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _caseEpFunc = new CaseEndPointFunction();
+            _caseEpFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             ShipmentTest = new BaseShipment();
             ShipmentArchiveCase = new ArchiveCaseShipment();
             ShipmentCaseList = new CaseListShipment();
@@ -51,7 +44,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                caseEPFunc.Test(ShipmentTest);
+                _caseEpFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -66,7 +59,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
             SetBasicShipmentSettings(ShipmentCaseList);
             try
             {
-                ResultCaseList = caseEPFunc.GetCaseList(ShipmentCaseList);
+                ResultCaseList = _caseEpFunc.GetCaseList(ShipmentCaseList);
                 SetViewedItem(ResultCaseListArray, "Result from GetCaseList");
             }
             catch (Exception ex)
@@ -80,7 +73,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
             SetBasicShipmentSettings(ShipmentArchiveCase);
             try
             {
-                ResultArchiveCase = caseEPFunc.ArchiveCase(ShipmentArchiveCase);
+                ResultArchiveCase = _caseEpFunc.ArchiveCase(ShipmentArchiveCase);
                 SetViewedItem(ResultArchiveCase, "Result from ArchiveCase");
             }
             catch (Exception ex)
@@ -94,7 +87,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
             SetBasicShipmentSettings(ShipmentInstantiateCollaboration);
             try
             {
-                ResultInstantiateCollaboration = caseEPFunc.InstantiateCollaboration(ShipmentInstantiateCollaboration);
+                ResultInstantiateCollaboration = _caseEpFunc.InstantiateCollaboration(ShipmentInstantiateCollaboration);
                 SetViewedItem(ResultInstantiateCollaboration, "Result from InstantiateCollaboration");
 
             }
@@ -119,12 +112,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         private void btn_GetCaseListSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentCaseList);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentCaseList);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentCaseList);
         }
 
         private void btn_GetCaseListLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentCaseList = (CaseListShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentCaseList);
+            ShipmentCaseList = (CaseListShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentCaseList);
         }
 
         private void btn_GetCaseListShowShipment_Click(object sender, EventArgs e)
@@ -139,7 +132,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 
         private void btn_GetCaseListSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultCaseList);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultCaseList);
         }
         #endregion
         #region InstantiateCollaborationClicks
@@ -151,12 +144,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         private void btn_ICSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentInstantiateCollaboration);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentInstantiateCollaboration);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentInstantiateCollaboration);
         }
 
         private void btn_ICLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentInstantiateCollaboration = (InstantiateCollaborationShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentInstantiateCollaboration);
+            ShipmentInstantiateCollaboration = (InstantiateCollaborationShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentInstantiateCollaboration);
         }
 
         private void btn_ICInvoke_Click(object sender, EventArgs e)
@@ -178,12 +171,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
         private void btn_ArchiveCaseSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(ShipmentArchiveCase);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentArchiveCase);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentArchiveCase);
         }
 
         private void btn_ArchiveCaseLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentArchiveCase = (ArchiveCaseShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentArchiveCase);
+            ShipmentArchiveCase = (ArchiveCaseShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentArchiveCase);
         }
 
         private void btn_ArchiveCaseInvoke_Click(object sender, EventArgs e)

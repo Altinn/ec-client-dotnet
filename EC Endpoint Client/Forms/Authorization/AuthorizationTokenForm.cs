@@ -1,71 +1,40 @@
-﻿using EC_Endpoint_Client.BaseForms;
-using EC_Endpoint_Client.Functionality;
-using EC_Endpoint_Client.Functionality.EndPoints.Authorization;
-using EC_Endpoint_Client.Token;
+﻿using EC_Endpoint_Client.Functionality.EndPoints.Authorization;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Authorization;
 
 namespace EC_Endpoint_Client.Forms.Authorization
 {
-    public partial class AuthorizationTokenForm : ClientBaseForm
+    public partial class AuthorizationTokenForm : BaseForms.ClientBaseForm
     {
-        public AuthorizationTokenEndPointFunctionality AuthTokenEPFunc { get; set; }
+        public AuthorizationTokenEndPointFunctionality AuthTokenEpFunc { get; set; }
         public GetTokenByAuthorizationCodeShipment GetTokenShipment { get; set; }
+        public AuthorizationAccessTokenResponseContainer TokenResponse { get; set; }
 
         public AuthorizationTokenForm()
         {
             InitializeComponent();
             GetTokenShipment = new GetTokenByAuthorizationCodeShipment();
-            AuthTokenEPFunc = new AuthorizationTokenEndPointFunctionality();
-            AuthTokenEPFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            AuthTokenEpFunc = new AuthorizationTokenEndPointFunctionality();
+            AuthTokenEpFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            AssignActions();
         }
 
-        void ReturnMessageXmlHandler(object sender, EventArgs e)
+        public override void ReturnMessageXmlHandler(object sender, EventArgs e)
         {
         }
 
-        private void btn_GetToken_Click(object sender, EventArgs e)
+        private void AssignActions()
         {
-            // Get token from text field
-            Guid authorizationCode = GetTokenShipment.AuthorizationCode;
-            string userName = SystemUsername;
-            string password = SystemPassword;
-            bool selfContained = GetTokenShipment.SelfContainedToken;
-
-            // Querry service and populate response
-            try
-            {
-                AuthorizationAccessTokenResponseContainer result = GetAccessToken(userName, password, authorizationCode,
-                    selfContained);
-                SetViewedItem(result, "Getting access token");
-            }
-            catch (Exception exception)
-            {
-                SetViewedItem(exception, "Error during test");
-            }
+            AssignAction(controllerGetRightsByToken, AuthTokenEpFunc.GetSelfContainedToken, GetTokenShipment, TokenResponse, "GetTokenService" );
         }
 
-        private AuthorizationAccessTokenResponseContainer GetAccessToken(
-            string userName, string password, Guid authorizationCode, bool selfContained)
+        public override void SetBasicShipmentSettings(BaseShipment shipment)
         {
-            // Get Altinn certificate for signing tokens
+            base.SetBasicShipmentSettings(shipment);
             string spiThumbprint = System.Configuration.ConfigurationManager.AppSettings["SpiCertificateThumbprint"];
-            X509Certificate2 altinnCertificate = GetCertificateByThumbPrint(spiThumbprint);
-            return AuthTokenEPFunc.GetSelfContainedToken(userName, password, SelectedEndpointName,
-                SelectedCertificate, altinnCertificate, authorizationCode, selfContained);
-        }
-
-        private void btn_showTempKey_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(GetTokenShipment, "Shipment to send to AuthorizationToken");
+            ((GetTokenByAuthorizationCodeShipment)shipment).SpiCertificate = GetCertificateByThumbPrint(spiThumbprint);
         }
     }
 }

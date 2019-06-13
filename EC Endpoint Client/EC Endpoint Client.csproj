@@ -72,10 +72,13 @@
     <Compile Include="BaseForms\SoapViewer.Designer.cs">
       <DependentUpon>SoapViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ActionSet.cs" />
     <Compile Include="Classes\ComplexItemCollectionEditor.cs" />
     <Compile Include="Classes\EndPointState.cs" />
+    <Compile Include="Classes\ExtendedClasses\Archive\ArchiveShipmentClasses.cs" />
     <Compile Include="Classes\ExtendedClasses\Correspondence\CorrespondenceAgencyExtended.cs" />
     <Compile Include="Classes\ExtendedClasses\Intermediary\FormTaskShipment.cs" />
+    <Compile Include="Classes\Shipments\Archive\DownloadQueueShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Authorization\AuthorizationShipmentClasses.cs" />
     <Compile Include="BaseForms\CertificateFunctionality.cs">
       <SubType>Form</SubType>
@@ -85,11 +88,11 @@
     </Compile>
     <Compile Include="Classes\Shipments\BaseShipmentClass.cs" />
     <Compile Include="Classes\BaseSoapHolder.cs" />
-    <Compile Include="Classes\Shipments\Intermediary\BatchLoggingAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\BatchLoggingAgencyShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Intermediary\IntermediaryShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Intermediary\ReceiptShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\KeyManagementShipmentClasses.cs" />
-    <Compile Include="Classes\Shipments\Intermediary\ReceiptAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\ReceiptAgencyShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\ReporteeArchiveShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\SOAShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\BrokerService\BrokerServiceShipmentClasses.cs" />
@@ -167,9 +170,7 @@
     <Compile Include="Forms\Authorization\AuthorizationTokenForm.Designer.cs">
       <DependentUpon>AuthorizationTokenForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\CertificateSelectorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Forms\CertificateSelectorForm.cs" />
     <Compile Include="Forms\CertificateSelectorForm.Designer.cs">
       <DependentUpon>CertificateSelectorForm.cs</DependentUpon>
     </Compile>
@@ -508,6 +509,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ActionHolderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ActionHolderControl.Designer.cs">
+      <DependentUpon>ActionHolderControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ArchiveTester.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -676,6 +683,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ActionHolderControl.resx">
+      <DependentUpon>ActionHolderControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ArchiveTester.resx">
       <DependentUpon>ArchiveTester.cs</DependentUpon>
     </EmbeddedResource>
@@ -898,8 +908,8 @@
     <None Include="Service References\IntermediaryInbound\EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC.wsdl" />
-    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC1.wsdl" />
+    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC2.wsdl" />
+    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC21.wsdl" />
     <None Include="Service References\KeyManagement\EC_Endpoint_Client.KeyManagement.CertificateBEList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1062,6 +1072,9 @@
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.DeleteReporteeElementECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.FormSetDataBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.FormSetElementExternalBEV2List.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1069,6 +1082,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.GetCorrespondenceListForReporteeECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.GetFormSetDataECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.GetFormSetElementsECResponse.datasource">
@@ -1083,7 +1099,7 @@
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ReporteeElementList\ReporteeElementListECSF.wsdl" />
+    <None Include="Service References\ReporteeElementList\ReporteeElementListECSF1.wsdl" />
     <None Include="Service References\SOArchiveStreamed\EC_Endpoint_Client.SOArchiveStreamed.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1275,9 +1291,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC.disco" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\IntermediaryInbound\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
@@ -1405,9 +1418,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ReporteeElementList\ReporteeElementListEC.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReporteeElementList\configuration91.svcinfo" />
@@ -1576,6 +1586,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\CorrespondenceAgency\CorrespondenceAgencyExternalEC1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeElementList\ReporteeElementListEC1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC1.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

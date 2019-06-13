@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.Administration {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.Administration {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,23 +155,23 @@ namespace EC_Endpoint_Client.Administration {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalReporteeBE", Namespace="http://schemas.altinn.no/services/Authorization/Administration/2012/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ExternalReporteeBE", Namespace="http://schemas.altinn.no/services/Authorization/Administration/2012/11")]
+    [Serializable()]
     public partial class ExternalReporteeBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string OrganizationNumberField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Administration.PartyType ReporteeTypeField;
+        [OptionalField()]
+        private PartyType ReporteeTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SSNField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -185,7 +184,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Name {
             get {
                 return this.NameField;
@@ -198,7 +197,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string OrganizationNumber {
             get {
                 return this.OrganizationNumberField;
@@ -211,8 +210,8 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Administration.PartyType ReporteeType {
+        [DataMember()]
+        public PartyType ReporteeType {
             get {
                 return this.ReporteeTypeField;
             }
@@ -224,7 +223,7 @@ namespace EC_Endpoint_Client.Administration {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SSN {
             get {
                 return this.SSNField;
@@ -248,27 +247,27 @@ namespace EC_Endpoint_Client.Administration {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PartyType", Namespace="http://schemas.altinn.no/services/Register/2009/10")]
+    [DataContract(Name="PartyType", Namespace="http://schemas.altinn.no/services/Register/2009/10")]
     public enum PartyType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         None = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Person = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Organization = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SelfIdentified = 3,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ExternalReporteeBEList", Namespace="http://schemas.altinn.no/services/Authorization/Administration/2012/11", ItemName="ExternalReporteeBE")]
-    [System.SerializableAttribute()]
-    public class ExternalReporteeBEList : System.Collections.Generic.List<EC_Endpoint_Client.Administration.ExternalReporteeBE> {
+    [CollectionDataContract(Name="ExternalReporteeBEList", Namespace="http://schemas.altinn.no/services/Authorization/Administration/2012/11", ItemName="ExternalReporteeBE")]
+    [Serializable()]
+    public class ExternalReporteeBEList : System.Collections.Generic.List<ExternalReporteeBE> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -277,37 +276,37 @@ namespace EC_Endpoint_Client.Administration {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Authorization/Administration/2012/11)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Administration.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Administration.TestResponse Test(EC_Endpoint_Client.Administration.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.TestResponse> TestAsync(EC_Endpoint_Client.Administration.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Authorization/Administration/2012/11 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteeByTempKeyEC", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteeByTempKeyECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Administration.AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteeByTempKeyECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse GetReporteeByTempKeyEC(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest request);
+        GetReporteeByTempKeyECResponse GetReporteeByTempKeyEC(GetReporteeByTempKeyECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteeByTempKeyEC", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteeByTempKeyECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse> GetReporteeByTempKeyECAsync(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest request);
+        System.Threading.Tasks.Task<GetReporteeByTempKeyECResponse> GetReporteeByTempKeyECAsync(GetReporteeByTempKeyECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Authorization/Administration/2012/11 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteesEC", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteesECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Administration.AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteesECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Administration.GetReporteesECResponse GetReporteesEC(EC_Endpoint_Client.Administration.GetReporteesECRequest request);
+        GetReporteesECResponse GetReporteesEC(GetReporteesECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteesEC", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2012/11/IAuthorization" +
             "AdministrationEC/GetReporteesECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteesECResponse> GetReporteesECAsync(EC_Endpoint_Client.Administration.GetReporteesECRequest request);
+        System.Threading.Tasks.Task<GetReporteesECResponse> GetReporteesECAsync(GetReporteesECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -337,12 +336,12 @@ namespace EC_Endpoint_Client.Administration {
     public partial class GetReporteeByTempKeyECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReporteeByTempKeyEC", Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11", Order=0)]
-        public EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequestBody Body;
+        public GetReporteeByTempKeyECRequestBody Body;
         
         public GetReporteeByTempKeyECRequest() {
         }
         
-        public GetReporteeByTempKeyECRequest(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequestBody Body) {
+        public GetReporteeByTempKeyECRequest(GetReporteeByTempKeyECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -350,16 +349,16 @@ namespace EC_Endpoint_Client.Administration {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
     public partial class GetReporteeByTempKeyECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public System.Guid tempKey;
         
         public GetReporteeByTempKeyECRequestBody() {
@@ -379,12 +378,12 @@ namespace EC_Endpoint_Client.Administration {
     public partial class GetReporteeByTempKeyECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReporteeByTempKeyECResponse", Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11", Order=0)]
-        public EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponseBody Body;
+        public GetReporteeByTempKeyECResponseBody Body;
         
         public GetReporteeByTempKeyECResponse() {
         }
         
-        public GetReporteeByTempKeyECResponse(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponseBody Body) {
+        public GetReporteeByTempKeyECResponse(GetReporteeByTempKeyECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -392,16 +391,16 @@ namespace EC_Endpoint_Client.Administration {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
     public partial class GetReporteeByTempKeyECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Administration.ExternalReporteeBE GetReporteeByTempKeyECResult;
+        [DataMember(Order=0)]
+        public ExternalReporteeBE GetReporteeByTempKeyECResult;
         
         public GetReporteeByTempKeyECResponseBody() {
         }
         
-        public GetReporteeByTempKeyECResponseBody(EC_Endpoint_Client.Administration.ExternalReporteeBE GetReporteeByTempKeyECResult) {
+        public GetReporteeByTempKeyECResponseBody(ExternalReporteeBE GetReporteeByTempKeyECResult) {
             this.GetReporteeByTempKeyECResult = GetReporteeByTempKeyECResult;
         }
     }
@@ -413,12 +412,12 @@ namespace EC_Endpoint_Client.Administration {
     public partial class GetReporteesECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReporteesEC", Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11", Order=0)]
-        public EC_Endpoint_Client.Administration.GetReporteesECRequestBody Body;
+        public GetReporteesECRequestBody Body;
         
         public GetReporteesECRequest() {
         }
         
-        public GetReporteesECRequest(EC_Endpoint_Client.Administration.GetReporteesECRequestBody Body) {
+        public GetReporteesECRequest(GetReporteesECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -426,25 +425,25 @@ namespace EC_Endpoint_Client.Administration {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
     public partial class GetReporteesECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string userSSN;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public bool retrieveInActiveReportee;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public bool retrieveSubEnitiy;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public System.Nullable<int> maximumReporteeCount;
         
         public GetReporteesECRequestBody() {
@@ -467,12 +466,12 @@ namespace EC_Endpoint_Client.Administration {
     public partial class GetReporteesECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetReporteesECResponse", Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11", Order=0)]
-        public EC_Endpoint_Client.Administration.GetReporteesECResponseBody Body;
+        public GetReporteesECResponseBody Body;
         
         public GetReporteesECResponse() {
         }
         
-        public GetReporteesECResponse(EC_Endpoint_Client.Administration.GetReporteesECResponseBody Body) {
+        public GetReporteesECResponse(GetReporteesECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -480,27 +479,27 @@ namespace EC_Endpoint_Client.Administration {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2012/11")]
     public partial class GetReporteesECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Administration.ExternalReporteeBEList GetReporteesECResult;
+        [DataMember(Order=0)]
+        public ExternalReporteeBEList GetReporteesECResult;
         
         public GetReporteesECResponseBody() {
         }
         
-        public GetReporteesECResponseBody(EC_Endpoint_Client.Administration.ExternalReporteeBEList GetReporteesECResult) {
+        public GetReporteesECResponseBody(ExternalReporteeBEList GetReporteesECResult) {
             this.GetReporteesECResult = GetReporteesECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthorizationAdministrationECChannel : EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC, System.ServiceModel.IClientChannel {
+    public interface IAuthorizationAdministrationECChannel : IAuthorizationAdministrationEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthorizationAdministrationECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC>, EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC {
+    public partial class AuthorizationAdministrationECClient : System.ServiceModel.ClientBase<IAuthorizationAdministrationEC>, IAuthorizationAdministrationEC {
         
         public AuthorizationAdministrationECClient() {
         }
@@ -522,87 +521,87 @@ namespace EC_Endpoint_Client.Administration {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Administration.TestResponse EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.Test(EC_Endpoint_Client.Administration.TestRequest request) {
+        TestResponse IAuthorizationAdministrationEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.Administration.TestRequest inValue = new EC_Endpoint_Client.Administration.TestRequest();
-            EC_Endpoint_Client.Administration.TestResponse retVal = ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IAuthorizationAdministrationEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.TestResponse> EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.TestAsync(EC_Endpoint_Client.Administration.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IAuthorizationAdministrationEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.TestResponse> TestAsync() {
-            EC_Endpoint_Client.Administration.TestRequest inValue = new EC_Endpoint_Client.Administration.TestRequest();
-            return ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IAuthorizationAdministrationEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.GetReporteeByTempKeyEC(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest request) {
+        GetReporteeByTempKeyECResponse IAuthorizationAdministrationEC.GetReporteeByTempKeyEC(GetReporteeByTempKeyECRequest request) {
             return base.Channel.GetReporteeByTempKeyEC(request);
         }
         
-        public EC_Endpoint_Client.Administration.ExternalReporteeBE GetReporteeByTempKeyEC(string systemUserName, string systemPassword, System.Guid tempKey) {
-            EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest inValue = new EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest();
-            inValue.Body = new EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequestBody();
+        public ExternalReporteeBE GetReporteeByTempKeyEC(string systemUserName, string systemPassword, System.Guid tempKey) {
+            GetReporteeByTempKeyECRequest inValue = new GetReporteeByTempKeyECRequest();
+            inValue.Body = new GetReporteeByTempKeyECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.tempKey = tempKey;
-            EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse retVal = ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).GetReporteeByTempKeyEC(inValue);
+            GetReporteeByTempKeyECResponse retVal = ((IAuthorizationAdministrationEC)(this)).GetReporteeByTempKeyEC(inValue);
             return retVal.Body.GetReporteeByTempKeyECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse> EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.GetReporteeByTempKeyECAsync(EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest request) {
+        System.Threading.Tasks.Task<GetReporteeByTempKeyECResponse> IAuthorizationAdministrationEC.GetReporteeByTempKeyECAsync(GetReporteeByTempKeyECRequest request) {
             return base.Channel.GetReporteeByTempKeyECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteeByTempKeyECResponse> GetReporteeByTempKeyECAsync(string systemUserName, string systemPassword, System.Guid tempKey) {
-            EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest inValue = new EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequest();
-            inValue.Body = new EC_Endpoint_Client.Administration.GetReporteeByTempKeyECRequestBody();
+        public System.Threading.Tasks.Task<GetReporteeByTempKeyECResponse> GetReporteeByTempKeyECAsync(string systemUserName, string systemPassword, System.Guid tempKey) {
+            GetReporteeByTempKeyECRequest inValue = new GetReporteeByTempKeyECRequest();
+            inValue.Body = new GetReporteeByTempKeyECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.tempKey = tempKey;
-            return ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).GetReporteeByTempKeyECAsync(inValue);
+            return ((IAuthorizationAdministrationEC)(this)).GetReporteeByTempKeyECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Administration.GetReporteesECResponse EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.GetReporteesEC(EC_Endpoint_Client.Administration.GetReporteesECRequest request) {
+        GetReporteesECResponse IAuthorizationAdministrationEC.GetReporteesEC(GetReporteesECRequest request) {
             return base.Channel.GetReporteesEC(request);
         }
         
-        public EC_Endpoint_Client.Administration.ExternalReporteeBEList GetReporteesEC(string systemUserName, string systemPassword, string userSSN, bool retrieveInActiveReportee, bool retrieveSubEnitiy, System.Nullable<int> maximumReporteeCount) {
-            EC_Endpoint_Client.Administration.GetReporteesECRequest inValue = new EC_Endpoint_Client.Administration.GetReporteesECRequest();
-            inValue.Body = new EC_Endpoint_Client.Administration.GetReporteesECRequestBody();
+        public ExternalReporteeBEList GetReporteesEC(string systemUserName, string systemPassword, string userSSN, bool retrieveInActiveReportee, bool retrieveSubEnitiy, System.Nullable<int> maximumReporteeCount) {
+            GetReporteesECRequest inValue = new GetReporteesECRequest();
+            inValue.Body = new GetReporteesECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.userSSN = userSSN;
             inValue.Body.retrieveInActiveReportee = retrieveInActiveReportee;
             inValue.Body.retrieveSubEnitiy = retrieveSubEnitiy;
             inValue.Body.maximumReporteeCount = maximumReporteeCount;
-            EC_Endpoint_Client.Administration.GetReporteesECResponse retVal = ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).GetReporteesEC(inValue);
+            GetReporteesECResponse retVal = ((IAuthorizationAdministrationEC)(this)).GetReporteesEC(inValue);
             return retVal.Body.GetReporteesECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteesECResponse> EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC.GetReporteesECAsync(EC_Endpoint_Client.Administration.GetReporteesECRequest request) {
+        System.Threading.Tasks.Task<GetReporteesECResponse> IAuthorizationAdministrationEC.GetReporteesECAsync(GetReporteesECRequest request) {
             return base.Channel.GetReporteesECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Administration.GetReporteesECResponse> GetReporteesECAsync(string systemUserName, string systemPassword, string userSSN, bool retrieveInActiveReportee, bool retrieveSubEnitiy, System.Nullable<int> maximumReporteeCount) {
-            EC_Endpoint_Client.Administration.GetReporteesECRequest inValue = new EC_Endpoint_Client.Administration.GetReporteesECRequest();
-            inValue.Body = new EC_Endpoint_Client.Administration.GetReporteesECRequestBody();
+        public System.Threading.Tasks.Task<GetReporteesECResponse> GetReporteesECAsync(string systemUserName, string systemPassword, string userSSN, bool retrieveInActiveReportee, bool retrieveSubEnitiy, System.Nullable<int> maximumReporteeCount) {
+            GetReporteesECRequest inValue = new GetReporteesECRequest();
+            inValue.Body = new GetReporteesECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.userSSN = userSSN;
             inValue.Body.retrieveInActiveReportee = retrieveInActiveReportee;
             inValue.Body.retrieveSubEnitiy = retrieveSubEnitiy;
             inValue.Body.maximumReporteeCount = maximumReporteeCount;
-            return ((EC_Endpoint_Client.Administration.IAuthorizationAdministrationEC)(this)).GetReporteesECAsync(inValue);
+            return ((IAuthorizationAdministrationEC)(this)).GetReporteesECAsync(inValue);
         }
     }
 }

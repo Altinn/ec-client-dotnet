@@ -1,41 +1,41 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Drawing.Design;
 using System.Windows.Forms;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
-using EC_Endpoint_Client.CorrespondenceAgency;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence;
+using EC_Endpoint_Client.Service_References.CorrespondenceAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 {
     public partial class CorrespondenceAgencyForm : AgencyBaseForm
     {
-        private readonly CorrespondenceAgencyEndPointFunction caepFunc;
-        private InsertCorrespondenceShipment ShipmentIC { get; set; }
-        private ReceiptExternal ResultIC;
+        private readonly CorrespondenceAgencyEndPointFunction _caepFunc;
+        private InsertCorrespondenceShipment ShipmentIc { get; set; }
+        private ReceiptExternal _resultIc;
         private NotificationBEList Notifications { get; set; }
-        private GetCorrespondenceStatusHistoryShipment GCHShipment { get; set; }
-        private GetCorrespondenceStatusDetailsShipment GCDShipment { get; set; }
-        private CorrespondenceStatusResultV3 GCDResult;
-        private CorrespondenceStatusHistoryResultEx GCHResult;
+        private GetCorrespondenceStatusHistoryShipment GchShipment { get; set; }
+        private GetCorrespondenceStatusDetailsShipment GcdShipment { get; set; }
+        private CorrespondenceStatusResultV3 _gcdResult;
+        private CorrespondenceStatusHistoryResultEx _gchResult;
 
         public CorrespondenceAgencyForm()
         {
             InitializeComponent();
             MyCollectionEditor.MyFormClosed += MyCollectionEditor_MyFormClosed;
-            caepFunc = new CorrespondenceAgencyEndPointFunction();
-            caepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _caepFunc = new CorrespondenceAgencyEndPointFunction();
+            _caepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             ShipmentTest = new BaseShipment();
             Notifications = new NotificationBEList();
-            ShipmentIC = new InsertCorrespondenceShipment {InsertCorrespondence = new InsertCorrespondenceV2()};
-            ShipmentIC.InsertCorrespondence.Notifications = Notifications;
-            ShipmentIC.InsertCorrespondence.ReplyOptions = new CorrespondenceInsertLinkBEList();
-            ShipmentIC.InsertCorrespondence.Content = new ExternalContentV2 { Attachments = new AttachmentsV2() };
-            GCHShipment = new GetCorrespondenceStatusHistoryShipment();
-            GCDShipment = new GetCorrespondenceStatusDetailsShipment();
-            GCHResult = new CorrespondenceStatusHistoryResultEx();
+            ShipmentIc = new InsertCorrespondenceShipment {InsertCorrespondence = new InsertCorrespondenceV2()};
+            ShipmentIc.InsertCorrespondence.Notifications = Notifications;
+            ShipmentIc.InsertCorrespondence.ReplyOptions = new CorrespondenceInsertLinkBEList();
+            ShipmentIc.InsertCorrespondence.Content = new ExternalContentV2 { Attachments = new AttachmentsV2() };
+            GchShipment = new GetCorrespondenceStatusHistoryShipment();
+            GcdShipment = new GetCorrespondenceStatusDetailsShipment();
+            _gchResult = new CorrespondenceStatusHistoryResultEx();
             // InvokeAssignTypeDescriptor(this.GetType());
             SetUpObjForPropGrid();
         }
@@ -76,99 +76,99 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         #region InsertCorrespondence
         private void btn_TestInvoke_Click(object sender, EventArgs e)
         {
-            InvokeService(caepFunc.Test, ShipmentTest, "Test");
+            InvokeService(_caepFunc.Test, ShipmentTest, "Test");
         }
 
         private void btn_ICShowShipment_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+            SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
         }
 
         private void btn_ICSaveShipment_Click(object sender, EventArgs e)
         {
-            InvokeSaveShipment(ShipmentIC);
+            InvokeSaveShipment(ShipmentIc);
         }
 
         private void btn_ICLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentIC = InvokeLoad<InsertCorrespondenceShipment>();
+            ShipmentIc = InvokeLoad<InsertCorrespondenceShipment>();
         }
 
         private void btn_ICInvoke_Click(object sender, EventArgs e)
         {
-            InvokeService(caepFunc.InsertCorrespondence, ShipmentIC, ref ResultIC, "InsertCorrespondence");
+            InvokeService(_caepFunc.InsertCorrespondence, ShipmentIc, ref _resultIc, "InsertCorrespondence");
         }
 
         private void btn_ICShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultIC, "Result from InsertCorrespondence");
+            SetViewedItem(_resultIc, "Result from InsertCorrespondence");
         }
 
         private void btn_ICSaveResult_Click(object sender, EventArgs e)
         {
-            InvokeSave(ResultIC);
+            InvokeSave(_resultIc);
         }
         #endregion
         #region GetCorrespondenceDetails Click
         private void btn_GCD_ShS_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCDShipment, "Result from GetCorrespondenceDetailsV3");
+            SetViewedItem(GcdShipment, "Result from GetCorrespondenceDetailsV3");
         }
 
         private void btn_GCD_ShR_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCDResult, "Result from GetCorrespondenceDetailsV3");
+            SetViewedItem(_gcdResult, "Result from GetCorrespondenceDetailsV3");
         }
 
         private void btn_GCD_Invoke_Click(object sender, EventArgs e)
         {
-            InvokeService(caepFunc.GetCorrespondenceDetailsV3, GCDShipment, ref GCDResult, "GetCorrespondenceDetailsV3");
+            InvokeService(_caepFunc.GetCorrespondenceDetailsV3, GcdShipment, ref _gcdResult, "GetCorrespondenceDetailsV3");
         }
 
         private void btn_GCD_SaR_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCDResult);
+            InvokeSave(_gcdResult);
         }
 
         private void btn_GCD_SaS_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCDShipment);
+            InvokeSave(GcdShipment);
         }
 
         private void btn_GCD_LS_Click(object sender, EventArgs e)
         {
-            GCDShipment = InvokeLoad<GetCorrespondenceStatusDetailsShipment>();
+            GcdShipment = InvokeLoad<GetCorrespondenceStatusDetailsShipment>();
         }
         #endregion
         #region GetCorrespondenceHistory Click
         private void btn_GCH_ShS_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCHShipment, "Shipment for GetCorrespondenceStatusHistory");
+            SetViewedItem(GchShipment, "Shipment for GetCorrespondenceStatusHistory");
         }
 
         private void btn_GCH_SaS_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCHShipment);
+            InvokeSave(GchShipment);
         }
 
         private void btn_GCH_LS_Click(object sender, EventArgs e)
         {
-            GCHShipment = InvokeLoad<GetCorrespondenceStatusHistoryShipment>();
+            GchShipment = InvokeLoad<GetCorrespondenceStatusHistoryShipment>();
         }
 
         private void btn_GCH_Invoke_Click(object sender, EventArgs e)
         {
-            InvokeService(caepFunc.GetCorrespondenceStatusHistory, GCHShipment, ref GCHResult, "GetCorrespondenceHistory");
+            InvokeService(_caepFunc.GetCorrespondenceStatusHistory, GchShipment, ref _gchResult, "GetCorrespondenceHistory");
         }
 
         private void btn_GCH_ShR_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCHResult, "Result from GetCorrespondenceStatusHistory");
+            SetViewedItem(_gchResult, "Result from GetCorrespondenceStatusHistory");
         }
 
         private void btn_GCH_SaR_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCHResult);
+            InvokeSave(_gchResult);
         }
         #endregion
     }

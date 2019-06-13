@@ -3,19 +3,20 @@ using System.ComponentModel;
 using System.Drawing.Design;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
-using EC_Endpoint_Client.CorrespondenceAgencyNoSystem;
 using EC_Endpoint_Client.Functionality;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence;
+using EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 {
     public partial class CorrespondenceAgencyNoSystemForm : AgencyBaseForm
     {
-        private CorrespondenceAgencyNoSystemEndPointFunction caepFunc;
+        private CorrespondenceAgencyNoSystemEndPointFunction _caepFunc;
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
-        public InsertCorrespondenceShipmentAEC ShipmentIC { get; set; }
-        private ReceiptExternal ResultIC { get; set; }
+        public InsertCorrespondenceShipmentAec ShipmentIc { get; set; }
+        private ReceiptExternal ResultIc { get; set; }
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
         private NotificationBEList Notifications { get; set; }
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
@@ -23,28 +24,28 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
         private CorrespondenceStatusResultV3 CorrespondenceStatus { get; set; }
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
-        private GetCorrespondenceStatusHistoryAECShipment GCHShipment { get; set; }
+        private GetCorrespondenceStatusHistoryAecShipment GchShipment { get; set; }
         [Editor(typeof(MyCollectionEditor), typeof(UITypeEditor))]
-        public CorrespondenceStatusHistoryAECResult GCHResult;
+        public CorrespondenceStatusHistoryAecResult GchResult;
         public CorrespondenceAgencyNoSystemForm()
         {
             InitializeComponent();
             InitializeComponent();
-            caepFunc = new CorrespondenceAgencyNoSystemEndPointFunction();
-            caepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _caepFunc = new CorrespondenceAgencyNoSystemEndPointFunction();
+            _caepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             ShipmentTest = new BaseShipment();
-            ShipmentIC = new InsertCorrespondenceShipmentAEC {InsertCorrespondence = new InsertCorrespondenceV2()};
-            ShipmentIC.InsertCorrespondence.SdpOptions = new SdpOptions();
+            ShipmentIc = new InsertCorrespondenceShipmentAec {InsertCorrespondence = new InsertCorrespondenceV2()};
+            ShipmentIc.InsertCorrespondence.SdpOptions = new SdpOptions();
             Notifications = new NotificationBEList();
-            ShipmentIC.InsertCorrespondence.Notifications = Notifications;
-            ShipmentIC.InsertCorrespondence.ReplyOptions = new CorrespondenceInsertLinkBEList();
-            ShipmentIC.InsertCorrespondence.Content = new ExternalContentV2();
-            ShipmentIC.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
+            ShipmentIc.InsertCorrespondence.Notifications = Notifications;
+            ShipmentIc.InsertCorrespondence.ReplyOptions = new CorrespondenceInsertLinkBEList();
+            ShipmentIc.InsertCorrespondence.Content = new ExternalContentV2();
+            ShipmentIc.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
             Filter = new GetCorrespondenceStatus();
             CorrespondenceStatus = new CorrespondenceStatusResultV3();
             Filter.CorrespondenceStatusFilter = new CorrespondenceStatusFilterV3();
             Filter.CorrespondenceStatusFilter.SdpSearchOptions = new SdpStatusSearchOptions();
-            GCHShipment = new GetCorrespondenceStatusHistoryAECShipment();
+            GchShipment = new GetCorrespondenceStatusHistoryAecShipment();
             SetUpObjForPropGrid();
             tb_userName.Enabled = false;
             tb_password.Enabled = false;
@@ -80,7 +81,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             TypeDescriptor.AddAttributes(typeof(SdpSmsNotification), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(SdpStatusInformation), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(SdpStatusSearchOptions), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
-            TypeDescriptor.AddAttributes(typeof(GetCorrespondenceStatusHistoryAECShipment), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(GetCorrespondenceStatusHistoryAecShipment), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CorrespondenceStatusHistoryRequestExternalBE), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CorrespondenceStatusHistoryResultExternalBE), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CorrespondenceStatusInformation), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
@@ -96,7 +97,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                caepFunc.Test(ShipmentTest);
+                _caepFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -107,11 +108,11 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void InsertCorrespondenceInvoke()
         {
-            SetBasicShipmentSettings(ShipmentIC);
+            SetBasicShipmentSettings(ShipmentIc);
             try
             {
-                ResultIC = caepFunc.InsertCorrespondence(ShipmentIC);
-                SetViewedItem(ResultIC, "Result from InsertCorrespondence");
+                ResultIc = _caepFunc.InsertCorrespondence(ShipmentIc);
+                SetViewedItem(ResultIc, "Result from InsertCorrespondence");
             }
             catch (Exception ex)
             {
@@ -124,7 +125,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
             SetBasicShipmentSettings(Filter);
             try
             {
-                CorrespondenceStatus = caepFunc.GetCorrespondenceDetailsV3(Filter);
+                CorrespondenceStatus = _caepFunc.GetCorrespondenceDetailsV3(Filter);
                 SetViewedItem(CorrespondenceStatus, "GetCorrespondenceDetails - Result");
             }
             catch (Exception ex)
@@ -136,40 +137,40 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         #region InsertCorrespondence
         private void btn_sdpOptions_Click(object sender, EventArgs e)
         {
-            ShipmentIC.InsertCorrespondence.SdpOptions = ShipmentIC.InsertCorrespondence.SdpOptions == null
-                ? ShipmentIC.InsertCorrespondence.SdpOptions = new SdpOptions() { SdpNotifications = new SdpNotifications() { EmailNotification = new SdpEmailNotification() } }
+            ShipmentIc.InsertCorrespondence.SdpOptions = ShipmentIc.InsertCorrespondence.SdpOptions == null
+                ? ShipmentIc.InsertCorrespondence.SdpOptions = new SdpOptions() { SdpNotifications = new SdpNotifications() { EmailNotification = new SdpEmailNotification() } }
                 : null;
-            SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+            SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
         }
 
         private void btn_ICShowShipment_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+            SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
         }
 
         private void btn_ICLoadShipment_Click(object sender, EventArgs e)
         {
-            ShipmentIC = (InsertCorrespondenceShipmentAEC)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentIC);
-            SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+            ShipmentIc = (InsertCorrespondenceShipmentAec)IoFunctionality.GeneralizedLoadFile(ShipmentIc);
+            SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
         }
 
         private void btn_addBinaryAttach_Click(object sender, EventArgs e)
         {
             string filename;
-            byte[] attachmentbytes = IOFunctionality.GeneralizedLoadAttachment(out filename);
+            byte[] attachmentbytes = IoFunctionality.GeneralizedLoadAttachment(out filename);
             if (attachmentbytes != null)
             {
                 BinaryAttachmentV2 attachment = new BinaryAttachmentV2();
-                if (ShipmentIC.InsertCorrespondence.Content.Attachments == null)
+                if (ShipmentIc.InsertCorrespondence.Content.Attachments == null)
                 {
-                    ShipmentIC.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
+                    ShipmentIc.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
                 }
-                if (ShipmentIC.InsertCorrespondence.Content.Attachments.BinaryAttachments == null)
+                if (ShipmentIc.InsertCorrespondence.Content.Attachments.BinaryAttachments == null)
                 {
-                    ShipmentIC.InsertCorrespondence.Content.Attachments.BinaryAttachments = new BinaryAttachmentExternalBEV2List();
+                    ShipmentIc.InsertCorrespondence.Content.Attachments.BinaryAttachments = new BinaryAttachmentExternalBEV2List();
                 }
 
-                ShipmentIC.InsertCorrespondence.Content.Attachments.BinaryAttachments.Add(new BinaryAttachmentV2()
+                ShipmentIc.InsertCorrespondence.Content.Attachments.BinaryAttachments.Add(new BinaryAttachmentV2()
                 {
                     Data=attachmentbytes,
                     DestinationType=UserTypeRestriction.Default,
@@ -181,30 +182,30 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
                     Name = System.IO.Path.GetFileNameWithoutExtension(filename)
                 });
 
-                SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+                SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
             }
         }
 
         private void btn_attachmentsRemoveAdd_Click(object sender, EventArgs e)
         {
-            if (ShipmentIC.InsertCorrespondence.Content.Attachments == null)
+            if (ShipmentIc.InsertCorrespondence.Content.Attachments == null)
             {
-                ShipmentIC.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
-                ShipmentIC.InsertCorrespondence.Content.Attachments.BinaryAttachments = new BinaryAttachmentExternalBEV2List();
-                ShipmentIC.InsertCorrespondence.Content.Attachments.XmlAttachmentList = new XmlAttachmentListV2();
+                ShipmentIc.InsertCorrespondence.Content.Attachments = new AttachmentsV2();
+                ShipmentIc.InsertCorrespondence.Content.Attachments.BinaryAttachments = new BinaryAttachmentExternalBEV2List();
+                ShipmentIc.InsertCorrespondence.Content.Attachments.XmlAttachmentList = new XmlAttachmentListV2();
             }
             else
             {
-                ShipmentIC.InsertCorrespondence.Content.Attachments = null;
+                ShipmentIc.InsertCorrespondence.Content.Attachments = null;
             }
 
-            SetViewedItem(ShipmentIC, "Shipment for InsertCorrespondence");
+            SetViewedItem(ShipmentIc, "Shipment for InsertCorrespondence");
         }
 
         private void btn_ICSaveShipment_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentIC);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentIC);
+            ClearBasicShipmentsettings(ShipmentIc);
+            IoFunctionality.GeneralizedSaveFile(ShipmentIc);
         }
 
         private void btn_ICInvoke_Click(object sender, EventArgs e)
@@ -214,12 +215,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void btn_ICShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultIC, "Result from InsertCorrespondence");
+            SetViewedItem(ResultIc, "Result from InsertCorrespondence");
         }
 
         private void btn_ICSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultIC);
+            IoFunctionality.GeneralizedSaveFile(ResultIc);
         }
         #endregion
         #region GetCorrespondenceDetails
@@ -239,13 +240,13 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void GC_LoadShipment_btn_Click(object sender, EventArgs e)
         {
-            Filter = Functionality.IOFunctionality.GeneralizedLoadFile(Filter);
+            Filter = IoFunctionality.GeneralizedLoadFile(Filter);
             SetViewedItem(Filter, "Shipment for InsertCorrespondence");
         }
 
         private void GC_SaveShipment_btn_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(Filter);
+            IoFunctionality.GeneralizedSaveFile(Filter);
         }
 
         private void GC_InvokeShipment_btn_Click(object sender, EventArgs e)
@@ -261,7 +262,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         private void GC_SaveResult_btn_Click(object sender, EventArgs e)
         {
 
-            Functionality.IOFunctionality.GeneralizedSaveFile(CorrespondenceStatus);
+            IoFunctionality.GeneralizedSaveFile(CorrespondenceStatus);
         }
         #endregion
 
@@ -272,32 +273,32 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         #region GetCorrespondenceHistory click
         private void btn_GCH_ShS_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCHShipment, "Result from GetCorrespondenceDetailsV3");
+            SetViewedItem(GchShipment, "Result from GetCorrespondenceDetailsV3");
         }
 
         private void btn_GCH_SaS_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCHShipment);
+            InvokeSave(GchShipment);
         }
 
         private void btn_GCH_LS_Click(object sender, EventArgs e)
         {
-            GCHShipment = InvokeLoad<GetCorrespondenceStatusHistoryAECShipment>();
+            GchShipment = InvokeLoad<GetCorrespondenceStatusHistoryAecShipment>();
         }
 
         private void btn_GCH_Invoke_Click(object sender, EventArgs e)
         {
-            InvokeService(caepFunc.GetCorrespondenceStatusHistory, GCHShipment, ref GCHResult, "GetCorrespondenceHistory");
+            InvokeService(_caepFunc.GetCorrespondenceStatusHistory, GchShipment, ref GchResult, "GetCorrespondenceHistory");
         }
 
         private void btn_GCH_ShR_Click(object sender, EventArgs e)
         {
-            SetViewedItem(GCHResult, "Result from GetCorrespondenceDetailsV3");
+            SetViewedItem(GchResult, "Result from GetCorrespondenceDetailsV3");
         }
 
         private void btn_GCH_SaR_Click(object sender, EventArgs e)
         {
-            InvokeSave(GCHResult);
+            InvokeSave(GchResult);
         }
         #endregion
     }

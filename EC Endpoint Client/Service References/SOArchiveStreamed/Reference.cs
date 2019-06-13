@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.SOArchiveStreamed {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.SOArchiveStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -160,16 +159,16 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Archive/ServiceOwnerArchive/2013/06)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.SOArchiveStreamed.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.SOArchiveStreamed.TestResponse Test(EC_Endpoint_Client.SOArchiveStreamed.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SOArchiveStreamed.TestResponse> TestAsync(EC_Endpoint_Client.SOArchiveStreamed.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2013/06/IServiceOwnerAr" +
             "chiveExternalStreamedEC/GetAttachmentDataStreamedEC", ReplyAction="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2013/06/IServiceOwnerAr" +
             "chiveExternalStreamedEC/GetAttachmentDataStreamedECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.SOArchiveStreamed.AltinnFault), Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2013/06/IServiceOwnerAr" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/ServiceOwnerArchive/2013/06/IServiceOwnerAr" +
             "chiveExternalStreamedEC/GetAttachmentDataStreamedECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
         System.IO.Stream GetAttachmentDataStreamedEC(string systemUserName, string systemPassword, int attachmentId);
         
@@ -200,12 +199,12 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceOwnerArchiveExternalStreamedECChannel : EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC, System.ServiceModel.IClientChannel {
+    public interface IServiceOwnerArchiveExternalStreamedECChannel : IServiceOwnerArchiveExternalStreamedEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceOwnerArchiveExternalStreamedECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC>, EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC {
+    public partial class ServiceOwnerArchiveExternalStreamedECClient : System.ServiceModel.ClientBase<IServiceOwnerArchiveExternalStreamedEC>, IServiceOwnerArchiveExternalStreamedEC {
         
         public ServiceOwnerArchiveExternalStreamedECClient() {
         }
@@ -227,23 +226,23 @@ namespace EC_Endpoint_Client.SOArchiveStreamed {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.SOArchiveStreamed.TestResponse EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC.Test(EC_Endpoint_Client.SOArchiveStreamed.TestRequest request) {
+        TestResponse IServiceOwnerArchiveExternalStreamedEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.SOArchiveStreamed.TestRequest inValue = new EC_Endpoint_Client.SOArchiveStreamed.TestRequest();
-            EC_Endpoint_Client.SOArchiveStreamed.TestResponse retVal = ((EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IServiceOwnerArchiveExternalStreamedEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SOArchiveStreamed.TestResponse> EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC.TestAsync(EC_Endpoint_Client.SOArchiveStreamed.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IServiceOwnerArchiveExternalStreamedEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.SOArchiveStreamed.TestResponse> TestAsync() {
-            EC_Endpoint_Client.SOArchiveStreamed.TestRequest inValue = new EC_Endpoint_Client.SOArchiveStreamed.TestRequest();
-            return ((EC_Endpoint_Client.SOArchiveStreamed.IServiceOwnerArchiveExternalStreamedEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IServiceOwnerArchiveExternalStreamedEC)(this)).TestAsync(inValue);
         }
         
         public System.IO.Stream GetAttachmentDataStreamedEC(string systemUserName, string systemPassword, int attachmentId) {

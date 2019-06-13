@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Receipt;
+using EC_Endpoint_Client.Service_References.Receipt;
 
-namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.Receipt
+namespace EC_Endpoint_Client.Classes.Shipments.Intermediary
 {
     public class ReceiptSearchExternalShipment : BaseShipment
     {
         public ReceiptSearchExternalShipment()
         {
-            this.ReceiptSearch = new ReceiptSearchExternal();
-            this.ReceiptSearch.References = new ReferenceList();
+            ReceiptSearch = new ReceiptSearchExternal();
+            ReceiptSearch.References = new ReferenceList();
         }
         public ReceiptSearchExternal ReceiptSearch { get; set; }
     }
@@ -20,8 +16,8 @@ namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.Receipt
     {
         public ReceiptV2SearchExternalShipment()
         {
-            this.ReceiptSearch = new ReceiptSearchExternal();
-            this.ReceiptSearch.References = new ReferenceList();
+            ReceiptSearch = new ReceiptSearchExternal();
+            ReceiptSearch.References = new ReferenceList();
         }
         public ReceiptSearchExternal ReceiptSearch { get; set; }
     }
@@ -41,9 +37,9 @@ namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.Receipt
     {
         public ReceiptSaveExternalShipment()
         {
-            this.ReceiptSave = new ReceiptSaveExternal();
-            this.ReceiptSave.SubReceipts = new ReceiptSaveExternalList();
-            this.ReceiptSave.References = new ReferenceList();
+            ReceiptSave = new ReceiptSaveExternal();
+            ReceiptSave.SubReceipts = new ReceiptSaveExternalList();
+            ReceiptSave.References = new ReferenceList();
         }
         public ReceiptSaveExternal ReceiptSave { get; set; }
     }
@@ -51,9 +47,9 @@ namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.Receipt
     {
         public ReceiptUpdateExternalShipment()
         {
-            this.ReceiptSave = new ReceiptSaveExternal();
-            this.ReceiptSave.SubReceipts = new ReceiptSaveExternalList();
-            this.ReceiptSave.References = new ReferenceList();
+            ReceiptSave = new ReceiptSaveExternal();
+            ReceiptSave.SubReceipts = new ReceiptSaveExternalList();
+            ReceiptSave.References = new ReferenceList();
         }
         public ReceiptSaveExternal ReceiptSave { get; set; }
     }

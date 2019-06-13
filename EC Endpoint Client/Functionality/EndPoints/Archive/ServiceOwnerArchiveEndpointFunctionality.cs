@@ -1,65 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel.Security;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.ArchiveCommonAgency;
-using EC_Endpoint_Client.DownloadQueue;
-using EC_Endpoint_Client.KeyManagement;
-using EC_Endpoint_Client.ReporteeArchive;
-using EC_Endpoint_Client.ReporteeArchiveStreamed;
-using EC_Endpoint_Client.SOArchive;
-using EC_Endpoint_Client.SOArchiveStreamed;
+﻿using System.Security.Cryptography.X509Certificates;
+using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Service_References.SOArchive;
+using EC_Endpoint_Client.Service_References.SOArchiveStreamed;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {
     public class ServiceOwnerArchiveEndpointFunctionality : EndPointFunctionalityBase
     {
         #region ServiceOwnerArchiveExternalEC
-        private ServiceOwnerArchiveExternalECClient GenerateSOArchiveProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private ServiceOwnerArchiveExternalECClient GenerateSoArchiveProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
             return
                 GenerateProxy<ServiceOwnerArchiveExternalECClient, IServiceOwnerArchiveExternalEC>(
-                    selectedEndpointName, SelectedCertificate);
+                    selectedEndpointName, selectedCertificate);
         }
 
-        public void TestSOArchive(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestSoArchive(BaseShipment shipment)
         {
-            var client = GenerateSOArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateSoArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "SOATest";
             client.Test();
         }
 
-        public SOArchive.ArchivedFormTaskV2 GetSOArchiveArchivedFormTaskV2(string username, string password, int reporteeElementId, int? languageId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ArchivedFormTaskV2 GetSoArchiveArchivedFormTaskV2(ArchiveBaseShipment shipment)
         {
-            var client = GenerateSOArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateSoArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "SOAGetFormTaskV2";
-            return client.GetArchivedFormTaskEC(username, password, reporteeElementId, languageId);
+            return client.GetArchivedFormTaskEC(shipment.Username, shipment.Password, shipment.ReporteeElementId, shipment.LanguageId ?? 1044);
         }
         #endregion
 
         #region ServiceOwnerArchiveExternalStreamedEC
-        private ServiceOwnerArchiveExternalStreamedECClient GenerateSOArchiveStreamedProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private ServiceOwnerArchiveExternalStreamedECClient GenerateSoArchiveStreamedProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
             return
                 GenerateProxy<ServiceOwnerArchiveExternalStreamedECClient, IServiceOwnerArchiveExternalStreamedEC>(
-                    selectedEndpointName, SelectedCertificate);
+                    selectedEndpointName, selectedCertificate);
         }
 
-        public void TestSOArchiveStreamed(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestSoArchiveStreamed(BaseShipment shipment)
         {
-            var client = GenerateSOArchiveStreamedProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateSoArchiveStreamedProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "SOAStreamedTest";
             client.Test();
         }
 
-        public System.IO.Stream GetSOArchiveAttachmentDataStreamed(string username, string password, int attachmentId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public StreamedAttachmentResult GetSoArchiveAttachmentDataStreamed(AttachmentBaseShipment shipment)
         {
-            var client = GenerateSOArchiveStreamedProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateSoArchiveStreamedProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "SOAStreamedGetAttachmentData";
-            return client.GetAttachmentDataStreamedEC(username, password, attachmentId);
+            return new StreamedAttachmentResult()
+            {
+                Result = IoFunctionality.WriteStreamToFile(
+                    client.GetAttachmentDataStreamedEC(shipment.Username, shipment.Password, shipment.AttachmentId))
+            };
         }
             
         #endregion

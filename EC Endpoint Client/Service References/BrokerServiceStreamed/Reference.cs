@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.BrokerServiceStreamed {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.BrokerServiceStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -160,37 +159,37 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Broker/2015/06)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerServiceStreamed.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerServiceStreamed.TestResponse Test(EC_Endpoint_Client.BrokerServiceStreamed.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.TestResponse> TestAsync(EC_Endpoint_Client.BrokerServiceStreamed.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/UploadFileStreamedEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/UploadFileStreamedECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerServiceStreamed.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/UploadFileStreamedECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerServiceStreamed.ReceiptExternalStreamedBE UploadFileStreamedEC(EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE request);
+        ReceiptExternalStreamedBE UploadFileStreamedEC(StreamedPayloadECBE request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/UploadFileStreamedEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/UploadFileStreamedECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.ReceiptExternalStreamedBE> UploadFileStreamedECAsync(EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE request);
+        System.Threading.Tasks.Task<ReceiptExternalStreamedBE> UploadFileStreamedECAsync(StreamedPayloadECBE request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Broker/2015/06 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/DownloadFileStreamedEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/DownloadFileStreamedECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BrokerServiceStreamed.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/DownloadFileStreamedECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse DownloadFileStreamedEC(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest request);
+        DownloadFileStreamedECResponse DownloadFileStreamedEC(DownloadFileStreamedECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/DownloadFileStreamedEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Broker/2015/06/IBrokerServiceExternal" +
             "ECStreamed/DownloadFileStreamedECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse> DownloadFileStreamedECAsync(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest request);
+        System.Threading.Tasks.Task<DownloadFileStreamedECResponse> DownloadFileStreamedECAsync(DownloadFileStreamedECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -296,12 +295,12 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
     public partial class DownloadFileStreamedECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFileStreamedEC", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequestBody Body;
+        public DownloadFileStreamedECRequestBody Body;
         
         public DownloadFileStreamedECRequest() {
         }
         
-        public DownloadFileStreamedECRequest(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequestBody Body) {
+        public DownloadFileStreamedECRequest(DownloadFileStreamedECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -309,19 +308,19 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class DownloadFileStreamedECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string fileReference;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string reportee;
         
         public DownloadFileStreamedECRequestBody() {
@@ -342,12 +341,12 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
     public partial class DownloadFileStreamedECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="DownloadFileStreamedECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06", Order=0)]
-        public EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponseBody Body;
+        public DownloadFileStreamedECResponseBody Body;
         
         public DownloadFileStreamedECResponse() {
         }
         
-        public DownloadFileStreamedECResponse(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponseBody Body) {
+        public DownloadFileStreamedECResponse(DownloadFileStreamedECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -355,10 +354,10 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06")]
     public partial class DownloadFileStreamedECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public byte[] DownloadFileStreamedECResult;
         
         public DownloadFileStreamedECResponseBody() {
@@ -370,12 +369,12 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBrokerServiceExternalECStreamedChannel : EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed, System.ServiceModel.IClientChannel {
+    public interface IBrokerServiceExternalECStreamedChannel : IBrokerServiceExternalECStreamed, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BrokerServiceExternalECStreamedClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed>, EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed {
+    public partial class BrokerServiceExternalECStreamedClient : System.ServiceModel.ClientBase<IBrokerServiceExternalECStreamed>, IBrokerServiceExternalECStreamed {
         
         public BrokerServiceExternalECStreamedClient() {
         }
@@ -397,39 +396,39 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerServiceStreamed.TestResponse EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed.Test(EC_Endpoint_Client.BrokerServiceStreamed.TestRequest request) {
+        TestResponse IBrokerServiceExternalECStreamed.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.BrokerServiceStreamed.TestRequest inValue = new EC_Endpoint_Client.BrokerServiceStreamed.TestRequest();
-            EC_Endpoint_Client.BrokerServiceStreamed.TestResponse retVal = ((EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IBrokerServiceExternalECStreamed)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.TestResponse> EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed.TestAsync(EC_Endpoint_Client.BrokerServiceStreamed.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IBrokerServiceExternalECStreamed.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.TestResponse> TestAsync() {
-            EC_Endpoint_Client.BrokerServiceStreamed.TestRequest inValue = new EC_Endpoint_Client.BrokerServiceStreamed.TestRequest();
-            return ((EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IBrokerServiceExternalECStreamed)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerServiceStreamed.ReceiptExternalStreamedBE EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed.UploadFileStreamedEC(EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE request) {
+        ReceiptExternalStreamedBE IBrokerServiceExternalECStreamed.UploadFileStreamedEC(StreamedPayloadECBE request) {
             return base.Channel.UploadFileStreamedEC(request);
         }
         
         public string UploadFileStreamedEC(string FileName, string Password, string Reference, string Reportee, string UserName, System.IO.Stream DataStream, out int ParentReceiptId, out string ReceiptHistory, out int ReceiptId, out string ReceiptStatusCode, out string ReceiptText, out string ReceiptTypeName) {
-            EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE inValue = new EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE();
+            StreamedPayloadECBE inValue = new StreamedPayloadECBE();
             inValue.FileName = FileName;
             inValue.Password = Password;
             inValue.Reference = Reference;
             inValue.Reportee = Reportee;
             inValue.UserName = UserName;
             inValue.DataStream = DataStream;
-            EC_Endpoint_Client.BrokerServiceStreamed.ReceiptExternalStreamedBE retVal = ((EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed)(this)).UploadFileStreamedEC(inValue);
+            ReceiptExternalStreamedBE retVal = ((IBrokerServiceExternalECStreamed)(this)).UploadFileStreamedEC(inValue);
             ParentReceiptId = retVal.ParentReceiptId;
             ReceiptHistory = retVal.ReceiptHistory;
             ReceiptId = retVal.ReceiptId;
@@ -439,39 +438,39 @@ namespace EC_Endpoint_Client.BrokerServiceStreamed {
             return retVal.LastChanged;
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.ReceiptExternalStreamedBE> UploadFileStreamedECAsync(EC_Endpoint_Client.BrokerServiceStreamed.StreamedPayloadECBE request) {
+        public System.Threading.Tasks.Task<ReceiptExternalStreamedBE> UploadFileStreamedECAsync(StreamedPayloadECBE request) {
             return base.Channel.UploadFileStreamedECAsync(request);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed.DownloadFileStreamedEC(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest request) {
+        DownloadFileStreamedECResponse IBrokerServiceExternalECStreamed.DownloadFileStreamedEC(DownloadFileStreamedECRequest request) {
             return base.Channel.DownloadFileStreamedEC(request);
         }
         
         public byte[] DownloadFileStreamedEC(string userName, string password, string fileReference, string reportee) {
-            EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest inValue = new EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequestBody();
+            DownloadFileStreamedECRequest inValue = new DownloadFileStreamedECRequest();
+            inValue.Body = new DownloadFileStreamedECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.fileReference = fileReference;
             inValue.Body.reportee = reportee;
-            EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse retVal = ((EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed)(this)).DownloadFileStreamedEC(inValue);
+            DownloadFileStreamedECResponse retVal = ((IBrokerServiceExternalECStreamed)(this)).DownloadFileStreamedEC(inValue);
             return retVal.Body.DownloadFileStreamedECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse> EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed.DownloadFileStreamedECAsync(EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest request) {
+        System.Threading.Tasks.Task<DownloadFileStreamedECResponse> IBrokerServiceExternalECStreamed.DownloadFileStreamedECAsync(DownloadFileStreamedECRequest request) {
             return base.Channel.DownloadFileStreamedECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECResponse> DownloadFileStreamedECAsync(string userName, string password, string fileReference, string reportee) {
-            EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest inValue = new EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequest();
-            inValue.Body = new EC_Endpoint_Client.BrokerServiceStreamed.DownloadFileStreamedECRequestBody();
+        public System.Threading.Tasks.Task<DownloadFileStreamedECResponse> DownloadFileStreamedECAsync(string userName, string password, string fileReference, string reportee) {
+            DownloadFileStreamedECRequest inValue = new DownloadFileStreamedECRequest();
+            inValue.Body = new DownloadFileStreamedECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.fileReference = fileReference;
             inValue.Body.reportee = reportee;
-            return ((EC_Endpoint_Client.BrokerServiceStreamed.IBrokerServiceExternalECStreamed)(this)).DownloadFileStreamedECAsync(inValue);
+            return ((IBrokerServiceExternalECStreamed)(this)).DownloadFileStreamedECAsync(inValue);
         }
     }
 }

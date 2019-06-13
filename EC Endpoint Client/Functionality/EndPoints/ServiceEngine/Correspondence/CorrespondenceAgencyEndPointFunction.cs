@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.CorrespondenceAgency;
+﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
+using EC_Endpoint_Client.Service_References.CorrespondenceAgency;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence
 {
     public class CorrespondenceAgencyEndPointFunction : EndPointFunctionalityBase
     {
-        private string Context = "CorrespondenceAgency";
+        private string _context = "CorrespondenceAgency";
         private CorrespondenceAgencyExternalECClient GenerateProxy(BaseShipment shipment)
         {
             return
@@ -22,31 +17,31 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         public void Test(BaseShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "Test";
+            OperationContext = _context + "Test";
             client.Test();
         }
 
         public ReceiptExternal InsertCorrespondence(InsertCorrespondenceShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "InsertCorrespondence";
+            OperationContext = _context + "InsertCorrespondence";
             return client.InsertCorrespondenceEC(shipment.Username, shipment.Password, shipment.SystemUserCode, shipment.ExternalShipmentReference, shipment.InsertCorrespondence);
         }
 
         public CorrespondenceStatusResultV3 GetCorrespondenceDetailsV3(GetCorrespondenceStatusDetailsShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "GetCorrespondenceDetailsStatus";
-            return client.GetCorrespondenceStatusDetailsECV3(shipment.Username, shipment.Password, shipment.request);
+            OperationContext = _context + "GetCorrespondenceDetailsStatus";
+            return client.GetCorrespondenceStatusDetailsECV3(shipment.Username, shipment.Password, shipment.Request);
         }
 
         public CorrespondenceStatusHistoryResultEx GetCorrespondenceStatusHistory(GetCorrespondenceStatusHistoryShipment shipment)
         {
             using (var client = GenerateProxy(shipment))
             {
-                OperationContext = Context + "GetcorrespondenceStatusHistory";
+                OperationContext = _context + "GetcorrespondenceStatusHistory";
                 return new CorrespondenceStatusHistoryResultEx(client.GetCorrespondenceStatusHistoryEC(shipment.Password, shipment.Username,
-                    shipment.request));
+                    shipment.Request));
             }
         }
     }

@@ -1,8 +1,8 @@
-﻿using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.LookUp;
-using EC_Endpoint_Client.LookUp;
-using EC_Endpoint_Client.Classes;
+﻿using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.LookUp;
+using EC_Endpoint_Client.Service_References.LookUp;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.LookUp
 {
     class LookUpEndPointFunction : EndPointFunctionalityBase
     {

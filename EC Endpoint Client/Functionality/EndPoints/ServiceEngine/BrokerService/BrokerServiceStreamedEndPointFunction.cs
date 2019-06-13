@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.BrokerServiceStreamed;
-using EC_Endpoint_Client.Classes;
+﻿using System.IO;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService;
+using EC_Endpoint_Client.Service_References.BrokerServiceStreamed;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService
 {
     class BrokerServiceStreamedEndPointFunction : EndPointFunctionalityBase
     {
@@ -36,7 +30,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
             {
                 OperationContext = "UploadFileStreamed";
                 client.UploadFileStreamedEC(shipment.FileName, shipment.Password, shipment.FileReference, shipment.Reportee, shipment.Username, fs,
-                    out receipt._ParentReceiptID, out receipt._ReceiptHistory, out receipt._ReceiptID, out receipt._ReceiptStatusCode, out receipt._ReceiptText, out receipt._ReceiptTypeName);
+                    out receipt._ParentReceiptId, out receipt._ReceiptHistory, out receipt._ReceiptId, out receipt._ReceiptStatusCode, out receipt._ReceiptText, out receipt._ReceiptTypeName);
             }
 
             return receipt;

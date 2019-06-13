@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.ArchiveCommonAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.ArchiveCommonAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,32 +155,32 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalSOASearchBE", Namespace="http://schemas.altinn.no/services/Archive/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ExternalSOASearchBE", Namespace="http://schemas.altinn.no/services/Archive/2009/10")]
+    [Serializable()]
     public partial class ExternalSOASearchBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> DateFromField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> DateToField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SSNOrOrgNumberField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SubjectField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -194,7 +193,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> CaseID {
             get {
                 return this.CaseIDField;
@@ -207,7 +206,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> DateFrom {
             get {
                 return this.DateFromField;
@@ -220,7 +219,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> DateTo {
             get {
                 return this.DateToField;
@@ -233,7 +232,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReferenceId {
             get {
                 return this.ReferenceIdField;
@@ -246,7 +245,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SSNOrOrgNumber {
             get {
                 return this.SSNOrOrgNumberField;
@@ -259,7 +258,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Subject {
             get {
                 return this.SubjectField;
@@ -272,7 +271,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserName {
             get {
                 return this.UserNameField;
@@ -297,72 +296,72 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ServiceOwnerArchiveReporteeElementBEV2List", Namespace="http://schemas.altinn.no/services/Archive/2009/10", ItemName="ServiceOwnerArchiveReporteeElementBEV2")]
-    [System.SerializableAttribute()]
-    public class ServiceOwnerArchiveReporteeElementBEV2List : System.Collections.Generic.List<EC_Endpoint_Client.ArchiveCommonAgency.ServiceOwnerArchiveReporteeElementBEV2> {
+    [CollectionDataContract(Name="ServiceOwnerArchiveReporteeElementBEV2List", Namespace="http://schemas.altinn.no/services/Archive/2009/10", ItemName="ServiceOwnerArchiveReporteeElementBEV2")]
+    [Serializable()]
+    public class ServiceOwnerArchiveReporteeElementBEV2List : System.Collections.Generic.List<ServiceOwnerArchiveReporteeElementBEV2> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceOwnerArchiveReporteeElementBEV2", Namespace="http://schemas.altinn.no/services/Archive/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ServiceOwnerArchiveReporteeElementBEV2", Namespace="http://schemas.altinn.no/services/Archive/2010/10")]
+    [Serializable()]
     public partial class ServiceOwnerArchiveReporteeElementBEV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string Altinn1AMReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<long> Altinn1ArchiveUnitIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> Altinn1FormCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ArchiveCommonAgency.ElementTypeV2 ElementTypeField;
+        [OptionalField()]
+        private ElementTypeV2 ElementTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> EndUserSystemIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> ExpiryDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsAltinn1Field;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> IsCorrespondenceConfirmationRequiredField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsSubjectMessageTitleField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReporteeElementIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReporteeIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SSNOrOrganizationNumberField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> SendCompleteField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SubjectField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SystemTypeNameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -375,7 +374,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Altinn1AMReference {
             get {
                 return this.Altinn1AMReferenceField;
@@ -388,7 +387,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<long> Altinn1ArchiveUnitId {
             get {
                 return this.Altinn1ArchiveUnitIdField;
@@ -401,7 +400,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> Altinn1FormCode {
             get {
                 return this.Altinn1FormCodeField;
@@ -414,7 +413,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -427,8 +426,8 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ArchiveCommonAgency.ElementTypeV2 ElementType {
+        [DataMember()]
+        public ElementTypeV2 ElementType {
             get {
                 return this.ElementTypeField;
             }
@@ -440,7 +439,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> EndUserSystemId {
             get {
                 return this.EndUserSystemIdField;
@@ -453,7 +452,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> ExpiryDate {
             get {
                 return this.ExpiryDateField;
@@ -466,7 +465,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsAltinn1 {
             get {
                 return this.IsAltinn1Field;
@@ -479,7 +478,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> IsCorrespondenceConfirmationRequired {
             get {
                 return this.IsCorrespondenceConfirmationRequiredField;
@@ -492,7 +491,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsSubjectMessageTitle {
             get {
                 return this.IsSubjectMessageTitleField;
@@ -505,7 +504,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChangedDate {
             get {
                 return this.LastChangedDateField;
@@ -518,7 +517,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReporteeElementId {
             get {
                 return this.ReporteeElementIdField;
@@ -531,7 +530,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReporteeId {
             get {
                 return this.ReporteeIdField;
@@ -544,7 +543,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReporteeName {
             get {
                 return this.ReporteeNameField;
@@ -557,7 +556,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SSNOrOrganizationNumber {
             get {
                 return this.SSNOrOrganizationNumberField;
@@ -570,7 +569,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> SendComplete {
             get {
                 return this.SendCompleteField;
@@ -583,7 +582,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Subject {
             get {
                 return this.SubjectField;
@@ -596,7 +595,7 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SystemTypeName {
             get {
                 return this.SystemTypeNameField;
@@ -620,25 +619,25 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ElementTypeV2", Namespace="http://schemas.altinn.no/services/altinnservice/2009/10")]
+    [DataContract(Name="ElementTypeV2", Namespace="http://schemas.altinn.no/services/altinnservice/2009/10")]
     public enum ElementTypeV2 : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Archive = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Active = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ArchiveCorrespondence = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LookUp = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Collaboration = 6,
     }
     
@@ -648,16 +647,16 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Archive/ArchiveCommon/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ArchiveCommonAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ArchiveCommonAgency.TestResponse Test(EC_Endpoint_Client.ArchiveCommonAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/Archive/ArchiveCommon/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10/IArchiveCommonAgencyE" +
             "xternalEC/GetServiceOwnerArchiveReporteeElementsEC", ReplyAction="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10/IArchiveCommonAgencyE" +
             "xternalEC/GetServiceOwnerArchiveReporteeElementsECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ArchiveCommonAgency.AltinnFault), Action="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10/IArchiveCommonAgencyE" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10/IArchiveCommonAgencyE" +
             "xternalEC/GetServiceOwnerArchiveReporteeElementsECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECResponse GetServiceOwnerArchiveReporteeElementsEC(EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequest request);
+        GetServiceOwnerArchiveReporteeElementsECResponse GetServiceOwnerArchiveReporteeElementsEC(GetServiceOwnerArchiveReporteeElementsECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -687,12 +686,12 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     public partial class GetServiceOwnerArchiveReporteeElementsECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceOwnerArchiveReporteeElementsEC", Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10", Order=0)]
-        public EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequestBody Body;
+        public GetServiceOwnerArchiveReporteeElementsECRequestBody Body;
         
         public GetServiceOwnerArchiveReporteeElementsECRequest() {
         }
         
-        public GetServiceOwnerArchiveReporteeElementsECRequest(EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequestBody Body) {
+        public GetServiceOwnerArchiveReporteeElementsECRequest(GetServiceOwnerArchiveReporteeElementsECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -700,25 +699,25 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10")]
     public partial class GetServiceOwnerArchiveReporteeElementsECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.ArchiveCommonAgency.ExternalSOASearchBE searchServiceOwnerArchive;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public ExternalSOASearchBE searchServiceOwnerArchive;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int languageID;
         
         public GetServiceOwnerArchiveReporteeElementsECRequestBody() {
         }
         
-        public GetServiceOwnerArchiveReporteeElementsECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.ArchiveCommonAgency.ExternalSOASearchBE searchServiceOwnerArchive, int languageID) {
+        public GetServiceOwnerArchiveReporteeElementsECRequestBody(string systemUserName, string systemPassword, ExternalSOASearchBE searchServiceOwnerArchive, int languageID) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.searchServiceOwnerArchive = searchServiceOwnerArchive;
@@ -733,12 +732,12 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     public partial class GetServiceOwnerArchiveReporteeElementsECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetServiceOwnerArchiveReporteeElementsECResponse", Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10", Order=0)]
-        public EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECResponseBody Body;
+        public GetServiceOwnerArchiveReporteeElementsECResponseBody Body;
         
         public GetServiceOwnerArchiveReporteeElementsECResponse() {
         }
         
-        public GetServiceOwnerArchiveReporteeElementsECResponse(EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECResponseBody Body) {
+        public GetServiceOwnerArchiveReporteeElementsECResponse(GetServiceOwnerArchiveReporteeElementsECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -746,27 +745,27 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/ArchiveCommon/2010/10")]
     public partial class GetServiceOwnerArchiveReporteeElementsECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.ArchiveCommonAgency.ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsECResult;
+        [DataMember(Order=0)]
+        public ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsECResult;
         
         public GetServiceOwnerArchiveReporteeElementsECResponseBody() {
         }
         
-        public GetServiceOwnerArchiveReporteeElementsECResponseBody(EC_Endpoint_Client.ArchiveCommonAgency.ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsECResult) {
+        public GetServiceOwnerArchiveReporteeElementsECResponseBody(ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsECResult) {
             this.GetServiceOwnerArchiveReporteeElementsECResult = GetServiceOwnerArchiveReporteeElementsECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IArchiveCommonAgencyExternalECChannel : EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface IArchiveCommonAgencyExternalECChannel : IArchiveCommonAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ArchiveCommonAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC>, EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC {
+    public partial class ArchiveCommonAgencyExternalECClient : System.ServiceModel.ClientBase<IArchiveCommonAgencyExternalEC>, IArchiveCommonAgencyExternalEC {
         
         public ArchiveCommonAgencyExternalECClient() {
         }
@@ -788,28 +787,28 @@ namespace EC_Endpoint_Client.ArchiveCommonAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ArchiveCommonAgency.TestResponse EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC.Test(EC_Endpoint_Client.ArchiveCommonAgency.TestRequest request) {
+        TestResponse IArchiveCommonAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.ArchiveCommonAgency.TestRequest inValue = new EC_Endpoint_Client.ArchiveCommonAgency.TestRequest();
-            EC_Endpoint_Client.ArchiveCommonAgency.TestResponse retVal = ((EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IArchiveCommonAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECResponse EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC.GetServiceOwnerArchiveReporteeElementsEC(EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequest request) {
+        GetServiceOwnerArchiveReporteeElementsECResponse IArchiveCommonAgencyExternalEC.GetServiceOwnerArchiveReporteeElementsEC(GetServiceOwnerArchiveReporteeElementsECRequest request) {
             return base.Channel.GetServiceOwnerArchiveReporteeElementsEC(request);
         }
         
-        public EC_Endpoint_Client.ArchiveCommonAgency.ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsEC(string systemUserName, string systemPassword, EC_Endpoint_Client.ArchiveCommonAgency.ExternalSOASearchBE searchServiceOwnerArchive, int languageID) {
-            EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequest inValue = new EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequest();
-            inValue.Body = new EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECRequestBody();
+        public ServiceOwnerArchiveReporteeElementBEV2List GetServiceOwnerArchiveReporteeElementsEC(string systemUserName, string systemPassword, ExternalSOASearchBE searchServiceOwnerArchive, int languageID) {
+            GetServiceOwnerArchiveReporteeElementsECRequest inValue = new GetServiceOwnerArchiveReporteeElementsECRequest();
+            inValue.Body = new GetServiceOwnerArchiveReporteeElementsECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.searchServiceOwnerArchive = searchServiceOwnerArchive;
             inValue.Body.languageID = languageID;
-            EC_Endpoint_Client.ArchiveCommonAgency.GetServiceOwnerArchiveReporteeElementsECResponse retVal = ((EC_Endpoint_Client.ArchiveCommonAgency.IArchiveCommonAgencyExternalEC)(this)).GetServiceOwnerArchiveReporteeElementsEC(inValue);
+            GetServiceOwnerArchiveReporteeElementsECResponse retVal = ((IArchiveCommonAgencyExternalEC)(this)).GetServiceOwnerArchiveReporteeElementsEC(inValue);
             return retVal.Body.GetServiceOwnerArchiveReporteeElementsECResult;
         }
     }

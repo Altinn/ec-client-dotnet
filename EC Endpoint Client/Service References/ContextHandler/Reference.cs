@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.ContextHandler {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.ContextHandler {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,27 +155,27 @@ namespace EC_Endpoint_Client.ContextHandler {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReporteeElementContextExternalBE", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementContext/2014/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReporteeElementContextExternalBE", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementContext/2014/10")]
+    [Serializable()]
     public partial class ReporteeElementContextExternalBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> ProcessStepIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.ContextHandler.ServiceType ServiceTypeField;
+        [OptionalField()]
+        private ServiceType ServiceTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -188,7 +187,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> ProcessStepID {
             get {
                 return this.ProcessStepIDField;
@@ -201,7 +200,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -214,7 +213,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -227,7 +226,7 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -240,8 +239,8 @@ namespace EC_Endpoint_Client.ContextHandler {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.ContextHandler.ServiceType ServiceType {
+        [DataMember()]
+        public ServiceType ServiceType {
             get {
                 return this.ServiceTypeField;
             }
@@ -264,25 +263,25 @@ namespace EC_Endpoint_Client.ContextHandler {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceType", Namespace="http://schemas.altinn.no/ServiceDevelopment/Service/2009/10")]
+    [DataContract(Name="ServiceType", Namespace="http://schemas.altinn.no/ServiceDevelopment/Service/2009/10")]
     public enum ServiceType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         None = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Reporting = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Collaboration = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Lookup = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Link = 5,
     }
     
@@ -292,23 +291,23 @@ namespace EC_Endpoint_Client.ContextHandler {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ContextHandler.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ContextHandler.TestResponse Test(EC_Endpoint_Client.ContextHandler.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ContextHandler.TestResponse> TestAsync(EC_Endpoint_Client.ContextHandler.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
             "rEC/GetReporteeElementContextExternalEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
             "rEC/GetReporteeElementContextExternalECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ContextHandler.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
             "rEC/GetReporteeElementContextExternalECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ContextHandler.ReporteeElementContextExternalBE GetReporteeElementContextExternalEC(string systemUserName, string systemPassword, int reporteeElementID);
+        ReporteeElementContextExternalBE GetReporteeElementContextExternalEC(string systemUserName, string systemPassword, int reporteeElementID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
             "rEC/GetReporteeElementContextExternalEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/ContextHandler/2014/10/IContextHandle" +
             "rEC/GetReporteeElementContextExternalECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ContextHandler.ReporteeElementContextExternalBE> GetReporteeElementContextExternalECAsync(string systemUserName, string systemPassword, int reporteeElementID);
+        System.Threading.Tasks.Task<ReporteeElementContextExternalBE> GetReporteeElementContextExternalECAsync(string systemUserName, string systemPassword, int reporteeElementID);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -332,12 +331,12 @@ namespace EC_Endpoint_Client.ContextHandler {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IContextHandlerECChannel : EC_Endpoint_Client.ContextHandler.IContextHandlerEC, System.ServiceModel.IClientChannel {
+    public interface IContextHandlerECChannel : IContextHandlerEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ContextHandlerECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.ContextHandler.IContextHandlerEC>, EC_Endpoint_Client.ContextHandler.IContextHandlerEC {
+    public partial class ContextHandlerECClient : System.ServiceModel.ClientBase<IContextHandlerEC>, IContextHandlerEC {
         
         public ContextHandlerECClient() {
         }
@@ -359,30 +358,30 @@ namespace EC_Endpoint_Client.ContextHandler {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ContextHandler.TestResponse EC_Endpoint_Client.ContextHandler.IContextHandlerEC.Test(EC_Endpoint_Client.ContextHandler.TestRequest request) {
+        TestResponse IContextHandlerEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.ContextHandler.TestRequest inValue = new EC_Endpoint_Client.ContextHandler.TestRequest();
-            EC_Endpoint_Client.ContextHandler.TestResponse retVal = ((EC_Endpoint_Client.ContextHandler.IContextHandlerEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IContextHandlerEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ContextHandler.TestResponse> EC_Endpoint_Client.ContextHandler.IContextHandlerEC.TestAsync(EC_Endpoint_Client.ContextHandler.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IContextHandlerEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ContextHandler.TestResponse> TestAsync() {
-            EC_Endpoint_Client.ContextHandler.TestRequest inValue = new EC_Endpoint_Client.ContextHandler.TestRequest();
-            return ((EC_Endpoint_Client.ContextHandler.IContextHandlerEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IContextHandlerEC)(this)).TestAsync(inValue);
         }
         
-        public EC_Endpoint_Client.ContextHandler.ReporteeElementContextExternalBE GetReporteeElementContextExternalEC(string systemUserName, string systemPassword, int reporteeElementID) {
+        public ReporteeElementContextExternalBE GetReporteeElementContextExternalEC(string systemUserName, string systemPassword, int reporteeElementID) {
             return base.Channel.GetReporteeElementContextExternalEC(systemUserName, systemPassword, reporteeElementID);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ContextHandler.ReporteeElementContextExternalBE> GetReporteeElementContextExternalECAsync(string systemUserName, string systemPassword, int reporteeElementID) {
+        public System.Threading.Tasks.Task<ReporteeElementContextExternalBE> GetReporteeElementContextExternalECAsync(string systemUserName, string systemPassword, int reporteeElementID) {
             return base.Channel.GetReporteeElementContextExternalECAsync(systemUserName, systemPassword, reporteeElementID);
         }
     }

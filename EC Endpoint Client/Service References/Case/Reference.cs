@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.Case {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,48 +155,48 @@ namespace EC_Endpoint_Client.Case {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CaseBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="CaseBE")]
-    [System.SerializableAttribute()]
-    public class CaseBEList : System.Collections.Generic.List<EC_Endpoint_Client.Case.CaseBE> {
+    [CollectionDataContract(Name="CaseBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="CaseBE")]
+    [Serializable()]
+    public class CaseBEList : System.Collections.Generic.List<CaseBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CaseBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CaseBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class CaseBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CaseNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CommentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateFriendlyNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CurrentStateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> DueDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NoticeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NoticeTemplateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> VisibleDateTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -210,7 +209,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CaseID {
             get {
                 return this.CaseIDField;
@@ -223,7 +222,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CaseName {
             get {
                 return this.CaseNameField;
@@ -236,7 +235,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Comments {
             get {
                 return this.CommentsField;
@@ -249,7 +248,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateFriendlyName {
             get {
                 return this.CurrentStateFriendlyNameField;
@@ -262,7 +261,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CurrentStateID {
             get {
                 return this.CurrentStateIDField;
@@ -275,7 +274,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateName {
             get {
                 return this.CurrentStateNameField;
@@ -288,7 +287,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [DataMember(EmitDefaultValue=false)]
         public System.Nullable<System.DateTime> DueDate {
             get {
                 return this.DueDateField;
@@ -301,7 +300,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Notice {
             get {
                 return this.NoticeField;
@@ -314,7 +313,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string NoticeTemplateID {
             get {
                 return this.NoticeTemplateIDField;
@@ -327,7 +326,7 @@ namespace EC_Endpoint_Client.Case {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [DataMember(EmitDefaultValue=false)]
         public System.Nullable<System.DateTime> VisibleDateTime {
             get {
                 return this.VisibleDateTimeField;
@@ -356,46 +355,46 @@ namespace EC_Endpoint_Client.Case {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Case/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Case.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Case.TestResponse Test(EC_Endpoint_Client.Case.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.TestResponse> TestAsync(EC_Endpoint_Client.Case.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseECRes" +
             "ponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Case.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseECAlt" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseECAlt" +
             "innFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Case.ArchiveCaseECResponse ArchiveCaseEC(EC_Endpoint_Client.Case.ArchiveCaseECRequest request);
+        ArchiveCaseECResponse ArchiveCaseEC(ArchiveCaseECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/ArchiveCaseECRes" +
             "ponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.ArchiveCaseECResponse> ArchiveCaseECAsync(EC_Endpoint_Client.Case.ArchiveCaseECRequest request);
+        System.Threading.Tasks.Task<ArchiveCaseECResponse> ArchiveCaseECAsync(ArchiveCaseECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListECRes" +
             "ponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Case.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListECAlt" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListECAlt" +
             "innFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Case.GetCaseListECResponse GetCaseListEC(EC_Endpoint_Client.Case.GetCaseListECRequest request);
+        GetCaseListECResponse GetCaseListEC(GetCaseListECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/GetCaseListECRes" +
             "ponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.GetCaseListECResponse> GetCaseListECAsync(EC_Endpoint_Client.Case.GetCaseListECRequest request);
+        System.Threading.Tasks.Task<GetCaseListECResponse> GetCaseListECAsync(GetCaseListECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
             "borationEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
             "borationECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Case.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
             "borationECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Case.InstantiateCollaborationECResponse InstantiateCollaborationEC(EC_Endpoint_Client.Case.InstantiateCollaborationECRequest request);
+        InstantiateCollaborationECResponse InstantiateCollaborationEC(InstantiateCollaborationECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
             "borationEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseEC/InstantiateColla" +
             "borationECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.InstantiateCollaborationECResponse> InstantiateCollaborationECAsync(EC_Endpoint_Client.Case.InstantiateCollaborationECRequest request);
+        System.Threading.Tasks.Task<InstantiateCollaborationECResponse> InstantiateCollaborationECAsync(InstantiateCollaborationECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -425,12 +424,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class ArchiveCaseECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ArchiveCaseEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.ArchiveCaseECRequestBody Body;
+        public ArchiveCaseECRequestBody Body;
         
         public ArchiveCaseECRequest() {
         }
         
-        public ArchiveCaseECRequest(EC_Endpoint_Client.Case.ArchiveCaseECRequestBody Body) {
+        public ArchiveCaseECRequest(ArchiveCaseECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -438,19 +437,19 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class ArchiveCaseECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string userPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public int caseID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public bool forceArchive;
         
         public ArchiveCaseECRequestBody() {
@@ -471,12 +470,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class ArchiveCaseECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ArchiveCaseECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.ArchiveCaseECResponseBody Body;
+        public ArchiveCaseECResponseBody Body;
         
         public ArchiveCaseECResponse() {
         }
         
-        public ArchiveCaseECResponse(EC_Endpoint_Client.Case.ArchiveCaseECResponseBody Body) {
+        public ArchiveCaseECResponse(ArchiveCaseECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -484,10 +483,10 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class ArchiveCaseECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public int ArchiveCaseECResult;
         
         public ArchiveCaseECResponseBody() {
@@ -505,12 +504,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class GetCaseListECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCaseListEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.GetCaseListECRequestBody Body;
+        public GetCaseListECRequestBody Body;
         
         public GetCaseListECRequest() {
         }
         
-        public GetCaseListECRequest(EC_Endpoint_Client.Case.GetCaseListECRequestBody Body) {
+        public GetCaseListECRequest(GetCaseListECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -518,28 +517,28 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class GetCaseListECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string userPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public int caseID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public string externalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public int externalServiceEditionCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public int languageID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+        [DataMember(EmitDefaultValue=false, Order=6)]
         public string reporteeNumber;
         
         public GetCaseListECRequestBody() {
@@ -563,12 +562,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class GetCaseListECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCaseListECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.GetCaseListECResponseBody Body;
+        public GetCaseListECResponseBody Body;
         
         public GetCaseListECResponse() {
         }
         
-        public GetCaseListECResponse(EC_Endpoint_Client.Case.GetCaseListECResponseBody Body) {
+        public GetCaseListECResponse(GetCaseListECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -576,16 +575,16 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class GetCaseListECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Case.CaseBEList GetCaseListECResult;
+        [DataMember(Order=0)]
+        public CaseBEList GetCaseListECResult;
         
         public GetCaseListECResponseBody() {
         }
         
-        public GetCaseListECResponseBody(EC_Endpoint_Client.Case.CaseBEList GetCaseListECResult) {
+        public GetCaseListECResponseBody(CaseBEList GetCaseListECResult) {
             this.GetCaseListECResult = GetCaseListECResult;
         }
     }
@@ -597,12 +596,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class InstantiateCollaborationECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstantiateCollaborationEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.InstantiateCollaborationECRequestBody Body;
+        public InstantiateCollaborationECRequestBody Body;
         
         public InstantiateCollaborationECRequest() {
         }
         
-        public InstantiateCollaborationECRequest(EC_Endpoint_Client.Case.InstantiateCollaborationECRequestBody Body) {
+        public InstantiateCollaborationECRequest(InstantiateCollaborationECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -610,31 +609,31 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class InstantiateCollaborationECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string userPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string externalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int externalServiceEditionCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [DataMember(EmitDefaultValue=false, Order=4)]
         public string reporteeNumber;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public string externalSystemReference;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public System.DateTime visibleDateTime;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        [DataMember(Order=7)]
         public System.DateTime dueDate;
         
         public InstantiateCollaborationECRequestBody() {
@@ -659,12 +658,12 @@ namespace EC_Endpoint_Client.Case {
     public partial class InstantiateCollaborationECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstantiateCollaborationECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.Case.InstantiateCollaborationECResponseBody Body;
+        public InstantiateCollaborationECResponseBody Body;
         
         public InstantiateCollaborationECResponse() {
         }
         
-        public InstantiateCollaborationECResponse(EC_Endpoint_Client.Case.InstantiateCollaborationECResponseBody Body) {
+        public InstantiateCollaborationECResponse(InstantiateCollaborationECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -672,10 +671,10 @@ namespace EC_Endpoint_Client.Case {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class InstantiateCollaborationECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public int InstantiateCollaborationECResult;
         
         public InstantiateCollaborationECResponseBody() {
@@ -687,12 +686,12 @@ namespace EC_Endpoint_Client.Case {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICaseECChannel : EC_Endpoint_Client.Case.ICaseEC, System.ServiceModel.IClientChannel {
+    public interface ICaseECChannel : ICaseEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CaseECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.Case.ICaseEC>, EC_Endpoint_Client.Case.ICaseEC {
+    public partial class CaseECClient : System.ServiceModel.ClientBase<ICaseEC>, ICaseEC {
         
         public CaseECClient() {
         }
@@ -714,64 +713,64 @@ namespace EC_Endpoint_Client.Case {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Case.TestResponse EC_Endpoint_Client.Case.ICaseEC.Test(EC_Endpoint_Client.Case.TestRequest request) {
+        TestResponse ICaseEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.Case.TestRequest inValue = new EC_Endpoint_Client.Case.TestRequest();
-            EC_Endpoint_Client.Case.TestResponse retVal = ((EC_Endpoint_Client.Case.ICaseEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((ICaseEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.TestResponse> EC_Endpoint_Client.Case.ICaseEC.TestAsync(EC_Endpoint_Client.Case.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> ICaseEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Case.TestResponse> TestAsync() {
-            EC_Endpoint_Client.Case.TestRequest inValue = new EC_Endpoint_Client.Case.TestRequest();
-            return ((EC_Endpoint_Client.Case.ICaseEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((ICaseEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Case.ArchiveCaseECResponse EC_Endpoint_Client.Case.ICaseEC.ArchiveCaseEC(EC_Endpoint_Client.Case.ArchiveCaseECRequest request) {
+        ArchiveCaseECResponse ICaseEC.ArchiveCaseEC(ArchiveCaseECRequest request) {
             return base.Channel.ArchiveCaseEC(request);
         }
         
         public int ArchiveCaseEC(string userName, string userPassword, int caseID, bool forceArchive) {
-            EC_Endpoint_Client.Case.ArchiveCaseECRequest inValue = new EC_Endpoint_Client.Case.ArchiveCaseECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.ArchiveCaseECRequestBody();
+            ArchiveCaseECRequest inValue = new ArchiveCaseECRequest();
+            inValue.Body = new ArchiveCaseECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.caseID = caseID;
             inValue.Body.forceArchive = forceArchive;
-            EC_Endpoint_Client.Case.ArchiveCaseECResponse retVal = ((EC_Endpoint_Client.Case.ICaseEC)(this)).ArchiveCaseEC(inValue);
+            ArchiveCaseECResponse retVal = ((ICaseEC)(this)).ArchiveCaseEC(inValue);
             return retVal.Body.ArchiveCaseECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.ArchiveCaseECResponse> EC_Endpoint_Client.Case.ICaseEC.ArchiveCaseECAsync(EC_Endpoint_Client.Case.ArchiveCaseECRequest request) {
+        System.Threading.Tasks.Task<ArchiveCaseECResponse> ICaseEC.ArchiveCaseECAsync(ArchiveCaseECRequest request) {
             return base.Channel.ArchiveCaseECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Case.ArchiveCaseECResponse> ArchiveCaseECAsync(string userName, string userPassword, int caseID, bool forceArchive) {
-            EC_Endpoint_Client.Case.ArchiveCaseECRequest inValue = new EC_Endpoint_Client.Case.ArchiveCaseECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.ArchiveCaseECRequestBody();
+        public System.Threading.Tasks.Task<ArchiveCaseECResponse> ArchiveCaseECAsync(string userName, string userPassword, int caseID, bool forceArchive) {
+            ArchiveCaseECRequest inValue = new ArchiveCaseECRequest();
+            inValue.Body = new ArchiveCaseECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.caseID = caseID;
             inValue.Body.forceArchive = forceArchive;
-            return ((EC_Endpoint_Client.Case.ICaseEC)(this)).ArchiveCaseECAsync(inValue);
+            return ((ICaseEC)(this)).ArchiveCaseECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Case.GetCaseListECResponse EC_Endpoint_Client.Case.ICaseEC.GetCaseListEC(EC_Endpoint_Client.Case.GetCaseListECRequest request) {
+        GetCaseListECResponse ICaseEC.GetCaseListEC(GetCaseListECRequest request) {
             return base.Channel.GetCaseListEC(request);
         }
         
-        public EC_Endpoint_Client.Case.CaseBEList GetCaseListEC(string userName, string userPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
-            EC_Endpoint_Client.Case.GetCaseListECRequest inValue = new EC_Endpoint_Client.Case.GetCaseListECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.GetCaseListECRequestBody();
+        public CaseBEList GetCaseListEC(string userName, string userPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
+            GetCaseListECRequest inValue = new GetCaseListECRequest();
+            inValue.Body = new GetCaseListECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.caseID = caseID;
@@ -779,18 +778,18 @@ namespace EC_Endpoint_Client.Case {
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
             inValue.Body.languageID = languageID;
             inValue.Body.reporteeNumber = reporteeNumber;
-            EC_Endpoint_Client.Case.GetCaseListECResponse retVal = ((EC_Endpoint_Client.Case.ICaseEC)(this)).GetCaseListEC(inValue);
+            GetCaseListECResponse retVal = ((ICaseEC)(this)).GetCaseListEC(inValue);
             return retVal.Body.GetCaseListECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.GetCaseListECResponse> EC_Endpoint_Client.Case.ICaseEC.GetCaseListECAsync(EC_Endpoint_Client.Case.GetCaseListECRequest request) {
+        System.Threading.Tasks.Task<GetCaseListECResponse> ICaseEC.GetCaseListECAsync(GetCaseListECRequest request) {
             return base.Channel.GetCaseListECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Case.GetCaseListECResponse> GetCaseListECAsync(string userName, string userPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
-            EC_Endpoint_Client.Case.GetCaseListECRequest inValue = new EC_Endpoint_Client.Case.GetCaseListECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.GetCaseListECRequestBody();
+        public System.Threading.Tasks.Task<GetCaseListECResponse> GetCaseListECAsync(string userName, string userPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
+            GetCaseListECRequest inValue = new GetCaseListECRequest();
+            inValue.Body = new GetCaseListECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.caseID = caseID;
@@ -798,17 +797,17 @@ namespace EC_Endpoint_Client.Case {
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
             inValue.Body.languageID = languageID;
             inValue.Body.reporteeNumber = reporteeNumber;
-            return ((EC_Endpoint_Client.Case.ICaseEC)(this)).GetCaseListECAsync(inValue);
+            return ((ICaseEC)(this)).GetCaseListECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Case.InstantiateCollaborationECResponse EC_Endpoint_Client.Case.ICaseEC.InstantiateCollaborationEC(EC_Endpoint_Client.Case.InstantiateCollaborationECRequest request) {
+        InstantiateCollaborationECResponse ICaseEC.InstantiateCollaborationEC(InstantiateCollaborationECRequest request) {
             return base.Channel.InstantiateCollaborationEC(request);
         }
         
         public int InstantiateCollaborationEC(string userName, string userPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, string externalSystemReference, System.DateTime visibleDateTime, System.DateTime dueDate) {
-            EC_Endpoint_Client.Case.InstantiateCollaborationECRequest inValue = new EC_Endpoint_Client.Case.InstantiateCollaborationECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.InstantiateCollaborationECRequestBody();
+            InstantiateCollaborationECRequest inValue = new InstantiateCollaborationECRequest();
+            inValue.Body = new InstantiateCollaborationECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.externalServiceCode = externalServiceCode;
@@ -817,18 +816,18 @@ namespace EC_Endpoint_Client.Case {
             inValue.Body.externalSystemReference = externalSystemReference;
             inValue.Body.visibleDateTime = visibleDateTime;
             inValue.Body.dueDate = dueDate;
-            EC_Endpoint_Client.Case.InstantiateCollaborationECResponse retVal = ((EC_Endpoint_Client.Case.ICaseEC)(this)).InstantiateCollaborationEC(inValue);
+            InstantiateCollaborationECResponse retVal = ((ICaseEC)(this)).InstantiateCollaborationEC(inValue);
             return retVal.Body.InstantiateCollaborationECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Case.InstantiateCollaborationECResponse> EC_Endpoint_Client.Case.ICaseEC.InstantiateCollaborationECAsync(EC_Endpoint_Client.Case.InstantiateCollaborationECRequest request) {
+        System.Threading.Tasks.Task<InstantiateCollaborationECResponse> ICaseEC.InstantiateCollaborationECAsync(InstantiateCollaborationECRequest request) {
             return base.Channel.InstantiateCollaborationECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Case.InstantiateCollaborationECResponse> InstantiateCollaborationECAsync(string userName, string userPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, string externalSystemReference, System.DateTime visibleDateTime, System.DateTime dueDate) {
-            EC_Endpoint_Client.Case.InstantiateCollaborationECRequest inValue = new EC_Endpoint_Client.Case.InstantiateCollaborationECRequest();
-            inValue.Body = new EC_Endpoint_Client.Case.InstantiateCollaborationECRequestBody();
+        public System.Threading.Tasks.Task<InstantiateCollaborationECResponse> InstantiateCollaborationECAsync(string userName, string userPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, string externalSystemReference, System.DateTime visibleDateTime, System.DateTime dueDate) {
+            InstantiateCollaborationECRequest inValue = new InstantiateCollaborationECRequest();
+            inValue.Body = new InstantiateCollaborationECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.userPassword = userPassword;
             inValue.Body.externalServiceCode = externalServiceCode;
@@ -837,7 +836,7 @@ namespace EC_Endpoint_Client.Case {
             inValue.Body.externalSystemReference = externalSystemReference;
             inValue.Body.visibleDateTime = visibleDateTime;
             inValue.Body.dueDate = dueDate;
-            return ((EC_Endpoint_Client.Case.ICaseEC)(this)).InstantiateCollaborationECAsync(inValue);
+            return ((ICaseEC)(this)).InstantiateCollaborationECAsync(inValue);
         }
     }
 }

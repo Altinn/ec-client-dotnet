@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms.ServiceEngine
+﻿namespace EC_Endpoint_Client.Forms.ServiceEngine.ContextHandler
 {
     partial class ContextHandlerAgencyForm
     {

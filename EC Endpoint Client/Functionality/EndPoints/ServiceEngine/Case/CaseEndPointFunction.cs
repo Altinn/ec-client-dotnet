@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Case;
-using EC_Endpoint_Client.Classes;
+﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.Case;
+using EC_Endpoint_Client.Service_References.Case;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case
 {
     class CaseEndPointFunction : EndPointFunctionalityBase
     {
@@ -27,14 +22,14 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         {
             var client = GenerateProxy(shipment);
             OperationContext = "CaseArchiveCase";
-            return client.ArchiveCaseEC(shipment.Username, shipment.Password, shipment.CaseID, shipment.ForceArchive);
+            return client.ArchiveCaseEC(shipment.Username, shipment.Password, shipment.CaseId, shipment.ForceArchive);
         }
 
         public CaseBEList GetCaseList(CaseListShipment shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "Case" + "GetCaseList";
-            return client.GetCaseListEC(shipment.Username, shipment.Password, shipment.CaseID, shipment.ExternalServiceCode, shipment.ExternalServiceEditionCode, shipment.LanguageID, shipment.ReporteeNumber);
+            return client.GetCaseListEC(shipment.Username, shipment.Password, shipment.CaseId, shipment.ExternalServiceCode, shipment.ExternalServiceEditionCode, shipment.LanguageId, shipment.ReporteeNumber);
         }
 
         public int InstantiateCollaboration(InstantiateCollaborationShipment shipment)

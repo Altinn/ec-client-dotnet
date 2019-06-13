@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.ArchiveCommonAgency;
-using EC_Endpoint_Client.Classes;
+﻿using System.Security.Cryptography.X509Certificates;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Forms.Archive;
+using EC_Endpoint_Client.Service_References.ArchiveCommonAgency;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {
     public class ArchiveCommonAgencyEndPointFunctionality : EndPointFunctionalityBase
     {
@@ -18,24 +14,24 @@ namespace EC_Endpoint_Client.Functionality
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        /// <param name="exSOASearchBE"></param>
+        /// <param name="exSoaSearchBe"></param>
         /// <param name="languageId"></param>
         /// <param name="selectedEndpointName"></param>
-        /// <param name="SelectedCertificate"></param>
+        /// <param name="selectedCertificate"></param>
         /// <returns></returns>
-        public ServiceOwnerArchiveReporteeElementBEV2List GetArchiveCommonAgencyReporteeElementsEC(string userName, string password, ExternalSOASearchBE exSOASearchBE, int languageId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ServiceOwnerArchiveReporteeElementBEV2List GetArchiveCommonAgencyReporteeElementsEc(ArchiveCommonAgencyShipment shipment)
         {
-            ServiceOwnerArchiveReporteeElementBEV2List soaREBEV2List;
-            var client = GenerateArchiveCommonProxy(selectedEndpointName, SelectedCertificate);
+            ServiceOwnerArchiveReporteeElementBEV2List soaRebev2List;
+            var client = GenerateArchiveCommonProxy(shipment.EndpointName, shipment.Certificate);
             
             OperationContext = "GetArchiveCommonAgencyReporteeElmeentsEC";
-            soaREBEV2List = client.GetServiceOwnerArchiveReporteeElementsEC(userName, password, exSOASearchBE, languageId);
-            return soaREBEV2List;
+            soaRebev2List = client.GetServiceOwnerArchiveReporteeElementsEC(shipment.Username, shipment.Password, shipment.SoaSearch, shipment.LanguageId);
+            return soaRebev2List;
         }
 
-        public void TestArchiveCommonAgency(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestArchiveCommonAgency(BaseShipment shipment)
         {
-            var client = GenerateArchiveCommonProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateArchiveCommonProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "ArchiveCommonAgencyTest";
             client.Test();
         }
@@ -48,11 +44,11 @@ namespace EC_Endpoint_Client.Functionality
         /// the base class. (It also adds an inspector to grab soap requests and responses.)
         /// </summary>
         /// <param name="selectedEndpointName"></param>
-        /// <param name="SelectedCertificate"></param>
+        /// <param name="selectedCertificate"></param>
         /// <returns></returns>
-        private ArchiveCommonAgencyExternalECClient GenerateArchiveCommonProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private ArchiveCommonAgencyExternalECClient GenerateArchiveCommonProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
-            return GenerateProxy<ArchiveCommonAgencyExternalECClient, IArchiveCommonAgencyExternalEC>(selectedEndpointName, SelectedCertificate);
+            return GenerateProxy<ArchiveCommonAgencyExternalECClient, IArchiveCommonAgencyExternalEC>(selectedEndpointName, selectedCertificate);
         }
 
         #endregion

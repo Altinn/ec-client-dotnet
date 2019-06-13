@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.CorrespondenceAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,29 +155,29 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusFilter", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusFilter", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
+    [Serializable()]
     public partial class CorrespondenceStatusFilter : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedAfterDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedBeforeDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusType CurrentStatusField;
+        [OptionalField()]
+        private CorrespondenceStatusType CurrentStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> NotificationSentField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         private string ServiceCodeField;
@@ -195,7 +194,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedAfterDate {
             get {
                 return this.CreatedAfterDateField;
@@ -208,7 +207,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedBeforeDate {
             get {
                 return this.CreatedBeforeDateField;
@@ -221,8 +220,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusType CurrentStatus {
+        [DataMember()]
+        public CorrespondenceStatusType CurrentStatus {
             get {
                 return this.CurrentStatusField;
             }
@@ -234,7 +233,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> NotificationSent {
             get {
                 return this.NotificationSentField;
@@ -247,7 +246,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -260,7 +259,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -273,7 +272,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -286,7 +285,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -310,39 +309,39 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusType", Namespace="http://schemas.altinn.no/services/serviceEntity/2013/11")]
+    [DataContract(Name="CorrespondenceStatusType", Namespace="http://schemas.altinn.no/services/serviceEntity/2013/11")]
     public enum CorrespondenceStatusType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Created = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Read = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Confirmed = 6,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusResult", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusResult", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
+    [Serializable()]
     public partial class CorrespondenceStatusResult : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool LimitReachedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.Status[] StatusListField;
+        [OptionalField()]
+        private Status[] StatusListField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -354,7 +353,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool LimitReached {
             get {
                 return this.LimitReachedField;
@@ -367,7 +366,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -380,7 +379,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -393,8 +392,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.Status[] StatusList {
+        [DataMember()]
+        public Status[] StatusList {
             get {
                 return this.StatusListField;
             }
@@ -418,30 +417,30 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Status", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Status", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
+    [Serializable()]
     public partial class Status : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CorrespondenceIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime CreatedDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.Notification[] NotificationsField;
+        [OptionalField()]
+        private Notification[] NotificationsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.StatusChange[] StatusChangesField;
+        [OptionalField()]
+        private StatusChange[] StatusChangesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -453,7 +452,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CorrespondenceID {
             get {
                 return this.CorrespondenceIDField;
@@ -466,7 +465,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime CreatedDate {
             get {
                 return this.CreatedDateField;
@@ -479,8 +478,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.Notification[] Notifications {
+        [DataMember()]
+        public Notification[] Notifications {
             get {
                 return this.NotificationsField;
             }
@@ -492,7 +491,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -505,7 +504,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -518,8 +517,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.StatusChange[] StatusChanges {
+        [DataMember()]
+        public StatusChange[] StatusChanges {
             get {
                 return this.StatusChangesField;
             }
@@ -543,21 +542,21 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
+    [Serializable()]
     public partial class Notification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string RecipientField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> SentDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.TransportType TransportTypeField;
+        [OptionalField()]
+        private TransportType TransportTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -569,7 +568,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Recipient {
             get {
                 return this.RecipientField;
@@ -582,7 +581,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> SentDate {
             get {
                 return this.SentDateField;
@@ -595,8 +594,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.TransportType TransportType {
+        [DataMember()]
+        public TransportType TransportType {
             get {
                 return this.TransportTypeField;
             }
@@ -620,18 +619,18 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatusChange", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StatusChange", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2013/11")]
+    [Serializable()]
     public partial class StatusChange : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime StatusDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusType StatusTypeField;
+        [OptionalField()]
+        private CorrespondenceStatusType StatusTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -643,7 +642,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime StatusDate {
             get {
                 return this.StatusDateField;
@@ -656,8 +655,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusType StatusType {
+        [DataMember()]
+        public CorrespondenceStatusType StatusType {
             get {
                 return this.StatusTypeField;
             }
@@ -680,47 +679,47 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
+    [DataContract(Name="TransportType", Namespace="http://schemas.altinn.no/serviceengine/formsengine/2009/10")]
     public enum TransportType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SMS = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Email = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         IM = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Both = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusFilterV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusFilterV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
+    [Serializable()]
     public partial class CorrespondenceStatusFilterV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedAfterDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedBeforeDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 CurrentStatusField;
+        [OptionalField()]
+        private CorrespondenceStatusTypeV2 CurrentStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> NotificationSentField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         private string ServiceCodeField;
@@ -737,7 +736,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedAfterDate {
             get {
                 return this.CreatedAfterDateField;
@@ -750,7 +749,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedBeforeDate {
             get {
                 return this.CreatedBeforeDateField;
@@ -763,8 +762,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 CurrentStatus {
+        [DataMember()]
+        public CorrespondenceStatusTypeV2 CurrentStatus {
             get {
                 return this.CurrentStatusField;
             }
@@ -776,7 +775,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> NotificationSent {
             get {
                 return this.NotificationSentField;
@@ -789,7 +788,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -802,7 +801,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -815,7 +814,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -828,7 +827,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -852,45 +851,45 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusTypeV2", Namespace="http://schemas.altinn.no/services/serviceEntity/2014/10")]
+    [DataContract(Name="CorrespondenceStatusTypeV2", Namespace="http://schemas.altinn.no/services/serviceEntity/2014/10")]
     public enum CorrespondenceStatusTypeV2 : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Created = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Read = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Confirmed = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Reserved = 10,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusResultV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusResultV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
+    [Serializable()]
     public partial class CorrespondenceStatusResultV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool LimitReachedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.StatusV2[] StatusListField;
+        [OptionalField()]
+        private StatusV2[] StatusListField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -902,7 +901,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool LimitReached {
             get {
                 return this.LimitReachedField;
@@ -915,7 +914,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -928,7 +927,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -941,8 +940,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.StatusV2[] StatusList {
+        [DataMember()]
+        public StatusV2[] StatusList {
             get {
                 return this.StatusListField;
             }
@@ -966,30 +965,30 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatusV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StatusV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
+    [Serializable()]
     public partial class StatusV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CorrespondenceIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime CreatedDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.Notification[] NotificationsField;
+        [OptionalField()]
+        private Notification[] NotificationsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.StatusChangeV2[] StatusChangesField;
+        [OptionalField()]
+        private StatusChangeV2[] StatusChangesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1001,7 +1000,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CorrespondenceID {
             get {
                 return this.CorrespondenceIDField;
@@ -1014,7 +1013,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime CreatedDate {
             get {
                 return this.CreatedDateField;
@@ -1027,8 +1026,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.Notification[] Notifications {
+        [DataMember()]
+        public Notification[] Notifications {
             get {
                 return this.NotificationsField;
             }
@@ -1040,7 +1039,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -1053,7 +1052,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -1066,8 +1065,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.StatusChangeV2[] StatusChanges {
+        [DataMember()]
+        public StatusChangeV2[] StatusChanges {
             get {
                 return this.StatusChangesField;
             }
@@ -1091,18 +1090,18 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StatusChangeV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StatusChangeV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2014/10")]
+    [Serializable()]
     public partial class StatusChangeV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime StatusDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 StatusTypeField;
+        [OptionalField()]
+        private CorrespondenceStatusTypeV2 StatusTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1114,7 +1113,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime StatusDate {
             get {
                 return this.StatusDateField;
@@ -1127,8 +1126,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 StatusType {
+        [DataMember()]
+        public CorrespondenceStatusTypeV2 StatusType {
             get {
                 return this.StatusTypeField;
             }
@@ -1152,32 +1151,32 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusFilterV3", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusFilterV3", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class CorrespondenceStatusFilterV3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedAfterDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> CreatedBeforeDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 CurrentStatusField;
+        [OptionalField()]
+        private CorrespondenceStatusTypeV2 CurrentStatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> NotificationSentField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpStatusSearchOptions SdpSearchOptionsField;
+        [OptionalField()]
+        private SdpStatusSearchOptions SdpSearchOptionsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         private string ServiceCodeField;
@@ -1194,7 +1193,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedAfterDate {
             get {
                 return this.CreatedAfterDateField;
@@ -1207,7 +1206,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> CreatedBeforeDate {
             get {
                 return this.CreatedBeforeDateField;
@@ -1220,8 +1219,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusTypeV2 CurrentStatus {
+        [DataMember()]
+        public CorrespondenceStatusTypeV2 CurrentStatus {
             get {
                 return this.CurrentStatusField;
             }
@@ -1233,7 +1232,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> NotificationSent {
             get {
                 return this.NotificationSentField;
@@ -1246,7 +1245,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -1259,8 +1258,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusSearchOptions SdpSearchOptions {
+        [DataMember()]
+        public SdpStatusSearchOptions SdpSearchOptions {
             get {
                 return this.SdpSearchOptionsField;
             }
@@ -1272,7 +1271,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -1285,7 +1284,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -1298,7 +1297,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -1323,11 +1322,11 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpStatusSearchOptions", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpStatusSearchOptions", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpStatusSearchOptions : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private bool IncludeCorrespondenceField;
@@ -1342,7 +1341,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public bool IncludeCorrespondence {
             get {
                 return this.IncludeCorrespondenceField;
@@ -1367,23 +1366,23 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusResultV3", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusResultV3", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class CorrespondenceStatusResultV3 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusInformation CorrespondenceStatusInformationField;
+        [OptionalField()]
+        private CorrespondenceStatusInformation CorrespondenceStatusInformationField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation SdpStatusInformationField;
+        [OptionalField()]
+        private SdpStatusInformation SdpStatusInformationField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceEditionCodeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1396,8 +1395,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusInformation CorrespondenceStatusInformation {
+        [DataMember()]
+        public CorrespondenceStatusInformation CorrespondenceStatusInformation {
             get {
                 return this.CorrespondenceStatusInformationField;
             }
@@ -1409,8 +1408,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation SdpStatusInformation {
+        [DataMember()]
+        public SdpStatusInformation SdpStatusInformation {
             get {
                 return this.SdpStatusInformationField;
             }
@@ -1422,7 +1421,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -1435,7 +1434,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -1460,17 +1459,17 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CorrespondenceStatusInformation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CorrespondenceStatusInformation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class CorrespondenceStatusInformation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.StatusV2[] CorrespondenceStatusDetailsListField;
+        [OptionalField()]
+        private StatusV2[] CorrespondenceStatusDetailsListField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool LimitReachedField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1483,8 +1482,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.StatusV2[] CorrespondenceStatusDetailsList {
+        [DataMember()]
+        public StatusV2[] CorrespondenceStatusDetailsList {
             get {
                 return this.CorrespondenceStatusDetailsListField;
             }
@@ -1496,7 +1495,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool LimitReached {
             get {
                 return this.LimitReachedField;
@@ -1521,18 +1520,18 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpStatusInformation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpStatusInformation", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpStatusInformation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool LimitReachedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpStatusDetails[] SdpStatusDetailsListField;
+        [OptionalField()]
+        private SdpStatusDetails[] SdpStatusDetailsListField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1544,7 +1543,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool LimitReached {
             get {
                 return this.LimitReachedField;
@@ -1557,8 +1556,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusDetails[] SdpStatusDetailsList {
+        [DataMember()]
+        public SdpStatusDetails[] SdpStatusDetailsList {
             get {
                 return this.SdpStatusDetailsListField;
             }
@@ -1582,33 +1581,33 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpStatusDetails", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpStatusDetails", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpStatusDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> CorrespondenceIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime CreatedDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int SdpIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpStatusChange[] StatusHistoryField;
+        [OptionalField()]
+        private SdpStatusChange[] StatusHistoryField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1620,7 +1619,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> CorrespondenceId {
             get {
                 return this.CorrespondenceIdField;
@@ -1633,7 +1632,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime CreatedDateTime {
             get {
                 return this.CreatedDateTimeField;
@@ -1646,7 +1645,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChangedDateTime {
             get {
                 return this.LastChangedDateTimeField;
@@ -1659,7 +1658,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reference {
             get {
                 return this.ReferenceField;
@@ -1672,7 +1671,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -1685,7 +1684,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int SdpId {
             get {
                 return this.SdpIdField;
@@ -1698,8 +1697,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusChange[] StatusHistory {
+        [DataMember()]
+        public SdpStatusChange[] StatusHistory {
             get {
                 return this.StatusHistoryField;
             }
@@ -1723,17 +1722,17 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpStatusChange", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpStatusChange", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpStatusChange : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpStatusType StatusField;
+        [OptionalField()]
+        private SdpStatusType StatusField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime StatusDateTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1746,8 +1745,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusType Status {
+        [DataMember()]
+        public SdpStatusType Status {
             get {
                 return this.StatusField;
             }
@@ -1759,7 +1758,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime StatusDateTime {
             get {
                 return this.StatusDateTimeField;
@@ -1783,83 +1782,83 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpStatusType", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [DataContract(Name="SdpStatusType", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
     public enum SdpStatusType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Unknown = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Sent_Meldingsformidler = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Delivered_EndUser = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Delivery_EndUser_Failed = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Reserved = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NoMailBox = 5,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsertCorrespondenceV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="InsertCorrespondenceV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [Serializable()]
     public partial class InsertCorrespondenceV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceEditionField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReporteeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ExternalContentV2 ContentField;
+        [OptionalField()]
+        private ExternalContentV2 ContentField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime VisibleDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> AllowSystemDeleteDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime DueDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceInsertLinkBEList ReplyOptionsField;
+        [OptionalField()]
+        private CorrespondenceInsertLinkBEList ReplyOptionsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.NotificationBEList NotificationsField;
+        [OptionalField()]
+        private NotificationBEList NotificationsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> AllowForwardingField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string MessageSenderField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> IsReservableField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpOptions SdpOptionsField;
+        [OptionalField()]
+        private SdpOptions SdpOptionsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string OnBehalfOfOrgNrField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1872,7 +1871,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -1885,7 +1884,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceEdition {
             get {
                 return this.ServiceEditionField;
@@ -1898,7 +1897,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -1911,8 +1910,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public EC_Endpoint_Client.CorrespondenceAgency.ExternalContentV2 Content {
+        [DataMember(Order=3)]
+        public ExternalContentV2 Content {
             get {
                 return this.ContentField;
             }
@@ -1924,7 +1923,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public System.DateTime VisibleDateTime {
             get {
                 return this.VisibleDateTimeField;
@@ -1937,7 +1936,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public System.Nullable<System.DateTime> AllowSystemDeleteDateTime {
             get {
                 return this.AllowSystemDeleteDateTimeField;
@@ -1950,7 +1949,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public System.DateTime DueDateTime {
             get {
                 return this.DueDateTimeField;
@@ -1963,7 +1962,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
+        [DataMember(Order=7)]
         public string ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
@@ -1976,8 +1975,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceInsertLinkBEList ReplyOptions {
+        [DataMember(Order=8)]
+        public CorrespondenceInsertLinkBEList ReplyOptions {
             get {
                 return this.ReplyOptionsField;
             }
@@ -1989,8 +1988,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public EC_Endpoint_Client.CorrespondenceAgency.NotificationBEList Notifications {
+        [DataMember(Order=9)]
+        public NotificationBEList Notifications {
             get {
                 return this.NotificationsField;
             }
@@ -2002,7 +2001,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
+        [DataMember(Order=10)]
         public System.Nullable<bool> AllowForwarding {
             get {
                 return this.AllowForwardingField;
@@ -2015,7 +2014,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
+        [DataMember(Order=11)]
         public System.Nullable<int> CaseID {
             get {
                 return this.CaseIDField;
@@ -2028,7 +2027,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
+        [DataMember(Order=12)]
         public string MessageSender {
             get {
                 return this.MessageSenderField;
@@ -2041,7 +2040,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
+        [DataMember(Order=13)]
         public System.Nullable<bool> IsReservable {
             get {
                 return this.IsReservableField;
@@ -2054,8 +2053,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpOptions SdpOptions {
+        [DataMember(Order=14)]
+        public SdpOptions SdpOptions {
             get {
                 return this.SdpOptionsField;
             }
@@ -2067,7 +2066,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
+        [DataMember(Order=15)]
         public string OnBehalfOfOrgNr {
             get {
                 return this.OnBehalfOfOrgNrField;
@@ -2092,29 +2091,29 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalContentV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ExternalContentV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [Serializable()]
     public partial class ExternalContentV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LanguageCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string MessageTitleField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string MessageSummaryField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string MessageBodyField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.AttachmentsV2 AttachmentsField;
+        [OptionalField()]
+        private AttachmentsV2 AttachmentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CustomMessageDataField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2127,7 +2126,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string LanguageCode {
             get {
                 return this.LanguageCodeField;
@@ -2140,7 +2139,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string MessageTitle {
             get {
                 return this.MessageTitleField;
@@ -2153,7 +2152,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string MessageSummary {
             get {
                 return this.MessageSummaryField;
@@ -2166,7 +2165,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public string MessageBody {
             get {
                 return this.MessageBodyField;
@@ -2179,8 +2178,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public EC_Endpoint_Client.CorrespondenceAgency.AttachmentsV2 Attachments {
+        [DataMember(Order=4)]
+        public AttachmentsV2 Attachments {
             get {
                 return this.AttachmentsField;
             }
@@ -2192,7 +2191,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public string CustomMessageData {
             get {
                 return this.CustomMessageDataField;
@@ -2217,22 +2216,22 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpOptions", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpOptions", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpOptions : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> BackupAltinnField;
         
         private string PrimaryDocumentFileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpNotifications SdpNotificationsField;
+        [OptionalField()]
+        private SdpNotifications SdpNotificationsField;
         
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpSetting SdpSettingField;
+        private SdpSetting SdpSettingField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2244,7 +2243,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<bool> BackupAltinn {
             get {
                 return this.BackupAltinnField;
@@ -2257,7 +2256,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string PrimaryDocumentFileName {
             get {
                 return this.PrimaryDocumentFileNameField;
@@ -2270,8 +2269,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpNotifications SdpNotifications {
+        [DataMember()]
+        public SdpNotifications SdpNotifications {
             get {
                 return this.SdpNotificationsField;
             }
@@ -2283,8 +2282,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpSetting SdpSetting {
+        [DataMember(IsRequired=true)]
+        public SdpSetting SdpSetting {
             get {
                 return this.SdpSettingField;
             }
@@ -2308,32 +2307,32 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CorrespondenceInsertLinkBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10", ItemName="ReplyOption")]
-    [System.SerializableAttribute()]
-    public class CorrespondenceInsertLinkBEList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.ReplyOption> {
+    [CollectionDataContract(Name="CorrespondenceInsertLinkBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10", ItemName="ReplyOption")]
+    [Serializable()]
+    public class CorrespondenceInsertLinkBEList : System.Collections.Generic.List<ReplyOption> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="NotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="Notification")]
-    [System.SerializableAttribute()]
-    public class NotificationBEList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.Notification1> {
+    [CollectionDataContract(Name="NotificationBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="Notification")]
+    [Serializable()]
+    public class NotificationBEList : System.Collections.Generic.List<Notification1> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachmentsV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AttachmentsV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [Serializable()]
     public partial class AttachmentsV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.BinaryAttachmentExternalBEV2List BinaryAttachmentsField;
+        [OptionalField()]
+        private BinaryAttachmentExternalBEV2List BinaryAttachmentsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.XmlAttachmentListV2 XmlAttachmentListField;
+        [OptionalField()]
+        private XmlAttachmentListV2 XmlAttachmentListField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2345,8 +2344,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.BinaryAttachmentExternalBEV2List BinaryAttachments {
+        [DataMember()]
+        public BinaryAttachmentExternalBEV2List BinaryAttachments {
             get {
                 return this.BinaryAttachmentsField;
             }
@@ -2358,8 +2357,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.XmlAttachmentListV2 XmlAttachmentList {
+        [DataMember()]
+        public XmlAttachmentListV2 XmlAttachmentList {
             get {
                 return this.XmlAttachmentListField;
             }
@@ -2383,46 +2382,46 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="BinaryAttachmentExternalBEV2List", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10", ItemName="BinaryAttachmentV2")]
-    [System.SerializableAttribute()]
-    public class BinaryAttachmentExternalBEV2List : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.BinaryAttachmentV2> {
+    [CollectionDataContract(Name="BinaryAttachmentExternalBEV2List", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10", ItemName="BinaryAttachmentV2")]
+    [Serializable()]
+    public class BinaryAttachmentExternalBEV2List : System.Collections.Generic.List<BinaryAttachmentV2> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="XmlAttachmentListV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10", ItemName="XmlAttachmentV2")]
-    [System.SerializableAttribute()]
-    public class XmlAttachmentListV2 : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.XmlAttachmentV2> {
+    [CollectionDataContract(Name="XmlAttachmentListV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10", ItemName="XmlAttachmentV2")]
+    [Serializable()]
+    public class XmlAttachmentListV2 : System.Collections.Generic.List<XmlAttachmentV2> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BinaryAttachmentV2", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BinaryAttachmentV2", Namespace="http://www.altinn.no/services/ServiceEngine/ReporteeElementList/2010/10")]
+    [Serializable()]
     public partial class BinaryAttachmentV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.UserTypeRestriction DestinationTypeField;
+        [OptionalField()]
+        private UserTypeRestriction DestinationTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.AttachmentFunctionType FunctionTypeField;
+        [OptionalField()]
+        private AttachmentFunctionType FunctionTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool EncryptedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private byte[] DataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2435,8 +2434,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.UserTypeRestriction DestinationType {
+        [DataMember()]
+        public UserTypeRestriction DestinationType {
             get {
                 return this.DestinationTypeField;
             }
@@ -2448,8 +2447,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.AttachmentFunctionType FunctionType {
+        [DataMember()]
+        public AttachmentFunctionType FunctionType {
             get {
                 return this.FunctionTypeField;
             }
@@ -2461,7 +2460,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -2474,7 +2473,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public string Name {
             get {
                 return this.NameField;
@@ -2487,7 +2486,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public bool Encrypted {
             get {
                 return this.EncryptedField;
@@ -2500,7 +2499,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public byte[] Data {
             get {
                 return this.DataField;
@@ -2513,7 +2512,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -2537,55 +2536,55 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserTypeRestriction", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Name="UserTypeRestriction", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public enum UserTypeRestriction : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Default = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PortalOnly = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         EndUserSystemOnly = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ShowToAll = 3,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AttachmentFunctionType", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
+    [DataContract(Name="AttachmentFunctionType", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
     public enum AttachmentFunctionType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Unspecified = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Invoice = 2,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="XmlAttachmentV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="XmlAttachmentV2", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [Serializable()]
     public partial class XmlAttachmentV2 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SendersReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FormDataXmlField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string DataFormatIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int DataFormatVersionField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int LogicalFormInFormSetIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2598,7 +2597,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SendersReference {
             get {
                 return this.SendersReferenceField;
@@ -2611,7 +2610,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public string FormDataXml {
             get {
                 return this.FormDataXmlField;
@@ -2624,7 +2623,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string DataFormatId {
             get {
                 return this.DataFormatIdField;
@@ -2637,7 +2636,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int DataFormatVersion {
             get {
                 return this.DataFormatVersionField;
@@ -2650,7 +2649,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public int LogicalFormInFormSetID {
             get {
                 return this.LogicalFormInFormSetIDField;
@@ -2675,21 +2674,21 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReplyOption", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReplyOption", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
+    [Serializable()]
     public partial class ReplyOption : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkServiceCode ServiceField;
+        [OptionalField()]
+        private InsertCorrespondenceLinkServiceCode ServiceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkArchiveRef ArchiveReferenceField;
+        [OptionalField()]
+        private InsertCorrespondenceLinkArchiveRef ArchiveReferenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkServiceURL URLField;
+        [OptionalField()]
+        private InsertCorrespondenceLinkServiceURL URLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2701,8 +2700,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkServiceCode Service {
+        [DataMember()]
+        public InsertCorrespondenceLinkServiceCode Service {
             get {
                 return this.ServiceField;
             }
@@ -2714,8 +2713,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkArchiveRef ArchiveReference {
+        [DataMember(Order=1)]
+        public InsertCorrespondenceLinkArchiveRef ArchiveReference {
             get {
                 return this.ArchiveReferenceField;
             }
@@ -2727,8 +2726,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceLinkServiceURL URL {
+        [DataMember(Order=2)]
+        public InsertCorrespondenceLinkServiceURL URL {
             get {
                 return this.URLField;
             }
@@ -2752,17 +2751,17 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsertCorrespondenceLinkServiceCode", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="InsertCorrespondenceLinkServiceCode", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
+    [Serializable()]
     public partial class InsertCorrespondenceLinkServiceCode : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceEditionField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2775,7 +2774,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -2788,7 +2787,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceEdition {
             get {
                 return this.ServiceEditionField;
@@ -2813,14 +2812,14 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsertCorrespondenceLinkArchiveRef", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="InsertCorrespondenceLinkArchiveRef", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
+    [Serializable()]
     public partial class InsertCorrespondenceLinkArchiveRef : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ArchiveRefField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2833,7 +2832,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ArchiveRef {
             get {
                 return this.ArchiveRefField;
@@ -2858,17 +2857,17 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="InsertCorrespondenceLinkServiceURL", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="InsertCorrespondenceLinkServiceURL", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2009/10")]
+    [Serializable()]
     public partial class InsertCorrespondenceLinkServiceURL : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LinkTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LinkURLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -2881,7 +2880,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string LinkText {
             get {
                 return this.LinkTextField;
@@ -2894,7 +2893,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string LinkURL {
             get {
                 return this.LinkURLField;
@@ -2919,30 +2918,30 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Notification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class Notification1 : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FromAddressField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ShipmentDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string LanguageCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NotificationTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.TextTokenSubstitutionBEList TextTokensField;
+        [OptionalField()]
+        private TextTokenSubstitutionBEList TextTokensField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReceiverEndPointBEList ReceiverEndPointsField;
+        [OptionalField()]
+        private ReceiverEndPointBEList ReceiverEndPointsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -2954,7 +2953,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FromAddress {
             get {
                 return this.FromAddressField;
@@ -2967,7 +2966,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ShipmentDateTime {
             get {
                 return this.ShipmentDateTimeField;
@@ -2980,7 +2979,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public string LanguageCode {
             get {
                 return this.LanguageCodeField;
@@ -2993,7 +2992,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public string NotificationType {
             get {
                 return this.NotificationTypeField;
@@ -3006,8 +3005,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public EC_Endpoint_Client.CorrespondenceAgency.TextTokenSubstitutionBEList TextTokens {
+        [DataMember(Order=4)]
+        public TextTokenSubstitutionBEList TextTokens {
             get {
                 return this.TextTokensField;
             }
@@ -3019,8 +3018,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiverEndPointBEList ReceiverEndPoints {
+        [DataMember(Order=5)]
+        public ReceiverEndPointBEList ReceiverEndPoints {
             get {
                 return this.ReceiverEndPointsField;
             }
@@ -3044,31 +3043,31 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
-    [System.SerializableAttribute()]
-    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.TextToken> {
+    [CollectionDataContract(Name="TextTokenSubstitutionBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="TextToken")]
+    [Serializable()]
+    public class TextTokenSubstitutionBEList : System.Collections.Generic.List<TextToken> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
-    [System.SerializableAttribute()]
-    public class ReceiverEndPointBEList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.ReceiverEndPoint> {
+    [CollectionDataContract(Name="ReceiverEndPointBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10", ItemName="ReceiverEndPoint")]
+    [Serializable()]
+    public class ReceiverEndPointBEList : System.Collections.Generic.List<ReceiverEndPoint> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="TextToken", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class TextToken : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int TokenNumField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string TokenValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3081,7 +3080,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int TokenNum {
             get {
                 return this.TokenNumField;
@@ -3094,7 +3093,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string TokenValue {
             get {
                 return this.TokenValueField;
@@ -3119,17 +3118,17 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiverEndPoint", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
+    [Serializable()]
     public partial class ReceiverEndPoint : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<EC_Endpoint_Client.CorrespondenceAgency.TransportType> TransportTypeField;
+        [OptionalField()]
+        private System.Nullable<TransportType> TransportTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiverAddressField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3142,8 +3141,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<EC_Endpoint_Client.CorrespondenceAgency.TransportType> TransportType {
+        [DataMember()]
+        public System.Nullable<TransportType> TransportType {
             get {
                 return this.TransportTypeField;
             }
@@ -3155,7 +3154,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        [DataMember(Order=1)]
         public string ReceiverAddress {
             get {
                 return this.ReceiverAddressField;
@@ -3180,18 +3179,18 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpNotifications", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SdpNotifications", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
     public partial class SdpNotifications : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpEmailNotification EmailNotificationField;
+        [OptionalField()]
+        private SdpEmailNotification EmailNotificationField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.SdpSmsNotification SmsNotificationField;
+        [OptionalField()]
+        private SdpSmsNotification SmsNotificationField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3203,8 +3202,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpEmailNotification EmailNotification {
+        [DataMember()]
+        public SdpEmailNotification EmailNotification {
             get {
                 return this.EmailNotificationField;
             }
@@ -3216,8 +3215,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpSmsNotification SmsNotification {
+        [DataMember()]
+        public SdpSmsNotification SmsNotification {
             get {
                 return this.SmsNotificationField;
             }
@@ -3240,26 +3239,26 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpSetting", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [DataContract(Name="SdpSetting", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
     public enum SdpSetting : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ForwardOnly = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         CopyAltinn = 1,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpEmailNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
-    public partial class SdpEmailNotification : EC_Endpoint_Client.CorrespondenceAgency.SdpNotification {
+    [DataContract(Name="SdpEmailNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
+    public partial class SdpEmailNotification : SdpNotification {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string EmailAddressField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string EmailAddress {
             get {
                 return this.EmailAddressField;
@@ -3275,14 +3274,14 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpSmsNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
-    public partial class SdpSmsNotification : EC_Endpoint_Client.CorrespondenceAgency.SdpNotification {
+    [DataContract(Name="SdpSmsNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
+    public partial class SdpSmsNotification : SdpNotification {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string MobileNumberField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string MobileNumber {
             get {
                 return this.MobileNumberField;
@@ -3298,18 +3297,18 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SdpNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.SdpSmsNotification))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.SdpEmailNotification))]
+    [DataContract(Name="SdpNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02")]
+    [Serializable()]
+    [KnownType(typeof(SdpSmsNotification))]
+    [KnownType(typeof(SdpEmailNotification))]
     public partial class SdpNotification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string NotificationTextField;
         
-        private EC_Endpoint_Client.CorrespondenceAgency.DaysDelayedList RepetitionsField;
+        private DaysDelayedList RepetitionsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3321,7 +3320,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string NotificationText {
             get {
                 return this.NotificationTextField;
@@ -3334,8 +3333,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.CorrespondenceAgency.DaysDelayedList Repetitions {
+        [DataMember(IsRequired=true)]
+        public DaysDelayedList Repetitions {
             get {
                 return this.RepetitionsField;
             }
@@ -3359,46 +3358,46 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="DaysDelayedList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02", ItemName="DaysDelayed")]
-    [System.SerializableAttribute()]
+    [CollectionDataContract(Name="DaysDelayedList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Correspondence/2016/02", ItemName="DaysDelayed")]
+    [Serializable()]
     public class DaysDelayedList : System.Collections.Generic.List<uint> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class ReceiptExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ParentReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptHistoryField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReceiptStatusEnum ReceiptStatusCodeField;
+        [OptionalField()]
+        private ReceiptStatusEnum ReceiptStatusCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReceiptTypeEnum ReceiptTypeNameField;
+        [OptionalField()]
+        private ReceiptTypeEnum ReceiptTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternalList SubReceiptsField;
+        [OptionalField()]
+        private ReceiptExternalList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3410,7 +3409,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChanged {
             get {
                 return this.LastChangedField;
@@ -3423,7 +3422,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ParentReceiptId {
             get {
                 return this.ParentReceiptIdField;
@@ -3436,7 +3435,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptHistory {
             get {
                 return this.ReceiptHistoryField;
@@ -3449,7 +3448,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -3462,8 +3461,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiptStatusEnum ReceiptStatusCode {
+        [DataMember()]
+        public ReceiptStatusEnum ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -3475,7 +3474,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptText {
             get {
                 return this.ReceiptTextField;
@@ -3488,8 +3487,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiptTypeEnum ReceiptTypeName {
+        [DataMember()]
+        public ReceiptTypeEnum ReceiptTypeName {
             get {
                 return this.ReceiptTypeNameField;
             }
@@ -3501,8 +3500,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -3514,8 +3513,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternalList SubReceipts {
+        [DataMember()]
+        public ReceiptExternalList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -3538,108 +3537,108 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptStatusEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OK = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         UnExpectedError = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ValidationFailed = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Rejected = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptTypeEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FormTask = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PINCODE = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Subscription = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Outbound = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PreFill = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDLS = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSF = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterER = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFProperty = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreet = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFCountry = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFUser = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LookUp = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreetAdd = 15,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFPropertyAdd = 16,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
-    [System.SerializableAttribute()]
-    public class ReferenceList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.Reference> {
+    [CollectionDataContract(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
+    [Serializable()]
+    public class ReferenceList : System.Collections.Generic.List<Reference> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
-    [System.SerializableAttribute()]
-    public class ReceiptExternalList : System.Collections.Generic.List<EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternal> {
+    [CollectionDataContract(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
+    [Serializable()]
+    public class ReceiptExternalList : System.Collections.Generic.List<ReceiptExternal> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class Reference : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CorrespondenceAgency.ReferenceType ReferenceTypeNameField;
+        [OptionalField()]
+        private ReferenceType ReferenceTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3652,8 +3651,8 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReferenceType ReferenceTypeName {
+        [DataMember()]
+        public ReferenceType ReferenceTypeName {
             get {
                 return this.ReferenceTypeNameField;
             }
@@ -3665,7 +3664,7 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReferenceValue {
             get {
                 return this.ReferenceValueField;
@@ -3689,46 +3688,46 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
+    [DataContract(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
     public enum ReferenceType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ExternalShipmentReference = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         EndUserSystemReference = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ParentReference = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SendersReference = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         WorkFlowReference = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         BatchReference = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OutboundShipmentReference = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ReceiversReference = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Altinn1Reference = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OwnerPartyReference = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PartyReference = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ArchiveReference = 12,
     }
     
@@ -3738,48 +3737,48 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.TestResponse Test(EC_Endpoint_Client.CorrespondenceAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECResponse GetCorrespondenceStatusDetailsEC(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequest request);
+        GetCorrespondenceStatusDetailsECResponse GetCorrespondenceStatusDetailsEC(GetCorrespondenceStatusDetailsECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV2", ReplyAction="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV2Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV2AltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Response GetCorrespondenceStatusDetailsECV2(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Request request);
+        GetCorrespondenceStatusDetailsECV2Response GetCorrespondenceStatusDetailsECV2(GetCorrespondenceStatusDetailsECV2Request request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV3", ReplyAction="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV3Response")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusDetailsECV3AltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Response GetCorrespondenceStatusDetailsECV3(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Request request);
+        GetCorrespondenceStatusDetailsECV3Response GetCorrespondenceStatusDetailsECV3(GetCorrespondenceStatusDetailsECV3Request request);
         
         // CODEGEN: Generating message contract since the wrapper name (CorrespondenceStatusHistoryRequest) of message CorrespondenceStatusHistoryRequest does not match the default value (GetCorrespondenceStatusHistoryEC)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusHistoryEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusHistoryECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/GetCorrespondenceStatusHistoryECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryResult GetCorrespondenceStatusHistoryEC(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryRequest request);
+        CorrespondenceStatusHistoryResult GetCorrespondenceStatusHistoryEC(CorrespondenceStatusHistoryRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/InsertCorrespondenceEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/InsertCorrespondenceECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CorrespondenceAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10/ICorrespondenc" +
             "eAgencyExternalEC/InsertCorrespondenceECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECResponse InsertCorrespondenceEC(EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequest request);
+        InsertCorrespondenceECResponse InsertCorrespondenceEC(InsertCorrespondenceECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3809,12 +3808,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsEC", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequestBody Body;
+        public GetCorrespondenceStatusDetailsECRequestBody Body;
         
         public GetCorrespondenceStatusDetailsECRequest() {
         }
         
-        public GetCorrespondenceStatusDetailsECRequest(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequestBody Body) {
+        public GetCorrespondenceStatusDetailsECRequest(GetCorrespondenceStatusDetailsECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -3822,22 +3821,22 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilter filterCriteria;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public CorrespondenceStatusFilter filterCriteria;
         
         public GetCorrespondenceStatusDetailsECRequestBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilter filterCriteria) {
+        public GetCorrespondenceStatusDetailsECRequestBody(string systemUserName, string systemPassword, CorrespondenceStatusFilter filterCriteria) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.filterCriteria = filterCriteria;
@@ -3851,12 +3850,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECResponseBody Body;
+        public GetCorrespondenceStatusDetailsECResponseBody Body;
         
         public GetCorrespondenceStatusDetailsECResponse() {
         }
         
-        public GetCorrespondenceStatusDetailsECResponse(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECResponseBody Body) {
+        public GetCorrespondenceStatusDetailsECResponse(GetCorrespondenceStatusDetailsECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -3864,16 +3863,16 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResult GetCorrespondenceStatusDetailsECResult;
+        [DataMember(Order=0)]
+        public CorrespondenceStatusResult GetCorrespondenceStatusDetailsECResult;
         
         public GetCorrespondenceStatusDetailsECResponseBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECResponseBody(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResult GetCorrespondenceStatusDetailsECResult) {
+        public GetCorrespondenceStatusDetailsECResponseBody(CorrespondenceStatusResult GetCorrespondenceStatusDetailsECResult) {
             this.GetCorrespondenceStatusDetailsECResult = GetCorrespondenceStatusDetailsECResult;
         }
     }
@@ -3885,12 +3884,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECV2Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsECV2", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2RequestBody Body;
+        public GetCorrespondenceStatusDetailsECV2RequestBody Body;
         
         public GetCorrespondenceStatusDetailsECV2Request() {
         }
         
-        public GetCorrespondenceStatusDetailsECV2Request(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2RequestBody Body) {
+        public GetCorrespondenceStatusDetailsECV2Request(GetCorrespondenceStatusDetailsECV2RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -3898,22 +3897,22 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECV2RequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV2 filterCriteria;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public CorrespondenceStatusFilterV2 filterCriteria;
         
         public GetCorrespondenceStatusDetailsECV2RequestBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECV2RequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV2 filterCriteria) {
+        public GetCorrespondenceStatusDetailsECV2RequestBody(string systemUserName, string systemPassword, CorrespondenceStatusFilterV2 filterCriteria) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.filterCriteria = filterCriteria;
@@ -3927,12 +3926,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECV2Response {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsECV2Response", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2ResponseBody Body;
+        public GetCorrespondenceStatusDetailsECV2ResponseBody Body;
         
         public GetCorrespondenceStatusDetailsECV2Response() {
         }
         
-        public GetCorrespondenceStatusDetailsECV2Response(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2ResponseBody Body) {
+        public GetCorrespondenceStatusDetailsECV2Response(GetCorrespondenceStatusDetailsECV2ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -3940,16 +3939,16 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECV2ResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2Result;
+        [DataMember(Order=0)]
+        public CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2Result;
         
         public GetCorrespondenceStatusDetailsECV2ResponseBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECV2ResponseBody(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2Result) {
+        public GetCorrespondenceStatusDetailsECV2ResponseBody(CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2Result) {
             this.GetCorrespondenceStatusDetailsECV2Result = GetCorrespondenceStatusDetailsECV2Result;
         }
     }
@@ -3961,12 +3960,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECV3Request {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsECV3", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3RequestBody Body;
+        public GetCorrespondenceStatusDetailsECV3RequestBody Body;
         
         public GetCorrespondenceStatusDetailsECV3Request() {
         }
         
-        public GetCorrespondenceStatusDetailsECV3Request(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3RequestBody Body) {
+        public GetCorrespondenceStatusDetailsECV3Request(GetCorrespondenceStatusDetailsECV3RequestBody Body) {
             this.Body = Body;
         }
     }
@@ -3974,22 +3973,22 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECV3RequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV3 filterCriteria;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public CorrespondenceStatusFilterV3 filterCriteria;
         
         public GetCorrespondenceStatusDetailsECV3RequestBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECV3RequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV3 filterCriteria) {
+        public GetCorrespondenceStatusDetailsECV3RequestBody(string systemUserName, string systemPassword, CorrespondenceStatusFilterV3 filterCriteria) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.filterCriteria = filterCriteria;
@@ -4003,12 +4002,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class GetCorrespondenceStatusDetailsECV3Response {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCorrespondenceStatusDetailsECV3Response", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3ResponseBody Body;
+        public GetCorrespondenceStatusDetailsECV3ResponseBody Body;
         
         public GetCorrespondenceStatusDetailsECV3Response() {
         }
         
-        public GetCorrespondenceStatusDetailsECV3Response(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3ResponseBody Body) {
+        public GetCorrespondenceStatusDetailsECV3Response(GetCorrespondenceStatusDetailsECV3ResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -4016,16 +4015,16 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class GetCorrespondenceStatusDetailsECV3ResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3Result;
+        [DataMember(Order=0)]
+        public CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3Result;
         
         public GetCorrespondenceStatusDetailsECV3ResponseBody() {
         }
         
-        public GetCorrespondenceStatusDetailsECV3ResponseBody(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3Result) {
+        public GetCorrespondenceStatusDetailsECV3ResponseBody(CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3Result) {
             this.GetCorrespondenceStatusDetailsECV3Result = GetCorrespondenceStatusDetailsECV3Result;
         }
     }
@@ -4034,11 +4033,11 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="CorrespondenceStatusHistoryRequest", WrapperNamespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", IsWrapped=true)]
-    [System.SerializableAttribute()]
+    [Serializable()]
     public partial class CorrespondenceStatusHistoryRequest {
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SystemPassword;
         
         [System.ServiceModel.MessageHeaderAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
@@ -4064,15 +4063,15 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class CorrespondenceStatusHistoryResult {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusInformation CorrespondenceStatusInformation;
+        public CorrespondenceStatusInformation CorrespondenceStatusInformation;
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=1)]
-        public EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation SdpStatusInformation;
+        public SdpStatusInformation SdpStatusInformation;
         
         public CorrespondenceStatusHistoryResult() {
         }
         
-        public CorrespondenceStatusHistoryResult(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusInformation CorrespondenceStatusInformation, EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation SdpStatusInformation) {
+        public CorrespondenceStatusHistoryResult(CorrespondenceStatusInformation CorrespondenceStatusInformation, SdpStatusInformation SdpStatusInformation) {
             this.CorrespondenceStatusInformation = CorrespondenceStatusInformation;
             this.SdpStatusInformation = SdpStatusInformation;
         }
@@ -4085,12 +4084,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class InsertCorrespondenceECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCorrespondenceEC", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequestBody Body;
+        public InsertCorrespondenceECRequestBody Body;
         
         public InsertCorrespondenceECRequest() {
         }
         
-        public InsertCorrespondenceECRequest(EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequestBody Body) {
+        public InsertCorrespondenceECRequest(InsertCorrespondenceECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -4098,28 +4097,28 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class InsertCorrespondenceECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string SystemUserCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        [DataMember(EmitDefaultValue=false, Order=3)]
         public string ExternalShipmentReference;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceV2 Correspondence;
+        [DataMember(EmitDefaultValue=false, Order=4)]
+        public InsertCorrespondenceV2 Correspondence;
         
         public InsertCorrespondenceECRequestBody() {
         }
         
-        public InsertCorrespondenceECRequestBody(string systemUserName, string systemPassword, string SystemUserCode, string ExternalShipmentReference, EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceV2 Correspondence) {
+        public InsertCorrespondenceECRequestBody(string systemUserName, string systemPassword, string SystemUserCode, string ExternalShipmentReference, InsertCorrespondenceV2 Correspondence) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.SystemUserCode = SystemUserCode;
@@ -4135,12 +4134,12 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     public partial class InsertCorrespondenceECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InsertCorrespondenceECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10", Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECResponseBody Body;
+        public InsertCorrespondenceECResponseBody Body;
         
         public InsertCorrespondenceECResponse() {
         }
         
-        public InsertCorrespondenceECResponse(EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECResponseBody Body) {
+        public InsertCorrespondenceECResponse(InsertCorrespondenceECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -4148,27 +4147,27 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Correspondence/2010/10")]
     public partial class InsertCorrespondenceECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternal InsertCorrespondenceECResult;
+        [DataMember(Order=0)]
+        public ReceiptExternal InsertCorrespondenceECResult;
         
         public InsertCorrespondenceECResponseBody() {
         }
         
-        public InsertCorrespondenceECResponseBody(EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternal InsertCorrespondenceECResult) {
+        public InsertCorrespondenceECResponseBody(ReceiptExternal InsertCorrespondenceECResult) {
             this.InsertCorrespondenceECResult = InsertCorrespondenceECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICorrespondenceAgencyExternalECChannel : EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface ICorrespondenceAgencyExternalECChannel : ICorrespondenceAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CorrespondenceAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC>, EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC {
+    public partial class CorrespondenceAgencyExternalECClient : System.ServiceModel.ClientBase<ICorrespondenceAgencyExternalEC>, ICorrespondenceAgencyExternalEC {
         
         public CorrespondenceAgencyExternalECClient() {
         }
@@ -4190,88 +4189,88 @@ namespace EC_Endpoint_Client.CorrespondenceAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.TestResponse EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.Test(EC_Endpoint_Client.CorrespondenceAgency.TestRequest request) {
+        TestResponse ICorrespondenceAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.CorrespondenceAgency.TestRequest inValue = new EC_Endpoint_Client.CorrespondenceAgency.TestRequest();
-            EC_Endpoint_Client.CorrespondenceAgency.TestResponse retVal = ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((ICorrespondenceAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECResponse EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsEC(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequest request) {
+        GetCorrespondenceStatusDetailsECResponse ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsEC(GetCorrespondenceStatusDetailsECRequest request) {
             return base.Channel.GetCorrespondenceStatusDetailsEC(request);
         }
         
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResult GetCorrespondenceStatusDetailsEC(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilter filterCriteria) {
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequest inValue = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequest();
-            inValue.Body = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECRequestBody();
+        public CorrespondenceStatusResult GetCorrespondenceStatusDetailsEC(string systemUserName, string systemPassword, CorrespondenceStatusFilter filterCriteria) {
+            GetCorrespondenceStatusDetailsECRequest inValue = new GetCorrespondenceStatusDetailsECRequest();
+            inValue.Body = new GetCorrespondenceStatusDetailsECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.filterCriteria = filterCriteria;
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECResponse retVal = ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsEC(inValue);
+            GetCorrespondenceStatusDetailsECResponse retVal = ((ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsEC(inValue);
             return retVal.Body.GetCorrespondenceStatusDetailsECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Response EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsECV2(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Request request) {
+        GetCorrespondenceStatusDetailsECV2Response ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsECV2(GetCorrespondenceStatusDetailsECV2Request request) {
             return base.Channel.GetCorrespondenceStatusDetailsECV2(request);
         }
         
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV2 filterCriteria) {
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Request inValue = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Request();
-            inValue.Body = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2RequestBody();
+        public CorrespondenceStatusResultV2 GetCorrespondenceStatusDetailsECV2(string systemUserName, string systemPassword, CorrespondenceStatusFilterV2 filterCriteria) {
+            GetCorrespondenceStatusDetailsECV2Request inValue = new GetCorrespondenceStatusDetailsECV2Request();
+            inValue.Body = new GetCorrespondenceStatusDetailsECV2RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.filterCriteria = filterCriteria;
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV2Response retVal = ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsECV2(inValue);
+            GetCorrespondenceStatusDetailsECV2Response retVal = ((ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsECV2(inValue);
             return retVal.Body.GetCorrespondenceStatusDetailsECV2Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Response EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsECV3(EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Request request) {
+        GetCorrespondenceStatusDetailsECV3Response ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusDetailsECV3(GetCorrespondenceStatusDetailsECV3Request request) {
             return base.Channel.GetCorrespondenceStatusDetailsECV3(request);
         }
         
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3(string systemUserName, string systemPassword, EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV3 filterCriteria) {
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Request inValue = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Request();
-            inValue.Body = new EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3RequestBody();
+        public CorrespondenceStatusResultV3 GetCorrespondenceStatusDetailsECV3(string systemUserName, string systemPassword, CorrespondenceStatusFilterV3 filterCriteria) {
+            GetCorrespondenceStatusDetailsECV3Request inValue = new GetCorrespondenceStatusDetailsECV3Request();
+            inValue.Body = new GetCorrespondenceStatusDetailsECV3RequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.filterCriteria = filterCriteria;
-            EC_Endpoint_Client.CorrespondenceAgency.GetCorrespondenceStatusDetailsECV3Response retVal = ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsECV3(inValue);
+            GetCorrespondenceStatusDetailsECV3Response retVal = ((ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusDetailsECV3(inValue);
             return retVal.Body.GetCorrespondenceStatusDetailsECV3Result;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryResult EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusHistoryEC(EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryRequest request) {
+        CorrespondenceStatusHistoryResult ICorrespondenceAgencyExternalEC.GetCorrespondenceStatusHistoryEC(CorrespondenceStatusHistoryRequest request) {
             return base.Channel.GetCorrespondenceStatusHistoryEC(request);
         }
 
-        public EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryResult GetCorrespondenceStatusHistoryEC(string SystemPassword, string SystemUserName, string[] CorrespondenceSendersReferences)
+        public CorrespondenceStatusHistoryResult GetCorrespondenceStatusHistoryEC(string SystemPassword, string SystemUserName, string[] CorrespondenceSendersReferences)
         {
-            EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryRequest inValue = new EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusHistoryRequest();
+            CorrespondenceStatusHistoryRequest inValue = new CorrespondenceStatusHistoryRequest();
             inValue.SystemPassword = SystemPassword;
             inValue.SystemUserName = SystemUserName;
             inValue.CorrespondenceSendersReferences = CorrespondenceSendersReferences;
-            return ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusHistoryEC(inValue);
+            return ((ICorrespondenceAgencyExternalEC)(this)).GetCorrespondenceStatusHistoryEC(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECResponse EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC.InsertCorrespondenceEC(EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequest request) {
+        InsertCorrespondenceECResponse ICorrespondenceAgencyExternalEC.InsertCorrespondenceEC(InsertCorrespondenceECRequest request) {
             return base.Channel.InsertCorrespondenceEC(request);
         }
         
-        public EC_Endpoint_Client.CorrespondenceAgency.ReceiptExternal InsertCorrespondenceEC(string systemUserName, string systemPassword, string SystemUserCode, string ExternalShipmentReference, EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceV2 Correspondence) {
-            EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequest inValue = new EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequest();
-            inValue.Body = new EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECRequestBody();
+        public ReceiptExternal InsertCorrespondenceEC(string systemUserName, string systemPassword, string SystemUserCode, string ExternalShipmentReference, InsertCorrespondenceV2 Correspondence) {
+            InsertCorrespondenceECRequest inValue = new InsertCorrespondenceECRequest();
+            inValue.Body = new InsertCorrespondenceECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.SystemUserCode = SystemUserCode;
             inValue.Body.ExternalShipmentReference = ExternalShipmentReference;
             inValue.Body.Correspondence = Correspondence;
-            EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceECResponse retVal = ((EC_Endpoint_Client.CorrespondenceAgency.ICorrespondenceAgencyExternalEC)(this)).InsertCorrespondenceEC(inValue);
+            InsertCorrespondenceECResponse retVal = ((ICorrespondenceAgencyExternalEC)(this)).InsertCorrespondenceEC(inValue);
             return retVal.Body.InsertCorrespondenceECResult;
         }
     }

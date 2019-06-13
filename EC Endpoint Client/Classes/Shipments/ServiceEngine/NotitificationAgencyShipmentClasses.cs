@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.NotificationAgency;
+﻿using EC_Endpoint_Client.Service_References.NotificationAgency;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine
 {

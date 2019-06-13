@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
+﻿namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUp
 {
     partial class LookUpForm
     {

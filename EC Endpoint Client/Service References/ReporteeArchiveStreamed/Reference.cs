@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.ReporteeArchiveStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -160,16 +159,16 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Archive/ReporteeArchive/2013/06)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReporteeArchiveStreamed.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse Test(EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse> TestAsync(EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/ReporteeArchive/2013/06/IReporteeArchiveExt" +
             "ernalStreamedEC/GetAttachmentDataECStreamed", ReplyAction="http://www.altinn.no/services/Archive/ReporteeArchive/2013/06/IReporteeArchiveExt" +
             "ernalStreamedEC/GetAttachmentDataECStreamedResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.ReporteeArchiveStreamed.AltinnFault), Action="http://www.altinn.no/services/Archive/ReporteeArchive/2013/06/IReporteeArchiveExt" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/ReporteeArchive/2013/06/IReporteeArchiveExt" +
             "ernalStreamedEC/GetAttachmentDataECStreamedAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
         System.IO.Stream GetAttachmentDataECStreamed(string userName, string password, int attachmentId);
         
@@ -200,12 +199,12 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IReporteeArchiveExternalStreamedECChannel : EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC, System.ServiceModel.IClientChannel {
+    public interface IReporteeArchiveExternalStreamedECChannel : IReporteeArchiveExternalStreamedEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ReporteeArchiveExternalStreamedECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC>, EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC {
+    public partial class ReporteeArchiveExternalStreamedECClient : System.ServiceModel.ClientBase<IReporteeArchiveExternalStreamedEC>, IReporteeArchiveExternalStreamedEC {
         
         public ReporteeArchiveExternalStreamedECClient() {
         }
@@ -227,23 +226,23 @@ namespace EC_Endpoint_Client.ReporteeArchiveStreamed {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC.Test(EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest request) {
+        TestResponse IReporteeArchiveExternalStreamedEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest inValue = new EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest();
-            EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse retVal = ((EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IReporteeArchiveExternalStreamedEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse> EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC.TestAsync(EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IReporteeArchiveExternalStreamedEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse> TestAsync() {
-            EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest inValue = new EC_Endpoint_Client.ReporteeArchiveStreamed.TestRequest();
-            return ((EC_Endpoint_Client.ReporteeArchiveStreamed.IReporteeArchiveExternalStreamedEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IReporteeArchiveExternalStreamedEC)(this)).TestAsync(inValue);
         }
         
         public System.IO.Stream GetAttachmentDataECStreamed(string userName, string password, int attachmentId) {

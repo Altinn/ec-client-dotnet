@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.Administration;
 using EC_Endpoint_Client.BaseForms;
+using EC_Endpoint_Client.Classes.Shipments.Authorization;
+using EC_Endpoint_Client.Functionality.EndPoints.Authorization;
+using EC_Endpoint_Client.Service_References.Administration;
 
 namespace EC_Endpoint_Client.Forms.Authorization
 {
@@ -17,10 +12,10 @@ namespace EC_Endpoint_Client.Forms.Authorization
         public Guid TempKey { get; set; }
         public ExternalReporteeBE ExternalReportee { get; set; }
         public ExternalReporteeBEList ExternalReporteeList { get; set; }
-        public ExternalReporteeBE[] ExternalReporteeArray { get { return ExternalReporteeList.ToArray(); } }
+        public ExternalReporteeBE[] ExternalReporteeArray => ExternalReporteeList.ToArray();
         public GetReporteesShipment GetReporteesShipment { get; set; }
         public GetReporteeByTempKeyShipment GetReporteeShipment { get; set; }
-        private Functionality.AuthorizationAdministrationEndPointFunctionality aaEPFunc { get; set; }
+        private AuthorizationAdministrationEndPointFunctionality AaEpFunc { get; set; }
         public AuthorizationAdministrationForm()
         {
             InitializeComponent();
@@ -28,8 +23,10 @@ namespace EC_Endpoint_Client.Forms.Authorization
             ExternalReporteeList = new ExternalReporteeBEList();
             GetReporteeShipment = new GetReporteeByTempKeyShipment();
             ExternalReportee = new ExternalReporteeBE();
-            aaEPFunc = new Functionality.AuthorizationAdministrationEndPointFunctionality();
-            aaEPFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            AaEpFunc = new AuthorizationAdministrationEndPointFunctionality();
+            AaEpFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            SetUpObjectesForPropertyGrid();
+            AssignActions();
         }
 
         private void SetUpObjectesForPropertyGrid()
@@ -38,81 +35,11 @@ namespace EC_Endpoint_Client.Forms.Authorization
             TypeDescriptor.AddAttributes(typeof(Guid), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
 
-        private void Test()
+        private void AssignActions()
         {
-            aaEPFunc.TestAuthorizationAdministration(SelectedEndpointName, SelectedCertificate);
+            AssignAction(testController, AaEpFunc.TestAuthorizationAdministration, BaseShipment, "Test Service");
+            AssignAction(controllerGetReporteeByTempKey, AaEpFunc.GetReporteeByTempKeyEc, GetReporteeShipment, ExternalReportee, "GetReporteeByTempKey");
+            AssignAction(controllerGetReportees, AaEpFunc.GetReporteesEc, GetReporteesShipment, ExternalReporteeList, "GetReportees Service");
         }
-
-        private void GetReporteeByTempKey()
-        {
-            ExternalReportee = aaEPFunc.GetReporteeByTempKeyEC(SystemUsername, SystemPassword, GetReporteeShipment.TempKey, SelectedEndpointName, SelectedCertificate);
-        }
-
-        private void GetReportees()
-        {
-            GetReporteesShipment.Certificate = SelectedCertificate;
-            GetReporteesShipment.EndpointName = SelectedEndpointName;
-            GetReporteesShipment.Password = SystemPassword;
-            GetReporteesShipment.Username = SystemUsername;
-            ExternalReporteeList = aaEPFunc.GetReporteesEC(GetReporteesShipment);
-        }
-
-        private void btn_ShowShipment_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(GetReporteesShipment, "Shipment to send to GetReportees");
-        }
-
-        private void btn_showReporteeArray_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(ExternalReporteeArray, "List of ExternalReportees from GetReportees.");
-        }
-
-        private void btn_getReporteeList_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetReportees();
-                SetViewedItem(ExternalReporteeArray, "List of ExternalReportees from GetReportees.");
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error during GetReportees");
-            }
-        }
-
-        private void btn_SaveReporteeList_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ExternalReporteeList);
-        }
-
-        private void btn_showTempKey_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(GetReporteeShipment, "Tempkey shipment to Get Reportee");
-        }
-
-        private void btn_GetReportee_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                GetReporteeByTempKey();
-                SetViewedItem(ExternalReportee, "ExternalReportee");
-            }
-            catch (Exception ex)
-            {
-                SetViewedItem(ex, "Error from GetReportee");
-            }
-        }
-
-        private void btn_ShowReportee_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(ExternalReportee, "ExternalReportee");
-        }
-
-        private void btn_SaveReportee_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ExternalReportee);
-        }
-
-
     }
 }

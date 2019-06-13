@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.Token {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.Token {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,17 +155,17 @@ namespace EC_Endpoint_Client.Token {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AuthorizationAccessTokenResponseExternalBE", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AuthorizationAccessTokenResponseExternalBE", Namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization")]
+    [Serializable()]
     public partial class AuthorizationAccessTokenResponseExternalBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.Guid> ReferenceTokenField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SelfContainedTokenField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -179,7 +178,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.Guid> ReferenceToken {
             get {
                 return this.ReferenceTokenField;
@@ -192,7 +191,7 @@ namespace EC_Endpoint_Client.Token {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SelfContainedToken {
             get {
                 return this.SelfContainedTokenField;
@@ -221,24 +220,24 @@ namespace EC_Endpoint_Client.Token {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Authorization/Administration/2016/02)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Token.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Token.TestResponse Test(EC_Endpoint_Client.Token.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Token.TestResponse> TestAsync(EC_Endpoint_Client.Token.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Authorization/Administration/2016/02 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
             "TokenExternalEC/GetAccessToken", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
             "TokenExternalEC/GetAccessTokenResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Token.AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
             "TokenExternalEC/GetAccessTokenAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Token.GetAccessTokenResponse GetAccessToken(EC_Endpoint_Client.Token.GetAccessTokenRequest request);
+        GetAccessTokenResponse GetAccessToken(GetAccessTokenRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
             "TokenExternalEC/GetAccessToken", ReplyAction="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorization" +
             "TokenExternalEC/GetAccessTokenResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Token.GetAccessTokenResponse> GetAccessTokenAsync(EC_Endpoint_Client.Token.GetAccessTokenRequest request);
+        System.Threading.Tasks.Task<GetAccessTokenResponse> GetAccessTokenAsync(GetAccessTokenRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -268,12 +267,12 @@ namespace EC_Endpoint_Client.Token {
     public partial class GetAccessTokenRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAccessToken", Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02", Order=0)]
-        public EC_Endpoint_Client.Token.GetAccessTokenRequestBody Body;
+        public GetAccessTokenRequestBody Body;
         
         public GetAccessTokenRequest() {
         }
         
-        public GetAccessTokenRequest(EC_Endpoint_Client.Token.GetAccessTokenRequestBody Body) {
+        public GetAccessTokenRequest(GetAccessTokenRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -281,19 +280,19 @@ namespace EC_Endpoint_Client.Token {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02")]
     public partial class GetAccessTokenRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public System.Guid authorizationCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public bool selfContained;
         
         public GetAccessTokenRequestBody() {
@@ -314,12 +313,12 @@ namespace EC_Endpoint_Client.Token {
     public partial class GetAccessTokenResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAccessTokenResponse", Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02", Order=0)]
-        public EC_Endpoint_Client.Token.GetAccessTokenResponseBody Body;
+        public GetAccessTokenResponseBody Body;
         
         public GetAccessTokenResponse() {
         }
         
-        public GetAccessTokenResponse(EC_Endpoint_Client.Token.GetAccessTokenResponseBody Body) {
+        public GetAccessTokenResponse(GetAccessTokenResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -327,27 +326,27 @@ namespace EC_Endpoint_Client.Token {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Authorization/Administration/2016/02")]
     public partial class GetAccessTokenResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Token.AuthorizationAccessTokenResponseExternalBE GetAccessTokenResult;
+        [DataMember(Order=0)]
+        public AuthorizationAccessTokenResponseExternalBE GetAccessTokenResult;
         
         public GetAccessTokenResponseBody() {
         }
         
-        public GetAccessTokenResponseBody(EC_Endpoint_Client.Token.AuthorizationAccessTokenResponseExternalBE GetAccessTokenResult) {
+        public GetAccessTokenResponseBody(AuthorizationAccessTokenResponseExternalBE GetAccessTokenResult) {
             this.GetAccessTokenResult = GetAccessTokenResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IAuthorizationTokenExternalECChannel : EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC, System.ServiceModel.IClientChannel {
+    public interface IAuthorizationTokenExternalECChannel : IAuthorizationTokenExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AuthorizationTokenExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC>, EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC {
+    public partial class AuthorizationTokenExternalECClient : System.ServiceModel.ClientBase<IAuthorizationTokenExternalEC>, IAuthorizationTokenExternalEC {
         
         public AuthorizationTokenExternalECClient() {
         }
@@ -369,54 +368,54 @@ namespace EC_Endpoint_Client.Token {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Token.TestResponse EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC.Test(EC_Endpoint_Client.Token.TestRequest request) {
+        TestResponse IAuthorizationTokenExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.Token.TestRequest inValue = new EC_Endpoint_Client.Token.TestRequest();
-            EC_Endpoint_Client.Token.TestResponse retVal = ((EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IAuthorizationTokenExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Token.TestResponse> EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC.TestAsync(EC_Endpoint_Client.Token.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IAuthorizationTokenExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Token.TestResponse> TestAsync() {
-            EC_Endpoint_Client.Token.TestRequest inValue = new EC_Endpoint_Client.Token.TestRequest();
-            return ((EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IAuthorizationTokenExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Token.GetAccessTokenResponse EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC.GetAccessToken(EC_Endpoint_Client.Token.GetAccessTokenRequest request) {
+        GetAccessTokenResponse IAuthorizationTokenExternalEC.GetAccessToken(GetAccessTokenRequest request) {
             return base.Channel.GetAccessToken(request);
         }
         
-        public EC_Endpoint_Client.Token.AuthorizationAccessTokenResponseExternalBE GetAccessToken(string userName, string password, System.Guid authorizationCode, bool selfContained) {
-            EC_Endpoint_Client.Token.GetAccessTokenRequest inValue = new EC_Endpoint_Client.Token.GetAccessTokenRequest();
-            inValue.Body = new EC_Endpoint_Client.Token.GetAccessTokenRequestBody();
+        public AuthorizationAccessTokenResponseExternalBE GetAccessToken(string userName, string password, System.Guid authorizationCode, bool selfContained) {
+            GetAccessTokenRequest inValue = new GetAccessTokenRequest();
+            inValue.Body = new GetAccessTokenRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.authorizationCode = authorizationCode;
             inValue.Body.selfContained = selfContained;
-            EC_Endpoint_Client.Token.GetAccessTokenResponse retVal = ((EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC)(this)).GetAccessToken(inValue);
+            GetAccessTokenResponse retVal = ((IAuthorizationTokenExternalEC)(this)).GetAccessToken(inValue);
             return retVal.Body.GetAccessTokenResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.Token.GetAccessTokenResponse> EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC.GetAccessTokenAsync(EC_Endpoint_Client.Token.GetAccessTokenRequest request) {
+        System.Threading.Tasks.Task<GetAccessTokenResponse> IAuthorizationTokenExternalEC.GetAccessTokenAsync(GetAccessTokenRequest request) {
             return base.Channel.GetAccessTokenAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.Token.GetAccessTokenResponse> GetAccessTokenAsync(string userName, string password, System.Guid authorizationCode, bool selfContained) {
-            EC_Endpoint_Client.Token.GetAccessTokenRequest inValue = new EC_Endpoint_Client.Token.GetAccessTokenRequest();
-            inValue.Body = new EC_Endpoint_Client.Token.GetAccessTokenRequestBody();
+        public System.Threading.Tasks.Task<GetAccessTokenResponse> GetAccessTokenAsync(string userName, string password, System.Guid authorizationCode, bool selfContained) {
+            GetAccessTokenRequest inValue = new GetAccessTokenRequest();
+            inValue.Body = new GetAccessTokenRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.authorizationCode = authorizationCode;
             inValue.Body.selfContained = selfContained;
-            return ((EC_Endpoint_Client.Token.IAuthorizationTokenExternalEC)(this)).GetAccessTokenAsync(inValue);
+            return ((IAuthorizationTokenExternalEC)(this)).GetAccessTokenAsync(inValue);
         }
     }
 }

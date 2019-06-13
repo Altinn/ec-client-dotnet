@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EC_Endpoint_Client.Service_References.IntermediaryInbound;
 
 namespace EC_Endpoint_Client.Classes.ExtendedClasses.Intermediary
 {
-    public class FormTaskShipment : EC_Endpoint_Client.IntermediaryInbound.FormTaskShipmentBE
+    public class FormTaskShipment : FormTaskShipmentBE
     {
         public FormTaskShipment()
         {
@@ -17,17 +13,17 @@ namespace EC_Endpoint_Client.Classes.ExtendedClasses.Intermediary
         }
     }
 
-    public class FormTask : EC_Endpoint_Client.IntermediaryInbound.FormTask
+    public class FormTask : Service_References.IntermediaryInbound.FormTask
     {
         public FormTask()
         {
         }
     }
 
-    public class Form : EC_Endpoint_Client.IntermediaryInbound.Form
+    public class Form : Service_References.IntermediaryInbound.Form
     {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string FormDataField;
+        private string _formDataField;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 5)]
         [Editor(typeof(MultilineStringEditor), typeof(UITypeEditor))]
@@ -35,14 +31,14 @@ namespace EC_Endpoint_Client.Classes.ExtendedClasses.Intermediary
         {
             get
             {
-                return this.FormDataField;
+                return _formDataField;
             }
             set
             {
-                if ((object.ReferenceEquals(this.FormDataField, value) != true))
+                if ((ReferenceEquals(_formDataField, value) != true))
                 {
-                    this.FormDataField = value;
-                    base.RaisePropertyChanged("FormData");
+                    _formDataField = value;
+                    RaisePropertyChanged("FormData");
                 }
             }
         }

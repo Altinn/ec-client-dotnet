@@ -1,39 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillAgency;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.PrefillAgency;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Prefill;
+using EC_Endpoint_Client.Service_References.PrefillAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 {
     public partial class PrefillAgencyForm : AgencyBaseForm
     {
-        private PrefillAgencyEndPointFunction paepFunc;
-        public SubmitPrefillFormTaskShipment ShipmentSPF { get; set; }
-        public SubmitAndInstantiatePrefillFormTaskShipment ShipmentSAIPF { get; set; }
-        private ReceiptExternal ResultSPF { get; set; }
-        private ReceiptExternal ResultSAIPF { get; set; }
+        private PrefillAgencyEndPointFunction _paepFunc;
+        public SubmitPrefillFormTaskShipment ShipmentSpf { get; set; }
+        public SubmitAndInstantiatePrefillFormTaskShipment ShipmentSaipf { get; set; }
+        private ReceiptExternal ResultSpf { get; set; }
+        private ReceiptExternal ResultSaipf { get; set; }
 
         public PrefillAgencyForm()
         {
             InitializeComponent();
-            paepFunc = new PrefillAgencyEndPointFunction();
-            paepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
-            ShipmentSPF = new SubmitPrefillFormTaskShipment();
-            ShipmentSAIPF = new SubmitAndInstantiatePrefillFormTaskShipment();
-            ResultSPF = new ReceiptExternal();
-            ResultSAIPF = new ReceiptExternal();
+            _paepFunc = new PrefillAgencyEndPointFunction();
+            _paepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            ShipmentSpf = new SubmitPrefillFormTaskShipment();
+            ShipmentSaipf = new SubmitAndInstantiatePrefillFormTaskShipment();
+            ResultSpf = new ReceiptExternal();
+            ResultSaipf = new ReceiptExternal();
 
-            ShipmentSPF.PrefillFormTask = new PrefillFormTaskDetails();
-            ShipmentSPF.PrefillFormTask.PreFillFormTasklist = new PreFillFormTaskBEList();
+            ShipmentSpf.PrefillFormTask = new PrefillFormTaskDetails();
+            ShipmentSpf.PrefillFormTask.PreFillFormTasklist = new PreFillFormTaskBEList();
             SetupObjForPropGrid();
         }
 
@@ -58,7 +51,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                paepFunc.Test(ShipmentTest);
+                _paepFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -69,11 +62,11 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void SubmitAndInstantiatePrefilledFormTask()
         {
-            SetBasicShipmentSettings(ShipmentSAIPF);
+            SetBasicShipmentSettings(ShipmentSaipf);
             try
             {
-                ResultSAIPF = paepFunc.SubmitAndInstantiatePrefilledFormTask(ShipmentSAIPF);
-                SetViewedItem(ResultSAIPF, "Result from SubmitAndInstantiatePrefilledFormTask");
+                ResultSaipf = _paepFunc.SubmitAndInstantiatePrefilledFormTask(ShipmentSaipf);
+                SetViewedItem(ResultSaipf, "Result from SubmitAndInstantiatePrefilledFormTask");
             }
             catch (Exception ex)
             {
@@ -83,11 +76,11 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void SubmitPrefilledFormTask()
         {
-            SetBasicShipmentSettings(ShipmentSPF);
+            SetBasicShipmentSettings(ShipmentSpf);
             try
             {
-                ResultSPF = paepFunc.SubmitPrefilledFormTasks(ShipmentSPF);
-                SetViewedItem(ResultSPF, "Result from SubmitPrefilledFormTask");
+                ResultSpf = _paepFunc.SubmitPrefilledFormTasks(ShipmentSpf);
+                SetViewedItem(ResultSpf, "Result from SubmitPrefilledFormTask");
             }
             catch (Exception ex)
             {
@@ -98,19 +91,19 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
         #region SubmitPrefillFormTasksClicks
         private void btn_SPFShowShip_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentSPF, "Shipment for SubmitPrefilledFormTasks");
+            SetViewedItem(ShipmentSpf, "Shipment for SubmitPrefilledFormTasks");
         }
 
         private void btn_SPFSaveShip_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentSPF);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentSPF);
+            ClearBasicShipmentsettings(ShipmentSpf);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentSpf);
         }
 
         private void btn_SPFLoadShip_Click(object sender, EventArgs e)
         {
-            ShipmentSPF = (SubmitPrefillFormTaskShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentSPF);
-            SetViewedItem(ShipmentSPF, "Shipment for SubmitPrefilledFormTasks");
+            ShipmentSpf = (SubmitPrefillFormTaskShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentSpf);
+            SetViewedItem(ShipmentSpf, "Shipment for SubmitPrefilledFormTasks");
         }
 
         private void btn_SPFInvoke_Click(object sender, EventArgs e)
@@ -120,30 +113,30 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void btn_SPFShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultSPF, "Result from SubmitPrefilledFormTask");
+            SetViewedItem(ResultSpf, "Result from SubmitPrefilledFormTask");
         }
 
         private void btn_SPFSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultSPF);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultSpf);
         }
         #endregion
         #region SubmitAndInstantiatePreifllFormTask
         private void btn_SAIPFShowShip_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentSAIPF, "Shipment for SubmitAndInstantiatePrefilledFormTask");
+            SetViewedItem(ShipmentSaipf, "Shipment for SubmitAndInstantiatePrefilledFormTask");
         }
 
         private void btn_SAIPFSaveShip_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentSAIPF);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentSAIPF);
+            ClearBasicShipmentsettings(ShipmentSaipf);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentSaipf);
         }
 
         private void btn_SAIPFLoadShip_Click(object sender, EventArgs e)
         {
-            ShipmentSAIPF = (SubmitAndInstantiatePrefillFormTaskShipment)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentSAIPF);
-            SetViewedItem(ShipmentSAIPF, "Shipment for SubmitAndInstantiatePrefilledFormTask");
+            ShipmentSaipf = (SubmitAndInstantiatePrefillFormTaskShipment)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentSaipf);
+            SetViewedItem(ShipmentSaipf, "Shipment for SubmitAndInstantiatePrefilledFormTask");
         }
 
         private void btn_SAIPFInvoke_Click(object sender, EventArgs e)
@@ -153,12 +146,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void btn_SAIPFShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultSAIPF, "Result from SubmitAndInstantiatePrefilledFormTask");
+            SetViewedItem(ResultSaipf, "Result from SubmitAndInstantiatePrefilledFormTask");
         }
 
         private void btn_SAIPFSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultSAIPF);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultSaipf);
         }
         #endregion
 

@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Configuration;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Configuration;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EC_Endpoint_Client.Forms;
 
-namespace EC_Endpoint_Client
+namespace EC_Endpoint_Client.BaseForms
 {
     public partial class CertificateFunctionality : Form
     {
@@ -29,7 +21,7 @@ namespace EC_Endpoint_Client
             store.Open(OpenFlags.ReadOnly);
             foreach (X509Certificate2 cert in store.Certificates)
             {
-                if (cert.Thumbprint.ToUpper() == thumbPrint.ToUpper())
+                if (cert.Thumbprint?.ToUpper() == thumbPrint.ToUpper())
                 {
                     return cert;
                 }
@@ -40,7 +32,7 @@ namespace EC_Endpoint_Client
         public virtual void GetDefaultCertificate()
         {
             var behaviors = (BehaviorsSection)ConfigurationManager.GetSection("system.serviceModel/behaviors");
-            EndpointBehaviorElement endpointBehavior = (EndpointBehaviorElement)behaviors.EndpointBehaviors["CustomBehavior"];
+            EndpointBehaviorElement endpointBehavior = behaviors.EndpointBehaviors["CustomBehavior"];
             ClientCredentialsElement cce = (ClientCredentialsElement)endpointBehavior[0];
             Thumbprint = cce.ClientCertificate.FindValue;
             SelectedCertificate = GetCertificateByThumbPrint(Thumbprint);
@@ -53,21 +45,20 @@ namespace EC_Endpoint_Client
 
         public virtual void ShowCertificateForm()
         {
-            Forms.CertificateSelectorForm csf = new CertificateSelectorForm(SelectedCertificate);
+            var csf = new CertificateSelectorForm(SelectedCertificate);
             csf.FormClosing += csf_FormClosing;
             csf.ShowDialog();
         }
 
-        void csf_FormClosing(object sender, FormClosingEventArgs e)
+        private void csf_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.SelectedCertificate = ((CertificateSelectorForm)sender).SelectedCertificate;
+            SelectedCertificate = ((CertificateSelectorForm)sender).SelectedCertificate;
             if (SelectedCertificate != null)
             {
-                this.Thumbprint = SelectedCertificate.Thumbprint;
+                Thumbprint = SelectedCertificate.Thumbprint;
             }
+
             HandleCertificateSet();
         }
-
-
     }
 }

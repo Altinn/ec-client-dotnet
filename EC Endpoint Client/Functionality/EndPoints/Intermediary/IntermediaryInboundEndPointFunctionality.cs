@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.Classes.Shipments;
-using EC_Endpoint_Client.IntermediaryInbound;
+﻿using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary;
+using EC_Endpoint_Client.Service_References.IntermediaryInbound;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {
@@ -26,7 +20,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             }
         }
 
-        public int GetAltinnSubmissionStatusEC(BaseShipment shipment)
+        public int GetAltinnSubmissionStatusEc(BaseShipment shipment)
         {
             OperationContext = "IntGetAltinnSubmissionStatus";
             using (var client = GenerateIntermediaryInboundProxy(shipment))
@@ -35,7 +29,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             }
         }
 
-        public ReceiptExternalBE SubmitFormTaskEC(IntermediaryInboundShipment shipment)
+        public ReceiptExternalBE SubmitFormTaskEc(IntermediaryInboundShipment shipment)
         {
             OperationContext = "IntSubmitFormTask";
             using (var client = GenerateIntermediaryInboundProxy(shipment))
@@ -50,7 +44,16 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             OperationContext = "IntSignAndComplet";
             using (var client = GenerateIntermediaryInboundProxy(shipment))
             {
-                return client.CompleteAndSignShipmentEC(shipment.Username, shipment.Password, shipment.ReporteeElementID, shipment.SignatureList, shipment.LanguageID);
+                return client.CompleteAndSignShipmentEC(shipment.Username, shipment.Password, shipment.ReporteeElementId, shipment.SignatureList, shipment.LanguageId);
+            }
+        }
+
+        public ReceiptExternal UpdateFormData(UpdateFormDataInput updateFormData)
+        {
+            OperationContext = "IntUpdateFormData";
+            using (var client = GenerateIntermediaryInboundProxy(updateFormData))
+            {
+                return client.UpdateFormDataEC(updateFormData.Username, updateFormData.Password, updateFormData.FormTaskUpdate);
             }
         }
 

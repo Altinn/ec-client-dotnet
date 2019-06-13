@@ -1,59 +1,46 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.KeyManagement;
+using EC_Endpoint_Client.Classes.Shipments.Archive;
+using EC_Endpoint_Client.Functionality.EndPoints.Archive;
+using EC_Endpoint_Client.Service_References.KeyManagement;
 
-namespace EC_Endpoint_Client.Forms
+namespace EC_Endpoint_Client.Forms.Archive
 {
-    public partial class KeyManagementForm : ClientBaseForm
+    public partial class KeyManagementForm : BaseForms.ClientBaseForm
     {
         public CertificateBEList CertificateList { get; set; }
         public KeyManagementShipmentClass Shipment { get; set; }
-        private CertificateBE[] CertificateArray
-        {
-            get { return CertificateList.ToArray(); }
-            set
-            {
-                CertificateList = (CertificateBEList)value.ToList<CertificateBE>();
-            }
-        }
+        private CertificateBE[] CertificateArray => CertificateList.ToArray();
 
-        private Functionality.KeyManagementEndPointFunctionality keyManFunc { get; set; }
+        private KeyManagementEndPointFunctionality KeyManFunc { get; set; }
 
         public KeyManagementForm()
         {
             InitializeComponent();
             CertificateList = new CertificateBEList();
             SetUpObjectsForPropertyGrid();
-            keyManFunc = new Functionality.KeyManagementEndPointFunctionality();
-            keyManFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            KeyManFunc = new KeyManagementEndPointFunctionality();
+            KeyManFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             Shipment = new KeyManagementShipmentClass();
-            ShowShipment();
+            AssignActions();
         }
 
-        public virtual void SetUpObjectsForPropertyGrid()
+        public void SetUpObjectsForPropertyGrid()
         {
             TypeDescriptor.AddAttributes(typeof(CertificateBE), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CertificateBEList), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
 
-        private void ShowShipment()
+        private void AssignActions()
         {
-            SetViewedItem(Shipment, "Shipment Item");
+            AssignAction(GetCertificateList, KeyManFunc.GetKeyManagementCertificatesBeList, Shipment, CertificateList, "GetCertificateList");
         }
 
         public void Test()
         {
             try
             {
-                keyManFunc.TestKeyManagement(SelectedEndpointName, SelectedCertificate);
+                KeyManFunc.TestKeyManagement(SelectedEndpointName, SelectedCertificate);
                 SetViewedItem("OK", "Test was OK");
             }
             catch (Exception ex)
@@ -72,7 +59,7 @@ namespace EC_Endpoint_Client.Forms
                 Shipment.Username = SystemUsername;
                 Shipment.Password = SystemPassword;
                 
-                CertificateList = keyManFunc.GetKeyManagementCertificatesBEList(Shipment);
+                CertificateList = KeyManFunc.GetKeyManagementCertificatesBeList(Shipment);
                 SetViewedItem(CertificateArray, "CertificateBEList");
             }
             catch (Exception ex)
@@ -81,34 +68,9 @@ namespace EC_Endpoint_Client.Forms
             }
         }
 
-        private void btn_getCertificateBEList_Click(object sender, EventArgs e)
-        {
-            GetCertificates();
-        }
-
-        private void btn_ShowCertificateBEList_Click(object sender, EventArgs e)
-        {
-            SetViewedItem(CertificateArray, "CertificateBEList");
-        }
-
-        private void btn_SaveCertificateBEList_Click(object sender, EventArgs e)
-        {
-            Functionality.IOFunctionality.GeneralizedSaveFile(CertificateList);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Test();
-        }
-
-        private void btn_showShipment_Click(object sender, EventArgs e)
-        {
-            ShowShipment();
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            ShowShipment();
         }
     }
 }

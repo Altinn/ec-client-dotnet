@@ -1,55 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.DownloadQueue;
+﻿using System.Security.Cryptography.X509Certificates;
+using EC_Endpoint_Client.Classes.Shipments.Archive;
+using EC_Endpoint_Client.Service_References.DownloadQueue;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {
     public class DownloadQueueEndPointFunctionality : EndPointFunctionalityBase
     {
         #region downloadQueue
 
-        public void TestDownloadQueue(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestDownloadQueue(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
-            var client = this.GenerateDownloadQueueProxy(selectedEndpointName, SelectedCertificate);
-            this.OperationContext = "DQTest";
+            var client = GenerateDownloadQueueProxy(selectedEndpointName, selectedCertificate);
+            OperationContext = "DQTest";
             client.Test();
         }
 
-        public DownloadQueueItemBEList GetDownloadQueueItemBEList(string username, string password, string serviceCode, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public DownloadQueueItemBEList GetDownloadQueueItemBeList(GetDownloadQueueShipment shipment)
         {
-            var client = this.GenerateDownloadQueueProxy(selectedEndpointName, SelectedCertificate);
-            this.OperationContext = "DQGetDQItemBEList";
-            return client.GetDownloadQueueItems(username, password, serviceCode);
+            var client = GenerateDownloadQueueProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "DQGetDQItemBEList";
+            return client.GetDownloadQueueItems(shipment.Username, shipment.Password, shipment.ServiceCode);
         }
 
-        public ArchivedFormTaskDQBE GetArchivedFormTaskDQBE(string username, string password, string archiveReference, int? languageID, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ArchivedFormTaskDQBE GetArchivedFormTaskDqbe(DownloadQueueExtendedShipment shipment)
         {
-            var client = this.GenerateDownloadQueueProxy(selectedEndpointName, SelectedCertificate);
-            this.OperationContext = "DQGetArchivedFormTask";
-            return client.GetArchivedFormTaskECDQ(username, password, archiveReference, languageID);
+            var client = GenerateDownloadQueueProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "DQGetArchivedFormTask";
+            return client.GetArchivedFormTaskECDQ(shipment.Username, shipment.Password, shipment.ArchiveReference, shipment.LanguageId);
         }
 
-        public byte[] GetFormSetPdf(string username, string password, string archiveReference, int languageId, string selectedEndpointName, X509Certificate2 selectedCertificate)
+        public byte[] GetFormSetPdf(DownloadQueueExtendedShipment shipment)
         {
-            var client = this.GenerateDownloadQueueProxy(selectedEndpointName, selectedCertificate);
-            this.OperationContext = "DQGetFormSetPdf";
-            return client.GetFormSetPdfEc(username, password, archiveReference, languageId);
+            var client = GenerateDownloadQueueProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "DQGetFormSetPdf";
+            return client.GetFormSetPdfEc(shipment.Username, shipment.Password, shipment.ArchiveReference, shipment.LanguageId ?? 0);
         }
 
-        public string PurgeDQItem(string username, string password, string archiveReference, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public BaseResult PurgeDqItem(DownloadQueueBaseShipment shipment)
         {
-            var client = this.GenerateDownloadQueueProxy(selectedEndpointName, SelectedCertificate);
-            this.OperationContext = "PurgeDQItem";
-            return client.PurgeItem(username, password, archiveReference);
+            var client = GenerateDownloadQueueProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "PurgeDQItem";
+            return new BaseResult()
+            {
+
+                Result = client.PurgeItem(shipment.Username, shipment.Password, shipment.ArchiveReference)
+            };
         }
 
-        private DownloadQueueExternalECClient GenerateDownloadQueueProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private DownloadQueueExternalECClient GenerateDownloadQueueProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
-            return GenerateProxy<DownloadQueueExternalECClient, IDownloadQueueExternalEC>(selectedEndpointName, SelectedCertificate);
+            return GenerateProxy<DownloadQueueExternalECClient, IDownloadQueueExternalEC>(selectedEndpointName, selectedCertificate);
         }
         #endregion
 

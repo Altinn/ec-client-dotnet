@@ -38,23 +38,20 @@
             this.btn_SaveFTShipment = new System.Windows.Forms.Button();
             this.btn_ShowFTShip = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_SaveSignReceipt = new System.Windows.Forms.Button();
-            this.btn_showSignReceipt = new System.Windows.Forms.Button();
-            this.btn_CompleteAndSign = new System.Windows.Forms.Button();
-            this.btn_LoadShipment = new System.Windows.Forms.Button();
-            this.btn_SaveShipment = new System.Windows.Forms.Button();
-            this.btn_ShowCompleteSignShipment = new System.Windows.Forms.Button();
+            this.controllerCompleteAndSign = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.btn_ShowSubmissionStatus = new System.Windows.Forms.Button();
-            this.btn_GetSubmissionStatus = new System.Windows.Forms.Button();
+            this.controllerGetSubmissionStatus = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.btn_Test = new System.Windows.Forms.Button();
+            this.testController = new EC_Endpoint_Client.UserControls.ActionHolderControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.actionHolder_UpdateFormData = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.servicePanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // servicePanel
@@ -66,6 +63,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -163,12 +161,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.btn_SaveSignReceipt);
-            this.tabPage2.Controls.Add(this.btn_showSignReceipt);
-            this.tabPage2.Controls.Add(this.btn_CompleteAndSign);
-            this.tabPage2.Controls.Add(this.btn_LoadShipment);
-            this.tabPage2.Controls.Add(this.btn_SaveShipment);
-            this.tabPage2.Controls.Add(this.btn_ShowCompleteSignShipment);
+            this.tabPage2.Controls.Add(this.controllerCompleteAndSign);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -177,72 +170,17 @@
             this.tabPage2.Text = "CompleteAndSign";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btn_SaveSignReceipt
+            // controllerCompleteAndSign
             // 
-            this.btn_SaveSignReceipt.Enabled = false;
-            this.btn_SaveSignReceipt.Location = new System.Drawing.Point(300, 64);
-            this.btn_SaveSignReceipt.Name = "btn_SaveSignReceipt";
-            this.btn_SaveSignReceipt.Size = new System.Drawing.Size(112, 23);
-            this.btn_SaveSignReceipt.TabIndex = 1;
-            this.btn_SaveSignReceipt.Text = "Save Receipt";
-            this.btn_SaveSignReceipt.UseVisualStyleBackColor = true;
-            this.btn_SaveSignReceipt.Click += new System.EventHandler(this.btn_SaveSignReceipt_Click);
-            // 
-            // btn_showSignReceipt
-            // 
-            this.btn_showSignReceipt.Enabled = false;
-            this.btn_showSignReceipt.Location = new System.Drawing.Point(300, 35);
-            this.btn_showSignReceipt.Name = "btn_showSignReceipt";
-            this.btn_showSignReceipt.Size = new System.Drawing.Size(112, 23);
-            this.btn_showSignReceipt.TabIndex = 2;
-            this.btn_showSignReceipt.Text = "Show Receipt";
-            this.btn_showSignReceipt.UseVisualStyleBackColor = true;
-            this.btn_showSignReceipt.Click += new System.EventHandler(this.btn_showSignReceipt_Click);
-            // 
-            // btn_CompleteAndSign
-            // 
-            this.btn_CompleteAndSign.Location = new System.Drawing.Point(300, 6);
-            this.btn_CompleteAndSign.Name = "btn_CompleteAndSign";
-            this.btn_CompleteAndSign.Size = new System.Drawing.Size(112, 23);
-            this.btn_CompleteAndSign.TabIndex = 3;
-            this.btn_CompleteAndSign.Text = "Invoke Method";
-            this.btn_CompleteAndSign.UseVisualStyleBackColor = true;
-            this.btn_CompleteAndSign.Click += new System.EventHandler(this.btn_CompleteAndSign_Click);
-            // 
-            // btn_LoadShipment
-            // 
-            this.btn_LoadShipment.Location = new System.Drawing.Point(6, 64);
-            this.btn_LoadShipment.Name = "btn_LoadShipment";
-            this.btn_LoadShipment.Size = new System.Drawing.Size(114, 23);
-            this.btn_LoadShipment.TabIndex = 4;
-            this.btn_LoadShipment.Text = "Load Shipment";
-            this.btn_LoadShipment.UseVisualStyleBackColor = true;
-            this.btn_LoadShipment.Click += new System.EventHandler(this.btn_LoadShipment_Click);
-            // 
-            // btn_SaveShipment
-            // 
-            this.btn_SaveShipment.Location = new System.Drawing.Point(6, 35);
-            this.btn_SaveShipment.Name = "btn_SaveShipment";
-            this.btn_SaveShipment.Size = new System.Drawing.Size(114, 23);
-            this.btn_SaveShipment.TabIndex = 5;
-            this.btn_SaveShipment.Text = "Save Shipment";
-            this.btn_SaveShipment.UseVisualStyleBackColor = true;
-            this.btn_SaveShipment.Click += new System.EventHandler(this.btn_SaveShipment_Click);
-            // 
-            // btn_ShowCompleteSignShipment
-            // 
-            this.btn_ShowCompleteSignShipment.Location = new System.Drawing.Point(6, 6);
-            this.btn_ShowCompleteSignShipment.Name = "btn_ShowCompleteSignShipment";
-            this.btn_ShowCompleteSignShipment.Size = new System.Drawing.Size(114, 23);
-            this.btn_ShowCompleteSignShipment.TabIndex = 6;
-            this.btn_ShowCompleteSignShipment.Text = "Show Shipment";
-            this.btn_ShowCompleteSignShipment.UseVisualStyleBackColor = true;
-            this.btn_ShowCompleteSignShipment.Click += new System.EventHandler(this.btn_ViewSignShipment);
+            this.controllerCompleteAndSign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controllerCompleteAndSign.Location = new System.Drawing.Point(3, 3);
+            this.controllerCompleteAndSign.Name = "controllerCompleteAndSign";
+            this.controllerCompleteAndSign.Size = new System.Drawing.Size(411, 337);
+            this.controllerCompleteAndSign.TabIndex = 7;
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.btn_ShowSubmissionStatus);
-            this.tabPage3.Controls.Add(this.btn_GetSubmissionStatus);
+            this.tabPage3.Controls.Add(this.controllerGetSubmissionStatus);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -251,29 +189,17 @@
             this.tabPage3.Text = "GetSubmissionStatus";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // btn_ShowSubmissionStatus
+            // controllerGetSubmissionStatus
             // 
-            this.btn_ShowSubmissionStatus.Location = new System.Drawing.Point(6, 35);
-            this.btn_ShowSubmissionStatus.Name = "btn_ShowSubmissionStatus";
-            this.btn_ShowSubmissionStatus.Size = new System.Drawing.Size(114, 23);
-            this.btn_ShowSubmissionStatus.TabIndex = 6;
-            this.btn_ShowSubmissionStatus.Text = "Show Result";
-            this.btn_ShowSubmissionStatus.UseVisualStyleBackColor = true;
-            this.btn_ShowSubmissionStatus.Click += new System.EventHandler(this.btn_ShowSubmissionStatus_Click);
-            // 
-            // btn_GetSubmissionStatus
-            // 
-            this.btn_GetSubmissionStatus.Location = new System.Drawing.Point(6, 6);
-            this.btn_GetSubmissionStatus.Name = "btn_GetSubmissionStatus";
-            this.btn_GetSubmissionStatus.Size = new System.Drawing.Size(114, 23);
-            this.btn_GetSubmissionStatus.TabIndex = 6;
-            this.btn_GetSubmissionStatus.Text = "Invoke Method";
-            this.btn_GetSubmissionStatus.UseVisualStyleBackColor = true;
-            this.btn_GetSubmissionStatus.Click += new System.EventHandler(this.btn_GetSubmissionStatus_Click);
+            this.controllerGetSubmissionStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.controllerGetSubmissionStatus.Location = new System.Drawing.Point(3, 3);
+            this.controllerGetSubmissionStatus.Name = "controllerGetSubmissionStatus";
+            this.controllerGetSubmissionStatus.Size = new System.Drawing.Size(411, 337);
+            this.controllerGetSubmissionStatus.TabIndex = 0;
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.btn_Test);
+            this.tabPage4.Controls.Add(this.testController);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -282,15 +208,32 @@
             this.tabPage4.Text = "Test";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // btn_Test
+            // testController
             // 
-            this.btn_Test.Location = new System.Drawing.Point(6, 6);
-            this.btn_Test.Name = "btn_Test";
-            this.btn_Test.Size = new System.Drawing.Size(114, 23);
-            this.btn_Test.TabIndex = 6;
-            this.btn_Test.Text = "Test";
-            this.btn_Test.UseVisualStyleBackColor = true;
-            this.btn_Test.Click += new System.EventHandler(this.btn_Test_Click);
+            this.testController.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.testController.Location = new System.Drawing.Point(3, 3);
+            this.testController.Name = "testController";
+            this.testController.Size = new System.Drawing.Size(411, 337);
+            this.testController.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.actionHolder_UpdateFormData);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(417, 343);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "UpdateFormData";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // actionHolder_UpdateFormData
+            // 
+            this.actionHolder_UpdateFormData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.actionHolder_UpdateFormData.Location = new System.Drawing.Point(3, 3);
+            this.actionHolder_UpdateFormData.Name = "actionHolder_UpdateFormData";
+            this.actionHolder_UpdateFormData.Size = new System.Drawing.Size(411, 337);
+            this.actionHolder_UpdateFormData.TabIndex = 0;
             // 
             // IntermediaryInboundForm
             // 
@@ -305,6 +248,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,16 +266,12 @@
         private System.Windows.Forms.Button btn_LoadFTShipment;
         private System.Windows.Forms.Button btn_SaveFTShipment;
         private System.Windows.Forms.Button btn_ShowFTShip;
-        private System.Windows.Forms.Button btn_SaveSignReceipt;
-        private System.Windows.Forms.Button btn_showSignReceipt;
-        private System.Windows.Forms.Button btn_CompleteAndSign;
-        private System.Windows.Forms.Button btn_LoadShipment;
-        private System.Windows.Forms.Button btn_SaveShipment;
-        private System.Windows.Forms.Button btn_ShowCompleteSignShipment;
-        private System.Windows.Forms.Button btn_GetSubmissionStatus;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.Button btn_Test;
-        private System.Windows.Forms.Button btn_ShowSubmissionStatus;
         private System.Windows.Forms.Button button1;
+        private UserControls.ActionHolderControl controllerCompleteAndSign;
+        private UserControls.ActionHolderControl controllerGetSubmissionStatus;
+        private UserControls.ActionHolderControl testController;
+        private System.Windows.Forms.TabPage tabPage5;
+        private UserControls.ActionHolderControl actionHolder_UpdateFormData;
     }
 }

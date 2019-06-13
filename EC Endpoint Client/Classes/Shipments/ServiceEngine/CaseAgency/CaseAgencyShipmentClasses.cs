@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.CaseAgencySystem;
+using EC_Endpoint_Client.Service_References.CaseAgencySystem;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency
 {
     public class CaseListShipment : BaseShipment
     {
-        public int CaseID { get; set; }
+        public int CaseId { get; set; }
         public string ExternalServiceCode { get; set; }
         public int ExternalServiceEditionCode { get; set; }
-        public int LanguageID { get; set; }
+        public int LanguageId { get; set; }
         public string ReporteeNumber { get; set; }
     }
 
@@ -29,7 +25,7 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency
     {
         public NotifyEventShipment()
         {
-            this.NotificationInfo = new StateMachineEventNotificationBE();
+            NotificationInfo = new StateMachineEventNotificationBE();
         }
         public StateMachineEventNotificationBE NotificationInfo { get; set; }
     }
@@ -38,10 +34,10 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency
     {
         public SetNoticeShipment()
         {
-            this.NoticeInfo = new NoticeBE();
-            this.NoticeInfo.NoticeTokens = new NoticeTokenBEList();
+            NoticeInfo = new NoticeBE();
+            NoticeInfo.NoticeTokens = new NoticeTokenBEList();
         }
-        public string ReporteeElementID { get; set; }
+        public string ReporteeElementId { get; set; }
         public NoticeBE NoticeInfo { get; set; }
     }
 }

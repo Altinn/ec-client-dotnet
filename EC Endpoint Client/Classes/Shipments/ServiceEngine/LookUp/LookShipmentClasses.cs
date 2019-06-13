@@ -1,4 +1,4 @@
-﻿using EC_Endpoint_Client.LookUp;
+﻿using EC_Endpoint_Client.Service_References.LookUp;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.LookUp
 

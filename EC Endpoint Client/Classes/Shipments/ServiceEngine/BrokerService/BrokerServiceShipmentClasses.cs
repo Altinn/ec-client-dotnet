@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Xml.Serialization;
-using EC_Endpoint_Client.BrokerService;
-using EC_Endpoint_Client.BrokerServiceStreamed;
+using EC_Endpoint_Client.Service_References.BrokerService;
 using File = System.IO.File;
+// ReSharper disable InconsistentNaming
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService
 {
@@ -64,13 +58,13 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService
     {
         [Browsable(true)]
         [XmlIgnore]
-        public int _ParentReceiptID;
+        public int _ParentReceiptId;
         [Browsable(true)]
         [XmlIgnore]
         public string _ReceiptHistory;
         [Browsable(true)]
         [XmlIgnore]
-        public int _ReceiptID;
+        public int _ReceiptId;
         [Browsable(true)]
         [XmlIgnore]
         public string _ReceiptStatusCode;
@@ -80,20 +74,20 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService
         [Browsable(true)]
         [XmlIgnore]
         public string _ReceiptTypeName;
-        public int ParentReceiptID
+        public int ParentReceiptId
         {
-            get { return _ParentReceiptID; }
-            set { _ParentReceiptID = value; }
+            get { return _ParentReceiptId; }
+            set { _ParentReceiptId = value; }
         }
         public string ReceiptHistory
         {
             get { return _ReceiptHistory; }
             set { _ReceiptHistory = value; }
         }
-        public int ReceiptID
+        public int ReceiptId
         {
-            get { return _ReceiptID; }
-            set { _ReceiptID = value; }
+            get { return _ReceiptId; }
+            set { _ReceiptId = value; }
         }
         public string ReceiptStatusCode
         {

@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.LookUp {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.LookUp {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,11 +155,11 @@ namespace EC_Endpoint_Client.LookUp {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="LookUpRequest", Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="LookUpRequest", Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
+    [Serializable()]
     public partial class LookUpRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private string QueryDataField;
@@ -181,7 +180,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string QueryData {
             get {
                 return this.QueryDataField;
@@ -194,7 +193,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string Reportee {
             get {
                 return this.ReporteeField;
@@ -207,7 +206,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -220,7 +219,7 @@ namespace EC_Endpoint_Client.LookUp {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public int ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -249,24 +248,24 @@ namespace EC_Endpoint_Client.LookUp {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/LookUp/2016/02)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.LookUp.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.LookUp.TestResponse Test(EC_Endpoint_Client.LookUp.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.TestResponse> TestAsync(EC_Endpoint_Client.LookUp.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/ServiceEngine/LookUp/2016/02 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
             "uteLookUp", ReplyAction="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
             "uteLookUpResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.LookUp.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
             "uteLookUpAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.LookUp.ExecuteLookUpResponse ExecuteLookUp(EC_Endpoint_Client.LookUp.ExecuteLookUpRequest request);
+        ExecuteLookUpResponse ExecuteLookUp(ExecuteLookUpRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
             "uteLookUp", ReplyAction="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02/ILookUpExternalEC/Exec" +
             "uteLookUpResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.ExecuteLookUpResponse> ExecuteLookUpAsync(EC_Endpoint_Client.LookUp.ExecuteLookUpRequest request);
+        System.Threading.Tasks.Task<ExecuteLookUpResponse> ExecuteLookUpAsync(ExecuteLookUpRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -296,12 +295,12 @@ namespace EC_Endpoint_Client.LookUp {
     public partial class ExecuteLookUpRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ExecuteLookUp", Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02", Order=0)]
-        public EC_Endpoint_Client.LookUp.ExecuteLookUpRequestBody Body;
+        public ExecuteLookUpRequestBody Body;
         
         public ExecuteLookUpRequest() {
         }
         
-        public ExecuteLookUpRequest(EC_Endpoint_Client.LookUp.ExecuteLookUpRequestBody Body) {
+        public ExecuteLookUpRequest(ExecuteLookUpRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -309,22 +308,22 @@ namespace EC_Endpoint_Client.LookUp {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
     public partial class ExecuteLookUpRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.LookUp.LookUpRequest lookUpRequest;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public LookUpRequest lookUpRequest;
         
         public ExecuteLookUpRequestBody() {
         }
         
-        public ExecuteLookUpRequestBody(string userName, string password, EC_Endpoint_Client.LookUp.LookUpRequest lookUpRequest) {
+        public ExecuteLookUpRequestBody(string userName, string password, LookUpRequest lookUpRequest) {
             this.userName = userName;
             this.password = password;
             this.lookUpRequest = lookUpRequest;
@@ -338,12 +337,12 @@ namespace EC_Endpoint_Client.LookUp {
     public partial class ExecuteLookUpResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="ExecuteLookUpResponse", Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02", Order=0)]
-        public EC_Endpoint_Client.LookUp.ExecuteLookUpResponseBody Body;
+        public ExecuteLookUpResponseBody Body;
         
         public ExecuteLookUpResponse() {
         }
         
-        public ExecuteLookUpResponse(EC_Endpoint_Client.LookUp.ExecuteLookUpResponseBody Body) {
+        public ExecuteLookUpResponse(ExecuteLookUpResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -351,10 +350,10 @@ namespace EC_Endpoint_Client.LookUp {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/LookUp/2016/02")]
     public partial class ExecuteLookUpResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public string ExecuteLookUpResult;
         
         public ExecuteLookUpResponseBody() {
@@ -366,12 +365,12 @@ namespace EC_Endpoint_Client.LookUp {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILookUpExternalECChannel : EC_Endpoint_Client.LookUp.ILookUpExternalEC, System.ServiceModel.IClientChannel {
+    public interface ILookUpExternalECChannel : ILookUpExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LookUpExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.LookUp.ILookUpExternalEC>, EC_Endpoint_Client.LookUp.ILookUpExternalEC {
+    public partial class LookUpExternalECClient : System.ServiceModel.ClientBase<ILookUpExternalEC>, ILookUpExternalEC {
         
         public LookUpExternalECClient() {
         }
@@ -393,52 +392,52 @@ namespace EC_Endpoint_Client.LookUp {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.LookUp.TestResponse EC_Endpoint_Client.LookUp.ILookUpExternalEC.Test(EC_Endpoint_Client.LookUp.TestRequest request) {
+        TestResponse ILookUpExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.LookUp.TestRequest inValue = new EC_Endpoint_Client.LookUp.TestRequest();
-            EC_Endpoint_Client.LookUp.TestResponse retVal = ((EC_Endpoint_Client.LookUp.ILookUpExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((ILookUpExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.TestResponse> EC_Endpoint_Client.LookUp.ILookUpExternalEC.TestAsync(EC_Endpoint_Client.LookUp.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> ILookUpExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.TestResponse> TestAsync() {
-            EC_Endpoint_Client.LookUp.TestRequest inValue = new EC_Endpoint_Client.LookUp.TestRequest();
-            return ((EC_Endpoint_Client.LookUp.ILookUpExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((ILookUpExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.LookUp.ExecuteLookUpResponse EC_Endpoint_Client.LookUp.ILookUpExternalEC.ExecuteLookUp(EC_Endpoint_Client.LookUp.ExecuteLookUpRequest request) {
+        ExecuteLookUpResponse ILookUpExternalEC.ExecuteLookUp(ExecuteLookUpRequest request) {
             return base.Channel.ExecuteLookUp(request);
         }
         
-        public string ExecuteLookUp(string userName, string password, EC_Endpoint_Client.LookUp.LookUpRequest lookUpRequest) {
-            EC_Endpoint_Client.LookUp.ExecuteLookUpRequest inValue = new EC_Endpoint_Client.LookUp.ExecuteLookUpRequest();
-            inValue.Body = new EC_Endpoint_Client.LookUp.ExecuteLookUpRequestBody();
+        public string ExecuteLookUp(string userName, string password, LookUpRequest lookUpRequest) {
+            ExecuteLookUpRequest inValue = new ExecuteLookUpRequest();
+            inValue.Body = new ExecuteLookUpRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.lookUpRequest = lookUpRequest;
-            EC_Endpoint_Client.LookUp.ExecuteLookUpResponse retVal = ((EC_Endpoint_Client.LookUp.ILookUpExternalEC)(this)).ExecuteLookUp(inValue);
+            ExecuteLookUpResponse retVal = ((ILookUpExternalEC)(this)).ExecuteLookUp(inValue);
             return retVal.Body.ExecuteLookUpResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.ExecuteLookUpResponse> EC_Endpoint_Client.LookUp.ILookUpExternalEC.ExecuteLookUpAsync(EC_Endpoint_Client.LookUp.ExecuteLookUpRequest request) {
+        System.Threading.Tasks.Task<ExecuteLookUpResponse> ILookUpExternalEC.ExecuteLookUpAsync(ExecuteLookUpRequest request) {
             return base.Channel.ExecuteLookUpAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.LookUp.ExecuteLookUpResponse> ExecuteLookUpAsync(string userName, string password, EC_Endpoint_Client.LookUp.LookUpRequest lookUpRequest) {
-            EC_Endpoint_Client.LookUp.ExecuteLookUpRequest inValue = new EC_Endpoint_Client.LookUp.ExecuteLookUpRequest();
-            inValue.Body = new EC_Endpoint_Client.LookUp.ExecuteLookUpRequestBody();
+        public System.Threading.Tasks.Task<ExecuteLookUpResponse> ExecuteLookUpAsync(string userName, string password, LookUpRequest lookUpRequest) {
+            ExecuteLookUpRequest inValue = new ExecuteLookUpRequest();
+            inValue.Body = new ExecuteLookUpRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.lookUpRequest = lookUpRequest;
-            return ((EC_Endpoint_Client.LookUp.ILookUpExternalEC)(this)).ExecuteLookUpAsync(inValue);
+            return ((ILookUpExternalEC)(this)).ExecuteLookUpAsync(inValue);
         }
     }
 }

@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.IntermediaryInboundStreamed {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -160,25 +159,25 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInboundStreamed.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse Test(EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse> TestAsync(EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
             "IntermediaryInboundExternalECStreamed/SubmitAttachmentStreamedEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
             "IntermediaryInboundExternalECStreamed/SubmitAttachmentStreamedECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInboundStreamed.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
             "IntermediaryInboundExternalECStreamed/SubmitAttachmentStreamedECAltinnFaultFault" +
             "", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE SubmitAttachmentStreamedEC(EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE request);
+        ReceiptExternalStreamedBE SubmitAttachmentStreamedEC(StreamedAttachmentECBE request);
         
         // CODEGEN: Generating message contract since the operation has multiple return values.
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
             "IntermediaryInboundExternalECStreamed/SubmitAttachmentStreamedEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2013/06/I" +
             "IntermediaryInboundExternalECStreamed/SubmitAttachmentStreamedECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE> SubmitAttachmentStreamedECAsync(EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE request);
+        System.Threading.Tasks.Task<ReceiptExternalStreamedBE> SubmitAttachmentStreamedECAsync(StreamedAttachmentECBE request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -290,12 +289,12 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IIntermediaryInboundExternalECStreamedChannel : EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed, System.ServiceModel.IClientChannel {
+    public interface IIntermediaryInboundExternalECStreamedChannel : IIntermediaryInboundExternalECStreamed, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IntermediaryInboundExternalECStreamedClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed>, EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed {
+    public partial class IntermediaryInboundExternalECStreamedClient : System.ServiceModel.ClientBase<IIntermediaryInboundExternalECStreamed>, IIntermediaryInboundExternalECStreamed {
         
         public IntermediaryInboundExternalECStreamedClient() {
         }
@@ -317,32 +316,32 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed.Test(EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest request) {
+        TestResponse IIntermediaryInboundExternalECStreamed.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest inValue = new EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest();
-            EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse retVal = ((EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IIntermediaryInboundExternalECStreamed)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse> EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed.TestAsync(EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IIntermediaryInboundExternalECStreamed.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.IntermediaryInboundStreamed.TestResponse> TestAsync() {
-            EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest inValue = new EC_Endpoint_Client.IntermediaryInboundStreamed.TestRequest();
-            return ((EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IIntermediaryInboundExternalECStreamed)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed.SubmitAttachmentStreamedEC(EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE request) {
+        ReceiptExternalStreamedBE IIntermediaryInboundExternalECStreamed.SubmitAttachmentStreamedEC(StreamedAttachmentECBE request) {
             return base.Channel.SubmitAttachmentStreamedEC(request);
         }
         
         public string SubmitAttachmentStreamedEC(string AttachmentTypeName, string CheckSum, string EndUserSystemreference, string FileName, string Name, int ReporteeElementId, string password, string userName, System.IO.Stream dataStream, out int ParentReceiptId, out string ReceiptHistory, out int ReceiptId, out string ReceiptStatusCode, out string ReceiptText, out string ReceiptTypeName) {
-            EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE inValue = new EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE();
+            StreamedAttachmentECBE inValue = new StreamedAttachmentECBE();
             inValue.AttachmentTypeName = AttachmentTypeName;
             inValue.CheckSum = CheckSum;
             inValue.EndUserSystemreference = EndUserSystemreference;
@@ -352,7 +351,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             inValue.password = password;
             inValue.userName = userName;
             inValue.dataStream = dataStream;
-            EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE retVal = ((EC_Endpoint_Client.IntermediaryInboundStreamed.IIntermediaryInboundExternalECStreamed)(this)).SubmitAttachmentStreamedEC(inValue);
+            ReceiptExternalStreamedBE retVal = ((IIntermediaryInboundExternalECStreamed)(this)).SubmitAttachmentStreamedEC(inValue);
             ParentReceiptId = retVal.ParentReceiptId;
             ReceiptHistory = retVal.ReceiptHistory;
             ReceiptId = retVal.ReceiptId;
@@ -362,7 +361,7 @@ namespace EC_Endpoint_Client.IntermediaryInboundStreamed {
             return retVal.LastChanged;
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE> SubmitAttachmentStreamedECAsync(EC_Endpoint_Client.IntermediaryInboundStreamed.StreamedAttachmentECBE request) {
+        public System.Threading.Tasks.Task<ReceiptExternalStreamedBE> SubmitAttachmentStreamedECAsync(StreamedAttachmentECBE request) {
             return base.Channel.SubmitAttachmentStreamedECAsync(request);
         }
     }

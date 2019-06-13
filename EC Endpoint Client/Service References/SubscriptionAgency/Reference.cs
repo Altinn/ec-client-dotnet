@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.SubscriptionAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.SubscriptionAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,14 +155,14 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SubscriptionDetails", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SubscriptionDetails", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
+    [Serializable()]
     public partial class SubscriptionDetails : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private EC_Endpoint_Client.SubscriptionAgency.SubscriptionList SubscriptionlistField;
+        private SubscriptionList SubscriptionlistField;
         
         private string SystemUserCodeField;
         
@@ -177,8 +176,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.SubscriptionAgency.SubscriptionList Subscriptionlist {
+        [DataMember(IsRequired=true)]
+        public SubscriptionList Subscriptionlist {
             get {
                 return this.SubscriptionlistField;
             }
@@ -190,7 +189,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string SystemUserCode {
             get {
                 return this.SystemUserCodeField;
@@ -215,36 +214,36 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SubscriptionList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10", ItemName="Subscription")]
-    [System.SerializableAttribute()]
-    public class SubscriptionList : System.Collections.Generic.List<EC_Endpoint_Client.SubscriptionAgency.Subscription> {
+    [CollectionDataContract(Name="SubscriptionList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10", ItemName="Subscription")]
+    [Serializable()]
+    public class SubscriptionList : System.Collections.Generic.List<Subscription> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Subscription", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Subscription", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
+    [Serializable()]
     public partial class Subscription : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         public Subscription()
         {
             this.IdentityFields = new SubscriptionIdentityFieldList();
         }
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> CaseIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ExpirationDateField;
         
         private string ExternalServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ExternalServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.SubscriptionIdentityFieldList IdentityFieldsField;
+        [OptionalField()]
+        private SubscriptionIdentityFieldList IdentityFieldsField;
         
         private System.DateTime NextDueDateField;
         
@@ -254,15 +253,15 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
         
         private System.DateTime StartDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int SubscriptionIDField;
         
-        private EC_Endpoint_Client.SubscriptionAgency.PeriodType SubscriptionPeriodTypeField;
+        private PeriodType SubscriptionPeriodTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int UserTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime VisibleDateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -275,7 +274,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> CaseId {
             get {
                 return this.CaseIdField;
@@ -288,7 +287,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ExpirationDate {
             get {
                 return this.ExpirationDateField;
@@ -301,7 +300,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -314,7 +313,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -327,8 +326,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.SubscriptionIdentityFieldList IdentityFields {
+        [DataMember()]
+        public SubscriptionIdentityFieldList IdentityFields {
             get {
                 return this.IdentityFieldsField;
             }
@@ -340,7 +339,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime NextDueDate {
             get {
                 return this.NextDueDateField;
@@ -353,7 +352,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime NextScheduleDate {
             get {
                 return this.NextScheduleDateField;
@@ -366,7 +365,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public string ReporteeId {
             get {
                 return this.ReporteeIdField;
@@ -379,7 +378,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime StartDate {
             get {
                 return this.StartDateField;
@@ -392,7 +391,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int SubscriptionID {
             get {
                 return this.SubscriptionIDField;
@@ -405,8 +404,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.SubscriptionAgency.PeriodType SubscriptionPeriodType {
+        [DataMember(IsRequired=true)]
+        public PeriodType SubscriptionPeriodType {
             get {
                 return this.SubscriptionPeriodTypeField;
             }
@@ -418,7 +417,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int UserType {
             get {
                 return this.UserTypeField;
@@ -431,7 +430,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime VisibleDate {
             get {
                 return this.VisibleDateField;
@@ -456,56 +455,56 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SubscriptionIdentityFieldList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10", ItemName="SubscriptionIdentityField")]
-    [System.SerializableAttribute()]
-    public class SubscriptionIdentityFieldList : System.Collections.Generic.List<EC_Endpoint_Client.SubscriptionAgency.SubscriptionIdentityField> {
+    [CollectionDataContract(Name="SubscriptionIdentityFieldList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10", ItemName="SubscriptionIdentityField")]
+    [Serializable()]
+    public class SubscriptionIdentityFieldList : System.Collections.Generic.List<SubscriptionIdentityField> {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="PeriodType", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
+    [DataContract(Name="PeriodType", Namespace="http://schemas.altinn.no/services/serviceEntity/2009/10")]
     public enum PeriodType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Annual = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Semiannual = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Quarterly = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Tertiary = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Bimonthly = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Monthly = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Fortnightly = 26,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Weekly = 52,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Daily = 365,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Once = 0,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SubscriptionIdentityField", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="SubscriptionIdentityField", Namespace="http://schemas.altinn.no/services/ServiceEngine/Subscription/2009/10")]
+    [Serializable()]
     public partial class SubscriptionIdentityField : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
 
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FieldValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -518,7 +517,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FieldValue {
             get {
                 return this.FieldValueField;
@@ -543,39 +542,39 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ReceiptExternal", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class ReceiptExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime LastChangedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ParentReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptHistoryField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReceiptIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.ReceiptStatusEnum ReceiptStatusCodeField;
+        [OptionalField()]
+        private ReceiptStatusEnum ReceiptStatusCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReceiptTextField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.ReceiptTypeEnum ReceiptTypeNameField;
+        [OptionalField()]
+        private ReceiptTypeEnum ReceiptTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.ReferenceList ReferencesField;
+        [OptionalField()]
+        private ReferenceList ReferencesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.ReceiptExternalList SubReceiptsField;
+        [OptionalField()]
+        private ReceiptExternalList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -587,7 +586,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime LastChanged {
             get {
                 return this.LastChangedField;
@@ -600,7 +599,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ParentReceiptId {
             get {
                 return this.ParentReceiptIdField;
@@ -613,7 +612,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptHistory {
             get {
                 return this.ReceiptHistoryField;
@@ -626,7 +625,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReceiptId {
             get {
                 return this.ReceiptIdField;
@@ -639,8 +638,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.ReceiptStatusEnum ReceiptStatusCode {
+        [DataMember()]
+        public ReceiptStatusEnum ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -652,7 +651,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReceiptText {
             get {
                 return this.ReceiptTextField;
@@ -665,8 +664,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.ReceiptTypeEnum ReceiptTypeName {
+        [DataMember()]
+        public ReceiptTypeEnum ReceiptTypeName {
             get {
                 return this.ReceiptTypeNameField;
             }
@@ -678,8 +677,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.ReferenceList References {
+        [DataMember()]
+        public ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -691,8 +690,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.ReceiptExternalList SubReceipts {
+        [DataMember()]
+        public ReceiptExternalList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -715,108 +714,108 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptStatusEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptStatusEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OK = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         UnExpectedError = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ValidationFailed = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Rejected = 4,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [DataContract(Name="ReceiptTypeEnum", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
     public enum ReceiptTypeEnum : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         FormTask = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PINCODE = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Subscription = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Outbound = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PreFill = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDLS = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSF = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterER = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFProperty = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreet = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFCountry = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFUser = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         LookUp = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreetAdd = 15,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFPropertyAdd = 16,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
-    [System.SerializableAttribute()]
-    public class ReferenceList : System.Collections.Generic.List<EC_Endpoint_Client.SubscriptionAgency.Reference> {
+    [CollectionDataContract(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
+    [Serializable()]
+    public class ReferenceList : System.Collections.Generic.List<Reference> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
-    [System.SerializableAttribute()]
-    public class ReceiptExternalList : System.Collections.Generic.List<EC_Endpoint_Client.SubscriptionAgency.ReceiptExternal> {
+    [CollectionDataContract(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
+    [Serializable()]
+    public class ReceiptExternalList : System.Collections.Generic.List<ReceiptExternal> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="Reference", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10")]
+    [Serializable()]
     public partial class Reference : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.SubscriptionAgency.ReferenceType ReferenceTypeNameField;
+        [OptionalField()]
+        private ReferenceType ReferenceTypeNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ReferenceValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -829,8 +828,8 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.SubscriptionAgency.ReferenceType ReferenceTypeName {
+        [DataMember()]
+        public ReferenceType ReferenceTypeName {
             get {
                 return this.ReferenceTypeNameField;
             }
@@ -842,7 +841,7 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ReferenceValue {
             get {
                 return this.ReferenceValueField;
@@ -866,46 +865,46 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
+    [DataContract(Name="ReferenceType", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/2009/10")]
     public enum ReferenceType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         NotSet = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ExternalShipmentReference = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         EndUserSystemReference = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ParentReference = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         SendersReference = 4,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         WorkFlowReference = 5,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         BatchReference = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OutboundShipmentReference = 7,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ReceiversReference = 8,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Altinn1Reference = 9,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         OwnerPartyReference = 10,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PartyReference = 11,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ArchiveReference = 12,
     }
     
@@ -915,24 +914,24 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Subscription/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.SubscriptionAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.SubscriptionAgency.TestResponse Test(EC_Endpoint_Client.SubscriptionAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.TestResponse> TestAsync(EC_Endpoint_Client.SubscriptionAgency.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Subscription/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
             "ncyExternalEC/SubmitSubscriptionEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
             "ncyExternalEC/SubmitSubscriptionECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.SubscriptionAgency.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
             "ncyExternalEC/SubmitSubscriptionECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse SubmitSubscriptionEC(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest request);
+        SubmitSubscriptionECResponse SubmitSubscriptionEC(SubmitSubscriptionECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
             "ncyExternalEC/SubmitSubscriptionEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10/ISubscriptionAge" +
             "ncyExternalEC/SubmitSubscriptionECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse> SubmitSubscriptionECAsync(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest request);
+        System.Threading.Tasks.Task<SubmitSubscriptionECResponse> SubmitSubscriptionECAsync(SubmitSubscriptionECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -962,12 +961,12 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     public partial class SubmitSubscriptionECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitSubscriptionEC", Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10", Order=0)]
-        public EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequestBody Body;
+        public SubmitSubscriptionECRequestBody Body;
         
         public SubmitSubscriptionECRequest() {
         }
         
-        public SubmitSubscriptionECRequest(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequestBody Body) {
+        public SubmitSubscriptionECRequest(SubmitSubscriptionECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -975,25 +974,25 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10")]
     public partial class SubmitSubscriptionECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string externalBatchId;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public EC_Endpoint_Client.SubscriptionAgency.SubscriptionDetails subscriptionDetails;
+        [DataMember(EmitDefaultValue=false, Order=3)]
+        public SubscriptionDetails subscriptionDetails;
         
         public SubmitSubscriptionECRequestBody() {
         }
         
-        public SubmitSubscriptionECRequestBody(string systemUserName, string systemPassword, string externalBatchId, EC_Endpoint_Client.SubscriptionAgency.SubscriptionDetails subscriptionDetails) {
+        public SubmitSubscriptionECRequestBody(string systemUserName, string systemPassword, string externalBatchId, SubscriptionDetails subscriptionDetails) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.externalBatchId = externalBatchId;
@@ -1008,12 +1007,12 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     public partial class SubmitSubscriptionECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitSubscriptionECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10", Order=0)]
-        public EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponseBody Body;
+        public SubmitSubscriptionECResponseBody Body;
         
         public SubmitSubscriptionECResponse() {
         }
         
-        public SubmitSubscriptionECResponse(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponseBody Body) {
+        public SubmitSubscriptionECResponse(SubmitSubscriptionECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1021,27 +1020,27 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Subscription/2010/10")]
     public partial class SubmitSubscriptionECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.SubscriptionAgency.ReceiptExternal SubmitSubscriptionECResult;
+        [DataMember(Order=0)]
+        public ReceiptExternal SubmitSubscriptionECResult;
         
         public SubmitSubscriptionECResponseBody() {
         }
         
-        public SubmitSubscriptionECResponseBody(EC_Endpoint_Client.SubscriptionAgency.ReceiptExternal SubmitSubscriptionECResult) {
+        public SubmitSubscriptionECResponseBody(ReceiptExternal SubmitSubscriptionECResult) {
             this.SubmitSubscriptionECResult = SubmitSubscriptionECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISubscriptionAgencyExternalECChannel : EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface ISubscriptionAgencyExternalECChannel : ISubscriptionAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SubscriptionAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC>, EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC {
+    public partial class SubscriptionAgencyExternalECClient : System.ServiceModel.ClientBase<ISubscriptionAgencyExternalEC>, ISubscriptionAgencyExternalEC {
         
         public SubscriptionAgencyExternalECClient() {
         }
@@ -1063,54 +1062,54 @@ namespace EC_Endpoint_Client.SubscriptionAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.SubscriptionAgency.TestResponse EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC.Test(EC_Endpoint_Client.SubscriptionAgency.TestRequest request) {
+        TestResponse ISubscriptionAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.SubscriptionAgency.TestRequest inValue = new EC_Endpoint_Client.SubscriptionAgency.TestRequest();
-            EC_Endpoint_Client.SubscriptionAgency.TestResponse retVal = ((EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((ISubscriptionAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.TestResponse> EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC.TestAsync(EC_Endpoint_Client.SubscriptionAgency.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> ISubscriptionAgencyExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.TestResponse> TestAsync() {
-            EC_Endpoint_Client.SubscriptionAgency.TestRequest inValue = new EC_Endpoint_Client.SubscriptionAgency.TestRequest();
-            return ((EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((ISubscriptionAgencyExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC.SubmitSubscriptionEC(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest request) {
+        SubmitSubscriptionECResponse ISubscriptionAgencyExternalEC.SubmitSubscriptionEC(SubmitSubscriptionECRequest request) {
             return base.Channel.SubmitSubscriptionEC(request);
         }
         
-        public EC_Endpoint_Client.SubscriptionAgency.ReceiptExternal SubmitSubscriptionEC(string systemUserName, string systemPassword, string externalBatchId, EC_Endpoint_Client.SubscriptionAgency.SubscriptionDetails subscriptionDetails) {
-            EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest inValue = new EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest();
-            inValue.Body = new EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequestBody();
+        public ReceiptExternal SubmitSubscriptionEC(string systemUserName, string systemPassword, string externalBatchId, SubscriptionDetails subscriptionDetails) {
+            SubmitSubscriptionECRequest inValue = new SubmitSubscriptionECRequest();
+            inValue.Body = new SubmitSubscriptionECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.externalBatchId = externalBatchId;
             inValue.Body.subscriptionDetails = subscriptionDetails;
-            EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse retVal = ((EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC)(this)).SubmitSubscriptionEC(inValue);
+            SubmitSubscriptionECResponse retVal = ((ISubscriptionAgencyExternalEC)(this)).SubmitSubscriptionEC(inValue);
             return retVal.Body.SubmitSubscriptionECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse> EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC.SubmitSubscriptionECAsync(EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest request) {
+        System.Threading.Tasks.Task<SubmitSubscriptionECResponse> ISubscriptionAgencyExternalEC.SubmitSubscriptionECAsync(SubmitSubscriptionECRequest request) {
             return base.Channel.SubmitSubscriptionECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECResponse> SubmitSubscriptionECAsync(string systemUserName, string systemPassword, string externalBatchId, EC_Endpoint_Client.SubscriptionAgency.SubscriptionDetails subscriptionDetails) {
-            EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest inValue = new EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequest();
-            inValue.Body = new EC_Endpoint_Client.SubscriptionAgency.SubmitSubscriptionECRequestBody();
+        public System.Threading.Tasks.Task<SubmitSubscriptionECResponse> SubmitSubscriptionECAsync(string systemUserName, string systemPassword, string externalBatchId, SubscriptionDetails subscriptionDetails) {
+            SubmitSubscriptionECRequest inValue = new SubmitSubscriptionECRequest();
+            inValue.Body = new SubmitSubscriptionECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.externalBatchId = externalBatchId;
             inValue.Body.subscriptionDetails = subscriptionDetails;
-            return ((EC_Endpoint_Client.SubscriptionAgency.ISubscriptionAgencyExternalEC)(this)).SubmitSubscriptionECAsync(inValue);
+            return ((ISubscriptionAgencyExternalEC)(this)).SubmitSubscriptionECAsync(inValue);
         }
     }
 }

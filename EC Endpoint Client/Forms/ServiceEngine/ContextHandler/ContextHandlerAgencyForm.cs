@@ -1,12 +1,12 @@
-﻿namespace EC_Endpoint_Client.Forms.ServiceEngine
-{
-    using EC_Endpoint_Client.BaseForms;
-    using EC_Endpoint_Client.Classes;
-    using EC_Endpoint_Client.ContextHandler;
-    using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-    using System;
-    using System.ServiceModel;
+﻿using System;
+using System.ServiceModel;
+using EC_Endpoint_Client.BaseForms;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
+using EC_Endpoint_Client.Service_References.ContextHandler;
 
+namespace EC_Endpoint_Client.Forms.ServiceEngine.ContextHandler
+{
     /// <summary>
     /// ContextHandlerAgencyForm used to test ContextHandlerAgency.
     /// </summary>
@@ -15,17 +15,17 @@
         /// <summary>
         /// Gets or sets the shipmentGC
         /// </summary>
-        BaseReporteeElementIdShipment shipmentGC { get; set; }
+        BaseReporteeElementIdShipment ShipmentGc { get; set; }
 
         /// <summary>
         /// Gets or sets the resultGC
         /// </summary>
-        ReporteeElementContextExternalBE resultGC { get; set; }
+        ReporteeElementContextExternalBE ResultGc { get; set; }
 
         /// <summary>
         /// Gets or sets the client
         /// </summary>
-        ContextHandlerExternalEndPointFunction client { get; set; }
+        ContextHandlerExternalEndPointFunction Client { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ContextHandlerAgencyForm"/> class.
@@ -38,9 +38,9 @@
 
         public void InitializeMyForm()
         {
-            shipmentGC = new BaseReporteeElementIdShipment();
-            client = new ContextHandlerExternalEndPointFunction();
-            client.ReturnMessageXml += ReturnMessageXmlHandler;
+            ShipmentGc = new BaseReporteeElementIdShipment();
+            Client = new ContextHandlerExternalEndPointFunction();
+            Client.ReturnMessageXml += ReturnMessageXmlHandler;
         }
 
         /// <summary>
@@ -48,9 +48,9 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ICShowShipment_Click(object sender, System.EventArgs e)
+        private void btn_ICShowShipment_Click(object sender, EventArgs e)
         {
-            SetViewedItem(shipmentGC, "GetReporteeElementContextShipment");
+            SetViewedItem(ShipmentGc, "GetReporteeElementContextShipment");
         }
 
         /// <summary>
@@ -58,9 +58,9 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ICShowResult_Click(object sender, System.EventArgs e)
+        private void btn_ICShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(resultGC, "Result from GetReporteeElementContext");
+            SetViewedItem(ResultGc, "Result from GetReporteeElementContext");
         }
 
         /// <summary>
@@ -68,13 +68,13 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_ICInvoke_Click(object sender, System.EventArgs e)
+        private void btn_ICInvoke_Click(object sender, EventArgs e)
         {
-            SetBasicShipmentSettings(shipmentGC);
+            SetBasicShipmentSettings(ShipmentGc);
             try
             {
-                resultGC = client.GetReporteeElementcontextExternal(shipmentGC);
-                SetViewedItem(resultGC, "Result from GetReporteeElementContext");
+                ResultGc = Client.GetReporteeElementcontextExternal(ShipmentGc);
+                SetViewedItem(ResultGc, "Result from GetReporteeElementContext");
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@
         /// <param name="e"></param>
         private void btn_ICSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(resultGC);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultGc);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@
             {
                 BaseShipment shipment = new BaseShipment();
                 SetBasicShipmentSettings(shipment);
-                client.Test(shipment);
+                Client.Test(shipment);
                 SetViewedItem("OK", "Test result: ");
             }
             catch(Exception ex)

@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms
+﻿namespace EC_Endpoint_Client.Forms.Archive
 {
     partial class ArchiveEndPointSelectorForm
     {

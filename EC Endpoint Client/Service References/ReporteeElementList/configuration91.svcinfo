@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="zg10Q8aSwKDv9p+05idLyIj+fM8=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="eb0bvQC9g2oiCIgBka1AFJyEEJY=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_IReporteeElementListEC">
       <properties>
@@ -719,10 +719,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_IReporteeElementListEC" contract="ReporteeElementList.IReporteeElementListEC" bindingType="customBinding" address="http://st01.altinn.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc" bindingConfiguration="CustomBinding_IReporteeElementListEC">
+    <endpoint name="CustomBinding_IReporteeElementListEC" contract="ReporteeElementList.IReporteeElementListEC" bindingType="customBinding" address="http://at01.ai.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc" bindingConfiguration="CustomBinding_IReporteeElementListEC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://st01.altinn.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc</serializedValue>
+          <serializedValue>http://at01.ai.basefarm.net/ServiceEngineExternal/ReporteeElementListEC.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

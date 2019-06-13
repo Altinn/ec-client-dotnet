@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.CaseAgencySystem {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,45 +155,45 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ExternalCaseBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="ExternalCaseBE")]
-    [System.SerializableAttribute()]
-    public class ExternalCaseBEList : System.Collections.Generic.List<EC_Endpoint_Client.CaseAgencySystem.ExternalCaseBE> {
+    [CollectionDataContract(Name="ExternalCaseBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="ExternalCaseBE")]
+    [Serializable()]
+    public class ExternalCaseBEList : System.Collections.Generic.List<ExternalCaseBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExternalCaseBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="ExternalCaseBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class ExternalCaseBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CaseNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateFriendlyNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CurrentStateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> DueDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsArchivedField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NoticeTemplateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> VisibleDateTimeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -207,7 +206,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CaseID {
             get {
                 return this.CaseIDField;
@@ -220,7 +219,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CaseName {
             get {
                 return this.CaseNameField;
@@ -233,7 +232,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateFriendlyName {
             get {
                 return this.CurrentStateFriendlyNameField;
@@ -246,7 +245,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CurrentStateID {
             get {
                 return this.CurrentStateIDField;
@@ -259,7 +258,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateName {
             get {
                 return this.CurrentStateNameField;
@@ -272,7 +271,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> DueDate {
             get {
                 return this.DueDateField;
@@ -285,7 +284,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsArchived {
             get {
                 return this.IsArchivedField;
@@ -298,7 +297,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string NoticeTemplateID {
             get {
                 return this.NoticeTemplateIDField;
@@ -311,7 +310,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> VisibleDateTime {
             get {
                 return this.VisibleDateTimeField;
@@ -336,26 +335,26 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StateMachineEventNotificationBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StateMachineEventNotificationBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class StateMachineEventNotificationBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string EventField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ExternalServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ExternalServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ReporteeElementIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -368,7 +367,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CaseID {
             get {
                 return this.CaseIDField;
@@ -381,7 +380,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Event {
             get {
                 return this.EventField;
@@ -394,7 +393,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ExternalServiceCode {
             get {
                 return this.ExternalServiceCodeField;
@@ -407,7 +406,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ExternalServiceEditionCode {
             get {
                 return this.ExternalServiceEditionCodeField;
@@ -420,7 +419,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ReporteeElementID {
             get {
                 return this.ReporteeElementIDField;
@@ -445,48 +444,48 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="StateMachineNotificationResultBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="StateMachineNotificationResultBE")]
-    [System.SerializableAttribute()]
-    public class StateMachineNotificationResultBEList : System.Collections.Generic.List<EC_Endpoint_Client.CaseAgencySystem.StateMachineNotificationResultBE> {
+    [CollectionDataContract(Name="StateMachineNotificationResultBEList", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="StateMachineNotificationResultBE")]
+    [Serializable()]
+    public class StateMachineNotificationResultBEList : System.Collections.Generic.List<StateMachineNotificationResultBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="StateMachineNotificationResultBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="StateMachineNotificationResultBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class StateMachineNotificationResultBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CaseIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<bool> ConditionEvaluationResultField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ConditionNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateFriendlyNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CurrentStateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CurrentStateNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ExceptionDetailField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool HasExceptionField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private bool IsStateChangedField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -499,7 +498,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CaseID {
             get {
                 return this.CaseIDField;
@@ -512,7 +511,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [DataMember(EmitDefaultValue=false)]
         public System.Nullable<bool> ConditionEvaluationResult {
             get {
                 return this.ConditionEvaluationResultField;
@@ -525,7 +524,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        [DataMember(EmitDefaultValue=false)]
         public string ConditionName {
             get {
                 return this.ConditionNameField;
@@ -538,7 +537,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateFriendlyName {
             get {
                 return this.CurrentStateFriendlyNameField;
@@ -551,7 +550,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CurrentStateID {
             get {
                 return this.CurrentStateIDField;
@@ -564,7 +563,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string CurrentStateName {
             get {
                 return this.CurrentStateNameField;
@@ -577,7 +576,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorCode {
             get {
                 return this.ErrorCodeField;
@@ -590,7 +589,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ExceptionDetail {
             get {
                 return this.ExceptionDetailField;
@@ -603,7 +602,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool HasException {
             get {
                 return this.HasExceptionField;
@@ -616,7 +615,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public bool IsStateChanged {
             get {
                 return this.IsStateChangedField;
@@ -641,18 +640,18 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NoticeBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="NoticeBE", Namespace="http://schemas.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class NoticeBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string NoticeTemplateIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.CaseAgencySystem.NoticeTokenBEList NoticeTokensField;
+        [OptionalField()]
+        private NoticeTokenBEList NoticeTokensField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -664,7 +663,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string NoticeTemplateID {
             get {
                 return this.NoticeTemplateIDField;
@@ -677,8 +676,8 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.CaseAgencySystem.NoticeTokenBEList NoticeTokens {
+        [DataMember()]
+        public NoticeTokenBEList NoticeTokens {
             get {
                 return this.NoticeTokensField;
             }
@@ -702,24 +701,24 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="NoticeTokenBEList", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="NoticeTokenBE")]
-    [System.SerializableAttribute()]
-    public class NoticeTokenBEList : System.Collections.Generic.List<EC_Endpoint_Client.CaseAgencySystem.NoticeTokenBE> {
+    [CollectionDataContract(Name="NoticeTokenBEList", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", ItemName="NoticeTokenBE")]
+    [Serializable()]
+    public class NoticeTokenBEList : System.Collections.Generic.List<NoticeTokenBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="NoticeTokenBE", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="NoticeTokenBE", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [Serializable()]
     public partial class NoticeTokenBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string TokenKeyField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string TokenValueField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -732,7 +731,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string TokenKey {
             get {
                 return this.TokenKeyField;
@@ -745,7 +744,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string TokenValue {
             get {
                 return this.TokenValueField;
@@ -774,63 +773,63 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/ServiceEngine/Case/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CaseAgencySystem.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CaseAgencySystem.TestResponse Test(EC_Endpoint_Client.CaseAgencySystem.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.TestResponse> TestAsync(EC_Endpoint_Client.CaseAgencySystem.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
             "aseListAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
             "aseListAgencySystemECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CaseAgencySystem.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
             "aseListAgencySystemECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse GetCaseListAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest request);
+        GetCaseListAgencySystemECResponse GetCaseListAgencySystemEC(GetCaseListAgencySystemECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
             "aseListAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/GetC" +
             "aseListAgencySystemECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse> GetCaseListAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest request);
+        System.Threading.Tasks.Task<GetCaseListAgencySystemECResponse> GetCaseListAgencySystemECAsync(GetCaseListAgencySystemECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
             "antiateCollaborationAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
             "antiateCollaborationAgencySystemECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CaseAgencySystem.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
             "antiateCollaborationAgencySystemECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse InstantiateCollaborationAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest request);
+        InstantiateCollaborationAgencySystemECResponse InstantiateCollaborationAgencySystemEC(InstantiateCollaborationAgencySystemECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
             "antiateCollaborationAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Inst" +
             "antiateCollaborationAgencySystemECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse> InstantiateCollaborationAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest request);
+        System.Threading.Tasks.Task<InstantiateCollaborationAgencySystemECResponse> InstantiateCollaborationAgencySystemECAsync(InstantiateCollaborationAgencySystemECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
             "fyEventAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
             "fyEventAgencySystemECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CaseAgencySystem.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
             "fyEventAgencySystemECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse NotifyEventAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest request);
+        NotifyEventAgencySystemECResponse NotifyEventAgencySystemEC(NotifyEventAgencySystemECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
             "fyEventAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/Noti" +
             "fyEventAgencySystemECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse> NotifyEventAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest request);
+        System.Threading.Tasks.Task<NotifyEventAgencySystemECResponse> NotifyEventAgencySystemECAsync(NotifyEventAgencySystemECRequest request);
         
         // CODEGEN: Generating message contract since element name systemUserName from namespace http://www.altinn.no/services/ServiceEngine/Case/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
             "oticeAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
             "oticeAgencySystemECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.CaseAgencySystem.AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
             "oticeAgencySystemECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse SetNoticeAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest request);
+        SetNoticeAgencySystemECResponse SetNoticeAgencySystemEC(SetNoticeAgencySystemECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
             "oticeAgencySystemEC", ReplyAction="http://www.altinn.no/services/ServiceEngine/Case/2010/10/ICaseAgencySystemEC/SetN" +
             "oticeAgencySystemECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse> SetNoticeAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest request);
+        System.Threading.Tasks.Task<SetNoticeAgencySystemECResponse> SetNoticeAgencySystemECAsync(SetNoticeAgencySystemECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -860,12 +859,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class GetCaseListAgencySystemECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCaseListAgencySystemEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequestBody Body;
+        public GetCaseListAgencySystemECRequestBody Body;
         
         public GetCaseListAgencySystemECRequest() {
         }
         
-        public GetCaseListAgencySystemECRequest(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequestBody Body) {
+        public GetCaseListAgencySystemECRequest(GetCaseListAgencySystemECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -873,28 +872,28 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class GetCaseListAgencySystemECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public int caseID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public string externalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        [DataMember(Order=4)]
         public int externalServiceEditionCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public int languageID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public string reporteeNumber;
         
         public GetCaseListAgencySystemECRequestBody() {
@@ -918,12 +917,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class GetCaseListAgencySystemECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCaseListAgencySystemECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponseBody Body;
+        public GetCaseListAgencySystemECResponseBody Body;
         
         public GetCaseListAgencySystemECResponse() {
         }
         
-        public GetCaseListAgencySystemECResponse(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponseBody Body) {
+        public GetCaseListAgencySystemECResponse(GetCaseListAgencySystemECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -931,16 +930,16 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class GetCaseListAgencySystemECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.ExternalCaseBEList GetCaseListAgencySystemECResult;
+        [DataMember(Order=0)]
+        public ExternalCaseBEList GetCaseListAgencySystemECResult;
         
         public GetCaseListAgencySystemECResponseBody() {
         }
         
-        public GetCaseListAgencySystemECResponseBody(EC_Endpoint_Client.CaseAgencySystem.ExternalCaseBEList GetCaseListAgencySystemECResult) {
+        public GetCaseListAgencySystemECResponseBody(ExternalCaseBEList GetCaseListAgencySystemECResult) {
             this.GetCaseListAgencySystemECResult = GetCaseListAgencySystemECResult;
         }
     }
@@ -952,12 +951,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class InstantiateCollaborationAgencySystemECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstantiateCollaborationAgencySystemEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequestBody Body;
+        public InstantiateCollaborationAgencySystemECRequestBody Body;
         
         public InstantiateCollaborationAgencySystemECRequest() {
         }
         
-        public InstantiateCollaborationAgencySystemECRequest(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequestBody Body) {
+        public InstantiateCollaborationAgencySystemECRequest(InstantiateCollaborationAgencySystemECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -965,28 +964,28 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class InstantiateCollaborationAgencySystemECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string externalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int externalServiceEditionCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        [DataMember(EmitDefaultValue=false, Order=4)]
         public string reporteeNumber;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [DataMember(Order=5)]
         public System.DateTime visibleDateTime;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
+        [DataMember(Order=6)]
         public System.DateTime dueDate;
         
         public InstantiateCollaborationAgencySystemECRequestBody() {
@@ -1010,12 +1009,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class InstantiateCollaborationAgencySystemECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="InstantiateCollaborationAgencySystemECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponseBody Body;
+        public InstantiateCollaborationAgencySystemECResponseBody Body;
         
         public InstantiateCollaborationAgencySystemECResponse() {
         }
         
-        public InstantiateCollaborationAgencySystemECResponse(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponseBody Body) {
+        public InstantiateCollaborationAgencySystemECResponse(InstantiateCollaborationAgencySystemECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1023,10 +1022,10 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class InstantiateCollaborationAgencySystemECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        [DataMember(Order=0)]
         public int InstantiateCollaborationAgencySystemECResult;
         
         public InstantiateCollaborationAgencySystemECResponseBody() {
@@ -1044,12 +1043,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class NotifyEventAgencySystemECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="NotifyEventAgencySystemEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequestBody Body;
+        public NotifyEventAgencySystemECRequestBody Body;
         
         public NotifyEventAgencySystemECRequest() {
         }
         
-        public NotifyEventAgencySystemECRequest(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequestBody Body) {
+        public NotifyEventAgencySystemECRequest(NotifyEventAgencySystemECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1057,22 +1056,22 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class NotifyEventAgencySystemECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.CaseAgencySystem.StateMachineEventNotificationBE notificationInfo;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public StateMachineEventNotificationBE notificationInfo;
         
         public NotifyEventAgencySystemECRequestBody() {
         }
         
-        public NotifyEventAgencySystemECRequestBody(string systemUserName, string systemPassword, EC_Endpoint_Client.CaseAgencySystem.StateMachineEventNotificationBE notificationInfo) {
+        public NotifyEventAgencySystemECRequestBody(string systemUserName, string systemPassword, StateMachineEventNotificationBE notificationInfo) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.notificationInfo = notificationInfo;
@@ -1086,12 +1085,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class NotifyEventAgencySystemECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="NotifyEventAgencySystemECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponseBody Body;
+        public NotifyEventAgencySystemECResponseBody Body;
         
         public NotifyEventAgencySystemECResponse() {
         }
         
-        public NotifyEventAgencySystemECResponse(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponseBody Body) {
+        public NotifyEventAgencySystemECResponse(NotifyEventAgencySystemECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1099,16 +1098,16 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class NotifyEventAgencySystemECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.StateMachineNotificationResultBEList NotifyEventAgencySystemECResult;
+        [DataMember(Order=0)]
+        public StateMachineNotificationResultBEList NotifyEventAgencySystemECResult;
         
         public NotifyEventAgencySystemECResponseBody() {
         }
         
-        public NotifyEventAgencySystemECResponseBody(EC_Endpoint_Client.CaseAgencySystem.StateMachineNotificationResultBEList NotifyEventAgencySystemECResult) {
+        public NotifyEventAgencySystemECResponseBody(StateMachineNotificationResultBEList NotifyEventAgencySystemECResult) {
             this.NotifyEventAgencySystemECResult = NotifyEventAgencySystemECResult;
         }
     }
@@ -1120,12 +1119,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class SetNoticeAgencySystemECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetNoticeAgencySystemEC", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequestBody Body;
+        public SetNoticeAgencySystemECRequestBody Body;
         
         public SetNoticeAgencySystemECRequest() {
         }
         
-        public SetNoticeAgencySystemECRequest(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequestBody Body) {
+        public SetNoticeAgencySystemECRequest(SetNoticeAgencySystemECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1133,25 +1132,25 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10")]
     public partial class SetNoticeAgencySystemECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string systemUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string systemPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string reporteeElementID;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public EC_Endpoint_Client.CaseAgencySystem.NoticeBE noticeInfo;
+        [DataMember(EmitDefaultValue=false, Order=3)]
+        public NoticeBE noticeInfo;
         
         public SetNoticeAgencySystemECRequestBody() {
         }
         
-        public SetNoticeAgencySystemECRequestBody(string systemUserName, string systemPassword, string reporteeElementID, EC_Endpoint_Client.CaseAgencySystem.NoticeBE noticeInfo) {
+        public SetNoticeAgencySystemECRequestBody(string systemUserName, string systemPassword, string reporteeElementID, NoticeBE noticeInfo) {
             this.systemUserName = systemUserName;
             this.systemPassword = systemPassword;
             this.reporteeElementID = reporteeElementID;
@@ -1166,12 +1165,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     public partial class SetNoticeAgencySystemECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SetNoticeAgencySystemECResponse", Namespace="http://www.altinn.no/services/ServiceEngine/Case/2010/10", Order=0)]
-        public EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponseBody Body;
+        public SetNoticeAgencySystemECResponseBody Body;
         
         public SetNoticeAgencySystemECResponse() {
         }
         
-        public SetNoticeAgencySystemECResponse(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponseBody Body) {
+        public SetNoticeAgencySystemECResponse(SetNoticeAgencySystemECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1179,7 +1178,7 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [DataContract()]
     public partial class SetNoticeAgencySystemECResponseBody {
         
         public SetNoticeAgencySystemECResponseBody() {
@@ -1187,12 +1186,12 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICaseAgencySystemECChannel : EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC, System.ServiceModel.IClientChannel {
+    public interface ICaseAgencySystemECChannel : ICaseAgencySystemEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CaseAgencySystemECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC>, EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC {
+    public partial class CaseAgencySystemECClient : System.ServiceModel.ClientBase<ICaseAgencySystemEC>, ICaseAgencySystemEC {
         
         public CaseAgencySystemECClient() {
         }
@@ -1214,33 +1213,33 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CaseAgencySystem.TestResponse EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.Test(EC_Endpoint_Client.CaseAgencySystem.TestRequest request) {
+        TestResponse ICaseAgencySystemEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.CaseAgencySystem.TestRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.TestRequest();
-            EC_Endpoint_Client.CaseAgencySystem.TestResponse retVal = ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((ICaseAgencySystemEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.TestResponse> EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.TestAsync(EC_Endpoint_Client.CaseAgencySystem.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> ICaseAgencySystemEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.TestResponse> TestAsync() {
-            EC_Endpoint_Client.CaseAgencySystem.TestRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.TestRequest();
-            return ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((ICaseAgencySystemEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.GetCaseListAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest request) {
+        GetCaseListAgencySystemECResponse ICaseAgencySystemEC.GetCaseListAgencySystemEC(GetCaseListAgencySystemECRequest request) {
             return base.Channel.GetCaseListAgencySystemEC(request);
         }
         
-        public EC_Endpoint_Client.CaseAgencySystem.ExternalCaseBEList GetCaseListAgencySystemEC(string systemUserName, string systemPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
-            EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequestBody();
+        public ExternalCaseBEList GetCaseListAgencySystemEC(string systemUserName, string systemPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
+            GetCaseListAgencySystemECRequest inValue = new GetCaseListAgencySystemECRequest();
+            inValue.Body = new GetCaseListAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.caseID = caseID;
@@ -1248,18 +1247,18 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
             inValue.Body.languageID = languageID;
             inValue.Body.reporteeNumber = reporteeNumber;
-            EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse retVal = ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).GetCaseListAgencySystemEC(inValue);
+            GetCaseListAgencySystemECResponse retVal = ((ICaseAgencySystemEC)(this)).GetCaseListAgencySystemEC(inValue);
             return retVal.Body.GetCaseListAgencySystemECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse> EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.GetCaseListAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest request) {
+        System.Threading.Tasks.Task<GetCaseListAgencySystemECResponse> ICaseAgencySystemEC.GetCaseListAgencySystemECAsync(GetCaseListAgencySystemECRequest request) {
             return base.Channel.GetCaseListAgencySystemECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECResponse> GetCaseListAgencySystemECAsync(string systemUserName, string systemPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
-            EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.GetCaseListAgencySystemECRequestBody();
+        public System.Threading.Tasks.Task<GetCaseListAgencySystemECResponse> GetCaseListAgencySystemECAsync(string systemUserName, string systemPassword, int caseID, string externalServiceCode, int externalServiceEditionCode, int languageID, string reporteeNumber) {
+            GetCaseListAgencySystemECRequest inValue = new GetCaseListAgencySystemECRequest();
+            inValue.Body = new GetCaseListAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.caseID = caseID;
@@ -1267,17 +1266,17 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
             inValue.Body.languageID = languageID;
             inValue.Body.reporteeNumber = reporteeNumber;
-            return ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).GetCaseListAgencySystemECAsync(inValue);
+            return ((ICaseAgencySystemEC)(this)).GetCaseListAgencySystemECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.InstantiateCollaborationAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest request) {
+        InstantiateCollaborationAgencySystemECResponse ICaseAgencySystemEC.InstantiateCollaborationAgencySystemEC(InstantiateCollaborationAgencySystemECRequest request) {
             return base.Channel.InstantiateCollaborationAgencySystemEC(request);
         }
         
         public int InstantiateCollaborationAgencySystemEC(string systemUserName, string systemPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, System.DateTime visibleDateTime, System.DateTime dueDate) {
-            EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequestBody();
+            InstantiateCollaborationAgencySystemECRequest inValue = new InstantiateCollaborationAgencySystemECRequest();
+            inValue.Body = new InstantiateCollaborationAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.externalServiceCode = externalServiceCode;
@@ -1285,18 +1284,18 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             inValue.Body.reporteeNumber = reporteeNumber;
             inValue.Body.visibleDateTime = visibleDateTime;
             inValue.Body.dueDate = dueDate;
-            EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse retVal = ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).InstantiateCollaborationAgencySystemEC(inValue);
+            InstantiateCollaborationAgencySystemECResponse retVal = ((ICaseAgencySystemEC)(this)).InstantiateCollaborationAgencySystemEC(inValue);
             return retVal.Body.InstantiateCollaborationAgencySystemECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse> EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.InstantiateCollaborationAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest request) {
+        System.Threading.Tasks.Task<InstantiateCollaborationAgencySystemECResponse> ICaseAgencySystemEC.InstantiateCollaborationAgencySystemECAsync(InstantiateCollaborationAgencySystemECRequest request) {
             return base.Channel.InstantiateCollaborationAgencySystemECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECResponse> InstantiateCollaborationAgencySystemECAsync(string systemUserName, string systemPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, System.DateTime visibleDateTime, System.DateTime dueDate) {
-            EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.InstantiateCollaborationAgencySystemECRequestBody();
+        public System.Threading.Tasks.Task<InstantiateCollaborationAgencySystemECResponse> InstantiateCollaborationAgencySystemECAsync(string systemUserName, string systemPassword, string externalServiceCode, int externalServiceEditionCode, string reporteeNumber, System.DateTime visibleDateTime, System.DateTime dueDate) {
+            InstantiateCollaborationAgencySystemECRequest inValue = new InstantiateCollaborationAgencySystemECRequest();
+            inValue.Body = new InstantiateCollaborationAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.externalServiceCode = externalServiceCode;
@@ -1304,66 +1303,66 @@ namespace EC_Endpoint_Client.CaseAgencySystem {
             inValue.Body.reporteeNumber = reporteeNumber;
             inValue.Body.visibleDateTime = visibleDateTime;
             inValue.Body.dueDate = dueDate;
-            return ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).InstantiateCollaborationAgencySystemECAsync(inValue);
+            return ((ICaseAgencySystemEC)(this)).InstantiateCollaborationAgencySystemECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.NotifyEventAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest request) {
+        NotifyEventAgencySystemECResponse ICaseAgencySystemEC.NotifyEventAgencySystemEC(NotifyEventAgencySystemECRequest request) {
             return base.Channel.NotifyEventAgencySystemEC(request);
         }
         
-        public EC_Endpoint_Client.CaseAgencySystem.StateMachineNotificationResultBEList NotifyEventAgencySystemEC(string systemUserName, string systemPassword, EC_Endpoint_Client.CaseAgencySystem.StateMachineEventNotificationBE notificationInfo) {
-            EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequestBody();
+        public StateMachineNotificationResultBEList NotifyEventAgencySystemEC(string systemUserName, string systemPassword, StateMachineEventNotificationBE notificationInfo) {
+            NotifyEventAgencySystemECRequest inValue = new NotifyEventAgencySystemECRequest();
+            inValue.Body = new NotifyEventAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.notificationInfo = notificationInfo;
-            EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse retVal = ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).NotifyEventAgencySystemEC(inValue);
+            NotifyEventAgencySystemECResponse retVal = ((ICaseAgencySystemEC)(this)).NotifyEventAgencySystemEC(inValue);
             return retVal.Body.NotifyEventAgencySystemECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse> EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.NotifyEventAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest request) {
+        System.Threading.Tasks.Task<NotifyEventAgencySystemECResponse> ICaseAgencySystemEC.NotifyEventAgencySystemECAsync(NotifyEventAgencySystemECRequest request) {
             return base.Channel.NotifyEventAgencySystemECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECResponse> NotifyEventAgencySystemECAsync(string systemUserName, string systemPassword, EC_Endpoint_Client.CaseAgencySystem.StateMachineEventNotificationBE notificationInfo) {
-            EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.NotifyEventAgencySystemECRequestBody();
+        public System.Threading.Tasks.Task<NotifyEventAgencySystemECResponse> NotifyEventAgencySystemECAsync(string systemUserName, string systemPassword, StateMachineEventNotificationBE notificationInfo) {
+            NotifyEventAgencySystemECRequest inValue = new NotifyEventAgencySystemECRequest();
+            inValue.Body = new NotifyEventAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.notificationInfo = notificationInfo;
-            return ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).NotifyEventAgencySystemECAsync(inValue);
+            return ((ICaseAgencySystemEC)(this)).NotifyEventAgencySystemECAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.SetNoticeAgencySystemEC(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest request) {
+        SetNoticeAgencySystemECResponse ICaseAgencySystemEC.SetNoticeAgencySystemEC(SetNoticeAgencySystemECRequest request) {
             return base.Channel.SetNoticeAgencySystemEC(request);
         }
         
-        public void SetNoticeAgencySystemEC(string systemUserName, string systemPassword, string reporteeElementID, EC_Endpoint_Client.CaseAgencySystem.NoticeBE noticeInfo) {
-            EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequestBody();
+        public void SetNoticeAgencySystemEC(string systemUserName, string systemPassword, string reporteeElementID, NoticeBE noticeInfo) {
+            SetNoticeAgencySystemECRequest inValue = new SetNoticeAgencySystemECRequest();
+            inValue.Body = new SetNoticeAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.reporteeElementID = reporteeElementID;
             inValue.Body.noticeInfo = noticeInfo;
-            EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse retVal = ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).SetNoticeAgencySystemEC(inValue);
+            SetNoticeAgencySystemECResponse retVal = ((ICaseAgencySystemEC)(this)).SetNoticeAgencySystemEC(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse> EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC.SetNoticeAgencySystemECAsync(EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest request) {
+        System.Threading.Tasks.Task<SetNoticeAgencySystemECResponse> ICaseAgencySystemEC.SetNoticeAgencySystemECAsync(SetNoticeAgencySystemECRequest request) {
             return base.Channel.SetNoticeAgencySystemECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECResponse> SetNoticeAgencySystemECAsync(string systemUserName, string systemPassword, string reporteeElementID, EC_Endpoint_Client.CaseAgencySystem.NoticeBE noticeInfo) {
-            EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest inValue = new EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequest();
-            inValue.Body = new EC_Endpoint_Client.CaseAgencySystem.SetNoticeAgencySystemECRequestBody();
+        public System.Threading.Tasks.Task<SetNoticeAgencySystemECResponse> SetNoticeAgencySystemECAsync(string systemUserName, string systemPassword, string reporteeElementID, NoticeBE noticeInfo) {
+            SetNoticeAgencySystemECRequest inValue = new SetNoticeAgencySystemECRequest();
+            inValue.Body = new SetNoticeAgencySystemECRequestBody();
             inValue.Body.systemUserName = systemUserName;
             inValue.Body.systemPassword = systemPassword;
             inValue.Body.reporteeElementID = reporteeElementID;
             inValue.Body.noticeInfo = noticeInfo;
-            return ((EC_Endpoint_Client.CaseAgencySystem.ICaseAgencySystemEC)(this)).SetNoticeAgencySystemECAsync(inValue);
+            return ((ICaseAgencySystemEC)(this)).SetNoticeAgencySystemECAsync(inValue);
         }
     }
 }

@@ -1,72 +1,74 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.ReporteeArchive;
-using EC_Endpoint_Client.ReporteeArchiveStreamed;
+using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Service_References.ReporteeArchive;
+using EC_Endpoint_Client.Service_References.ReporteeArchiveStreamed;
 
-namespace EC_Endpoint_Client.Functionality
+namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {
     class ReporteeArchiveEndPointFunctionality : EndPointFunctionalityBase
     {
         #region ReporteeArchiveForm
-        private ReporteeArchiveExternalECClient GenerateReporteeArchiveProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private ReporteeArchiveExternalECClient GenerateReporteeArchiveProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
             return GenerateProxy<ReporteeArchiveExternalECClient, IReporteeArchiveExternalEC>(selectedEndpointName,
-                SelectedCertificate);
+                selectedCertificate);
         }
 
-        public ReporteeArchive.ArchivedFormTaskV2 GetReporteeArchiveArchivedFormTaskV2(string username, string password, int reporteeElementId, int? languageId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ArchivedFormTaskV2 GetReporteeArchiveArchivedFormTaskV2(ArchiveBaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAGetFormTaskV2";
-            return client.GetArchivedFormTaskEC(username, password, reporteeElementId, languageId);
+            return client.GetArchivedFormTaskEC(shipment.Username, shipment.Password, shipment.ReporteeElementId, shipment.LanguageId);
         }
 
-        public ArchivedLookupExternal GetReporteeArchiveLookUp(string username, string password, int reporteeElementId, int languageId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public ArchivedLookupExternal GetReporteeArchiveLookUp(ArchiveBaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAReporteeLookup";
-            return client.GetArchivedLookupEC(username, password, reporteeElementId, languageId);
+            return client.GetArchivedLookupEC(shipment.Username, shipment.Password, shipment.ReporteeElementId, shipment.LanguageId ?? 1044);
         }
 
-        public AttachmentBEV2 GetReporteeArchiveAttachment(string username, string password, int attachmenId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public AttachmentBEV2 GetReporteeArchiveAttachment(AttachmentBaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAGetReporteeArchiveAttachment";
-            return client.GetAttachmentDataEC(username, password, attachmenId);
+            return client.GetAttachmentDataEC(shipment.Username, shipment.Password, shipment.AttachmentId);
         }
 
-        public void TestReporteeArchive(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestReporteeArchive(BaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RATest";
             client.Test();
         }
         #endregion
 
         #region reporteeArchiveStreamed
-        private ReporteeArchiveExternalStreamedECClient GenerateReporteeArchiveStreamedProxy(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        private ReporteeArchiveExternalStreamedECClient GenerateReporteeArchiveStreamedProxy(string selectedEndpointName, X509Certificate2 selectedCertificate)
         {
             return
                 GenerateProxy<ReporteeArchiveExternalStreamedECClient, IReporteeArchiveExternalStreamedEC>(
-                    selectedEndpointName, SelectedCertificate);
+                    selectedEndpointName, selectedCertificate);
         }
 
-        public void TestReporteeArchiveExternalStreamed(string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public void TestReporteeArchiveExternalStreamed(BaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveStreamedProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveStreamedProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAStreamedTest";
             client.Test();
         }
 
-        public System.IO.Stream GetReporteeArchiveAttachmentDataECStreamed(string username, string password, int attachmentId, string selectedEndpointName, X509Certificate2 SelectedCertificate)
+        public StreamedAttachmentResult GetReporteeArchiveAttachmentDataEcStreamed(AttachmentBaseShipment shipment)
         {
-            var client = GenerateReporteeArchiveStreamedProxy(selectedEndpointName, SelectedCertificate);
+            var client = GenerateReporteeArchiveStreamedProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAStreamedGetAttachmentData";
-            return client.GetAttachmentDataECStreamed(username, password, attachmentId);
+            return new StreamedAttachmentResult()
+            {
+                Result = IoFunctionality.WriteStreamToFile(
+                    client.GetAttachmentDataECStreamed(shipment.Username, shipment.Password, shipment.AttachmentId))
+            };
         }
         #endregion
 

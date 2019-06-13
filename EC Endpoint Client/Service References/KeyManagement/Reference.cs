@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.KeyManagement {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.KeyManagement {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,27 +155,27 @@ namespace EC_Endpoint_Client.KeyManagement {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="CertificateBEList", Namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10", ItemName="CertificateBE")]
-    [System.SerializableAttribute()]
-    public class CertificateBEList : System.Collections.Generic.List<EC_Endpoint_Client.KeyManagement.CertificateBE> {
+    [CollectionDataContract(Name="CertificateBEList", Namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10", ItemName="CertificateBE")]
+    [Serializable()]
+    public class CertificateBEList : System.Collections.Generic.List<CertificateBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CertificateBE", Namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="CertificateBE", Namespace="http://schemas.altinn.no/services/Archive/KeyManagement/2010/10")]
+    [Serializable()]
     public partial class CertificateBE : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string CertificateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CertificateIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ServiceOwnerIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -189,7 +188,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Certificate {
             get {
                 return this.CertificateField;
@@ -202,7 +201,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int CertificateId {
             get {
                 return this.CertificateIdField;
@@ -215,7 +214,7 @@ namespace EC_Endpoint_Client.KeyManagement {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ServiceOwnerId {
             get {
                 return this.ServiceOwnerIdField;
@@ -244,24 +243,24 @@ namespace EC_Endpoint_Client.KeyManagement {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Archive/KeyManagement/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.KeyManagement.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.KeyManagement.TestResponse Test(EC_Endpoint_Client.KeyManagement.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.TestResponse> TestAsync(EC_Endpoint_Client.KeyManagement.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Archive/KeyManagement/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
             "lEC/GetCertificatesEC", ReplyAction="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
             "lEC/GetCertificatesECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.KeyManagement.AltinnFault), Action="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
             "lEC/GetCertificatesECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse GetCertificatesEC(EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest request);
+        GetCertificatesECResponse GetCertificatesEC(GetCertificatesECRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
             "lEC/GetCertificatesEC", ReplyAction="http://www.altinn.no/services/Archive/KeyManagement/2010/10/IKeyManagementExterna" +
             "lEC/GetCertificatesECResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse> GetCertificatesECAsync(EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest request);
+        System.Threading.Tasks.Task<GetCertificatesECResponse> GetCertificatesECAsync(GetCertificatesECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -291,12 +290,12 @@ namespace EC_Endpoint_Client.KeyManagement {
     public partial class GetCertificatesECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCertificatesEC", Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10", Order=0)]
-        public EC_Endpoint_Client.KeyManagement.GetCertificatesECRequestBody Body;
+        public GetCertificatesECRequestBody Body;
         
         public GetCertificatesECRequest() {
         }
         
-        public GetCertificatesECRequest(EC_Endpoint_Client.KeyManagement.GetCertificatesECRequestBody Body) {
+        public GetCertificatesECRequest(GetCertificatesECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -304,19 +303,19 @@ namespace EC_Endpoint_Client.KeyManagement {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10")]
     public partial class GetCertificatesECRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string userName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string password;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        [DataMember(EmitDefaultValue=false, Order=2)]
         public string externalServiceCode;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [DataMember(Order=3)]
         public int externalServiceEditionCode;
         
         public GetCertificatesECRequestBody() {
@@ -337,12 +336,12 @@ namespace EC_Endpoint_Client.KeyManagement {
     public partial class GetCertificatesECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetCertificatesECResponse", Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10", Order=0)]
-        public EC_Endpoint_Client.KeyManagement.GetCertificatesECResponseBody Body;
+        public GetCertificatesECResponseBody Body;
         
         public GetCertificatesECResponse() {
         }
         
-        public GetCertificatesECResponse(EC_Endpoint_Client.KeyManagement.GetCertificatesECResponseBody Body) {
+        public GetCertificatesECResponse(GetCertificatesECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -350,27 +349,27 @@ namespace EC_Endpoint_Client.KeyManagement {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10")]
+    [DataContract(Namespace="http://www.altinn.no/services/Archive/KeyManagement/2010/10")]
     public partial class GetCertificatesECResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.KeyManagement.CertificateBEList GetCertificatesECResult;
+        [DataMember(Order=0)]
+        public CertificateBEList GetCertificatesECResult;
         
         public GetCertificatesECResponseBody() {
         }
         
-        public GetCertificatesECResponseBody(EC_Endpoint_Client.KeyManagement.CertificateBEList GetCertificatesECResult) {
+        public GetCertificatesECResponseBody(CertificateBEList GetCertificatesECResult) {
             this.GetCertificatesECResult = GetCertificatesECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IKeyManagementExternalECChannel : EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC, System.ServiceModel.IClientChannel {
+    public interface IKeyManagementExternalECChannel : IKeyManagementExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class KeyManagementExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC>, EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC {
+    public partial class KeyManagementExternalECClient : System.ServiceModel.ClientBase<IKeyManagementExternalEC>, IKeyManagementExternalEC {
         
         public KeyManagementExternalECClient() {
         }
@@ -392,54 +391,54 @@ namespace EC_Endpoint_Client.KeyManagement {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.KeyManagement.TestResponse EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC.Test(EC_Endpoint_Client.KeyManagement.TestRequest request) {
+        TestResponse IKeyManagementExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.KeyManagement.TestRequest inValue = new EC_Endpoint_Client.KeyManagement.TestRequest();
-            EC_Endpoint_Client.KeyManagement.TestResponse retVal = ((EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IKeyManagementExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.TestResponse> EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC.TestAsync(EC_Endpoint_Client.KeyManagement.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IKeyManagementExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.TestResponse> TestAsync() {
-            EC_Endpoint_Client.KeyManagement.TestRequest inValue = new EC_Endpoint_Client.KeyManagement.TestRequest();
-            return ((EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IKeyManagementExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC.GetCertificatesEC(EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest request) {
+        GetCertificatesECResponse IKeyManagementExternalEC.GetCertificatesEC(GetCertificatesECRequest request) {
             return base.Channel.GetCertificatesEC(request);
         }
         
-        public EC_Endpoint_Client.KeyManagement.CertificateBEList GetCertificatesEC(string userName, string password, string externalServiceCode, int externalServiceEditionCode) {
-            EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest inValue = new EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest();
-            inValue.Body = new EC_Endpoint_Client.KeyManagement.GetCertificatesECRequestBody();
+        public CertificateBEList GetCertificatesEC(string userName, string password, string externalServiceCode, int externalServiceEditionCode) {
+            GetCertificatesECRequest inValue = new GetCertificatesECRequest();
+            inValue.Body = new GetCertificatesECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.externalServiceCode = externalServiceCode;
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
-            EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse retVal = ((EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC)(this)).GetCertificatesEC(inValue);
+            GetCertificatesECResponse retVal = ((IKeyManagementExternalEC)(this)).GetCertificatesEC(inValue);
             return retVal.Body.GetCertificatesECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse> EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC.GetCertificatesECAsync(EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest request) {
+        System.Threading.Tasks.Task<GetCertificatesECResponse> IKeyManagementExternalEC.GetCertificatesECAsync(GetCertificatesECRequest request) {
             return base.Channel.GetCertificatesECAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.KeyManagement.GetCertificatesECResponse> GetCertificatesECAsync(string userName, string password, string externalServiceCode, int externalServiceEditionCode) {
-            EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest inValue = new EC_Endpoint_Client.KeyManagement.GetCertificatesECRequest();
-            inValue.Body = new EC_Endpoint_Client.KeyManagement.GetCertificatesECRequestBody();
+        public System.Threading.Tasks.Task<GetCertificatesECResponse> GetCertificatesECAsync(string userName, string password, string externalServiceCode, int externalServiceEditionCode) {
+            GetCertificatesECRequest inValue = new GetCertificatesECRequest();
+            inValue.Body = new GetCertificatesECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.externalServiceCode = externalServiceCode;
             inValue.Body.externalServiceEditionCode = externalServiceEditionCode;
-            return ((EC_Endpoint_Client.KeyManagement.IKeyManagementExternalEC)(this)).GetCertificatesECAsync(inValue);
+            return ((IKeyManagementExternalEC)(this)).GetCertificatesECAsync(inValue);
         }
     }
 }

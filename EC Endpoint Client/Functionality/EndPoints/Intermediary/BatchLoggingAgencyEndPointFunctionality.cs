@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.BatchLoggingAgency;
-using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.Classes.Shipments.Intermediary;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses;
+using EC_Endpoint_Client.Service_References.BatchLoggingAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {
@@ -30,6 +24,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
         public BatchLoggingStatusOverview GetStatusOverview(BatchLoggingAgencyShipment shipment)
         {
             OperationContext = "BatchLoggingAgencyGetStatusOverview";
+            CheckShipment(shipment);
             using (var client = GenerateBatchLoggingAgencyProxy(shipment))
             {
                 return client.GetStatusOverview(shipment.Username, shipment.Password, shipment.BatchLoggingRequest);
@@ -39,6 +34,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
         public BatchLoggingDetailedStatus GetDetailedOverview(BatchLoggingAgencyShipment shipment)
         {
             OperationContext = "BatchLoggingAgencyGetStatusOverview";
+            CheckShipment(shipment);
             using (var client = GenerateBatchLoggingAgencyProxy(shipment))
             {
                 return client.GetDetailedStatus(shipment.Username, shipment.Password, shipment.BatchLoggingRequest);
@@ -48,9 +44,18 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
         public DataItem GetDataItem(BatchLoggingAgencyShipment shipment)
         {
             OperationContext = "BatchLoggingAgencyGetStatusOverview";
+            CheckShipment(shipment);
             using (var client = GenerateBatchLoggingAgencyProxy(shipment))
             {
                 return client.GetDataItem(shipment.Username, shipment.Password, shipment.DataItemIdRequest.DataItemId);
+            }
+        }
+
+        private void CheckShipment(BatchLoggingAgencyShipment shipment)
+        {
+            if (shipment.BatchLoggingRequest.TimeRange.DateFrom == DateTime.MinValue && shipment.BatchLoggingRequest.TimeRange.DateTo == DateTime.MinValue)
+            {
+                shipment.BatchLoggingRequest.TimeRange = null;
             }
         }
     }

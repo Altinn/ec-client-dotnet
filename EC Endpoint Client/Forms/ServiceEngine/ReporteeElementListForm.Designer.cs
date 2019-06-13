@@ -64,6 +64,8 @@
             this.button24 = new System.Windows.Forms.Button();
             this.TestPage = new System.Windows.Forms.TabPage();
             this.btn_TestInvoke = new System.Windows.Forms.Button();
+            this.GetFormSetData = new System.Windows.Forms.TabPage();
+            this.ahc_GetFormSetData = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.servicePanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.GetCorrListForArch.SuspendLayout();
@@ -72,6 +74,7 @@
             this.GetRE.SuspendLayout();
             this.DeleteRE.SuspendLayout();
             this.TestPage.SuspendLayout();
+            this.GetFormSetData.SuspendLayout();
             this.SuspendLayout();
             // 
             // servicePanel
@@ -85,9 +88,11 @@
             this.tabControl1.Controls.Add(this.GetFS);
             this.tabControl1.Controls.Add(this.GetRE);
             this.tabControl1.Controls.Add(this.DeleteRE);
+            this.tabControl1.Controls.Add(this.GetFormSetData);
             this.tabControl1.Controls.Add(this.TestPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(425, 369);
@@ -101,12 +106,12 @@
             this.GetCorrListForArch.Controls.Add(this.btn_GPDSaveShip);
             this.GetCorrListForArch.Controls.Add(this.btn_GPDInvoke);
             this.GetCorrListForArch.Controls.Add(this.btn_GPDShowShip);
-            this.GetCorrListForArch.Location = new System.Drawing.Point(4, 22);
+            this.GetCorrListForArch.Location = new System.Drawing.Point(4, 58);
             this.GetCorrListForArch.Name = "GetCorrListForArch";
             this.GetCorrListForArch.Padding = new System.Windows.Forms.Padding(3);
-            this.GetCorrListForArch.Size = new System.Drawing.Size(417, 343);
+            this.GetCorrListForArch.Size = new System.Drawing.Size(417, 307);
             this.GetCorrListForArch.TabIndex = 0;
-            this.GetCorrListForArch.Text = "GetCorrespondenceListForArchiveRef";
+            this.GetCorrListForArch.Text = "GetCorrListForArchiveRef";
             this.GetCorrListForArch.UseVisualStyleBackColor = true;
             // 
             // btn_GPDSaveResult
@@ -177,12 +182,12 @@
             this.GetCorrListForRep.Controls.Add(this.button4);
             this.GetCorrListForRep.Controls.Add(this.button5);
             this.GetCorrListForRep.Controls.Add(this.button6);
-            this.GetCorrListForRep.Location = new System.Drawing.Point(4, 22);
+            this.GetCorrListForRep.Location = new System.Drawing.Point(4, 40);
             this.GetCorrListForRep.Name = "GetCorrListForRep";
             this.GetCorrListForRep.Padding = new System.Windows.Forms.Padding(3);
-            this.GetCorrListForRep.Size = new System.Drawing.Size(417, 343);
+            this.GetCorrListForRep.Size = new System.Drawing.Size(417, 325);
             this.GetCorrListForRep.TabIndex = 2;
-            this.GetCorrListForRep.Text = "GetCorrespondenceListForReportee";
+            this.GetCorrListForRep.Text = "GetCorrListForReportee";
             this.GetCorrListForRep.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -253,10 +258,10 @@
             this.GetFS.Controls.Add(this.button10);
             this.GetFS.Controls.Add(this.button11);
             this.GetFS.Controls.Add(this.button12);
-            this.GetFS.Location = new System.Drawing.Point(4, 22);
+            this.GetFS.Location = new System.Drawing.Point(4, 40);
             this.GetFS.Name = "GetFS";
             this.GetFS.Padding = new System.Windows.Forms.Padding(3);
-            this.GetFS.Size = new System.Drawing.Size(417, 343);
+            this.GetFS.Size = new System.Drawing.Size(417, 325);
             this.GetFS.TabIndex = 3;
             this.GetFS.Text = "GetFormSetElements";
             this.GetFS.UseVisualStyleBackColor = true;
@@ -329,10 +334,10 @@
             this.GetRE.Controls.Add(this.button16);
             this.GetRE.Controls.Add(this.button17);
             this.GetRE.Controls.Add(this.button18);
-            this.GetRE.Location = new System.Drawing.Point(4, 22);
+            this.GetRE.Location = new System.Drawing.Point(4, 40);
             this.GetRE.Name = "GetRE";
             this.GetRE.Padding = new System.Windows.Forms.Padding(3);
-            this.GetRE.Size = new System.Drawing.Size(417, 343);
+            this.GetRE.Size = new System.Drawing.Size(417, 325);
             this.GetRE.TabIndex = 4;
             this.GetRE.Text = "GetReporteeElementList";
             this.GetRE.UseVisualStyleBackColor = true;
@@ -403,10 +408,10 @@
             this.DeleteRE.Controls.Add(this.button22);
             this.DeleteRE.Controls.Add(this.button23);
             this.DeleteRE.Controls.Add(this.button24);
-            this.DeleteRE.Location = new System.Drawing.Point(4, 22);
+            this.DeleteRE.Location = new System.Drawing.Point(4, 40);
             this.DeleteRE.Name = "DeleteRE";
             this.DeleteRE.Padding = new System.Windows.Forms.Padding(3);
-            this.DeleteRE.Size = new System.Drawing.Size(417, 343);
+            this.DeleteRE.Size = new System.Drawing.Size(417, 325);
             this.DeleteRE.TabIndex = 5;
             this.DeleteRE.Text = "DeleteReporteeElement";
             this.DeleteRE.UseVisualStyleBackColor = true;
@@ -454,10 +459,10 @@
             // TestPage
             // 
             this.TestPage.Controls.Add(this.btn_TestInvoke);
-            this.TestPage.Location = new System.Drawing.Point(4, 22);
+            this.TestPage.Location = new System.Drawing.Point(4, 58);
             this.TestPage.Name = "TestPage";
             this.TestPage.Padding = new System.Windows.Forms.Padding(3);
-            this.TestPage.Size = new System.Drawing.Size(417, 343);
+            this.TestPage.Size = new System.Drawing.Size(417, 307);
             this.TestPage.TabIndex = 1;
             this.TestPage.Text = "Test";
             this.TestPage.UseVisualStyleBackColor = true;
@@ -471,6 +476,25 @@
             this.btn_TestInvoke.Text = "Test";
             this.btn_TestInvoke.UseVisualStyleBackColor = true;
             this.btn_TestInvoke.Click += new System.EventHandler(this.ButtonHandler);
+            // 
+            // GetFormSetData
+            // 
+            this.GetFormSetData.Controls.Add(this.ahc_GetFormSetData);
+            this.GetFormSetData.Location = new System.Drawing.Point(4, 40);
+            this.GetFormSetData.Name = "GetFormSetData";
+            this.GetFormSetData.Padding = new System.Windows.Forms.Padding(3);
+            this.GetFormSetData.Size = new System.Drawing.Size(417, 325);
+            this.GetFormSetData.TabIndex = 6;
+            this.GetFormSetData.Text = "GetFormSetData";
+            this.GetFormSetData.UseVisualStyleBackColor = true;
+            // 
+            // ahc_GetFormSetData
+            // 
+            this.ahc_GetFormSetData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ahc_GetFormSetData.Location = new System.Drawing.Point(3, 3);
+            this.ahc_GetFormSetData.Name = "ahc_GetFormSetData";
+            this.ahc_GetFormSetData.Size = new System.Drawing.Size(411, 319);
+            this.ahc_GetFormSetData.TabIndex = 0;
             // 
             // ReporteeElementListForm
             // 
@@ -487,6 +511,7 @@
             this.GetRE.ResumeLayout(false);
             this.DeleteRE.ResumeLayout(false);
             this.TestPage.ResumeLayout(false);
+            this.GetFormSetData.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -530,5 +555,7 @@
         private System.Windows.Forms.Button button22;
         private System.Windows.Forms.Button button23;
         private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.TabPage GetFormSetData;
+        private UserControls.ActionHolderControl ahc_GetFormSetData;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace EC_Endpoint_Client
 {
-    partial class ECEndPointClient
+    partial class EcEndPointClient
     {
         /// <summary>
         /// Required designer variable.
@@ -107,7 +107,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_AuthorizationAdministration);
             this.Controls.Add(this.button2);
-            this.Name = "ECEndPointClient";
+            this.Name = "EcEndPointClient";
             this.Text = "EC Endpoint Client";
             this.ResumeLayout(false);
 

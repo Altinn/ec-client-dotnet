@@ -1,26 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Configuration;
 
 namespace EC_Endpoint_Client.Configuration
 {
-    public class ApiEnvironment : ConfigurationElement
+    public class EnvironmentUrl : ConfigurationElement
     {
         [ConfigurationProperty("name", IsRequired = true)]
         public string Name => this["name"] as string;
-        [ConfigurationProperty("address", IsRequired = false)]
+        [ConfigurationProperty("address", IsRequired = true)]
         public string Environment => this["address"] as string;
+        [ConfigurationProperty("ignoreinwcf", IsRequired = false)]
+        public bool? IgnoreInWcf => this["ignoreinwcf"] as bool?;
     }
-    public class ApiEnvironmentCollection : ConfigurationElementCollection
+    public class EnvironmentUrlCollection : ConfigurationElementCollection
     {
-        public ApiEnvironment this[int index]
+        public EnvironmentUrl this[int index]
         {
             get
             {
-                return BaseGet(index) as ApiEnvironment;
+                return BaseGet(index) as EnvironmentUrl;
             }
             set
             {
@@ -33,11 +30,11 @@ namespace EC_Endpoint_Client.Configuration
         }
         protected override ConfigurationElement CreateNewElement()
         {
-            return new ApiEnvironment();
+            return new EnvironmentUrl();
         }
         protected override object GetElementKey(ConfigurationElement element)
         {
-            return ((ApiEnvironment)element).Name + ((ApiEnvironment)element).Environment;
+            return ((EnvironmentUrl)element).Name + ((EnvironmentUrl)element).Environment;
         }
     }
 
@@ -51,8 +48,8 @@ namespace EC_Endpoint_Client.Configuration
                 new EcClientConfiguration();
         }
 
-        [ConfigurationProperty("ApiEnvironmentCollection")]
-        [ConfigurationCollection(typeof(ApiEnvironmentCollection), AddItemName = "ApiEnvironment")]
-        public ApiEnvironmentCollection ApiEnvironmentCollection => this["ApiEnvironmentCollection"] as ApiEnvironmentCollection;
+        [ConfigurationProperty("EnvironmentUrlCollection")]
+        [ConfigurationCollection(typeof(EnvironmentUrlCollection), AddItemName = "EnvironmentUrl")]
+        public EnvironmentUrlCollection EnvironmentUrlCollection => this["EnvironmentUrlCollection"] as EnvironmentUrlCollection;
     }
 }

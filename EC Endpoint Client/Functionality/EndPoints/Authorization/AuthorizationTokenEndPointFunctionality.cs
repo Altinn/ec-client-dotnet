@@ -1,42 +1,42 @@
-﻿using EC_Endpoint_Client.Token;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.IdentityModel.Protocols.WSTrust;
-using System.ServiceModel.Security.Tokens;
+using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Authorization;
 using EC_Endpoint_Client.Forms.Authorization;
+using EC_Endpoint_Client.Service_References.Token;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Authorization
 {
     public class AuthorizationTokenEndPointFunctionality : EndPointFunctionalityBase
     {
         #region Public methods
-        public AuthorizationAccessTokenResponseContainer GetSelfContainedToken(string userName, string password,
-            string selectedEndpointName, X509Certificate2 selectedCertificate, X509Certificate2 altinnCertificate, 
-            Guid authorizationCode, bool selfContained)
+        public AuthorizationAccessTokenResponseContainer GetSelfContainedToken(GetTokenByAuthorizationCodeShipment shipment)
         {
-            var client = GenerateAuthorizationTokenProxy(selectedEndpointName, selectedCertificate);
-            OperationContext = "AuthAccessTokenTest";
+            var client = GenerateAuthorizationTokenProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "AuthAccessTokenGet";
 
-            var accessToken = client.GetAccessToken(userName, password, authorizationCode, selfContained);
+            var accessToken = client.GetAccessToken(shipment.Username, shipment.Password, shipment.AuthorizationCode, shipment.SelfContainedToken);
 
             SecurityToken validationResult = null;
-            if (selfContained)
+            if (shipment.SelfContainedToken)
             {
-                validationResult = ValidateToken(altinnCertificate, accessToken.SelfContainedToken);
+                validationResult = ValidateToken(shipment.SpiCertificate, accessToken.SelfContainedToken);
             }
 
             return new AuthorizationAccessTokenResponseContainer() 
-                { 
-                    UnwrappedToken = validationResult,
-                    SelfContainedToken = accessToken.SelfContainedToken,
-                    ReferenceToken = accessToken.ReferenceToken
-                };
+            { 
+                UnwrappedToken = validationResult,
+                SelfContainedToken = accessToken.SelfContainedToken,
+                ReferenceToken = accessToken.ReferenceToken
+            };
+        }
+
+        public void Test(BaseShipment shipment)
+        {
+            var client = GenerateAuthorizationTokenProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "AuthAccessTokenTest";
+            client.Test();
         }
         #endregion
 

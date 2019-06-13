@@ -8,39 +8,38 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.BatchLoggingAgency {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+using System;
+using System.Runtime.Serialization;
+
+namespace EC_Endpoint_Client.Service_References.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+    [Serializable()]
     public partial class AltinnFault : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnExtendedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string AltinnLocalizedErrorMessageField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ErrorGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ErrorIDField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserGuidField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string UserIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -53,7 +52,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnErrorMessage {
             get {
                 return this.AltinnErrorMessageField;
@@ -66,7 +65,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnExtendedErrorMessage {
             get {
                 return this.AltinnExtendedErrorMessageField;
@@ -79,7 +78,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string AltinnLocalizedErrorMessage {
             get {
                 return this.AltinnLocalizedErrorMessageField;
@@ -92,7 +91,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ErrorGuid {
             get {
                 return this.ErrorGuidField;
@@ -105,7 +104,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ErrorID {
             get {
                 return this.ErrorIDField;
@@ -118,7 +117,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserGuid {
             get {
                 return this.UserGuidField;
@@ -131,7 +130,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string UserId {
             get {
                 return this.UserIdField;
@@ -156,33 +155,33 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchLoggingRequestExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BatchLoggingRequestExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class BatchLoggingRequestExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<long> DataBatchIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<EC_Endpoint_Client.BatchLoggingAgency.DataBatchType> DataBatchTypeField;
+        [OptionalField()]
+        private System.Nullable<DataBatchType> DataBatchTypeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<long> FromIssueIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> SequenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string SystemUserCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDateTimeRequestExternal TimeRangeField;
+        [OptionalField()]
+        private BatchLoggingDateTimeRequestExternal TimeRangeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -194,7 +193,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<long> DataBatchId {
             get {
                 return this.DataBatchIdField;
@@ -207,8 +206,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<EC_Endpoint_Client.BatchLoggingAgency.DataBatchType> DataBatchType {
+        [DataMember()]
+        public System.Nullable<DataBatchType> DataBatchType {
             get {
                 return this.DataBatchTypeField;
             }
@@ -220,7 +219,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -233,7 +232,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<long> FromIssueId {
             get {
                 return this.FromIssueIdField;
@@ -246,7 +245,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> Sequence {
             get {
                 return this.SequenceField;
@@ -259,7 +258,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string SystemUserCode {
             get {
                 return this.SystemUserCodeField;
@@ -272,8 +271,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDateTimeRequestExternal TimeRange {
+        [DataMember()]
+        public BatchLoggingDateTimeRequestExternal TimeRange {
             get {
                 return this.TimeRangeField;
             }
@@ -297,11 +296,11 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchLoggingDateTimeRequestExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="BatchLoggingDateTimeRequestExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class BatchLoggingDateTimeRequestExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private System.DateTime DateFromField;
@@ -318,7 +317,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime DateFrom {
             get {
                 return this.DateFromField;
@@ -331,7 +330,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        [DataMember(IsRequired=true)]
         public System.DateTime DateTo {
             get {
                 return this.DateToField;
@@ -355,57 +354,57 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataBatchType", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Name="DataBatchType", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public enum DataBatchType : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         ActivateSubscription = 100,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Notification = 101,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Correspondence = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         PreFill = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFProperty = 13,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFPropertyAdd = 23,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreet = 14,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFStreetAdd = 24,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterDSFUser = 17,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         RegisterER = 12,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Subscription = 4,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchLoggingStatusOverview", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDetailedStatus))]
+    [DataContract(Name="BatchLoggingStatusOverview", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
+    [KnownType(typeof(BatchLoggingDetailedStatus))]
     public partial class BatchLoggingStatusOverview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.DataBatch[] DataBatchesField;
+        [OptionalField()]
+        private DataBatch[] DataBatchesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int NumberOfIssuesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -418,8 +417,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.DataBatch[] DataBatches {
+        [DataMember()]
+        public DataBatch[] DataBatches {
             get {
                 return this.DataBatchesField;
             }
@@ -431,7 +430,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int NumberOfIssues {
             get {
                 return this.NumberOfIssuesField;
@@ -456,18 +455,18 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="BatchLoggingDetailedStatus", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
-    public partial class BatchLoggingDetailedStatus : EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingStatusOverview {
+    [DataContract(Name="BatchLoggingDetailedStatus", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
+    public partial class BatchLoggingDetailedStatus : BatchLoggingStatusOverview {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.DataItem[] DataItemsField;
+        [OptionalField()]
+        private DataItem[] DataItemsField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.IssueExternal[] IssuesField;
+        [OptionalField()]
+        private IssueExternal[] IssuesField;
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.DataItem[] DataItems {
+        [DataMember()]
+        public DataItem[] DataItems {
             get {
                 return this.DataItemsField;
             }
@@ -479,8 +478,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.IssueExternal[] Issues {
+        [DataMember()]
+        public IssueExternal[] Issues {
             get {
                 return this.IssuesField;
             }
@@ -495,32 +494,32 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataBatch", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="DataBatch", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class DataBatch : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private long DataBatchIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> EndDateField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string FileNameField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int NumberOfIssuesField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int SequenceField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int ShipmentIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<System.DateTime> StartDateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -533,7 +532,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public long DataBatchId {
             get {
                 return this.DataBatchIdField;
@@ -546,7 +545,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> EndDate {
             get {
                 return this.EndDateField;
@@ -559,7 +558,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string FileName {
             get {
                 return this.FileNameField;
@@ -572,7 +571,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int NumberOfIssues {
             get {
                 return this.NumberOfIssuesField;
@@ -585,7 +584,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int Sequence {
             get {
                 return this.SequenceField;
@@ -598,7 +597,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int ShipmentId {
             get {
                 return this.ShipmentIdField;
@@ -611,7 +610,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<System.DateTime> StartDate {
             get {
                 return this.StartDateField;
@@ -636,35 +635,35 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DataItem", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="DataItem", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class DataItem : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string DataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<long> DataBatchIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private long DataItemIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int LineField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int PositionField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string ServiceCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<int> ServiceEditionCodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string StateField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -677,7 +676,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Data {
             get {
                 return this.DataField;
@@ -690,7 +689,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<long> DataBatchId {
             get {
                 return this.DataBatchIdField;
@@ -703,7 +702,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public long DataItemId {
             get {
                 return this.DataItemIdField;
@@ -716,7 +715,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int Line {
             get {
                 return this.LineField;
@@ -729,7 +728,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int Position {
             get {
                 return this.PositionField;
@@ -742,7 +741,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string ServiceCode {
             get {
                 return this.ServiceCodeField;
@@ -755,7 +754,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<int> ServiceEditionCode {
             get {
                 return this.ServiceEditionCodeField;
@@ -768,7 +767,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string State {
             get {
                 return this.StateField;
@@ -793,24 +792,24 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IssueExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="IssueExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class IssueExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private long DataBatchIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.Nullable<long> DataItemIdField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private System.DateTime ErrorDateTimeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.IssueTypeExternal IssueTypeField;
+        [OptionalField()]
+        private IssueTypeExternal IssueTypeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -822,7 +821,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public long DataBatchId {
             get {
                 return this.DataBatchIdField;
@@ -835,7 +834,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.Nullable<long> DataItemId {
             get {
                 return this.DataItemIdField;
@@ -848,7 +847,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public System.DateTime ErrorDateTime {
             get {
                 return this.ErrorDateTimeField;
@@ -861,8 +860,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.IssueTypeExternal IssueType {
+        [DataMember()]
+        public IssueTypeExternal IssueType {
             get {
                 return this.IssueTypeField;
             }
@@ -886,21 +885,21 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IssueTypeExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
-    [System.SerializableAttribute()]
+    [DataContract(Name="IssueTypeExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [Serializable()]
     public partial class IssueTypeExternal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
+        [NonSerialized()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private int CodeField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        [OptionalField()]
         private string DescriptionField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.BatchLoggingAgency.IssueTypeLevelExternal LevelField;
+        [OptionalField()]
+        private IssueTypeLevelExternal LevelField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -912,7 +911,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public int Code {
             get {
                 return this.CodeField;
@@ -925,7 +924,7 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
+        [DataMember()]
         public string Description {
             get {
                 return this.DescriptionField;
@@ -938,8 +937,8 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.BatchLoggingAgency.IssueTypeLevelExternal Level {
+        [DataMember()]
+        public IssueTypeLevelExternal Level {
             get {
                 return this.LevelField;
             }
@@ -962,22 +961,22 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="IssueTypeLevelExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Name="IssueTypeLevelExternal", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public enum IssueTypeLevelExternal : int {
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Other = 0,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Information = 1,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Warning = 2,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Error = 3,
         
-        [System.Runtime.Serialization.EnumMemberAttribute()]
+        [EnumMember()]
         Critical = 4,
     }
     
@@ -987,50 +986,50 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Intermediary/BatchLogging/2016/02)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BatchLoggingAgency.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BatchLoggingAgency.TestResponse Test(EC_Endpoint_Client.BatchLoggingAgency.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        TestResponse Test(TestRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.TestResponse> TestAsync(EC_Endpoint_Client.BatchLoggingAgency.TestRequest request);
+        System.Threading.Tasks.Task<TestResponse> TestAsync(TestRequest request);
         
         // CODEGEN: Generating message contract since element name agencyUserName from namespace http://www.altinn.no/services/Intermediary/BatchLogging/2016/02 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetStatusOverview", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetStatusOverviewResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BatchLoggingAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetStatusOverviewAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse GetStatusOverview(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest request);
+        GetStatusOverviewResponse GetStatusOverview(GetStatusOverviewRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetStatusOverview", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetStatusOverviewResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse> GetStatusOverviewAsync(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest request);
+        System.Threading.Tasks.Task<GetStatusOverviewResponse> GetStatusOverviewAsync(GetStatusOverviewRequest request);
         
         // CODEGEN: Generating message contract since element name agencyUserName from namespace http://www.altinn.no/services/Intermediary/BatchLogging/2016/02 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDetailedStatus", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDetailedStatusResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BatchLoggingAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDetailedStatusAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse GetDetailedStatus(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest request);
+        GetDetailedStatusResponse GetDetailedStatus(GetDetailedStatusRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDetailedStatus", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDetailedStatusResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse> GetDetailedStatusAsync(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest request);
+        System.Threading.Tasks.Task<GetDetailedStatusResponse> GetDetailedStatusAsync(GetDetailedStatusRequest request);
         
         // CODEGEN: Generating message contract since element name agencyUserName from namespace http://www.altinn.no/services/Intermediary/BatchLogging/2016/02 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDataItem", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDataItemResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.BatchLoggingAgency.AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
+        [System.ServiceModel.FaultContractAttribute(typeof(AltinnFault), Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDataItemAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse GetDataItem(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest request);
+        GetDataItemResponse GetDataItem(GetDataItemRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDataItem", ReplyAction="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02/IBatchLoggingAgen" +
             "cyExternalEC/GetDataItemResponse")]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse> GetDataItemAsync(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest request);
+        System.Threading.Tasks.Task<GetDataItemResponse> GetDataItemAsync(GetDataItemRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1060,12 +1059,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetStatusOverviewRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStatusOverview", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequestBody Body;
+        public GetStatusOverviewRequestBody Body;
         
         public GetStatusOverviewRequest() {
         }
         
-        public GetStatusOverviewRequest(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequestBody Body) {
+        public GetStatusOverviewRequest(GetStatusOverviewRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1073,22 +1072,22 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetStatusOverviewRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string agencyUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string agencyPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public BatchLoggingRequestExternal request;
         
         public GetStatusOverviewRequestBody() {
         }
         
-        public GetStatusOverviewRequestBody(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
+        public GetStatusOverviewRequestBody(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
             this.agencyUserName = agencyUserName;
             this.agencyPassword = agencyPassword;
             this.request = request;
@@ -1102,12 +1101,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetStatusOverviewResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetStatusOverviewResponse", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponseBody Body;
+        public GetStatusOverviewResponseBody Body;
         
         public GetStatusOverviewResponse() {
         }
         
-        public GetStatusOverviewResponse(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponseBody Body) {
+        public GetStatusOverviewResponse(GetStatusOverviewResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1115,16 +1114,16 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetStatusOverviewResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingStatusOverview GetStatusOverviewResult;
+        [DataMember(Order=0)]
+        public BatchLoggingStatusOverview GetStatusOverviewResult;
         
         public GetStatusOverviewResponseBody() {
         }
         
-        public GetStatusOverviewResponseBody(EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingStatusOverview GetStatusOverviewResult) {
+        public GetStatusOverviewResponseBody(BatchLoggingStatusOverview GetStatusOverviewResult) {
             this.GetStatusOverviewResult = GetStatusOverviewResult;
         }
     }
@@ -1136,12 +1135,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetDetailedStatusRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDetailedStatus", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequestBody Body;
+        public GetDetailedStatusRequestBody Body;
         
         public GetDetailedStatusRequest() {
         }
         
-        public GetDetailedStatusRequest(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequestBody Body) {
+        public GetDetailedStatusRequest(GetDetailedStatusRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1149,22 +1148,22 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetDetailedStatusRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string agencyUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string agencyPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request;
+        [DataMember(EmitDefaultValue=false, Order=2)]
+        public BatchLoggingRequestExternal request;
         
         public GetDetailedStatusRequestBody() {
         }
         
-        public GetDetailedStatusRequestBody(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
+        public GetDetailedStatusRequestBody(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
             this.agencyUserName = agencyUserName;
             this.agencyPassword = agencyPassword;
             this.request = request;
@@ -1178,12 +1177,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetDetailedStatusResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDetailedStatusResponse", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponseBody Body;
+        public GetDetailedStatusResponseBody Body;
         
         public GetDetailedStatusResponse() {
         }
         
-        public GetDetailedStatusResponse(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponseBody Body) {
+        public GetDetailedStatusResponse(GetDetailedStatusResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1191,16 +1190,16 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetDetailedStatusResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDetailedStatus GetDetailedStatusResult;
+        [DataMember(Order=0)]
+        public BatchLoggingDetailedStatus GetDetailedStatusResult;
         
         public GetDetailedStatusResponseBody() {
         }
         
-        public GetDetailedStatusResponseBody(EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDetailedStatus GetDetailedStatusResult) {
+        public GetDetailedStatusResponseBody(BatchLoggingDetailedStatus GetDetailedStatusResult) {
             this.GetDetailedStatusResult = GetDetailedStatusResult;
         }
     }
@@ -1212,12 +1211,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetDataItemRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataItem", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequestBody Body;
+        public GetDataItemRequestBody Body;
         
         public GetDataItemRequest() {
         }
         
-        public GetDataItemRequest(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequestBody Body) {
+        public GetDataItemRequest(GetDataItemRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -1225,16 +1224,16 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetDataItemRequestBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        [DataMember(EmitDefaultValue=false, Order=0)]
         public string agencyUserName;
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        [DataMember(EmitDefaultValue=false, Order=1)]
         public string agencyPassword;
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        [DataMember(Order=2)]
         public long dataItemId;
         
         public GetDataItemRequestBody() {
@@ -1254,12 +1253,12 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     public partial class GetDataItemResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetDataItemResponse", Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02", Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponseBody Body;
+        public GetDataItemResponseBody Body;
         
         public GetDataItemResponse() {
         }
         
-        public GetDataItemResponse(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponseBody Body) {
+        public GetDataItemResponse(GetDataItemResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -1267,27 +1266,27 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
+    [DataContract(Namespace="http://www.altinn.no/services/Intermediary/BatchLogging/2016/02")]
     public partial class GetDataItemResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.BatchLoggingAgency.DataItem GetDataItemResult;
+        [DataMember(Order=0)]
+        public DataItem GetDataItemResult;
         
         public GetDataItemResponseBody() {
         }
         
-        public GetDataItemResponseBody(EC_Endpoint_Client.BatchLoggingAgency.DataItem GetDataItemResult) {
+        public GetDataItemResponseBody(DataItem GetDataItemResult) {
             this.GetDataItemResult = GetDataItemResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IBatchLoggingAgencyExternalECChannel : EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC, System.ServiceModel.IClientChannel {
+    public interface IBatchLoggingAgencyExternalECChannel : IBatchLoggingAgencyExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class BatchLoggingAgencyExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC>, EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC {
+    public partial class BatchLoggingAgencyExternalECClient : System.ServiceModel.ClientBase<IBatchLoggingAgencyExternalEC>, IBatchLoggingAgencyExternalEC {
         
         public BatchLoggingAgencyExternalECClient() {
         }
@@ -1309,110 +1308,110 @@ namespace EC_Endpoint_Client.BatchLoggingAgency {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BatchLoggingAgency.TestResponse EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.Test(EC_Endpoint_Client.BatchLoggingAgency.TestRequest request) {
+        TestResponse IBatchLoggingAgencyExternalEC.Test(TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.BatchLoggingAgency.TestRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.TestRequest();
-            EC_Endpoint_Client.BatchLoggingAgency.TestResponse retVal = ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).Test(inValue);
+            TestRequest inValue = new TestRequest();
+            TestResponse retVal = ((IBatchLoggingAgencyExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.TestResponse> EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.TestAsync(EC_Endpoint_Client.BatchLoggingAgency.TestRequest request) {
+        System.Threading.Tasks.Task<TestResponse> IBatchLoggingAgencyExternalEC.TestAsync(TestRequest request) {
             return base.Channel.TestAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.TestResponse> TestAsync() {
-            EC_Endpoint_Client.BatchLoggingAgency.TestRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.TestRequest();
-            return ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).TestAsync(inValue);
+        public System.Threading.Tasks.Task<TestResponse> TestAsync() {
+            TestRequest inValue = new TestRequest();
+            return ((IBatchLoggingAgencyExternalEC)(this)).TestAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetStatusOverview(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest request) {
+        GetStatusOverviewResponse IBatchLoggingAgencyExternalEC.GetStatusOverview(GetStatusOverviewRequest request) {
             return base.Channel.GetStatusOverview(request);
         }
         
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingStatusOverview GetStatusOverview(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequestBody();
+        public BatchLoggingStatusOverview GetStatusOverview(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
+            GetStatusOverviewRequest inValue = new GetStatusOverviewRequest();
+            inValue.Body = new GetStatusOverviewRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.request = request;
-            EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse retVal = ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetStatusOverview(inValue);
+            GetStatusOverviewResponse retVal = ((IBatchLoggingAgencyExternalEC)(this)).GetStatusOverview(inValue);
             return retVal.Body.GetStatusOverviewResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse> EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetStatusOverviewAsync(EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest request) {
+        System.Threading.Tasks.Task<GetStatusOverviewResponse> IBatchLoggingAgencyExternalEC.GetStatusOverviewAsync(GetStatusOverviewRequest request) {
             return base.Channel.GetStatusOverviewAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewResponse> GetStatusOverviewAsync(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetStatusOverviewRequestBody();
+        public System.Threading.Tasks.Task<GetStatusOverviewResponse> GetStatusOverviewAsync(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
+            GetStatusOverviewRequest inValue = new GetStatusOverviewRequest();
+            inValue.Body = new GetStatusOverviewRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.request = request;
-            return ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetStatusOverviewAsync(inValue);
+            return ((IBatchLoggingAgencyExternalEC)(this)).GetStatusOverviewAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetDetailedStatus(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest request) {
+        GetDetailedStatusResponse IBatchLoggingAgencyExternalEC.GetDetailedStatus(GetDetailedStatusRequest request) {
             return base.Channel.GetDetailedStatus(request);
         }
         
-        public EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingDetailedStatus GetDetailedStatus(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequestBody();
+        public BatchLoggingDetailedStatus GetDetailedStatus(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
+            GetDetailedStatusRequest inValue = new GetDetailedStatusRequest();
+            inValue.Body = new GetDetailedStatusRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.request = request;
-            EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse retVal = ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetDetailedStatus(inValue);
+            GetDetailedStatusResponse retVal = ((IBatchLoggingAgencyExternalEC)(this)).GetDetailedStatus(inValue);
             return retVal.Body.GetDetailedStatusResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse> EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetDetailedStatusAsync(EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest request) {
+        System.Threading.Tasks.Task<GetDetailedStatusResponse> IBatchLoggingAgencyExternalEC.GetDetailedStatusAsync(GetDetailedStatusRequest request) {
             return base.Channel.GetDetailedStatusAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusResponse> GetDetailedStatusAsync(string agencyUserName, string agencyPassword, EC_Endpoint_Client.BatchLoggingAgency.BatchLoggingRequestExternal request) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetDetailedStatusRequestBody();
+        public System.Threading.Tasks.Task<GetDetailedStatusResponse> GetDetailedStatusAsync(string agencyUserName, string agencyPassword, BatchLoggingRequestExternal request) {
+            GetDetailedStatusRequest inValue = new GetDetailedStatusRequest();
+            inValue.Body = new GetDetailedStatusRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.request = request;
-            return ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetDetailedStatusAsync(inValue);
+            return ((IBatchLoggingAgencyExternalEC)(this)).GetDetailedStatusAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetDataItem(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest request) {
+        GetDataItemResponse IBatchLoggingAgencyExternalEC.GetDataItem(GetDataItemRequest request) {
             return base.Channel.GetDataItem(request);
         }
         
-        public EC_Endpoint_Client.BatchLoggingAgency.DataItem GetDataItem(string agencyUserName, string agencyPassword, long dataItemId) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequestBody();
+        public DataItem GetDataItem(string agencyUserName, string agencyPassword, long dataItemId) {
+            GetDataItemRequest inValue = new GetDataItemRequest();
+            inValue.Body = new GetDataItemRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.dataItemId = dataItemId;
-            EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse retVal = ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetDataItem(inValue);
+            GetDataItemResponse retVal = ((IBatchLoggingAgencyExternalEC)(this)).GetDataItem(inValue);
             return retVal.Body.GetDataItemResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse> EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC.GetDataItemAsync(EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest request) {
+        System.Threading.Tasks.Task<GetDataItemResponse> IBatchLoggingAgencyExternalEC.GetDataItemAsync(GetDataItemRequest request) {
             return base.Channel.GetDataItemAsync(request);
         }
         
-        public System.Threading.Tasks.Task<EC_Endpoint_Client.BatchLoggingAgency.GetDataItemResponse> GetDataItemAsync(string agencyUserName, string agencyPassword, long dataItemId) {
-            EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest inValue = new EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequest();
-            inValue.Body = new EC_Endpoint_Client.BatchLoggingAgency.GetDataItemRequestBody();
+        public System.Threading.Tasks.Task<GetDataItemResponse> GetDataItemAsync(string agencyUserName, string agencyPassword, long dataItemId) {
+            GetDataItemRequest inValue = new GetDataItemRequest();
+            inValue.Body = new GetDataItemRequestBody();
             inValue.Body.agencyUserName = agencyUserName;
             inValue.Body.agencyPassword = agencyPassword;
             inValue.Body.dataItemId = dataItemId;
-            return ((EC_Endpoint_Client.BatchLoggingAgency.IBatchLoggingAgencyExternalEC)(this)).GetDataItemAsync(inValue);
+            return ((IBatchLoggingAgencyExternalEC)(this)).GetDataItemAsync(inValue);
         }
     }
 }

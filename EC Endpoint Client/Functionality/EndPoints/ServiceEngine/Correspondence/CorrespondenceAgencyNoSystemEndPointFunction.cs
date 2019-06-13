@@ -1,13 +1,13 @@
-﻿using EC_Endpoint_Client.Classes;
+﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
-using EC_Endpoint_Client.CorrespondenceAgencyNoSystem;
-using ReceiptExternal = EC_Endpoint_Client.CorrespondenceAgencyNoSystem.ReceiptExternal;
+using EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem;
+using ReceiptExternal = EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem.ReceiptExternal;
 
-namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
+namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence
 {
     public class CorrespondenceAgencyNoSystemEndPointFunction : EndPointFunctionalityBase
     {
-        private string Context = "CorrespondenceAgencyNoSystem";
+        private string _context = "CorrespondenceAgencyNoSystem";
 
         private CorrespondenceAgencyExternalAECClient GenerateProxy(BaseShipment shipment)
         {
@@ -19,40 +19,40 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
         public void Test(BaseShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "Test";
+            OperationContext = _context + "Test";
             client.Test();
         }
 
-        public ReceiptExternal InsertCorrespondence(InsertCorrespondenceShipmentAEC shipment)
+        public ReceiptExternal InsertCorrespondence(InsertCorrespondenceShipmentAec shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "InsertCorrespondence";
+            OperationContext = _context + "InsertCorrespondence";
             return client.InsertCorrespondenceAECV2(shipment.ExternalShipmentReference, shipment.InsertCorrespondence);
         }
 
         public CorrespondenceStatusResultV3 GetCorrespondenceDetailsV3(GetCorrespondenceStatus filter)
         {
             var client = GenerateProxy(filter);
-            OperationContext = Context + "GetCorrespondenceDetails";
+            OperationContext = _context + "GetCorrespondenceDetails";
             return client.GetCorrespondenceStatusDetailsAECV3(filter.CorrespondenceStatusFilter);
         }
 
 
-        public CorrespondenceStatusResultV3 GetCorrespondenceDetailsV3(GetCorrespondenceStatusDetailsAECShipment shipment)
+        public CorrespondenceStatusResultV3 GetCorrespondenceDetailsV3(GetCorrespondenceStatusDetailsAecShipment shipment)
         {
             var client = GenerateProxy(shipment);
-            OperationContext = Context + "GetCorrespondenceDetailsStatus";
-            return client.GetCorrespondenceStatusDetailsAECV3(shipment.request);
+            OperationContext = _context + "GetCorrespondenceDetailsStatus";
+            return client.GetCorrespondenceStatusDetailsAECV3(shipment.Request);
         }
 
-        public CorrespondenceStatusHistoryAECResult GetCorrespondenceStatusHistory(GetCorrespondenceStatusHistoryAECShipment shipment)
+        public CorrespondenceStatusHistoryAecResult GetCorrespondenceStatusHistory(GetCorrespondenceStatusHistoryAecShipment shipment)
         {
             using (var client = GenerateProxy(shipment))
             {
                 CorrespondenceStatusHistoryRequestExternalBE req = new CorrespondenceStatusHistoryRequestExternalBE();
-                req.CorrespondenceSendersReferences = shipment.request;
-                OperationContext = Context + "GetcorrespondenceStatusHistory";
-                return new CorrespondenceStatusHistoryAECResult(client.GetCorrespondenceStatusHistoryAEC(req));
+                req.CorrespondenceSendersReferences = shipment.Request;
+                OperationContext = _context + "GetcorrespondenceStatusHistory";
+                return new CorrespondenceStatusHistoryAecResult(client.GetCorrespondenceStatusHistoryAEC(req));
             }
         }
 

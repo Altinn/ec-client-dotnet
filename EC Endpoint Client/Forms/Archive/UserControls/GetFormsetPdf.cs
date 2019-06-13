@@ -10,11 +10,11 @@ namespace EC_Endpoint_Client.Forms.Archive.UserControls
         public string ArchiveReference {
             get
             {
-                return this.txbArchiveReference.Text;
+                return txbArchiveReference.Text;
             }
             set
             {
-                this.txbArchiveReference.Text = value;
+                txbArchiveReference.Text = value;
             }
         }
 
@@ -22,7 +22,7 @@ namespace EC_Endpoint_Client.Forms.Archive.UserControls
         {
             get
             {
-                object selectedValue = this.cobLanguageId.SelectedValue;
+                object selectedValue = cobLanguageId.SelectedValue;
                 if (selectedValue != null)
                 {
                     int langId;
@@ -33,22 +33,22 @@ namespace EC_Endpoint_Client.Forms.Archive.UserControls
             }
             set
             {
-                if (this.cobLanguageId.Items.Contains(value))
+                if (cobLanguageId.Items.Contains(value))
                 {
-                    this.cobLanguageId.SelectedItem = value;
+                    cobLanguageId.SelectedItem = value;
                 }
             }
         }
 
         public GetFormsetPdf()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         // ReSharper disable once InconsistentNaming
         private void btnInvoke_Click(object sender, EventArgs e)
         {
-            EventHandler handler = this.InvokeClick;
+            EventHandler handler = InvokeClick;
             if (handler != null)
             {
                 handler(this, EventArgs.Empty);

@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace EC_Endpoint_Client.Forms.Intermediary
 {
-    public partial class IntermediarySelectorForm : SelectorBaseForm
+    public partial class IntermediarySelectorForm : BaseForms.SelectorBaseForm
     {
         public IntermediarySelectorForm()
         {

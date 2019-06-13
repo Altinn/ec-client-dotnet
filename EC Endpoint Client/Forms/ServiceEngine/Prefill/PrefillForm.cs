@@ -1,37 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillEUS;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Prefill;
-using EC_Endpoint_Client.PrefillEUS;
+using EC_Endpoint_Client.Service_References.PrefillEUS;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 {
-    public partial class PrefillForm : ClientBaseForm
+    public partial class PrefillForm : BaseForms.ClientBaseForm
     {
-        PrefillEUSEndPointFunction peusepFunc;
-        private PrefillDataBE ResultGPD { get; set; }
-        public GetPrefillDataShipmentBase ShipmentGPD { get; set; }
-        public  GetPrefillDataV2ShipmentExt ShipmentGPDV2 { get; set; }
-        private PrefillDataBEv2 ResultGPDV2 { get; set; }
+        PrefillEusEndPointFunction _peusepFunc;
+        private PrefillDataBE ResultGpd { get; set; }
+        public GetPrefillDataShipmentBase ShipmentGpd { get; set; }
+        public  GetPrefillDataV2ShipmentExt ShipmentGpdv2 { get; set; }
+        private PrefillDataBEv2 ResultGpdv2 { get; set; }
 
         public PrefillForm()
         {
             InitializeComponent();
-            peusepFunc = new Functionality.EndPoints.ServiceEngine.Prefill.PrefillEUSEndPointFunction();
-            peusepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
+            _peusepFunc = new PrefillEusEndPointFunction();
+            _peusepFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             ShipmentTest = new BaseShipment();
-            ShipmentGPD = new GetPrefillDataShipmentBase();
-            ShipmentGPDV2 = new GetPrefillDataV2ShipmentExt();
-            ResultGPD = new PrefillDataBE();
-            ResultGPDV2 = new PrefillDataBEv2();
+            ShipmentGpd = new GetPrefillDataShipmentBase();
+            ShipmentGpdv2 = new GetPrefillDataV2ShipmentExt();
+            ResultGpd = new PrefillDataBE();
+            ResultGpdv2 = new PrefillDataBEv2();
         }
 
         private void SetupObjForPropGrid()
@@ -46,7 +39,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                peusepFunc.Test(ShipmentTest);
+                _peusepFunc.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -57,11 +50,11 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         public void GetPrefillDataV1()
         {
-            SetBasicShipmentSettings(ShipmentGPD);
+            SetBasicShipmentSettings(ShipmentGpd);
             try
             {
-                ResultGPD = peusepFunc.GetPrefillData(ShipmentGPD);
-                SetViewedItem(ResultGPD, "Result from GetPrefillData");
+                ResultGpd = _peusepFunc.GetPrefillData(ShipmentGpd);
+                SetViewedItem(ResultGpd, "Result from GetPrefillData");
             }
             catch (Exception ex)
             {
@@ -73,21 +66,21 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
         {
             GetPrefillDataV2Shipment ship = new GetPrefillDataV2Shipment();
             SetBasicShipmentSettings(ship);
-            ship.PrefillBEList = new PreFillRequestBEList();
-            ship.ExternalServiceCode = ShipmentGPDV2.ExternalServiceCode;
-            ship.ExternalServiceEditionCode = ShipmentGPDV2.ExternalServiceEditionCode;
-            ship.ReporteeNumber = ShipmentGPDV2.ReporteeNumber;
-            if (ShipmentGPDV2.PrefillBEList != null)
+            ship.PrefillBeList = new PreFillRequestBEList();
+            ship.ExternalServiceCode = ShipmentGpdv2.ExternalServiceCode;
+            ship.ExternalServiceEditionCode = ShipmentGpdv2.ExternalServiceEditionCode;
+            ship.ReporteeNumber = ShipmentGpdv2.ReporteeNumber;
+            if (ShipmentGpdv2.PrefillBeList != null)
             {
-                foreach (string s in ShipmentGPDV2.PrefillBEList)
+                foreach (string s in ShipmentGpdv2.PrefillBeList)
                 {
-                    ship.PrefillBEList.Add(s);
+                    ship.PrefillBeList.Add(s);
                 }
             }
             try
             {
-                ResultGPDV2 = peusepFunc.GetPrefillDataV2(ship);
-                SetViewedItem(ResultGPDV2, "Result from GetPrefillDataV2");
+                ResultGpdv2 = _peusepFunc.GetPrefillDataV2(ship);
+                SetViewedItem(ResultGpdv2, "Result from GetPrefillDataV2");
             }
             catch (Exception ex)
             {
@@ -97,23 +90,23 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
         #region GPDClick
         private void btn_GPDShowShip_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentGPD, "Shipment for GetPrefillData");
+            SetViewedItem(ShipmentGpd, "Shipment for GetPrefillData");
         }
 
         private void btn_GPDLoadShip_Click(object sender, EventArgs e)
         {
-            ShipmentGPD = (GetPrefillDataShipmentBase)Functionality.IOFunctionality.GeneralizedLoadFile(ShipmentGPD);
+            ShipmentGpd = (GetPrefillDataShipmentBase)Functionality.IoFunctionality.GeneralizedLoadFile(ShipmentGpd);
         }
 
         private void btn_GPDShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultGPD, "Result from GetPrefillData");
+            SetViewedItem(ResultGpd, "Result from GetPrefillData");
         }
 
         private void btn_GPDSaveShip_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentGPD);
-            Functionality.IOFunctionality.GeneralizedSaveFile(ShipmentGPD);
+            ClearBasicShipmentsettings(ShipmentGpd);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ShipmentGpd);
         }
 
         private void btn_GPDInvoke_Click(object sender, EventArgs e)
@@ -123,44 +116,44 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void btn_GPDSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultGPD);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultGpd);
         }
 #endregion
         #region GPDV2Clicks
         private void btn_GPDV2ShowShip_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ShipmentGPDV2, "Shipment for GetPrefillDataV2");
+            SetViewedItem(ShipmentGpdv2, "Shipment for GetPrefillDataV2");
         }
 
         private void btn_GPDV2LoadShip_Click(object sender, EventArgs e)
         {
             GetPrefillDataV2Shipment ship = new GetPrefillDataV2Shipment();
-            ship = Functionality.IOFunctionality.GeneralizedLoadFile(ship);
-            ShipmentGPDV2 = ListToArray(ship);
-            SetViewedItem(ShipmentGPDV2, "Shipment for GetPrefillDataV2");
+            ship = Functionality.IoFunctionality.GeneralizedLoadFile(ship);
+            ShipmentGpdv2 = ListToArray(ship);
+            SetViewedItem(ShipmentGpdv2, "Shipment for GetPrefillDataV2");
         }
 
         private void btn_GPDV2ShowResult_Click(object sender, EventArgs e)
         {
-            SetViewedItem(ResultGPDV2, "Result from GetPrefillDataV2");
+            SetViewedItem(ResultGpdv2, "Result from GetPrefillDataV2");
         }
 
         private void btn_GPDV2SaveShip_Click(object sender, EventArgs e)
         {
-            ClearBasicShipmentsettings(ShipmentGPDV2);
+            ClearBasicShipmentsettings(ShipmentGpdv2);
             GetPrefillDataV2Shipment ship = ArrayToList();
-            Functionality.IOFunctionality.GeneralizedSaveFile(ship);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ship);
         }
 
         private GetPrefillDataV2Shipment ArrayToList()
         {
             GetPrefillDataV2Shipment ship = new GetPrefillDataV2Shipment();
-            ship.ExternalServiceCode = ShipmentGPDV2.ExternalServiceCode;
-            ship.ExternalServiceEditionCode = ShipmentGPDV2.ExternalServiceEditionCode;
-            ship.ReporteeNumber = ShipmentGPDV2.ReporteeNumber;
-            foreach (string s in ShipmentGPDV2.PrefillBEList)
+            ship.ExternalServiceCode = ShipmentGpdv2.ExternalServiceCode;
+            ship.ExternalServiceEditionCode = ShipmentGpdv2.ExternalServiceEditionCode;
+            ship.ReporteeNumber = ShipmentGpdv2.ReporteeNumber;
+            foreach (string s in ShipmentGpdv2.PrefillBeList)
             {
-                ship.PrefillBEList.Add(s);
+                ship.PrefillBeList.Add(s);
             }
             return ship;
         }
@@ -171,7 +164,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
             ship.ExternalServiceCode = inship.ExternalServiceCode;
             ship.ExternalServiceEditionCode = inship.ExternalServiceEditionCode;
             ship.ReporteeNumber = inship.ReporteeNumber;
-            ship.PrefillBEList = inship.PrefillBEList.ToArray();
+            ship.PrefillBeList = inship.PrefillBeList.ToArray();
             return ship;
         }
 
@@ -182,7 +175,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 
         private void btn_GPDV2SaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(ResultGPDV2);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ResultGpdv2);
         }
 #endregion
 

@@ -2,19 +2,18 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Xml;
-
-using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService;
 
 namespace EC_Endpoint_Client.Functionality
 {
-    class IOFunctionality
+    class IoFunctionality
     {
-        private const string FILTER = "Text File|*.txt|XML file|*.xml|All Files|*.*";
+        private const string Filter = "Text File|*.txt|XML file|*.xml|All Files|*.*";
 
         public static void GeneralizedSaveFile(object obj)
         {
-            SaveFileDialog sfd = new SaveFileDialog { Filter = FILTER };
+            SaveFileDialog sfd = new SaveFileDialog { Filter = Filter };
 
             DialogResult result = sfd.ShowDialog();
             if (result == DialogResult.OK)
@@ -34,9 +33,9 @@ namespace EC_Endpoint_Client.Functionality
             file.Close();
         }
 
-        public static void WriteStreamToFile(Stream input)
+        public static string WriteStreamToFile(Stream input)
         {
-            SaveFileDialog sfd = new SaveFileDialog { Filter = FILTER };
+            SaveFileDialog sfd = new SaveFileDialog { Filter = Filter };
 
             DialogResult result = sfd.ShowDialog();
             if (result == DialogResult.OK)
@@ -46,6 +45,8 @@ namespace EC_Endpoint_Client.Functionality
                     CopyStream(input, file);
                 }
             }
+
+            return sfd.FileName;
         }
 
         private static void CopyStream(Stream input, Stream output)
@@ -160,9 +161,9 @@ namespace EC_Endpoint_Client.Functionality
                     return obj;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                
+                // ignored
             }
 
             return obj;

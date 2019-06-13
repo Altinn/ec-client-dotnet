@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.PrefillAgency;
+using EC_Endpoint_Client.Service_References.PrefillAgency;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillAgency
 {
@@ -19,16 +15,16 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillAgency
         }
         
         public PrefillFormTask PrefillFormTask { get; set; }
-        public string ExternalBatchID { get; set; }
+        public string ExternalBatchId { get; set; }
         public bool DoSaveFormTask { get; set; }
         public bool DoInstantiateFormTask { get; set; }
-        public int? CaseID { get; set; }
+        public int? CaseId { get; set; }
         public DateTime? DueDate { get; set; }
     }
 
     public class SubmitPrefillFormTaskShipment : BaseShipment
     {
-        public string ExternalBatchID { get; set; }
+        public string ExternalBatchId { get; set; }
         public PrefillFormTaskDetails PrefillFormTask { get; set; }
     }
 }

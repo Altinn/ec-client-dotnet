@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
-using System.Data;
-using System.Drawing;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.ServiceModel.Configuration;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Configuration;
 
-namespace EC_Endpoint_Client.Forms
+namespace EC_Endpoint_Client.BaseForms
 {
     public partial class SelectorBaseForm : Form
     {
@@ -32,10 +25,10 @@ namespace EC_Endpoint_Client.Forms
             SelectedCertificate = cert;
         }
 
-        protected virtual void SetClientValues(ClientBaseForm cbf, string contractName)
+        protected virtual void SetClientValues(BaseForms.ClientBaseForm cbf, string contractName)
         {
-            cbf.SelectedCertificate = this.SelectedCertificate;
-            cbf.Thumbprint = this.Thumbprint;
+            cbf.SelectedCertificate = SelectedCertificate;
+            cbf.Thumbprint = Thumbprint;
             cbf.EndPointConfigurationNameList = GetEndPoints(contractName);
             if(State != null)
                 cbf.SetUserState(State);
@@ -44,38 +37,29 @@ namespace EC_Endpoint_Client.Forms
 
         void cbf_FormClosing(object sender, FormClosingEventArgs e)
         {
-            EndPointState newState = ((ClientBaseForm)sender).GetUserState();
+            EndPointState newState = ((BaseForms.ClientBaseForm)sender).GetUserState();
             if (State == null)
                 State = newState;
             else
             {
                 State.SelectedEndPointName = newState.SelectedEndPointName;
-                State.UserName = newState.UserName != null ? newState.UserName : State.UserName;
-                State.Password = newState.Password != null ? newState.Password : State.Password;
-                State.AgencyUserName = newState.AgencyUserName != null ? newState.AgencyUserName : State.AgencyUserName;
-                State.AgencyPassword = newState.AgencyPassword != null ? newState.AgencyPassword : State.AgencyPassword;
+                State.UserName = newState.UserName ?? State.UserName;
+                State.Password = newState.Password ?? State.Password;
+                State.AgencyUserName = newState.AgencyUserName ?? State.AgencyUserName;
+                State.AgencyPassword = newState.AgencyPassword ?? State.AgencyPassword;
             }
         }
 
         public virtual List<string> GetEndPoints(string contract)
         {
-
-            var clientSection = (ClientSection)ConfigurationManager.GetSection("system.serviceModel/client");
-            var list = new List<string>();
-
-            foreach (ChannelEndpointElement ep in clientSection.Endpoints)
-            {
-                if (ep.Contract == contract)
-                    list.Add(ep.Name);
-            }
-            return list;
+            return (from EnvironmentUrl eu in EcClientConfiguration.GetConfig().EnvironmentUrlCollection where !eu.IgnoreInWcf.HasValue || !eu.IgnoreInWcf.Value select eu.Name).ToList();
         }
 
-        public virtual void ShowMethod1(System.Windows.Forms.Form form)
+        public virtual void ShowMethod1(Form form)
         {
-            this.Hide();
+            Hide();
             form.ShowDialog();
-            this.Show();
+            Show();
         }
     }
 }

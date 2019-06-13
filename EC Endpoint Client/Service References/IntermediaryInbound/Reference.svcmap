@@ -18,12 +18,12 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://at01.ai.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="IntermediaryInboundExternalEC.wsdl" MetadataType="Wsdl" ID="af3d86f9-ce66-4266-9565-ed6f202064a1" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl" />
-    <MetadataFile FileName="IntermediaryInboundExternalEC1.wsdl" MetadataType="Wsdl" ID="080dbdd2-b46b-4557-8a1b-cc8673e1cf6d" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl=wsdl0" />
-    <MetadataFile FileName="IntermediaryInboundExternalEC.disco" MetadataType="Disco" ID="0658cb5a-5318-40ed-ba54-7263d445022d" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?disco" />
+    <MetadataFile FileName="IntermediaryInboundExternalEC1.disco" MetadataType="Disco" ID="6e1b1a82-1773-4c6b-9b45-1b88fae2eecb" SourceId="1" SourceUrl="https://at01.ai.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?disco" />
+    <MetadataFile FileName="IntermediaryInboundExternalEC2.wsdl" MetadataType="Wsdl" ID="8ab7f4f9-b277-479c-a334-7787b12ed11f" SourceId="1" SourceUrl="https://at01.ai.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="IntermediaryInboundExternalEC21.wsdl" MetadataType="Wsdl" ID="e9dc1463-0597-4d4b-80af-2e5cf597ae8d" SourceId="1" SourceUrl="https://at01.ai.basefarm.net/IntermediaryExternal/IntermediaryInboundExternalEC.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

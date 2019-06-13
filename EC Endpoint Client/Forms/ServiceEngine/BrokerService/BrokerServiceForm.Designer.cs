@@ -1,4 +1,4 @@
-﻿namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerServiceForm
+﻿namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerService
 {
     partial class BrokerServiceForm
     {

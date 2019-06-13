@@ -1,6 +1,8 @@
-﻿namespace EC_Endpoint_Client.Forms
+﻿using System.Windows.Forms;
+
+namespace EC_Endpoint_Client.BaseForms
 {
-    partial class ClientBaseForm
+    public partial class ClientBaseForm : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +117,7 @@
             // 
             // soapMessagesToolStripMenuItem
             // 
-            this.soapMessagesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.soapMessagesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.requestToolStripMenuItem,
             this.replyToolStripMenuItem});
             this.soapMessagesToolStripMenuItem.Enabled = false;
@@ -125,7 +127,7 @@
             // 
             // requestToolStripMenuItem
             // 
-            this.requestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.requestToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] {
             this.showToolStripMenuItem,
             this.saveToolStripMenuItem});
             this.requestToolStripMenuItem.Name = "requestToolStripMenuItem";

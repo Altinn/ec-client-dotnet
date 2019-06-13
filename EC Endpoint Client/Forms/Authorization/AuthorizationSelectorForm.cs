@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace EC_Endpoint_Client.Forms.Authorization
 {
-    public partial class AuthorizationSelectorForm : SelectorBaseForm
+    public partial class AuthorizationSelectorForm : BaseForms.SelectorBaseForm
     {
         public AuthorizationSelectorForm()
         {

@@ -1,9 +1,11 @@
 ﻿using System;
+using EC_Endpoint_Client.Forms.ServiceEngine.ContextHandler;
 using EC_Endpoint_Client.Forms.ServiceEngine.Correspondence;
+using EC_Endpoint_Client.Forms.ServiceEngine.LookUp;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine
 {
-    public partial class ServiceEngineSelectorForm : SelectorBaseForm
+    public partial class ServiceEngineSelectorForm : BaseForms.SelectorBaseForm
     {
         public ServiceEngineSelectorForm()
         {
@@ -96,7 +98,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine
         private void button11_Click(object sender, EventArgs e)
         {
             //BrokerService
-            BrokerServiceForm.BrokerServiceForm bsf = new BrokerServiceForm.BrokerServiceForm();
+            BrokerService.BrokerServiceForm bsf = new BrokerService.BrokerServiceForm();
             SetClientValues(bsf, "BrokerService.IBrokerServiceExternalEC");
             ShowMethod1(bsf);
         }
@@ -104,7 +106,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine
         private void button12_Click(object sender, EventArgs e)
         {
             //LookUp
-            LookUpForm.LookUpForm luf = new LookUpForm.LookUpForm();
+            LookUpForm luf = new LookUpForm();
             SetClientValues(luf, "LookUp.ILookUpExternalEC");
             ShowMethod1(luf);
         }

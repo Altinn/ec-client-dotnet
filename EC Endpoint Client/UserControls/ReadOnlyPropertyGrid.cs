@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EC_Endpoint_Client.UserControls
@@ -19,7 +13,7 @@ namespace EC_Endpoint_Client.UserControls
             set
             {
                 _readOnly = value;
-                this.SetObjectAsReadOnly(this.SelectedObject, _readOnly);
+                SetObjectAsReadOnly(SelectedObject, _readOnly);
             }
         }
 
@@ -30,16 +24,16 @@ namespace EC_Endpoint_Client.UserControls
 
         protected override void OnSelectedObjectsChanged(EventArgs e)
         {
-            this.SetObjectAsReadOnly(this.SelectedObject, this._readOnly);
+            SetObjectAsReadOnly(SelectedObject, _readOnly);
             base.OnSelectedObjectsChanged(e);
         }
 
         private void SetObjectAsReadOnly(object selectedObject, bool isReadOnly)
         {
-            if (this.SelectedObject != null)
+            if (SelectedObject != null)
             {
-                TypeDescriptor.AddAttributes(this.SelectedObject, new Attribute[] { new ReadOnlyAttribute(_readOnly) });
-                this.Refresh();
+                TypeDescriptor.AddAttributes(SelectedObject, new Attribute[] { new ReadOnlyAttribute(_readOnly) });
+                Refresh();
             }
         }
     }

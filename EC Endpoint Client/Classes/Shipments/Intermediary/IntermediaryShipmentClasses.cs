@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
-using EC_Endpoint_Client.IntermediaryInbound;
-using EC_Endpoint_Client.IntermediaryInboundStreamed;
+using EC_Endpoint_Client.Service_References.IntermediaryInbound;
 
-namespace EC_Endpoint_Client.Classes.Shipments
+namespace EC_Endpoint_Client.Classes.Shipments.Intermediary
 {
     public class IntermediaryInboundShipment : BaseShipment
     {
@@ -19,6 +13,17 @@ namespace EC_Endpoint_Client.Classes.Shipments
             FormTaskShipment.FormTasks = new FormTask();
         }
         public FormTaskShipmentBE FormTaskShipment { get; set; }
+    }
+
+    public class UpdateFormDataInput : BaseShipment
+    {
+        public UpdateFormDataInput()
+        {
+            FormTaskUpdate = new FormTaskUpdate();
+            FormTaskUpdate.FormUpdateList = new FormUpdateList();
+        }
+
+        public FormTaskUpdate FormTaskUpdate{ get; set; }
     }
 
     public class SubmissionStatusWrapper
@@ -32,7 +37,7 @@ namespace EC_Endpoint_Client.Classes.Shipments
         {
             SignatureList = new SignatureList();
         }
-        public int ReporteeElementID { get; set; }
+        public int ReporteeElementId { get; set; }
         [XmlIgnore]
         public Signature[] Signatures
         {
@@ -48,7 +53,7 @@ namespace EC_Endpoint_Client.Classes.Shipments
         }
         [Browsable(false)]
         public SignatureList SignatureList { get; set; }
-        public int LanguageID { get; set; }
+        public int LanguageId { get; set; }
     }
 
     public class IntermediaryStreamedSubmitAttachmentShipment : BaseShipment
@@ -64,7 +69,7 @@ namespace EC_Endpoint_Client.Classes.Shipments
         [Category("Shipment Data")]
         public string Name { get; set; }
         [Category("Shipment Data")]
-        public int ReporteeElementID { get; set; }
+        public int ReporteeElementId { get; set; }
         [Category("Info")]
         public bool AttachmentDataLoaded
         {
@@ -89,44 +94,21 @@ namespace EC_Endpoint_Client.Classes.Shipments
     {
         [Browsable(true)]
         [XmlIgnore]
-        public int _ParentReceiptID;
+        public int ParentReceiptId;
         [Browsable(true)]
         [XmlIgnore]
-        public string _ReceiptHistory;
+        public string ReceiptHistory;
         [Browsable(true)]
         [XmlIgnore]
-        public int _ReceiptID;
+        public int ReceiptId;
         [Browsable(true)]
         [XmlIgnore]
-        public string _ReceiptStatusCode;
+        public string ReceiptStatusCode;
         [Browsable(true)]
         [XmlIgnore]
-        public string _ReceiptText;
+        public string ReceiptText;
         [Browsable(true)]
         [XmlIgnore]
-        public string _ReceiptTypeName;
-        public int ParentReceiptID
-        { 
-            get { return _ParentReceiptID; }
-            set { _ParentReceiptID = value; }
-        }
-        public string ReceiptHistory 
-        { 
-            get { return _ReceiptHistory; }
-            set { _ReceiptHistory = value; }
-        }
-        public int ReceiptID { 
-            get { return _ReceiptID; }
-            set { _ReceiptID = value; }
-        }
-        public string ReceiptStatusCode { get { return _ReceiptStatusCode; }
-            set { _ReceiptStatusCode = value; }
-        }
-        public string ReceiptText { get { return _ReceiptText; }
-            set { _ReceiptText = value; }
-        }
-        public string ReceiptTypeName { get { return _ReceiptTypeName; }
-            set { _ReceiptTypeName = value; }
-        }
+        public string ReceiptTypeName;
     }
 }

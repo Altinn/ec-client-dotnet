@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EC_Endpoint_Client.Classes;
-using EC_Endpoint_Client.Classes.Shipments.Intermediary.Receipt;
-using EC_Endpoint_Client.Receipt;
+﻿using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Intermediary;
+using EC_Endpoint_Client.Service_References.Receipt;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {
@@ -31,7 +26,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.GetReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSearch);
         }
 
-        public Receipt.Receipt GetReceiptV2(ReceiptV2SearchExternalShipment shipment)
+        public Receipt GetReceiptV2(ReceiptV2SearchExternalShipment shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptGetReceiptV2";
@@ -59,7 +54,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.SaveReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSave);
         }
 
-        public Receipt.Receipt UpdateReceipt(ReceiptUpdateExternalShipment shipment)
+        public Receipt UpdateReceipt(ReceiptUpdateExternalShipment shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptUpdateReceipt";

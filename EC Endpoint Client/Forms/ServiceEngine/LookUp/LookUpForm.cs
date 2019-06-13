@@ -1,16 +1,16 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using EC_Endpoint_Client.Classes;
+using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.LookUp;
-using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.LookUp;
+using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.LookUp;
+using EC_Endpoint_Client.Service_References.LookUp;
 
-namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
+namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUp
 {
-    public partial class LookUpForm : ClientBaseForm
+    public partial class LookUpForm : BaseForms.ClientBaseForm
     {
-        private LookUpEndPointFunction lookUpEndPointFunction;
+        private LookUpEndPointFunction _lookUpEndPointFunction;
 
         public LookUpShipment LookUpShipment;
 
@@ -20,8 +20,8 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
         public LookUpForm()
         {
             InitializeComponent();
-            lookUpEndPointFunction = new LookUpEndPointFunction();
-            lookUpEndPointFunction.ReturnMessageXml += ReturnMessageXmlHandler;
+            _lookUpEndPointFunction = new LookUpEndPointFunction();
+            _lookUpEndPointFunction.ReturnMessageXml += ReturnMessageXmlHandler;
 
             ShipmentTest = new BaseShipment();
             LookUpShipment = new LookUpShipment();
@@ -39,7 +39,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
             SetBasicShipmentSettings(ShipmentTest);
             try
             {
-                lookUpEndPointFunction.Test(ShipmentTest);
+                _lookUpEndPointFunction.Test(ShipmentTest);
                 SetViewedItem("OK", "Test ran OK");
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
-                LookUpResult = lookUpEndPointFunction.LookUp(LookUpShipment);
+                LookUpResult = _lookUpEndPointFunction.LookUp(LookUpShipment);
                 SetViewedItem(LookUpResult, "LookUpResult");
             }
             catch (Exception ex)
@@ -83,12 +83,12 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
         private void btn_LookUpSaveShipment_Click(object sender, EventArgs e)
         {
             ClearBasicShipmentsettings(LookUpShipment);
-            Functionality.IOFunctionality.GeneralizedSaveFile(LookUpShipment);
+            Functionality.IoFunctionality.GeneralizedSaveFile(LookUpShipment);
         }
 
         private void btn_LookUpLoadShipment_Click(object sender, EventArgs e)
         {
-            LookUpShipment = (LookUpShipment)Functionality.IOFunctionality.GeneralizedLoadFile(LookUpShipment);
+            LookUpShipment = (LookUpShipment)Functionality.IoFunctionality.GeneralizedLoadFile(LookUpShipment);
             SetViewedItem(LookUpShipment, "Shipment for LookUpShipment");
         }
 
@@ -104,7 +104,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.LookUpForm
 
         private void btn_LookUpSaveResult_Click(object sender, EventArgs e)
         {
-            Functionality.IOFunctionality.GeneralizedSaveFile(LookUpResult);
+            Functionality.IoFunctionality.GeneralizedSaveFile(LookUpResult);
         }
         #endregion
     }
