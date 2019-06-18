@@ -2,6 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
 using EC_Endpoint_Client.Classes.Shipments;
+using EC_Endpoint_Client.Classes.Shipments.Archive;
 using EC_Endpoint_Client.Service_References.ReporteeArchive;
 using EC_Endpoint_Client.Service_References.ReporteeArchiveStreamed;
 
@@ -35,6 +36,13 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
             var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
             OperationContext = "RAGetReporteeArchiveAttachment";
             return client.GetAttachmentDataEC(shipment.Username, shipment.Password, shipment.AttachmentId);
+        }
+
+        public ArchivedCorrespondence GetReporteeArchiveCorrespondence(ReporteeArchiveCorrespondenceShipment shipment)
+        {
+            var client = GenerateReporteeArchiveProxy(shipment.EndpointName, shipment.Certificate);
+            OperationContext = "RAGetReporteeArchiveCorrespondence";
+            return client.GetArchivedCorrespondenceEC(shipment.Username, shipment.Password, shipment.ArchiveId);
         }
 
         public void TestReporteeArchive(BaseShipment shipment)

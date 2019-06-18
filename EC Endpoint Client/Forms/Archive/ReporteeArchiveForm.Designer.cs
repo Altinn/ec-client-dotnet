@@ -35,6 +35,8 @@
             this.getArchivedLookupController = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.getAttachmentDataController = new EC_Endpoint_Client.UserControls.ActionHolderControl();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.getArchivedCorrespondenceController = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.testController = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.servicePanel.SuspendLayout();
@@ -42,6 +44,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +57,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
@@ -119,6 +123,25 @@
             this.getAttachmentDataController.Size = new System.Drawing.Size(411, 337);
             this.getAttachmentDataController.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.getArchivedCorrespondenceController);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(417, 343);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "GetArchivedCorrespondence";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // getArchivedCorrespondenceController
+            // 
+            this.getArchivedCorrespondenceController.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.getArchivedCorrespondenceController.Location = new System.Drawing.Point(3, 3);
+            this.getArchivedCorrespondenceController.Name = "getArchivedCorrespondenceController";
+            this.getArchivedCorrespondenceController.Size = new System.Drawing.Size(411, 337);
+            this.getArchivedCorrespondenceController.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.testController);
@@ -150,6 +173,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,5 +191,7 @@
         private EC_Endpoint_Client.UserControls.ActionHolderControl getArchivedLookupController;
         private EC_Endpoint_Client.UserControls.ActionHolderControl getAttachmentDataController;
         private EC_Endpoint_Client.UserControls.ActionHolderControl testController;
+        private System.Windows.Forms.TabPage tabPage5;
+        private EC_Endpoint_Client.UserControls.ActionHolderControl getArchivedCorrespondenceController;
     }
 }

@@ -19,4 +19,9 @@
     {
         public int ReporteeElementId { get; set; }
     }
+
+    public class ReporteeArchiveCorrespondenceShipment : BaseShipment
+    {
+        public int ArchiveId { get; set; }
+    }
 }

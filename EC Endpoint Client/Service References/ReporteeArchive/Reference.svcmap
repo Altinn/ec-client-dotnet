@@ -19,11 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://at03.ai.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReporteeArchiveExternalEC.wsdl" MetadataType="Wsdl" ID="c7cc96ba-d679-40b0-ba11-468a9ccffd39" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc?wsdl" />
-    <MetadataFile FileName="ReporteeArchiveExternalEC.disco" MetadataType="Disco" ID="d42671e7-c225-4174-9b8b-611980a8a89e" SourceId="1" SourceUrl="https://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc?disco" />
+    <MetadataFile FileName="ReporteeArchiveExternalEC.wsdl" MetadataType="Wsdl" ID="10e2a535-8dcf-40ff-98da-032ca53f87ff" SourceId="1" SourceUrl="https://at03.ai.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

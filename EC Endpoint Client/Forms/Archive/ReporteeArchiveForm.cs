@@ -14,11 +14,13 @@ namespace EC_Endpoint_Client.Forms.Archive
         public ArchivedFormTaskV2 ArchivedFormTask { get; set; }
         public AttachmentBEV2 Attachment { get; set; }
         public ArchivedLookupExternal ArchivedLookup { get; set; }
+        public ArchivedCorrespondence ArchivedCorrespondence { get; set; }
         private ReporteeArchiveEndPointFunctionality RepArchFunc { get; set; }
         public ReporteeArchiveShipment GetFtShipment { get; set; }
         public ReporteeArchiveLookupShipment GetLuShipment { get; set; }
         private AttachmentBaseShipment AttachmentShipment { get; set; }
         private ArchiveBaseShipment ArchiveBaseShipment { get; set; }
+        private ReporteeArchiveCorrespondenceShipment ReporteeArchiveCorrespondenceShipment { get; set; }
         private BaseShipment BaseShipment { get; set; }
         #endregion
         public ReporteeArchiveForm()
@@ -35,6 +37,8 @@ namespace EC_Endpoint_Client.Forms.Archive
             AttachmentShipment = new AttachmentBaseShipment();
             ArchiveBaseShipment = new ArchiveBaseShipment();
             BaseShipment = new BaseShipment();
+            ReporteeArchiveCorrespondenceShipment = new ReporteeArchiveCorrespondenceShipment();
+            ArchivedCorrespondence = new ArchivedCorrespondence();
             AssignActions();
         }
 
@@ -43,6 +47,7 @@ namespace EC_Endpoint_Client.Forms.Archive
             AssignAction(getArchFTctrl, RepArchFunc.GetReporteeArchiveArchivedFormTaskV2, ArchiveBaseShipment, ArchivedFormTask, "GetArchivedFormTask");
             AssignAction(getArchivedLookupController, RepArchFunc.GetReporteeArchiveLookUp, ArchiveBaseShipment, ArchivedLookup, "GetArchiveLookup");
             AssignAction(getAttachmentDataController, RepArchFunc.GetReporteeArchiveAttachment, AttachmentShipment, Attachment, "GetAttachment");
+            AssignAction(getArchivedCorrespondenceController, RepArchFunc.GetReporteeArchiveCorrespondence, ReporteeArchiveCorrespondenceShipment, ArchivedCorrespondence, "GetArchivedCorrespondence");
             AssignAction(testController, RepArchFunc.TestReporteeArchive, BaseShipment, "Test");
         }
 
@@ -58,6 +63,7 @@ namespace EC_Endpoint_Client.Forms.Archive
             TypeDescriptor.AddAttributes(typeof(ArchivedLookupExternal), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ArchivedAttachmentBEV2List), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ArchivedAttachmentBEV2), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(ArchivedCorrespondence), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="ruZcK0fVvthIYOo+c1tMMF4IIzU=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="hUqbryvqLJVnRDJGpAIwAu9ZtFE=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="CustomBinding_IReporteeArchiveExternalEC">
       <properties>
@@ -719,10 +719,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="CustomBinding_IReporteeArchiveExternalEC" contract="ReporteeArchive.IReporteeArchiveExternalEC" bindingType="customBinding" address="http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" bindingConfiguration="CustomBinding_IReporteeArchiveExternalEC">
+    <endpoint name="CustomBinding_IReporteeArchiveExternalEC" contract="ReporteeArchive.IReporteeArchiveExternalEC" bindingType="customBinding" address="http://at03.ai.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc" bindingConfiguration="CustomBinding_IReporteeArchiveExternalEC">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://st01.altinn.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc</serializedValue>
+          <serializedValue>http://at03.ai.basefarm.net/ArchiveExternal/ReporteeArchiveExternalEC.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -1050,6 +1050,9 @@
     <None Include="Service References\ReporteeArchiveStreamed\ReporteeArchiveExternalStreamedEC4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\ReporteeArchive\EC_Endpoint_Client.ReporteeArchive.ArchivedCorrespondence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ReporteeArchive\EC_Endpoint_Client.ReporteeArchive.ArchivedFormTaskV2.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1057,6 +1060,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeArchive\EC_Endpoint_Client.ReporteeArchive.AttachmentBEV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchive\EC_Endpoint_Client.ReporteeArchive.GetArchivedCorrespondenceECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeArchive\EC_Endpoint_Client.ReporteeArchive.GetArchivedFormTaskECResponse.datasource">
@@ -1214,9 +1220,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ReporteeArchive\ReporteeArchiveExternalEC.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReporteeArchive\configuration91.svcinfo" />
