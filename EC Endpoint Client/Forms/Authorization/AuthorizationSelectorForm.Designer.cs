@@ -28,37 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_AuthorizationAdministration = new System.Windows.Forms.Button();
+            this.btn_AuthorizationToken = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_AuthorizationAdministration
             // 
-            this.button1.Location = new System.Drawing.Point(13, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "AuthorizationAdministration";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_AuthorizationAdministration.Location = new System.Drawing.Point(13, 13);
+            this.btn_AuthorizationAdministration.Name = "btn_AuthorizationAdministration";
+            this.btn_AuthorizationAdministration.Size = new System.Drawing.Size(141, 23);
+            this.btn_AuthorizationAdministration.TabIndex = 0;
+            this.btn_AuthorizationAdministration.Text = "AuthorizationAdministration";
+            this.btn_AuthorizationAdministration.UseVisualStyleBackColor = true;
+            this.btn_AuthorizationAdministration.Click += new System.EventHandler(this.btn_AuthorizationAdministration_Click);
             // 
-            // button2
+            // btn_AuthorizationToken
             // 
-            this.button2.Location = new System.Drawing.Point(13, 42);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "AuthorizationToken";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_AuthorizationToken.Location = new System.Drawing.Point(13, 42);
+            this.btn_AuthorizationToken.Name = "btn_AuthorizationToken";
+            this.btn_AuthorizationToken.Size = new System.Drawing.Size(141, 23);
+            this.btn_AuthorizationToken.TabIndex = 1;
+            this.btn_AuthorizationToken.Text = "AuthorizationToken";
+            this.btn_AuthorizationToken.UseVisualStyleBackColor = true;
+            this.btn_AuthorizationToken.Click += new System.EventHandler(this.btn_AuthorizationToken_Click);
             // 
             // AuthorizationSelectorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(232, 72);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_AuthorizationToken);
+            this.Controls.Add(this.btn_AuthorizationAdministration);
             this.Name = "AuthorizationSelectorForm";
             this.Text = "AuthorizationSelectorForm";
             this.ResumeLayout(false);
@@ -67,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_AuthorizationAdministration;
+        private System.Windows.Forms.Button btn_AuthorizationToken;
     }
 }

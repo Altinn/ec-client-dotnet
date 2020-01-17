@@ -10,6 +10,8 @@ namespace EC_Endpoint_Client.Configuration
         public string Environment => this["address"] as string;
         [ConfigurationProperty("ignoreinwcf", IsRequired = false)]
         public bool? IgnoreInWcf => this["ignoreinwcf"] as bool?;
+        [ConfigurationProperty("usetestmode", IsRequired = false)]
+        public bool? UseTestMode => this["usetestmode"] as bool?;
     }
     public class EnvironmentUrlCollection : ConfigurationElementCollection
     {

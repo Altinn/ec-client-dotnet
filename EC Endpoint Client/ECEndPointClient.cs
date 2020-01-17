@@ -35,21 +35,26 @@ namespace EC_Endpoint_Client
 
         public override void HandleCertificateSet()
         {
-            button1.Enabled = SelectedCertificate != null;
-            button2.Enabled = SelectedCertificate != null;
-            button4.Enabled = SelectedCertificate != null;
-            btn_AuthorizationAdministration.Enabled = SelectedCertificate != null;
+            btn_IntermediaryECEndpoint.Enabled = SelectedCertificate != null;
+            btn_ArchiveECEndpoint.Enabled = SelectedCertificate != null;
+            btn_ServiceEngineECEndPoint.Enabled = SelectedCertificate != null;
+            btn_AuthorizationECEndPoint.Enabled = SelectedCertificate != null;
+
+            btn_IntermediaryEC2Endpoint.Enabled = SelectedCertificate != null;
+            btn_ArchiveEC2Endpoint.Enabled = SelectedCertificate != null;
+            btn_ServiceEngineEC2EndPoint.Enabled = SelectedCertificate != null;
+            btn_AuthorizationEC2EndPoint.Enabled = SelectedCertificate != null;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_SelectCertificate_Click(object sender, EventArgs e)
         {
             ShowCertificateForm();
         }
 
         #region endpoint selector form activation
-        private void button2_Click_1(object sender, EventArgs e)
+        private void btn_ArchiveECEndpoint_Click(object sender, EventArgs e)
         {
-            ArchiveEndPointSelectorForm aepsForm = new ArchiveEndPointSelectorForm(Thumbprint, SelectedCertificate);
+            ArchiveEndPointSelectorForm aepsForm = new ArchiveEndPointSelectorForm(Thumbprint, SelectedCertificate, false);
             Hide();
             aepsForm.SelectedCertificate = SelectedCertificate;
             aepsForm.Thumbprint = Thumbprint;
@@ -59,11 +64,9 @@ namespace EC_Endpoint_Client
             Show();
         }
 
-        private void btn_AuthorizationAdministration_Click(object sender, EventArgs e)
+        private void btn_AuthorizationECEndPoint_Click(object sender, EventArgs e)
         {
-            Forms.Authorization.AuthorizationSelectorForm asF = new Forms.Authorization.AuthorizationSelectorForm();
-            asF.SelectedCertificate = SelectedCertificate;
-            asF.Thumbprint = Thumbprint;
+            Forms.Authorization.AuthorizationSelectorForm asF = new Forms.Authorization.AuthorizationSelectorForm(Thumbprint, SelectedCertificate, false);
             asF.State = State;
             asF.FormClosing += SelectorFormClosing;
             Hide();
@@ -71,11 +74,9 @@ namespace EC_Endpoint_Client
             Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btn_IntermediaryECEndpoint_Click(object sender, EventArgs e)
         {
-            Forms.Intermediary.IntermediarySelectorForm isf = new Forms.Intermediary.IntermediarySelectorForm();
-            isf.SelectedCertificate = SelectedCertificate;
-            isf.Thumbprint = Thumbprint;
+            Forms.Intermediary.IntermediarySelectorForm isf = new Forms.Intermediary.IntermediarySelectorForm(Thumbprint, SelectedCertificate, false);
             isf.State = State;
             isf.FormClosing += SelectorFormClosing;
             Hide();
@@ -83,11 +84,9 @@ namespace EC_Endpoint_Client
             Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_ServiceEngineECEndPoint_Click(object sender, EventArgs e)
         {
-            Forms.ServiceEngine.ServiceEngineSelectorForm ssf = new Forms.ServiceEngine.ServiceEngineSelectorForm();
-            ssf.SelectedCertificate = SelectedCertificate;
-            ssf.Thumbprint = Thumbprint;
+            Forms.ServiceEngine.ServiceEngineSelectorForm ssf = new Forms.ServiceEngine.ServiceEngineSelectorForm(Thumbprint, SelectedCertificate, false);
             ssf.State = State;
             ssf.FormClosing += SelectorFormClosing;
             Hide();
@@ -116,5 +115,46 @@ namespace EC_Endpoint_Client
 
         #endregion
 
+        private void btn_ArchiveEC2Endpoint_Click(object sender, EventArgs e)
+        {
+            ArchiveEndPointSelectorForm aepsForm = new ArchiveEndPointSelectorForm(Thumbprint, SelectedCertificate, true);
+            Hide();
+            aepsForm.SelectedCertificate = SelectedCertificate;
+            aepsForm.Thumbprint = Thumbprint;
+            aepsForm.State = State;
+            aepsForm.FormClosing += SelectorFormClosing;
+            aepsForm.ShowDialog();
+            Show();
+        }
+
+        private void btn_AuthorizationEC2EndPoint_Click(object sender, EventArgs e)
+        {
+            Forms.Authorization.AuthorizationSelectorForm asF = new Forms.Authorization.AuthorizationSelectorForm(Thumbprint, SelectedCertificate, true);
+            asF.State = State;
+            asF.FormClosing += SelectorFormClosing;
+            Hide();
+            asF.ShowDialog();
+            Show();
+        }
+
+        private void btn_ServiceEngineEC2EndPoint_Click(object sender, EventArgs e)
+        {
+            Forms.ServiceEngine.ServiceEngineSelectorForm ssf = new Forms.ServiceEngine.ServiceEngineSelectorForm(Thumbprint, SelectedCertificate, true);
+            ssf.State = State;
+            ssf.FormClosing += SelectorFormClosing;
+            Hide();
+            ssf.ShowDialog();
+            Show();
+        }
+
+        private void btn_IntermediaryEC2Endpoint_Click(object sender, EventArgs e)
+        {
+            Forms.Intermediary.IntermediarySelectorForm isf = new Forms.Intermediary.IntermediarySelectorForm(Thumbprint, SelectedCertificate, true);
+            isf.State = State;
+            isf.FormClosing += SelectorFormClosing;
+            Hide();
+            isf.ShowDialog();
+            Show();
+        }
     }
 }

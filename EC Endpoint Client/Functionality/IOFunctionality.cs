@@ -49,6 +49,22 @@ namespace EC_Endpoint_Client.Functionality
             return sfd.FileName;
         }
 
+        public static string WriteStreamToFile(byte[] input)
+        {
+            SaveFileDialog sfd = new SaveFileDialog { Filter = Filter };
+
+            DialogResult result = sfd.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                using (FileStream file = File.OpenWrite(sfd.FileName))
+                {
+                    file.Write(input, 0, input.Length);
+                }
+            }
+
+            return sfd.FileName;
+        }
+
         private static void CopyStream(Stream input, Stream output)
         {
             byte[] buffer = new byte[8 * 1024];
