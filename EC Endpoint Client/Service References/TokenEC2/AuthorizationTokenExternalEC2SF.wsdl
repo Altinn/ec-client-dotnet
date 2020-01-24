@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.altinn.no/services/Authorization/Administration/2016/02" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AuthorizationTokenExternalEC2SF" targetNamespace="http://www.altinn.no/services/Authorization/Administration/2016/02" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IAuthorizationTokenExternalEC2_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpToken />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:EndorsingSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:SecureConversationToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <mssp:MustNotSendCancel xmlns:mssp="http://schemas.microsoft.com/ws/2005/07/securitypolicy" />
+                <sp:BootstrapPolicy>
+                  <wsp:Policy>
+                    <sp:SignedParts>
+                      <sp:Body />
+                      <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="From" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="FaultTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="ReplyTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="MessageID" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="RelatesTo" Namespace="http://www.w3.org/2005/08/addressing" />
+                      <sp:Header Name="Action" Namespace="http://www.w3.org/2005/08/addressing" />
+                    </sp:SignedParts>
+                    <sp:EncryptedParts>
+                      <sp:Body />
+                    </sp:EncryptedParts>
+                    <sp:TransportBinding>
+                      <wsp:Policy>
+                        <sp:TransportToken>
+                          <wsp:Policy>
+                            <sp:HttpToken />
+                          </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                          <wsp:Policy>
+                            <sp:Basic256 />
+                          </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                          <wsp:Policy>
+                            <sp:Strict />
+                          </wsp:Policy>
+                        </sp:Layout>
+                        <sp:IncludeTimestamp />
+                      </wsp:Policy>
+                    </sp:TransportBinding>
+                    <sp:EndorsingSupportingTokens>
+                      <wsp:Policy>
+                        <sp:X509Token sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+                          <wsp:Policy>
+                            <sp:RequireThumbprintReference />
+                            <sp:WssX509V3Token10 />
+                          </wsp:Policy>
+                        </sp:X509Token>
+                        <sp:SignedParts>
+                          <sp:Header Name="To" Namespace="http://www.w3.org/2005/08/addressing" />
+                        </sp:SignedParts>
+                      </wsp:Policy>
+                    </sp:EndorsingSupportingTokens>
+                    <sp:Wss11>
+                      <wsp:Policy>
+                        <sp:MustSupportRefThumbprint />
+                      </wsp:Policy>
+                    </sp:Wss11>
+                    <sp:Trust10>
+                      <wsp:Policy>
+                        <sp:MustSupportIssuedTokens />
+                        <sp:RequireClientEntropy />
+                        <sp:RequireServerEntropy />
+                      </wsp:Policy>
+                    </sp:Trust10>
+                  </wsp:Policy>
+                </sp:BootstrapPolicy>
+              </wsp:Policy>
+            </sp:SecureConversationToken>
+          </wsp:Policy>
+        </sp:EndorsingSupportingTokens>
+        <sp:Wss11 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss11>
+        <sp:Trust10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:MustSupportIssuedTokens />
+            <sp:RequireClientEntropy />
+            <sp:RequireServerEntropy />
+          </wsp:Policy>
+        </sp:Trust10>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/2009/10">
+      <xsd:element name="Test">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="TestResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://www.altinn.no/services/common/fault/2009/10" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/common/fault/2009/10">
+      <xsd:complexType name="AltinnFault">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            Represents a SOAP fault message used by Altinn to convey exception information to the caller.
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="AltinnErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnExtendedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the verbose version of the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="AltinnLocalizedErrorMessage" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the localized version of the error message.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the unique GUID for the specific fault.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="ErrorID" type="xsd:int">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the error type id.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserGuid" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the GUID of the user.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="UserId" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the id of the user.
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AltinnFault" nillable="true" type="tns:AltinnFault" />
+    </xsd:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/Authorization/Administration/2016/02">
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization" />
+      <xsd:element name="GetAccessToken">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="1" name="authorizationCode" type="q1:guid" />
+            <xsd:element minOccurs="0" name="selfContained" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccessTokenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q2="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization" minOccurs="0" name="GetAccessTokenResult" nillable="true" type="q2:AuthorizationAccessTokenResponseExternalBE" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LogAccessToken">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element minOccurs="1" name="serviceCode" type="xsd:string" />
+            <xsd:element minOccurs="1" name="serviceEditionCode" type="xsd:int" />
+            <xsd:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="1" name="authorizationCode" type="q3:guid" />
+            <xsd:element minOccurs="0" name="usageDateTime" nillable="true" type="xsd:dateTime" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="LogAccessTokenResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveAccessToken">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" name="userName" type="xsd:string" />
+            <xsd:element minOccurs="1" name="password" type="xsd:string" />
+            <xsd:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="1" name="authorizationCode" type="q4:guid" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="RemoveAccessTokenResponse">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Altinn.Common.SBL.Entities.Authorization">
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:complexType name="AuthorizationAccessTokenResponseExternalBE">
+        <xsd:annotation>
+          <xsd:appinfo>
+            <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+              <d1p1:Text z:Id="2">&lt;summary&gt;
+            This is the response class for requesting reference token
+            &lt;/summary&gt;</d1p1:Text>
+            </Surrogate>
+          </xsd:appinfo>
+        </xsd:annotation>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="ReferenceToken" nillable="true" type="ser:guid">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets the reference token associated with the request
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element minOccurs="0" name="SelfContainedToken" nillable="true" type="xsd:string">
+            <xsd:annotation>
+              <xsd:appinfo>
+                <Surrogate z:Id="1" i:type="d1p1:Annotation" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:d1p1="XmlCommentsExporter.Annotation">
+                  <d1p1:Text z:Id="2">&lt;summary&gt;
+            Gets or sets self contained token
+            &lt;/summary&gt;</d1p1:Text>
+                </Surrogate>
+              </xsd:appinfo>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AuthorizationAccessTokenResponseExternalBE" nillable="true" type="tns:AuthorizationAccessTokenResponseExternalBE" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_Test_InputMessage">
+    <wsdl:part xmlns:q5="http://www.altinn.no/services/2009/10" name="parameters" element="q5:Test" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_Test_OutputMessage">
+    <wsdl:part xmlns:q6="http://www.altinn.no/services/2009/10" name="parameters" element="q6:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_Test_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q7:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_GetAccessToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_GetAccessToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_GetAccessToken_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q8:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_LogAccessToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_LogAccessToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_LogAccessToken_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q9:AltinnFault" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_RemoveAccessToken_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccessToken" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_RemoveAccessToken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAccessTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthorizationTokenExternalEC2_RemoveAccessToken_AltinnFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://www.altinn.no/services/common/fault/2009/10" name="detail" element="q10:AltinnFault" />
+  </wsdl:message>
+  <wsdl:portType name="IAuthorizationTokenExternalEC2">
+    <wsdl:documentation>&lt;summary&gt;
+            Service contract for the authorization token service with enterprise certificate authentication.
+            &lt;/summary&gt;</wsdl:documentation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" message="tns:IAuthorizationTokenExternalEC2_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse" message="tns:IAuthorizationTokenExternalEC2_Test_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault" name="AltinnFaultFault" message="tns:IAuthorizationTokenExternalEC2_Test_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessToken">
+      <wsdl:documentation>&lt;summary&gt;
+            Exchanges an AuthorizationCode into an AccessToken
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;User name for an enterprise user with an enterprise certificate.&lt;/param&gt;
+            &lt;param name="password"&gt;User password for an enterprise user with an enterprise certificate.&lt;/param&gt;
+            &lt;param name="authorizationCode"&gt;Code used to generate an AccessToken.&lt;/param&gt;
+            &lt;param name="selfContained"&gt;Optional parameter that identifies whether token should be self contained or not.&lt;/param&gt;
+            &lt;returns&gt;An AccessToken.&lt;/returns&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/GetAccessToken" message="tns:IAuthorizationTokenExternalEC2_GetAccessToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/GetAccessTokenResponse" message="tns:IAuthorizationTokenExternalEC2_GetAccessToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/GetAccessTokenAltinnFaultFault" name="AltinnFaultFault" message="tns:IAuthorizationTokenExternalEC2_GetAccessToken_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogAccessToken">
+      <wsdl:documentation>&lt;summary&gt;
+            Use this operation to log when a legal entity use a consent by accessing a data source.
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;User name for an enterprise user with an enterprise certificate.&lt;/param&gt;
+            &lt;param name="password"&gt;The password for the given enterprise user.&lt;/param&gt;
+            &lt;param name="serviceCode"&gt;The service code of the service used to access the data source.&lt;/param&gt;
+            &lt;param name="serviceEditionCode"&gt;The service edition code of the service used to access the data source.&lt;/param&gt;        
+            &lt;param name="authorizationCode"&gt;The authorization code for the consent which was used when accessing the data source.&lt;/param&gt;
+            &lt;param name="usageDateTime"&gt;The time when the consent was used.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/LogAccessToken" message="tns:IAuthorizationTokenExternalEC2_LogAccessToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/LogAccessTokenResponse" message="tns:IAuthorizationTokenExternalEC2_LogAccessToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/LogAccessTokenAltinnFaultFault" name="AltinnFaultFault" message="tns:IAuthorizationTokenExternalEC2_LogAccessToken_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccessToken">
+      <wsdl:documentation>&lt;summary&gt;
+            This method checks for the authorization of the user (who is trying to delete consent) against authorization code
+            &lt;/summary&gt;
+            &lt;param name="userName"&gt;User name for an enterprise user with an enterprise certificate.&lt;/param&gt;
+            &lt;param name="password"&gt;The password for the given enterprise user.&lt;/param&gt;
+            &lt;param name="authorizationCode"&gt;The authorization code for the consent which was used when accessing the data source.&lt;/param&gt;</wsdl:documentation>
+      <wsdl:input wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/RemoveAccessToken" message="tns:IAuthorizationTokenExternalEC2_RemoveAccessToken_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/RemoveAccessTokenResponse" message="tns:IAuthorizationTokenExternalEC2_RemoveAccessToken_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/RemoveAccessTokenAltinnFaultFault" name="AltinnFaultFault" message="tns:IAuthorizationTokenExternalEC2_RemoveAccessToken_AltinnFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IAuthorizationTokenExternalEC2" type="tns:IAuthorizationTokenExternalEC2">
+    <wsp:PolicyReference URI="#CustomBinding_IAuthorizationTokenExternalEC2_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Test">
+      <soap12:operation soapAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccessToken">
+      <soap12:operation soapAction="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/GetAccessToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="LogAccessToken">
+      <soap12:operation soapAction="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/LogAccessToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAccessToken">
+      <soap12:operation soapAction="http://www.altinn.no/services/Authorization/Administration/2016/02/IAuthorizationTokenExternalEC/RemoveAccessToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="AltinnFaultFault">
+        <soap12:fault use="literal" name="AltinnFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthorizationTokenExternalEC2SF">
+    <wsdl:port name="CustomBinding_IAuthorizationTokenExternalEC2" binding="tns:CustomBinding_IAuthorizationTokenExternalEC2">
+      <soap12:address location="http://at03.ai.basefarm.net/AuthorizationExternal/TokenExternalEC2.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://at03.ai.basefarm.net/AuthorizationExternal/TokenExternalEC2.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

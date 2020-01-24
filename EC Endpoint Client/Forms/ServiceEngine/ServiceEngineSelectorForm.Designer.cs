@@ -28,158 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btn_Case = new System.Windows.Forms.Button();
+            this.btn_CaseAgency = new System.Windows.Forms.Button();
+            this.btn_Correspondence = new System.Windows.Forms.Button();
+            this.btn_CorrespondenceAgency = new System.Windows.Forms.Button();
+            this.btn_PrefillEUS = new System.Windows.Forms.Button();
+            this.btn_PrefillAgency = new System.Windows.Forms.Button();
+            this.btn_NotificationAgency = new System.Windows.Forms.Button();
+            this.btn_ReporteeElementList = new System.Windows.Forms.Button();
+            this.btn_SubscriptionAgency = new System.Windows.Forms.Button();
+            this.btn_ContextHandlerAgency = new System.Windows.Forms.Button();
+            this.btn_BrokerService = new System.Windows.Forms.Button();
+            this.btn_LookUp = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.CorrespondenceAgencyNosystem = new System.Windows.Forms.Button();
+            this.btn_CorrespondenceAgencyNosystem = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Case
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Case";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Case.Location = new System.Drawing.Point(3, 3);
+            this.btn_Case.Name = "btn_Case";
+            this.btn_Case.Size = new System.Drawing.Size(234, 23);
+            this.btn_Case.TabIndex = 0;
+            this.btn_Case.Text = "Case";
+            this.btn_Case.UseVisualStyleBackColor = true;
+            this.btn_Case.Click += new System.EventHandler(this.btn_Case_Click);
             // 
-            // button2
+            // btn_CaseAgency
             // 
-            this.button2.Location = new System.Drawing.Point(3, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "CaseAgeny";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_CaseAgency.Location = new System.Drawing.Point(3, 65);
+            this.btn_CaseAgency.Name = "btn_CaseAgency";
+            this.btn_CaseAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_CaseAgency.TabIndex = 0;
+            this.btn_CaseAgency.Text = "CaseAgency";
+            this.btn_CaseAgency.UseVisualStyleBackColor = true;
+            this.btn_CaseAgency.Click += new System.EventHandler(this.btn_CaseAgency_Click);
             // 
-            // button3
+            // btn_Correspondence
             // 
-            this.button3.Location = new System.Drawing.Point(3, 123);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Correspondence";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_Correspondence.Location = new System.Drawing.Point(3, 123);
+            this.btn_Correspondence.Name = "btn_Correspondence";
+            this.btn_Correspondence.Size = new System.Drawing.Size(234, 23);
+            this.btn_Correspondence.TabIndex = 0;
+            this.btn_Correspondence.Text = "Correspondence";
+            this.btn_Correspondence.UseVisualStyleBackColor = true;
+            this.btn_Correspondence.Click += new System.EventHandler(this.btn_Correspondence_Click);
             // 
-            // button4
+            // btn_CorrespondenceAgency
             // 
-            this.button4.Location = new System.Drawing.Point(3, 152);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(234, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "CorrespondenceAgency";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_CorrespondenceAgency.Location = new System.Drawing.Point(3, 152);
+            this.btn_CorrespondenceAgency.Name = "btn_CorrespondenceAgency";
+            this.btn_CorrespondenceAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_CorrespondenceAgency.TabIndex = 0;
+            this.btn_CorrespondenceAgency.Text = "CorrespondenceAgency";
+            this.btn_CorrespondenceAgency.UseVisualStyleBackColor = true;
+            this.btn_CorrespondenceAgency.Click += new System.EventHandler(this.btn_CorrespondenceAgency_Click);
             // 
-            // button5
+            // btn_PrefillEUS
             // 
-            this.button5.Location = new System.Drawing.Point(3, 210);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(234, 23);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "PrefillEUS";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_PrefillEUS.Location = new System.Drawing.Point(3, 210);
+            this.btn_PrefillEUS.Name = "btn_PrefillEUS";
+            this.btn_PrefillEUS.Size = new System.Drawing.Size(234, 23);
+            this.btn_PrefillEUS.TabIndex = 0;
+            this.btn_PrefillEUS.Text = "PrefillEUS";
+            this.btn_PrefillEUS.UseVisualStyleBackColor = true;
+            this.btn_PrefillEUS.Click += new System.EventHandler(this.btn_PrefillEUS_Click);
             // 
-            // button6
+            // btn_PrefillAgency
             // 
-            this.button6.Location = new System.Drawing.Point(3, 239);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(234, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "PrefillAgency";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btn_PrefillAgency.Location = new System.Drawing.Point(3, 239);
+            this.btn_PrefillAgency.Name = "btn_PrefillAgency";
+            this.btn_PrefillAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_PrefillAgency.TabIndex = 0;
+            this.btn_PrefillAgency.Text = "PrefillAgency";
+            this.btn_PrefillAgency.UseVisualStyleBackColor = true;
+            this.btn_PrefillAgency.Click += new System.EventHandler(this.btn_PrefillAgency_Click);
             // 
-            // button7
+            // btn_NotificationAgency
             // 
-            this.button7.Location = new System.Drawing.Point(3, 268);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(234, 23);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "NotificationAgency";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_NotificationAgency.Location = new System.Drawing.Point(3, 268);
+            this.btn_NotificationAgency.Name = "btn_NotificationAgency";
+            this.btn_NotificationAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_NotificationAgency.TabIndex = 0;
+            this.btn_NotificationAgency.Text = "NotificationAgency";
+            this.btn_NotificationAgency.UseVisualStyleBackColor = true;
+            this.btn_NotificationAgency.Click += new System.EventHandler(this.btn_NotificationAgency_Click);
             // 
-            // button8
+            // btn_ReporteeElementList
             // 
-            this.button8.Location = new System.Drawing.Point(3, 297);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(234, 23);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "ReporteeElementList";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.btn_ReporteeElementList.Location = new System.Drawing.Point(3, 297);
+            this.btn_ReporteeElementList.Name = "btn_ReporteeElementList";
+            this.btn_ReporteeElementList.Size = new System.Drawing.Size(234, 23);
+            this.btn_ReporteeElementList.TabIndex = 0;
+            this.btn_ReporteeElementList.Text = "ReporteeElementList";
+            this.btn_ReporteeElementList.UseVisualStyleBackColor = true;
+            this.btn_ReporteeElementList.Click += new System.EventHandler(this.btn_ReporteeElementList_Click);
             // 
-            // button9
+            // btn_SubscriptionAgency
             // 
-            this.button9.Location = new System.Drawing.Point(3, 326);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(234, 23);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "SubscriptionAgency";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btn_SubscriptionAgency.Location = new System.Drawing.Point(3, 326);
+            this.btn_SubscriptionAgency.Name = "btn_SubscriptionAgency";
+            this.btn_SubscriptionAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_SubscriptionAgency.TabIndex = 0;
+            this.btn_SubscriptionAgency.Text = "SubscriptionAgency";
+            this.btn_SubscriptionAgency.UseVisualStyleBackColor = true;
+            this.btn_SubscriptionAgency.Click += new System.EventHandler(this.btn_SubscriptionAgency_Click);
             // 
-            // button10
+            // btn_ContextHandlerAgency
             // 
-            this.button10.Location = new System.Drawing.Point(3, 94);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(234, 23);
-            this.button10.TabIndex = 1;
-            this.button10.Text = "ContextHandlerAgency";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.btn_ContextHandlerAgency.Location = new System.Drawing.Point(3, 94);
+            this.btn_ContextHandlerAgency.Name = "btn_ContextHandlerAgency";
+            this.btn_ContextHandlerAgency.Size = new System.Drawing.Size(234, 23);
+            this.btn_ContextHandlerAgency.TabIndex = 1;
+            this.btn_ContextHandlerAgency.Text = "ContextHandlerAgency";
+            this.btn_ContextHandlerAgency.UseVisualStyleBackColor = true;
+            this.btn_ContextHandlerAgency.Click += new System.EventHandler(this.btn_ContextHandlerAgency_Click);
             // 
-            // button11
+            // btn_BrokerService
             // 
-            this.button11.Location = new System.Drawing.Point(3, 32);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(234, 27);
-            this.button11.TabIndex = 2;
-            this.button11.Text = "BrokerService";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            this.btn_BrokerService.Location = new System.Drawing.Point(3, 32);
+            this.btn_BrokerService.Name = "btn_BrokerService";
+            this.btn_BrokerService.Size = new System.Drawing.Size(234, 27);
+            this.btn_BrokerService.TabIndex = 2;
+            this.btn_BrokerService.Text = "BrokerService";
+            this.btn_BrokerService.UseVisualStyleBackColor = true;
+            this.btn_BrokerService.Click += new System.EventHandler(this.btn_BrokerService_Click);
             // 
-            // button12
+            // btn_LookUp
             // 
-            this.button12.Location = new System.Drawing.Point(3, 355);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(234, 23);
-            this.button12.TabIndex = 3;
-            this.button12.Text = "LookUp";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            this.btn_LookUp.Location = new System.Drawing.Point(3, 355);
+            this.btn_LookUp.Name = "btn_LookUp";
+            this.btn_LookUp.Size = new System.Drawing.Size(234, 23);
+            this.btn_LookUp.TabIndex = 3;
+            this.btn_LookUp.Text = "LookUp";
+            this.btn_LookUp.UseVisualStyleBackColor = true;
+            this.btn_LookUp.Click += new System.EventHandler(this.btn_LookUp_Click);
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button11);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button10);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Controls.Add(this.CorrespondenceAgencyNosystem);
-            this.flowLayoutPanel1.Controls.Add(this.button5);
-            this.flowLayoutPanel1.Controls.Add(this.button6);
-            this.flowLayoutPanel1.Controls.Add(this.button7);
-            this.flowLayoutPanel1.Controls.Add(this.button8);
-            this.flowLayoutPanel1.Controls.Add(this.button9);
-            this.flowLayoutPanel1.Controls.Add(this.button12);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Case);
+            this.flowLayoutPanel1.Controls.Add(this.btn_BrokerService);
+            this.flowLayoutPanel1.Controls.Add(this.btn_CaseAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_ContextHandlerAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_Correspondence);
+            this.flowLayoutPanel1.Controls.Add(this.btn_CorrespondenceAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_CorrespondenceAgencyNosystem);
+            this.flowLayoutPanel1.Controls.Add(this.btn_PrefillEUS);
+            this.flowLayoutPanel1.Controls.Add(this.btn_PrefillAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_NotificationAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_ReporteeElementList);
+            this.flowLayoutPanel1.Controls.Add(this.btn_SubscriptionAgency);
+            this.flowLayoutPanel1.Controls.Add(this.btn_LookUp);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -187,15 +187,15 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(243, 393);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // CorrespondenceAgencyNosystem
+            // btn_CorrespondenceAgencyNosystem
             // 
-            this.CorrespondenceAgencyNosystem.Location = new System.Drawing.Point(3, 181);
-            this.CorrespondenceAgencyNosystem.Name = "CorrespondenceAgencyNosystem";
-            this.CorrespondenceAgencyNosystem.Size = new System.Drawing.Size(233, 23);
-            this.CorrespondenceAgencyNosystem.TabIndex = 4;
-            this.CorrespondenceAgencyNosystem.Text = "CorrespondenceAgencyNoSystem";
-            this.CorrespondenceAgencyNosystem.UseVisualStyleBackColor = true;
-            this.CorrespondenceAgencyNosystem.Click += new System.EventHandler(this.CorrespondenceAgencyNosystem_Click);
+            this.btn_CorrespondenceAgencyNosystem.Location = new System.Drawing.Point(3, 181);
+            this.btn_CorrespondenceAgencyNosystem.Name = "btn_CorrespondenceAgencyNosystem";
+            this.btn_CorrespondenceAgencyNosystem.Size = new System.Drawing.Size(233, 23);
+            this.btn_CorrespondenceAgencyNosystem.TabIndex = 4;
+            this.btn_CorrespondenceAgencyNosystem.Text = "CorrespondenceAgencyNoSystem";
+            this.btn_CorrespondenceAgencyNosystem.UseVisualStyleBackColor = true;
+            this.btn_CorrespondenceAgencyNosystem.Click += new System.EventHandler(this.btn_CorrespondenceAgencyNosystem_Click);
             // 
             // ServiceEngineSelectorForm
             // 
@@ -212,19 +212,19 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btn_Case;
+        private System.Windows.Forms.Button btn_CaseAgency;
+        private System.Windows.Forms.Button btn_Correspondence;
+        private System.Windows.Forms.Button btn_CorrespondenceAgency;
+        private System.Windows.Forms.Button btn_PrefillEUS;
+        private System.Windows.Forms.Button btn_PrefillAgency;
+        private System.Windows.Forms.Button btn_NotificationAgency;
+        private System.Windows.Forms.Button btn_ReporteeElementList;
+        private System.Windows.Forms.Button btn_SubscriptionAgency;
+        private System.Windows.Forms.Button btn_ContextHandlerAgency;
+        private System.Windows.Forms.Button btn_BrokerService;
+        private System.Windows.Forms.Button btn_LookUp;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button CorrespondenceAgencyNosystem;
+        private System.Windows.Forms.Button btn_CorrespondenceAgencyNosystem;
     }
 }

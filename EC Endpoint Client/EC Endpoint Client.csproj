@@ -89,24 +89,37 @@
     <Compile Include="Classes\Shipments\BaseShipmentClass.cs" />
     <Compile Include="Classes\BaseSoapHolder.cs" />
     <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\BatchLoggingAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\BatchLoggingAgencyShipmentClassesEC2.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\ReceiptAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\Intermediary\IntermediaryShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\IntermediaryShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\Intermediary\ReceiptShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\KeyManagementShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Intermediary\AgencyClasses\ReceiptAgencyShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\ReporteeArchiveShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\Archive\SOAShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\Intermediary\ReceiptShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\BrokerService\BrokerServiceShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\BrokerService\BrokerServiceShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\CaseAgency\CaseAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\CaseAgency\CaseAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\Case\CaseShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\ContextHandlerShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\CorrespondenceAgency\CorrespondenceAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\CorrespondenceAgency\CorrespondenceAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\Correspondence\CorrespondenceShipmentClasses.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\LookUp\LookShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\LookUp\LookShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\NotitificationAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\NotitificationAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\PrefillAgency\PrefillAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\PrefillAgency\PrefillAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\PrefillEUS\PrefillEUSShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\PrefillEUS\PrefillEUSShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\ReporteeElementListShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\ReporteeElementListShipmentClassesEC2.cs" />
     <Compile Include="Classes\Shipments\ServiceEngine\SubscriptionAgencyShipmentClasses.cs" />
+    <Compile Include="Classes\Shipments\ServiceEngine\SubscriptionAgencyShipmentClassesEC2.cs" />
     <Compile Include="Classes\StringWrapper.cs" />
     <Compile Include="Configuration\ECClientConfiguration.cs" />
     <Compile Include="ECEndPointClient.cs">
@@ -127,6 +140,12 @@
     <Compile Include="Forms\Archive\ArchiveCommonAgencyForm.Designer.cs">
       <DependentUpon>ArchiveCommonAgencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Archive\ArchiveCommonAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\ArchiveCommonAgencyFormEC2.Designer.cs">
+      <DependentUpon>ArchiveCommonAgencyFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Archive\ArchiveEndPointSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,11 +158,47 @@
     <Compile Include="Forms\ArchiveMultiTester.Designer.cs">
       <DependentUpon>ArchiveMultiTester.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Archive\DownloadQueueFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\DownloadQueueFormEC2.Designer.cs">
+      <DependentUpon>DownloadQueueFormEC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Archive\KeyManagementFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\KeyManagementFormEC2.Designer.cs">
+      <DependentUpon>KeyManagementFormEC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Archive\ReporteeArchiveFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\ReporteeArchiveFormEC2.Designer.cs">
+      <DependentUpon>ReporteeArchiveFormEC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Archive\ReporteeArchiveStreamedFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\ReporteeArchiveStreamedFormEC2.Designer.cs">
+      <DependentUpon>ReporteeArchiveStreamedFormEC2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Archive\ServiceOwnerArchiveFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\ServiceOwnerArchiveFormEC2.Designer.cs">
+      <DependentUpon>ServiceOwnerArchiveFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Archive\ServiceOwnerArchiveStreamedForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Archive\ServiceOwnerArchiveStreamedForm.Designer.cs">
       <DependentUpon>ServiceOwnerArchiveStreamedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Archive\ServiceOwnerArchiveStreamedFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Archive\ServiceOwnerArchiveStreamedFormEC2.Designer.cs">
+      <DependentUpon>ServiceOwnerArchiveStreamedFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Archive\UserControls\GetFormsetPdf.cs">
       <SubType>UserControl</SubType>
@@ -158,6 +213,12 @@
     <Compile Include="Forms\Authorization\AuthorizationAdministrationForm.Designer.cs">
       <DependentUpon>AuthorizationAdministrationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationAdministrationFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationAdministrationFormEC2.Designer.cs">
+      <DependentUpon>AuthorizationAdministrationFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Authorization\AuthorizationSelectorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +230,12 @@
     </Compile>
     <Compile Include="Forms\Authorization\AuthorizationTokenForm.Designer.cs">
       <DependentUpon>AuthorizationTokenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationTokenFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Authorization\AuthorizationTokenFormEC2.Designer.cs">
+      <DependentUpon>AuthorizationTokenFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\CertificateSelectorForm.cs" />
     <Compile Include="Forms\CertificateSelectorForm.Designer.cs">
@@ -222,17 +289,35 @@
     <Compile Include="Forms\Intermediary\BatchLoggingForm.Designer.cs">
       <DependentUpon>BatchLoggingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Intermediary\BatchLoggingFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Intermediary\BatchLoggingFormEC2.Designer.cs">
+      <DependentUpon>BatchLoggingFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Intermediary\IntermediaryInboundForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Intermediary\IntermediaryInboundForm.Designer.cs">
       <DependentUpon>IntermediaryInboundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Intermediary\IntermediaryInboundFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Intermediary\IntermediaryInboundFormEC2.Designer.cs">
+      <DependentUpon>IntermediaryInboundFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Intermediary\IntermediaryInboundStreamedForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Intermediary\IntermediaryInboundStreamedForm.Designer.cs">
       <DependentUpon>IntermediaryInboundStreamedForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Intermediary\IntermediaryInboundStreamedFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Intermediary\IntermediaryInboundStreamedFormEC2.Designer.cs">
+      <DependentUpon>IntermediaryInboundStreamedFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Intermediary\IntermediarySelectorForm.cs">
       <SubType>Form</SubType>
@@ -246,11 +331,23 @@
     <Compile Include="Forms\Intermediary\ReceiptAgencyForm.Designer.cs">
       <DependentUpon>ReceiptAgencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Intermediary\ReceiptAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Intermediary\ReceiptAgencyFormEC2.Designer.cs">
+      <DependentUpon>ReceiptAgencyFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Intermediary\ReceiptForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Intermediary\ReceiptForm.Designer.cs">
       <DependentUpon>ReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Intermediary\ReceiptFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Intermediary\ReceiptFormEC2.Designer.cs">
+      <DependentUpon>ReceiptFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\BrokerService\BrokerServiceForm.cs">
       <SubType>Form</SubType>
@@ -258,11 +355,23 @@
     <Compile Include="Forms\ServiceEngine\BrokerService\BrokerServiceForm.Designer.cs">
       <DependentUpon>BrokerServiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\BrokerService\BrokerServiceFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\BrokerService\BrokerServiceFormEC2.Designer.cs">
+      <DependentUpon>BrokerServiceFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\Case\CaseAgencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Case\CaseAgencyForm.Designer.cs">
       <DependentUpon>CaseAgencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Case\CaseAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Case\CaseAgencyFormEC2.Designer.cs">
+      <DependentUpon>CaseAgencyFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Case\CaseForm.cs">
       <SubType>Form</SubType>
@@ -270,11 +379,23 @@
     <Compile Include="Forms\ServiceEngine\Case\CaseForm.Designer.cs">
       <DependentUpon>CaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\Case\CaseFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Case\CaseFormEC2.Designer.cs">
+      <DependentUpon>CaseFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\ContextHandler\ContextHandlerAgencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\ContextHandler\ContextHandlerAgencyForm.Designer.cs">
       <DependentUpon>ContextHandlerAgencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\ContextHandler\ContextHandlerAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\ContextHandler\ContextHandlerAgencyFormEC2.Designer.cs">
+      <DependentUpon>ContextHandlerAgencyFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyForm.cs">
       <SubType>Form</SubType>
@@ -282,11 +403,23 @@
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyForm.Designer.cs">
       <DependentUpon>CorrespondenceAgencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyFormEC2.Designer.cs">
+      <DependentUpon>CorrespondenceAgencyFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemForm.Designer.cs">
       <DependentUpon>CorrespondenceAgencyNoSystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemFormEC2.Designer.cs">
+      <DependentUpon>CorrespondenceAgencyNoSystemFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceForm.cs">
       <SubType>Form</SubType>
@@ -294,11 +427,23 @@
     <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceForm.Designer.cs">
       <DependentUpon>CorrespondenceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Correspondence\CorrespondenceFormEC2.Designer.cs">
+      <DependentUpon>CorrespondenceFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\LookUp\LookUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\LookUp\LookUpForm.Designer.cs">
       <DependentUpon>LookUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\LookUp\LookUpFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\LookUp\LookUpFormEC2.Designer.cs">
+      <DependentUpon>LookUpFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\NotificationAgencyForm.cs">
       <SubType>Form</SubType>
@@ -306,11 +451,23 @@
     <Compile Include="Forms\ServiceEngine\NotificationAgencyForm.Designer.cs">
       <DependentUpon>NotificationAgencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\NotificationAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\NotificationAgencyFormEC2.Designer.cs">
+      <DependentUpon>NotificationAgencyFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\Prefill\PrefillAgencyForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Prefill\PrefillAgencyForm.Designer.cs">
       <DependentUpon>PrefillAgencyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Prefill\PrefillAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Prefill\PrefillAgencyFormEC2.Designer.cs">
+      <DependentUpon>PrefillAgencyFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\Prefill\PrefillForm.cs">
       <SubType>Form</SubType>
@@ -318,11 +475,23 @@
     <Compile Include="Forms\ServiceEngine\Prefill\PrefillForm.Designer.cs">
       <DependentUpon>PrefillForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\Prefill\PrefillFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\Prefill\PrefillFormEC2.Designer.cs">
+      <DependentUpon>PrefillFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ServiceEngine\ReporteeElementListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ServiceEngine\ReporteeElementListForm.Designer.cs">
       <DependentUpon>ReporteeElementListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\ReporteeElementListFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\ReporteeElementListFormEC2.Designer.cs">
+      <DependentUpon>ReporteeElementListFormEC2.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ServiceEngine\ServiceEngineSelectorForm.cs">
       <SubType>Form</SubType>
@@ -336,40 +505,82 @@
     <Compile Include="Forms\ServiceEngine\SubscriptionAgencyForm.Designer.cs">
       <DependentUpon>SubscriptionAgencyForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ServiceEngine\SubscriptionAgencyFormEC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ServiceEngine\SubscriptionAgencyFormEC2.Designer.cs">
+      <DependentUpon>SubscriptionAgencyFormEC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Functionality\EndPoints\Archive\ArchiveCommonAgencyEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Archive\ArchiveCommonAgencyEndPointFunctionalityEC2.cs" />
+    <Compile Include="Functionality\EndPoints\Archive\DownloadQueueEndPointFunctionalityEC2.cs" />
+    <Compile Include="Functionality\EndPoints\Archive\KeyManagementEndPointFunctionalityEC2.cs" />
+    <Compile Include="Functionality\EndPoints\Archive\ReporteeArchiveEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Archive\ServiceOwnerArchiveEndpointFunctionality.cs" />
     <Compile Include="Functionality\CertificateHandling.cs" />
     <Compile Include="Functionality\EndPoints\Archive\DownloadQueueEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Archive\ServiceOwnerArchiveEndpointFunctionalityEC2.cs" />
+    <Compile Include="Functionality\EndPoints\Authorization\AuthorizationAdministrationEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Authorization\AuthorizationTokenEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Authorization\AuthorizationTokenEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\EndPointFunctionalityCommon.cs" />
     <Compile Include="Functionality\EndPoints\Authorization\AuthorizationAdministrationEndPointFunctionality.cs" />
     <Compile Include="Functionality\EndPoints\Intermediary\BatchLoggingAgencyEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Intermediary\BatchLoggingAgencyEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Intermediary\IntermediaryInboundEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Intermediary\IntermediaryInboundEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Intermediary\IntermediaryInboundStreamedEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Intermediary\IntermediaryInboundStreamedEndPointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Intermediary\ReceiptAgencyEndpointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Intermediary\ReceiptAgencyEndpointFunctionalityEC2.cs" />
     <Compile Include="Functionality\EndPoints\Intermediary\ReceiptEndPointFunctionality.cs" />
+    <Compile Include="Functionality\EndPoints\Intermediary\ReceiptEndPointFunctionalityEC2.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\BrokerService\BrokerServiceEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\BrokerService\BrokerServiceStreamedEndPointFunction.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\BrokerService\BrokerServiceEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\BrokerService\BrokerServiceStreamedEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Case\CaseAgencySystemEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Case\CaseAgencySystemEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Case\CaseEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Case\CaseEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\ContextHandlerExternalEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\ContextHandlerExternalEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceAgencyEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceAgencyEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceAgencyNoSystemEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Correspondence\CorrespondenceEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\LookUp\LookUpEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\LookUp\LookUpEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\NotificationAgencyEndpointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\NotificationAgencyEndpointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Prefill\PrefillAgencyEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Prefill\PrefillAgencyEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\Prefill\PrefillEUSEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\Prefill\PrefillEUSEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\ReporteeElementListEndPointFunction.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\ReporteeElementListEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\EndPoints\ServiceEngine\SubscriptionAgencyEndPointFunction.cs" />
     <Compile Include="Classes\Enums.cs" />
+    <Compile Include="Functionality\EndPoints\ServiceEngine\SubscriptionAgencyEndPointFunctionEC2.cs" />
     <Compile Include="Functionality\IOFunctionality.cs" />
     <Compile Include="Functionality\EndPoints\Archive\KeyManagementEndPointFunctionality.cs" />
     <Compile Include="Functionality\EndPoints\Archive\ReporteeArchiveEndPointFunctionality.cs" />
     <Compile Include="Functionality\EndPoints\MessageInspector.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AdministrationEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Administration\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ArchiveCommonAgencyEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -379,7 +590,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\BatchLoggingAgencyEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\BatchLoggingAgency\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BrokerServiceEC2Streamed\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\BrokerServiceEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -394,7 +620,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CaseAgencySystemEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\CaseAgencySystem\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CaseEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -404,7 +640,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ContextHandlerEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ContextHandler\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CorrespondenceAgencyEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CorrespondenceAgencyNoSystemEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -419,12 +670,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CorrespondenceEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Correspondence\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\DownloadQueueEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\DownloadQueue\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IntermediaryInboundEC2Streamed\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\IntermediaryInboundEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -439,7 +710,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\KeyManagementEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\KeyManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LookUpEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -449,7 +730,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\NotificationAgencyEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\NotificationAgency\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PrefillAgencyEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -459,7 +750,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\PrefillEUSEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\PrefillEUS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReceiptAgencyEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -469,7 +770,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ReceiptEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\Receipt\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReporteeArchiveEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReporteeArchiveStreamedEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -484,7 +800,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ReporteeElementListEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ReporteeElementList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SOArchiveEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SOArchiveStreamedEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -499,7 +830,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SubscriptionAgencyEC2\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SubscriptionAgency\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TokenEC2\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -596,6 +937,9 @@
     <EmbeddedResource Include="Forms\Authorization\AuthorizationTokenForm.resx">
       <DependentUpon>AuthorizationTokenForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Authorization\AuthorizationTokenFormEC2.resx">
+      <DependentUpon>AuthorizationTokenFormEC2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CertificateSelectorForm.resx">
       <DependentUpon>CertificateSelectorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -616,6 +960,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Intermediary\BatchLoggingForm.resx">
       <DependentUpon>BatchLoggingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Intermediary\BatchLoggingFormEC2.resx">
+      <DependentUpon>BatchLoggingFormEC2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Intermediary\IntermediaryInboundForm.resx">
       <DependentUpon>IntermediaryInboundForm.cs</DependentUpon>
@@ -714,6 +1061,25 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\AdministrationEC2\AuthorizationAdministrationExternalEC2SF.wsdl" />
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.ExternalReporteeBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.ExternalReporteeBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.GetReporteeByTempKeyECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.GetReporteesECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.LogConsentUsageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AdministrationEC2\EC_Endpoint_Client.AdministrationEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Administration\AuthorizationAdministrationExternalECSF.wsdl" />
     <None Include="Service References\Administration\EC_Endpoint_Client.Administration.ExternalReporteeBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -730,8 +1096,40 @@
     <None Include="Service References\Administration\EC_Endpoint_Client.Administration.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ArchiveCommonAgencyEC2\ArchiveCommonAgencyExternalEC2.wsdl" />
+    <None Include="Service References\ArchiveCommonAgencyEC2\EC_Endpoint_Client.ArchiveCommonAgencyEC2.GetServiceOwnerArchiveReporteeElementsECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ArchiveCommonAgencyEC2\EC_Endpoint_Client.ArchiveCommonAgencyEC2.ServiceOwnerArchiveReporteeElementBEV2List.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ArchiveCommonAgencyEC2\EC_Endpoint_Client.ArchiveCommonAgencyEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ArchiveCommonAgency\ArchiveCommonAgencyExternalEC.wsdl" />
     <None Include="Service References\ArchiveCommonAgency\EC_Endpoint_Client.ArchiveCommonAgency.ServiceOwnerArchiveReporteeElementBEV2List.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\BatchLoggingAgencyExternalEC2.wsdl" />
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.BatchLoggingDetailedStatus.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.BatchLoggingStatusOverview.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.DataItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.GetDataItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.GetDetailedStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.GetStatusOverviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BatchLoggingAgencyEC2\EC_Endpoint_Client.BatchLoggingAgencyEC2.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\BatchLoggingAgency\BatchLoggingAgencyExternalEC.wsdl" />
@@ -754,6 +1152,32 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\BatchLoggingAgency\EC_Endpoint_Client.BatchLoggingAgency.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2Streamed\BrokerServiceExternalEC2StreamedSF.wsdl" />
+    <None Include="Service References\BrokerServiceEC2Streamed\EC_Endpoint_Client.BrokerServiceEC2Streamed.DownloadFileStreamedECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2Streamed\EC_Endpoint_Client.BrokerServiceEC2Streamed.ReceiptExternalStreamedBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2Streamed\EC_Endpoint_Client.BrokerServiceEC2Streamed.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2\BrokerServiceExternalEC2SF.wsdl" />
+    <None Include="Service References\BrokerServiceEC2\EC_Endpoint_Client.BrokerServiceEC2.BrokerServiceAvailableFileList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2\EC_Endpoint_Client.BrokerServiceEC2.ConfirmDownloadedECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2\EC_Endpoint_Client.BrokerServiceEC2.GetAvailableFilesECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2\EC_Endpoint_Client.BrokerServiceEC2.InitiateBrokerServiceECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\BrokerServiceEC2\EC_Endpoint_Client.BrokerServiceEC2.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\BrokerServiceStreamed\BrokerServiceExternalECStreamedSF.wsdl" />
@@ -779,6 +1203,28 @@
     <None Include="Service References\BrokerService\EC_Endpoint_Client.BrokerService.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CaseAgencySystemEC2\CaseAgencySystemEC2SF.wsdl" />
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.ExternalCaseBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.GetCaseListAgencySystemECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.InstantiateCollaborationAgencySystemECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.NotifyEventAgencySystemECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.SetNoticeAgencySystemECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.StateMachineNotificationResultBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseAgencySystemEC2\EC_Endpoint_Client.CaseAgencySystemEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CaseAgencySystem\CaseAgencySystemECSF.wsdl" />
     <None Include="Service References\CaseAgencySystem\EC_Endpoint_Client.CaseAgencySystem.ExternalCaseBEList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -801,6 +1247,22 @@
     <None Include="Service References\CaseAgencySystem\EC_Endpoint_Client.CaseAgencySystem.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CaseEC2\CaseEC2SF.wsdl" />
+    <None Include="Service References\CaseEC2\EC_Endpoint_Client.CaseEC2.ArchiveCaseECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseEC2\EC_Endpoint_Client.CaseEC2.CaseBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseEC2\EC_Endpoint_Client.CaseEC2.GetCaseListECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseEC2\EC_Endpoint_Client.CaseEC2.InstantiateCollaborationECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CaseEC2\EC_Endpoint_Client.CaseEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Case\CaseECSF.wsdl" />
     <None Include="Service References\Case\EC_Endpoint_Client.Case.ArchiveCaseECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -817,11 +1279,84 @@
     <None Include="Service References\Case\EC_Endpoint_Client.Case.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ContextHandlerEC2\ContextHandlerEC2SF.wsdl" />
+    <None Include="Service References\ContextHandlerEC2\EC_Endpoint_Client.ContextHandlerEC2.GetReporteeElementContextExternalECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextHandlerEC2\EC_Endpoint_Client.ContextHandlerEC2.ReporteeElementContextExternalBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ContextHandlerEC2\EC_Endpoint_Client.ContextHandlerEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ContextHandler\ContextHandlerECSF.wsdl" />
     <None Include="Service References\ContextHandler\EC_Endpoint_Client.ContextHandler.ReporteeElementContextExternalBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ContextHandler\EC_Endpoint_Client.ContextHandler.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\CorrespondenceAgencyExternalEC2SF.wsdl" />
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.CorrespondenceStatusHistoryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.CorrespondenceStatusInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.CorrespondenceStatusResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.CorrespondenceStatusResultV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.CorrespondenceStatusResultV3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.GetCorrespondenceStatusDetailsECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.GetCorrespondenceStatusDetailsECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.GetCorrespondenceStatusDetailsECV3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.InsertCorrespondenceECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.SdpStatusInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyEC2\EC_Endpoint_Client.CorrespondenceAgencyEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\CorrespondenceAgencyExternalAEC2.wsdl" />
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\CorrespondenceAgencyExternalAEC2SF1.wsdl" />
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.CorrespondenceStatusHistoryResultExternalBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.CorrespondenceStatusInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.CorrespondenceStatusResultV3.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.GetCorrespondenceStatusDetailsAECV3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.InsertCorrespondenceAECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.SdpStatusInformation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\EC_Endpoint_Client.CorrespondenceAgencyNoSystemEC2.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CorrespondenceAgencyNoSystem\CorrespondenceAgencyExternalAEC.wsdl" />
@@ -869,6 +1404,25 @@
     <None Include="Service References\CorrespondenceAgency\EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CorrespondenceEC2\CorrespondenceExternalEC2SF.wsdl" />
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.ArchiveCorrespondenceForEndUserSystemECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.CorrespondenceForEndUserSystemV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.GetCorrespondenceForEndUserSystemsECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.Receipt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.SaveCorrespondenceConfirmationECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CorrespondenceEC2\EC_Endpoint_Client.CorrespondenceEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Correspondence\CorrespondenceExternalECSF.wsdl" />
     <None Include="Service References\Correspondence\EC_Endpoint_Client.Correspondence.ArchiveCorrespondenceForEndUserSystemECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -888,6 +1442,19 @@
     <None Include="Service References\Correspondence\EC_Endpoint_Client.Correspondence.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\DownloadQueueEC2\DownloadQueueExternalEC2.wsdl" />
+    <None Include="Service References\DownloadQueueEC2\EC_Endpoint_Client.DownloadQueueEC2.ArchivedFormTaskDQBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DownloadQueueEC2\EC_Endpoint_Client.DownloadQueueEC2.DownloadQueueItemBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DownloadQueueEC2\EC_Endpoint_Client.DownloadQueueEC2.GetFormSetPdfEcResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DownloadQueueEC2\EC_Endpoint_Client.DownloadQueueEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\DownloadQueue\DownloadQueueExternalEC1.wsdl" />
     <None Include="Service References\DownloadQueue\EC_Endpoint_Client.DownloadQueue.ArchivedFormTaskDQBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -895,6 +1462,36 @@
     <None Include="Service References\DownloadQueue\EC_Endpoint_Client.DownloadQueue.DownloadQueueItemBEList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\EC_Endpoint_Client.IntermediaryInboundEC2Streamed.ReceiptExternalStreamedBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\EC_Endpoint_Client.IntermediaryInboundEC2Streamed.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\IntermediaryInboundExternalEC2StreamedSF.wsdl" />
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.CompleteAndSignShipmentECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.GetAltinnSubmissionStatusECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.ReceiptExternalBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.SubmitFormTaskECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\EC_Endpoint_Client.IntermediaryInboundEC2.UpdateFormDataECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\IntermediaryInboundEC2\IntermediaryInboundExternalEC2.wsdl" />
+    <None Include="Service References\IntermediaryInboundEC2\IntermediaryInboundExternalEC21.wsdl" />
     <None Include="Service References\IntermediaryInboundStreamed\EC_Endpoint_Client.IntermediaryInboundStreamed.ReceiptExternalStreamedBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -910,6 +1507,16 @@
     </None>
     <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC2.wsdl" />
     <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC21.wsdl" />
+    <None Include="Service References\KeyManagementEC2\EC_Endpoint_Client.KeyManagementEC2.CertificateBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeyManagementEC2\EC_Endpoint_Client.KeyManagementEC2.GetCertificatesECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeyManagementEC2\EC_Endpoint_Client.KeyManagementEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\KeyManagementEC2\KeyManagementExternalEC2.wsdl" />
     <None Include="Service References\KeyManagement\EC_Endpoint_Client.KeyManagement.CertificateBEList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -920,6 +1527,13 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\KeyManagement\KeyManagementExternalEC.wsdl" />
+    <None Include="Service References\LookUpEC2\EC_Endpoint_Client.LookUpEC2.ExecuteLookUpResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookUpEC2\EC_Endpoint_Client.LookUpEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LookUpEC2\LookUpExternalEC2SF.wsdl" />
     <None Include="Service References\LookUp\EC_Endpoint_Client.LookUp.ExecuteLookUpResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -927,6 +1541,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\LookUp\LookUpExternalECSF.wsdl" />
+    <None Include="Service References\NotificationAgencyEC2\EC_Endpoint_Client.NotificationAgencyEC2.SendNotificationResultList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationAgencyEC2\EC_Endpoint_Client.NotificationAgencyEC2.SendStandaloneNotificationECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationAgencyEC2\EC_Endpoint_Client.NotificationAgencyEC2.SendStandaloneNotificationECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationAgencyEC2\EC_Endpoint_Client.NotificationAgencyEC2.SendStandaloneNotificationECV3Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationAgencyEC2\EC_Endpoint_Client.NotificationAgencyEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\NotificationAgencyEC2\NotificationAgencyExternalEC2SF.wsdl" />
     <None Include="Service References\NotificationAgency\EC_Endpoint_Client.NotificationAgency.SendStandaloneNotificationECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -934,6 +1564,19 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\NotificationAgency\NotificationAgencyExternalEC.wsdl" />
+    <None Include="Service References\PrefillAgencyEC2\EC_Endpoint_Client.PrefillAgencyEC2.ReceiptExternal1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillAgencyEC2\EC_Endpoint_Client.PrefillAgencyEC2.SubmitAndInstantiatePrefilledFormTaskECResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillAgencyEC2\EC_Endpoint_Client.PrefillAgencyEC2.SubmitPrefilledFormTasksECResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillAgencyEC2\EC_Endpoint_Client.PrefillAgencyEC2.TestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillAgencyEC2\PreFillAgencyExternalEC2.wsdl" />
     <None Include="Service References\PrefillAgency\EC_Endpoint_Client.PrefillAgency.ReceiptExternal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -947,6 +1590,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PrefillAgency\PreFillAgencyExternalEC.wsdl" />
+    <None Include="Service References\PrefillEUSEC2\EC_Endpoint_Client.PrefillEUSEC2.GetPrefillDataECResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillEUSEC2\EC_Endpoint_Client.PrefillEUSEC2.GetPrefillDataECV2Response1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillEUSEC2\EC_Endpoint_Client.PrefillEUSEC2.PrefillDataBE1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillEUSEC2\EC_Endpoint_Client.PrefillEUSEC2.PrefillDataBEv21.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillEUSEC2\EC_Endpoint_Client.PrefillEUSEC2.TestResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PrefillEUSEC2\PreFillEUSExternalEC2.wsdl" />
     <None Include="Service References\PrefillEUS\EC_Endpoint_Client.PrefillEUS.GetPrefillDataECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -963,6 +1622,40 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\PrefillEUS\PreFillEUSExternalEC.wsdl" />
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.GetReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.GetReceiptECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.GetReceiptListECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.GetReceiptListECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.Receipt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.ReceiptExternalList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.ReceiptList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.SaveReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\EC_Endpoint_Client.ReceiptAgencyEC2.UpdateReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptAgencyEC2\ReceiptAgencyExternalEC2.wsdl" />
     <None Include="Service References\ReceiptAgency\EC_Endpoint_Client.ReceiptAgency.GetReceiptECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -997,6 +1690,40 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReceiptAgency\ReceiptAgencyExternalEC.wsdl" />
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.GetReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.GetReceiptECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.GetReceiptListECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.GetReceiptListECV2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.Receipt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.ReceiptExternalList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.ReceiptList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.SaveReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\EC_Endpoint_Client.ReceiptEC2.UpdateReceiptECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReceiptEC2\ReceiptExternalEC2.wsdl" />
     <None Include="Service References\Receipt\EC_Endpoint_Client.Receipt.GetReceiptECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1031,6 +1758,38 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\Receipt\ReceiptExternalEC.wsdl" />
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.ArchivedCorrespondence.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.ArchivedFormTaskV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.ArchivedLookupExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.AttachmentBEV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.GetArchivedCorrespondenceECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.GetArchivedFormTaskECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.GetAttachmentDataECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\EC_Endpoint_Client.ReporteeArchiveEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveEC2\ReporteeArchiveExternalEC2.wsdl" />
+    <None Include="Service References\ReporteeArchiveStreamedEC2\EC_Endpoint_Client.ReporteeArchiveStreamedEC2.GetAttachmentDataECStreamedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveStreamedEC2\EC_Endpoint_Client.ReporteeArchiveStreamedEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeArchiveStreamedEC2\ReporteeArchiveExternalStreamedEC2.wsdl" />
     <None Include="Service References\ReporteeArchiveStreamed\EC_Endpoint_Client.ReporteeArchiveStreamed.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1075,6 +1834,37 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeArchive\ReporteeArchiveExternalEC.wsdl" />
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.DeleteReporteeElementECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.FormSetDataBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.FormSetElementExternalBEV2List.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.GetCorrespondenceListForArchiveRefECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.GetCorrespondenceListForReporteeECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.GetFormSetDataECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.GetFormSetElementsECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.GetReporteeElementListECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.ReporteeElementBEV2Lis.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\EC_Endpoint_Client.ReporteeElementListEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReporteeElementListEC2\ReporteeElementListEC2SF.wsdl" />
     <None Include="Service References\ReporteeElementList\EC_Endpoint_Client.ReporteeElementList.DeleteReporteeElementECResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1106,6 +1896,26 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ReporteeElementList\ReporteeElementListECSF1.wsdl" />
+    <None Include="Service References\SOArchiveEC2\EC_Endpoint_Client.SOArchiveEC2.ArchivedFormTaskV2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveEC2\EC_Endpoint_Client.SOArchiveEC2.ArchiveShipmentStatusExternalBEList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveEC2\EC_Endpoint_Client.SOArchiveEC2.ArchiveShipmentStatusExternalBEV2List.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveEC2\EC_Endpoint_Client.SOArchiveEC2.GetArchivedFormTaskECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveEC2\EC_Endpoint_Client.SOArchiveEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveEC2\ServiceOwnerArchiveExternalEC2SF.wsdl" />
+    <None Include="Service References\SOArchiveStreamedEC2\EC_Endpoint_Client.SOArchiveStreamedEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SOArchiveStreamedEC2\ServiceOwnerArchiveExternalStreamedEC2SF.wsdl" />
     <None Include="Service References\SOArchiveStreamed\EC_Endpoint_Client.SOArchiveStreamed.TestResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1120,6 +1930,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SOArchive\ServiceOwnerArchiveExternalECSF.wsdl" />
+    <None Include="Service References\SubscriptionAgencyEC2\EC_Endpoint_Client.SubscriptionAgencyEC2.ReceiptExternal.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SubscriptionAgencyEC2\EC_Endpoint_Client.SubscriptionAgencyEC2.SubmitSubscriptionECResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SubscriptionAgencyEC2\EC_Endpoint_Client.SubscriptionAgencyEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SubscriptionAgencyEC2\SubscriptionAgencyExternalEC2.wsdl" />
     <None Include="Service References\SubscriptionAgency\EC_Endpoint_Client.SubscriptionAgency.ReceiptExternal.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1130,6 +1950,22 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\SubscriptionAgency\SubscriptionAgencyExternalEC.wsdl" />
+    <None Include="Service References\TokenEC2\AuthorizationTokenExternalEC2SF.wsdl" />
+    <None Include="Service References\TokenEC2\EC_Endpoint_Client.TokenEC2.AuthorizationAccessTokenResponseExternalBE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TokenEC2\EC_Endpoint_Client.TokenEC2.GetAccessTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TokenEC2\EC_Endpoint_Client.TokenEC2.LogAccessTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TokenEC2\EC_Endpoint_Client.TokenEC2.RemoveAccessTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\TokenEC2\EC_Endpoint_Client.TokenEC2.TestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\Token\AuthorizationTokenExternalECSF1.wsdl" />
     <None Include="Service References\Token\EC_Endpoint_Client.Token.AuthorizationAccessTokenResponseExternalBE.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1150,33 +1986,61 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AdministrationEC2\" />
     <WCFMetadataStorage Include="Service References\Administration\" />
+    <WCFMetadataStorage Include="Service References\ArchiveCommonAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\ArchiveCommonAgency\" />
+    <WCFMetadataStorage Include="Service References\BatchLoggingAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\BatchLoggingAgency\" />
+    <WCFMetadataStorage Include="Service References\BrokerServiceEC2Streamed\" />
+    <WCFMetadataStorage Include="Service References\BrokerServiceEC2\" />
     <WCFMetadataStorage Include="Service References\BrokerServiceStreamed\" />
     <WCFMetadataStorage Include="Service References\BrokerService\" />
+    <WCFMetadataStorage Include="Service References\CaseAgencySystemEC2\" />
     <WCFMetadataStorage Include="Service References\CaseAgencySystem\" />
+    <WCFMetadataStorage Include="Service References\CaseEC2\" />
     <WCFMetadataStorage Include="Service References\Case\" />
+    <WCFMetadataStorage Include="Service References\ContextHandlerEC2\" />
     <WCFMetadataStorage Include="Service References\ContextHandler\" />
+    <WCFMetadataStorage Include="Service References\CorrespondenceAgencyEC2\" />
+    <WCFMetadataStorage Include="Service References\CorrespondenceAgencyNoSystemEC2\" />
     <WCFMetadataStorage Include="Service References\CorrespondenceAgencyNoSystem\" />
     <WCFMetadataStorage Include="Service References\CorrespondenceAgency\" />
+    <WCFMetadataStorage Include="Service References\CorrespondenceEC2\" />
     <WCFMetadataStorage Include="Service References\Correspondence\" />
+    <WCFMetadataStorage Include="Service References\DownloadQueueEC2\" />
     <WCFMetadataStorage Include="Service References\DownloadQueue\" />
+    <WCFMetadataStorage Include="Service References\IntermediaryInboundEC2Streamed\" />
+    <WCFMetadataStorage Include="Service References\IntermediaryInboundEC2\" />
     <WCFMetadataStorage Include="Service References\IntermediaryInboundStreamed\" />
     <WCFMetadataStorage Include="Service References\IntermediaryInbound\" />
+    <WCFMetadataStorage Include="Service References\KeyManagementEC2\" />
     <WCFMetadataStorage Include="Service References\KeyManagement\" />
+    <WCFMetadataStorage Include="Service References\LookUpEC2\" />
     <WCFMetadataStorage Include="Service References\LookUp\" />
+    <WCFMetadataStorage Include="Service References\NotificationAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\NotificationAgency\" />
+    <WCFMetadataStorage Include="Service References\PrefillAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\PrefillAgency\" />
+    <WCFMetadataStorage Include="Service References\PrefillEUSEC2\" />
     <WCFMetadataStorage Include="Service References\PrefillEUS\" />
+    <WCFMetadataStorage Include="Service References\ReceiptAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\ReceiptAgency\" />
+    <WCFMetadataStorage Include="Service References\ReceiptEC2\" />
     <WCFMetadataStorage Include="Service References\Receipt\" />
+    <WCFMetadataStorage Include="Service References\ReporteeArchiveEC2\" />
+    <WCFMetadataStorage Include="Service References\ReporteeArchiveStreamedEC2\" />
     <WCFMetadataStorage Include="Service References\ReporteeArchiveStreamed\" />
     <WCFMetadataStorage Include="Service References\ReporteeArchive\" />
+    <WCFMetadataStorage Include="Service References\ReporteeElementListEC2\" />
     <WCFMetadataStorage Include="Service References\ReporteeElementList\" />
+    <WCFMetadataStorage Include="Service References\SOArchiveEC2\" />
+    <WCFMetadataStorage Include="Service References\SOArchiveStreamedEC2\" />
     <WCFMetadataStorage Include="Service References\SOArchiveStreamed\" />
     <WCFMetadataStorage Include="Service References\SOArchive\" />
+    <WCFMetadataStorage Include="Service References\SubscriptionAgencyEC2\" />
     <WCFMetadataStorage Include="Service References\SubscriptionAgency\" />
+    <WCFMetadataStorage Include="Service References\TokenEC2\" />
     <WCFMetadataStorage Include="Service References\Token\" />
   </ItemGroup>
   <ItemGroup>
@@ -1220,6 +2084,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchive\ReporteeArchiveExternalEC.disco" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ReporteeArchive\configuration91.svcinfo" />
@@ -1595,6 +2462,345 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\IntermediaryInbound\IntermediaryInboundExternalEC1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownloadQueueEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownloadQueueEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DownloadQueueEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveStreamedEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveStreamedEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveStreamedEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeArchiveEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ArchiveCommonAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ArchiveCommonAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ArchiveCommonAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeyManagementEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeyManagementEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\KeyManagementEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveStreamedEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveStreamedEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SOArchiveStreamedEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AdministrationEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AdministrationEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AdministrationEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TokenEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TokenEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TokenEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2Streamed\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2Streamed\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BrokerServiceEC2Streamed\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseAgencySystemEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseAgencySystemEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CaseAgencySystemEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContextHandlerEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContextHandlerEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ContextHandlerEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LookUpEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LookUpEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LookUpEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillEUSEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillEUSEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillEUSEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PrefillAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\NotificationAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeElementListEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeElementListEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReporteeElementListEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SubscriptionAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BatchLoggingAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BatchLoggingAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BatchLoggingAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2Streamed\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptAgencyEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptAgencyEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptAgencyEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReceiptEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CorrespondenceAgencyNoSystemEC2\CorrespondenceAgencyExternalAEC2.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\IntermediaryInboundEC2\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

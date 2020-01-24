@@ -31,9 +31,23 @@ namespace EC_Endpoint_Client.Functionality.EndPoints
             var proxy = Activator.CreateInstance(typeof(T)) as T;
             if (proxy?.ClientCredentials == null)
                 return null;
-            proxy.ClientCredentials.ClientCertificate.Certificate = selectedCertificate;
-            var builder = new UriBuilder(proxy.Endpoint.Address.Uri) {Host = GetHostForEnvironment(endpointName)};
+            Tuple<string, string, int, bool?> replacement = GetHostForEnvironment(endpointName);
+            var builder = new UriBuilder(proxy.Endpoint.Address.Uri) { Host = replacement.Item2, Scheme = replacement.Item1, Port = replacement.Item3 };
+
+            if(replacement.Item4 != null)
+            {
+                if (builder.Query.Length > 1)
+                {
+                    builder.Query += "&bigiptestversion=" + replacement.Item4.ToString().ToLower();
+                }
+                else
+                {
+                    builder.Query = "bigiptestversion=" + replacement.Item4.ToString().ToLower();
+                }
+            }
+
             proxy.Endpoint.Address = new EndpointAddress(builder.Uri);
+            proxy.ClientCredentials.ClientCertificate.Certificate = selectedCertificate;
             GetCredentialsForServiceCertificate(proxy.ClientCredentials.ServiceCertificate);
             if (setInspectorBehavior)
             {
@@ -78,20 +92,21 @@ namespace EC_Endpoint_Client.Functionality.EndPoints
             endpointBehaviors.Add(inspectorBehavior);
         }
 
-        private string GetHostForEnvironment(string environment)
+        private Tuple<string, string, int, bool?> GetHostForEnvironment(string environment)
         {
             UriBuilder builder = new UriBuilder();
             builder.Host = "localhost";
+            bool? useTestMode = null;
             foreach (EnvironmentUrl eu in EcClientConfiguration.GetConfig().EnvironmentUrlCollection)
             {
                 if (eu.Name == environment)
                 {
                     builder = new UriBuilder(eu.Environment);
+                    useTestMode = eu.UseTestMode;
                     break;
                 }
             }
-
-            return builder.Host;
+            return new Tuple<string, string, int, bool?>(builder.Scheme, builder.Host, builder.Port, useTestMode);
         }
     }
 }

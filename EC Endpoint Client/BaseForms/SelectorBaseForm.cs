@@ -11,25 +11,28 @@ namespace EC_Endpoint_Client.BaseForms
     {
         public string Thumbprint { get; set; }
         public X509Certificate2 SelectedCertificate { get; set; }
+        public bool UseEC2Interface { get; set; }
         public string SelectedEndPointName { get; set; }
         public EndPointState State { get; set; }
+
         public SelectorBaseForm()
         {
             InitializeComponent();
         }
 
-        public SelectorBaseForm(string thumb, X509Certificate2 cert)
+        public SelectorBaseForm(string thumb, X509Certificate2 cert, bool useEC2Interface)
         {
-            InitializeComponent();
             Thumbprint = thumb;
             SelectedCertificate = cert;
+            UseEC2Interface = useEC2Interface;
+            InitializeComponent();
         }
 
         protected virtual void SetClientValues(BaseForms.ClientBaseForm cbf, string contractName)
         {
             cbf.SelectedCertificate = SelectedCertificate;
             cbf.Thumbprint = Thumbprint;
-            cbf.EndPointConfigurationNameList = GetEndPoints(contractName);
+            cbf.EndPointConfigurationNameList = GetEndPoints();
             if(State != null)
                 cbf.SetUserState(State);
             cbf.FormClosing += cbf_FormClosing;
@@ -50,7 +53,7 @@ namespace EC_Endpoint_Client.BaseForms
             }
         }
 
-        public virtual List<string> GetEndPoints(string contract)
+        public virtual List<string> GetEndPoints()
         {
             return (from EnvironmentUrl eu in EcClientConfiguration.GetConfig().EnvironmentUrlCollection where !eu.IgnoreInWcf.HasValue || !eu.IgnoreInWcf.Value select eu.Name).ToList();
         }

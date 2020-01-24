@@ -44,6 +44,8 @@ namespace EC_Endpoint_Client.Forms.Intermediary
             ReceiptUpdateShipment = new ReceiptUpdateExternalShipment();
             ReceiptListSearchShipment = new ReceiptListSearchExternalShipment();
             ReceiptListV2SearchShipment = new ReceiptListV2SearchExternalShipment();
+            TestShipment = new BaseShipment();
+
             SetupObjectsForPropertyGrid();
         }
 

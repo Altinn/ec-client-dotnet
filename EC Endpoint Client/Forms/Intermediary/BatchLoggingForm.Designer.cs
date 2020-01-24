@@ -35,6 +35,8 @@
             this.controllerGetDetailedStatus = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.controllerGetStatusOverviews = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.controllerGetDataItem = new EC_Endpoint_Client.UserControls.ActionHolderControl();
+ 			this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btn_Test = new System.Windows.Forms.Button();
             this.servicePanel.SuspendLayout();
             this.getDetailedOverViewTab.SuspendLayout();
             this.getStatusOverviewTab.SuspendLayout();
@@ -51,6 +53,7 @@
             this.getDetailedOverViewTab.Controls.Add(this.getStatusOverviewTab);
             this.getDetailedOverViewTab.Controls.Add(this.getDetailedStatusTab);
             this.getDetailedOverViewTab.Controls.Add(this.getDataItemPage);
+			this.getDetailedOverViewTab.Controls.Add(this.tabPage1);
             this.getDetailedOverViewTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.getDetailedOverViewTab.Location = new System.Drawing.Point(0, 0);
             this.getDetailedOverViewTab.Name = "getDetailedOverViewTab";
@@ -114,6 +117,27 @@
             this.controllerGetDataItem.Name = "controllerGetDataItem";
             this.controllerGetDataItem.Size = new System.Drawing.Size(411, 337);
             this.controllerGetDataItem.TabIndex = 0;
+			// 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Controls.Add(this.btn_Test);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(417, 343);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Test";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btn_Test
+            // 
+            this.btn_Test.Location = new System.Drawing.Point(6, 6);
+            this.btn_Test.Name = "btn_Test";
+            this.btn_Test.Size = new System.Drawing.Size(118, 23);
+            this.btn_Test.TabIndex = 7;
+            this.btn_Test.Text = "Test";
+            this.btn_Test.UseVisualStyleBackColor = true;
+            this.btn_Test.Click += new System.EventHandler(this.btn_Test_Click);
             // 
             // BatchLoggingForm
             // 
@@ -141,5 +165,7 @@
         private UserControls.ActionHolderControl controllerGetDetailedStatus;
         private UserControls.ActionHolderControl controllerGetStatusOverviews;
         private UserControls.ActionHolderControl controllerGetDataItem;
+		private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button btn_Test;
     }
 }
