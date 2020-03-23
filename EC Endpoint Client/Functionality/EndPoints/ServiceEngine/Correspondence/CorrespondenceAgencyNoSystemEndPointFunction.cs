@@ -1,7 +1,7 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
-using EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem;
-using ReceiptExternal = EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem.ReceiptExternal;
+using EC_Endpoint_Client.CorrespondenceAgencyNoSystem;
+using ReceiptExternal = EC_Endpoint_Client.CorrespondenceAgencyNoSystem.ReceiptExternal;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence
 {
@@ -49,10 +49,13 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondenc
         {
             using (var client = GenerateProxy(shipment))
             {
+                SdpStatusInformation info = new SdpStatusInformation();
+
                 CorrespondenceStatusHistoryRequestExternalBE req = new CorrespondenceStatusHistoryRequestExternalBE();
                 req.CorrespondenceSendersReferences = shipment.Request;
                 OperationContext = _context + "GetcorrespondenceStatusHistory";
-                return new CorrespondenceStatusHistoryAecResult(client.GetCorrespondenceStatusHistoryAEC(req));
+                var result = client.GetCorrespondenceStatusHistoryAEC(req.CorrespondenceSendersReferences, out info);
+                return new CorrespondenceStatusHistoryAecResult(result, info);
             }
         }
 

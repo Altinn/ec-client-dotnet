@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Xml.Serialization;
-using EC_Endpoint_Client.Service_References.BrokerService;
+using EC_Endpoint_Client.BrokerService;
 using File = System.IO.File;
 // ReSharper disable InconsistentNaming
 

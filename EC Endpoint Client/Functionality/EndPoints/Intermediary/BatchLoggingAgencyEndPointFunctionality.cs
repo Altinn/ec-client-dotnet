@@ -1,7 +1,7 @@
 ﻿using System;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses;
-using EC_Endpoint_Client.Service_References.BatchLoggingAgency;
+using EC_Endpoint_Client.BatchLoggingAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {

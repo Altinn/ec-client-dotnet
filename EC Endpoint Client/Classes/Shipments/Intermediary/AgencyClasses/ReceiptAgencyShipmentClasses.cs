@@ -1,5 +1,5 @@
 ﻿using System;
-using EC_Endpoint_Client.Service_References.ReceiptAgency;
+using EC_Endpoint_Client.ReceiptAgency;
 
 namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses
 {

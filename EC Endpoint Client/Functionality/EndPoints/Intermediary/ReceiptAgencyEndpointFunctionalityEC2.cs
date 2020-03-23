@@ -25,7 +25,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.GetReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSearch);
         }
 
-        public Receipt GetReceiptV2(ReceiptV2SearchExternalShipmentEC2 shipment)
+        public ReceiptAgencyEC2.Receipt GetReceiptV2(ReceiptV2SearchExternalShipmentEC2 shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptAgencyGetReceiptV2";
@@ -46,14 +46,14 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.GetReceiptListECV2(shipment.Username, shipment.Password, shipment.ReceiptType, shipment.DateFrom, shipment.DateTo);
         }
 
-        public ReceiptExternal SaveReceipt(ReceiptSaveExternalShipmentEC2 shipment)
+        public ReceiptAgencyEC2.ReceiptExternal SaveReceipt(ReceiptSaveExternalShipmentEC2 shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptAgencySaveReceipt";
             return client.SaveReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSave);
         }
 
-        public Receipt UpdateReceipt(ReceiptUpdateExternalShipmentEC2 shipment)
+        public ReceiptAgencyEC2.Receipt UpdateReceipt(ReceiptUpdateExternalShipmentEC2 shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptAgencyUpdateReceipt";

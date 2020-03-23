@@ -3,8 +3,8 @@ using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Archive;
-using EC_Endpoint_Client.Service_References.ReporteeArchive;
-using EC_Endpoint_Client.Service_References.ReporteeArchiveStreamed;
+using EC_Endpoint_Client.ReporteeArchive;
+using EC_Endpoint_Client.ReporteeArchiveStreamed;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {

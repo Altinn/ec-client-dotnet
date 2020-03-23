@@ -3,7 +3,7 @@ using System.ComponentModel;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.Service_References.NotificationAgency;
+using EC_Endpoint_Client.NotificationAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine
 {

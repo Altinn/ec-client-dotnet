@@ -6,7 +6,7 @@ using System.Drawing.Design;
 using System.Linq;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Intermediary;
-using EC_Endpoint_Client.Service_References.IntermediaryInbound;
+using EC_Endpoint_Client.IntermediaryInbound;
 
 namespace EC_Endpoint_Client.Forms.Intermediary
 {

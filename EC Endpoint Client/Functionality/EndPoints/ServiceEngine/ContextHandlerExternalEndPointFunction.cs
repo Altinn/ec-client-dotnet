@@ -1,5 +1,5 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
-using EC_Endpoint_Client.Service_References.ContextHandler;
+using EC_Endpoint_Client.ContextHandler;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
 {

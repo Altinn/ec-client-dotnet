@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillAgency;
-using EC_Endpoint_Client.Service_References.PrefillAgency;
+using EC_Endpoint_Client.PrefillAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Prefill
 {

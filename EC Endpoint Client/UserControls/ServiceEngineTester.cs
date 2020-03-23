@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Windows.Forms;
-using EC_Endpoint_Client.Service_References.Case;
-using EC_Endpoint_Client.Service_References.CaseAgencySystem;
-using EC_Endpoint_Client.Service_References.Correspondence;
-using EC_Endpoint_Client.Service_References.CorrespondenceAgency;
-using EC_Endpoint_Client.Service_References.NotificationAgency;
-using EC_Endpoint_Client.Service_References.PrefillAgency;
-using EC_Endpoint_Client.Service_References.PrefillEUS;
+using EC_Endpoint_Client.Case;
+using EC_Endpoint_Client.CaseAgencySystem;
+using EC_Endpoint_Client.Correspondence;
+using EC_Endpoint_Client.CorrespondenceAgency;
+using EC_Endpoint_Client.NotificationAgency;
+using EC_Endpoint_Client.PrefillAgency;
+using EC_Endpoint_Client.PrefillEUS;
 using EC_Endpoint_Client.ReporteeElementList;
-using EC_Endpoint_Client.Service_References.SubscriptionAgency;
-using PrefillFormTask = EC_Endpoint_Client.Service_References.PrefillAgency.PrefillFormTask;
+using EC_Endpoint_Client.SubscriptionAgency;
+using PrefillFormTask = EC_Endpoint_Client.PrefillAgency.PrefillFormTask;
 
 #region serviceengine
 

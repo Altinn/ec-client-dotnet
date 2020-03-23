@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
-using EC_Endpoint_Client.Service_References.CorrespondenceAgency;
+using EC_Endpoint_Client.CorrespondenceAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence
 {
@@ -37,11 +37,13 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondenc
 
         public CorrespondenceStatusHistoryResultEx GetCorrespondenceStatusHistory(GetCorrespondenceStatusHistoryShipment shipment)
         {
+            SdpStatusInformation info = new SdpStatusInformation();
             using (var client = GenerateProxy(shipment))
             {
                 OperationContext = _context + "GetcorrespondenceStatusHistory";
-                return new CorrespondenceStatusHistoryResultEx(client.GetCorrespondenceStatusHistoryEC(shipment.Password, shipment.Username,
-                    shipment.Request));
+                var result = client.GetCorrespondenceStatusHistoryEC(shipment.Password, shipment.Username, shipment.Request, out info);
+                CorrespondenceStatusHistoryResultEx resultEx = new CorrespondenceStatusHistoryResultEx(result, info);
+                return resultEx;
             }
         }
     }

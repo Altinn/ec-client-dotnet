@@ -166,12 +166,7 @@ namespace EC_Endpoint_Client.NotificationAgencyEC2 {
     [System.Runtime.Serialization.DataContractAttribute(Name="StandaloneNotification", Namespace="http://schemas.altinn.no/services/ServiceEngine/Notification/2009/10")]
     [System.SerializableAttribute()]
     public partial class StandaloneNotification : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        public StandaloneNotification()
-        {
-            this.TextTokens = new TextTokenSubstitutionBEList();
-            this.ReceiverEndPoints = new ReceiverEndPointBEList();
-        }
-
+        
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         

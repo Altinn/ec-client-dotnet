@@ -13,6 +13,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService
 
         public void Test(BaseShipment shipment)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
             var client = GenerateProxy(shipment);
             OperationContext = "BrokerServiceTest";
             client.Test();
@@ -30,6 +31,13 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService
             var client = GenerateProxy(shipment);
             OperationContext = "BrokerServiceTest";
             return client.GetAvailableFilesEC(shipment.Username, shipment.Password, shipment.BrokerServiceSearch).ToArray();
+        }
+
+        public bool CheckForNewFiles(BrokerServicePollShipment shipment)
+        {
+            var client = GenerateProxy(shipment);
+            OperationContext = "GetNewFiles";
+            return client.CheckIfAvailableFilesEC(shipment.Username, shipment.Password, shipment.Poll);
         }
     }
 }

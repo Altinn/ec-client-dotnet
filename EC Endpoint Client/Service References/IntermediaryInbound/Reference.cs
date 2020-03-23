@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
+namespace EC_Endpoint_Client.IntermediaryInbound {
     using System.Runtime.Serialization;
     using System;
     
@@ -159,7 +159,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="SignatureList", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2009/" +
         "10", ItemName="Signature")]
     [System.SerializableAttribute()]
-    public class SignatureList : System.Collections.Generic.List<EC_Endpoint_Client.Service_References.IntermediaryInbound.Signature> {
+    public class SignatureList : System.Collections.Generic.List<EC_Endpoint_Client.IntermediaryInbound.Signature> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -333,19 +333,19 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private int ReceiptIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptStatusEnum ReceiptStatusCodeField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptStatusEnum ReceiptStatusCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReceiptTextField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptTypeEnum ReceiptTypeNameField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptTypeEnum ReceiptTypeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceList ReferencesField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReferenceList ReferencesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalList SubReceiptsField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalList SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -410,7 +410,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptStatusEnum ReceiptStatusCode {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptStatusEnum ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -436,7 +436,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptTypeEnum ReceiptTypeName {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptTypeEnum ReceiptTypeName {
             get {
                 return this.ReceiptTypeNameField;
             }
@@ -449,7 +449,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceList References {
+        public EC_Endpoint_Client.IntermediaryInbound.ReferenceList References {
             get {
                 return this.ReferencesField;
             }
@@ -462,7 +462,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalList SubReceipts {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalList SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -564,14 +564,14 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReferenceList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="Reference")]
     [System.SerializableAttribute()]
-    public class ReferenceList : System.Collections.Generic.List<EC_Endpoint_Client.Service_References.IntermediaryInbound.Reference> {
+    public class ReferenceList : System.Collections.Generic.List<EC_Endpoint_Client.IntermediaryInbound.Reference> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ReceiptExternalList", Namespace="http://schemas.altinn.no/services/Intermediary/Receipt/2009/10", ItemName="ReceiptExternal")]
     [System.SerializableAttribute()]
-    public class ReceiptExternalList : System.Collections.Generic.List<EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal> {
+    public class ReceiptExternalList : System.Collections.Generic.List<EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -584,7 +584,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceType ReferenceTypeNameField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReferenceType ReferenceTypeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReferenceValueField;
@@ -600,7 +600,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceType ReferenceTypeName {
+        public EC_Endpoint_Client.IntermediaryInbound.ReferenceType ReferenceTypeName {
             get {
                 return this.ReferenceTypeNameField;
             }
@@ -695,13 +695,13 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private string ExternalShipmentReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTask FormTasksField;
+        private EC_Endpoint_Client.IntermediaryInbound.FormTask FormTasksField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.Attachment[] AttachmentsField;
+        private EC_Endpoint_Client.IntermediaryInbound.Attachment[] AttachmentsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.Signature1 SignaturesField;
+        private EC_Endpoint_Client.IntermediaryInbound.Signature1 SignaturesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsUserDelegationLockedField;
@@ -710,10 +710,10 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private int UserDefinedNumberOfSignaturesRequiredField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.DelegatedUserBE[] UsersField;
+        private EC_Endpoint_Client.IntermediaryInbound.DelegatedUserBE[] UsersField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.EncryptedKeyBE EncryptedKeyField;
+        private EC_Endpoint_Client.IntermediaryInbound.EncryptedKeyBE EncryptedKeyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> CaseIDField;
@@ -755,7 +755,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTask FormTasks {
+        public EC_Endpoint_Client.IntermediaryInbound.FormTask FormTasks {
             get {
                 return this.FormTasksField;
             }
@@ -768,7 +768,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.Attachment[] Attachments {
+        public EC_Endpoint_Client.IntermediaryInbound.Attachment[] Attachments {
             get {
                 return this.AttachmentsField;
             }
@@ -781,7 +781,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.Signature1 Signatures {
+        public EC_Endpoint_Client.IntermediaryInbound.Signature1 Signatures {
             get {
                 return this.SignaturesField;
             }
@@ -820,7 +820,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.DelegatedUserBE[] Users {
+        public EC_Endpoint_Client.IntermediaryInbound.DelegatedUserBE[] Users {
             get {
                 return this.UsersField;
             }
@@ -833,7 +833,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.EncryptedKeyBE EncryptedKey {
+        public EC_Endpoint_Client.IntermediaryInbound.EncryptedKeyBE EncryptedKey {
             get {
                 return this.EncryptedKeyField;
             }
@@ -884,7 +884,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private int ServiceEditionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.Form[] FormsField;
+        private EC_Endpoint_Client.IntermediaryInbound.Form[] FormsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -923,7 +923,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.Form[] Forms {
+        public EC_Endpoint_Client.IntermediaryInbound.Form[] Forms {
             get {
                 return this.FormsField;
             }
@@ -1080,10 +1080,10 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReporteeSymmetricKeyBE ReporteeSymmetricKeyField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReporteeSymmetricKeyBE ReporteeSymmetricKeyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ServiceOwnerSymmetricKeyBE[] ServiceOwnerSymmetricKeysField;
+        private EC_Endpoint_Client.IntermediaryInbound.ServiceOwnerSymmetricKeyBE[] ServiceOwnerSymmetricKeysField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1096,7 +1096,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReporteeSymmetricKeyBE ReporteeSymmetricKey {
+        public EC_Endpoint_Client.IntermediaryInbound.ReporteeSymmetricKeyBE ReporteeSymmetricKey {
             get {
                 return this.ReporteeSymmetricKeyField;
             }
@@ -1109,7 +1109,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ServiceOwnerSymmetricKeyBE[] ServiceOwnerSymmetricKeys {
+        public EC_Endpoint_Client.IntermediaryInbound.ServiceOwnerSymmetricKeyBE[] ServiceOwnerSymmetricKeys {
             get {
                 return this.ServiceOwnerSymmetricKeysField;
             }
@@ -1318,7 +1318,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PhoneNumberField;
         
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.SigningOptions SigningOptionsField;
+        private EC_Endpoint_Client.IntermediaryInbound.SigningOptions SigningOptionsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1422,7 +1422,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.SigningOptions SigningOptions {
+        public EC_Endpoint_Client.IntermediaryInbound.SigningOptions SigningOptions {
             get {
                 return this.SigningOptionsField;
             }
@@ -1749,19 +1749,19 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         private System.DateTime LastChangedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptTypeExternal ReceiptTypeNameField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptTypeExternal ReceiptTypeNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptStatusExternal ReceiptStatusCodeField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptStatusExternal ReceiptStatusCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ParentReceiptIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ArrayOfReferenceExternalBE ReferencesField;
+        private EC_Endpoint_Client.IntermediaryInbound.ArrayOfReferenceExternalBE ReferencesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalBE[] SubReceiptsField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE[] SubReceiptsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1826,7 +1826,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptTypeExternal ReceiptTypeName {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptTypeExternal ReceiptTypeName {
             get {
                 return this.ReceiptTypeNameField;
             }
@@ -1839,7 +1839,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptStatusExternal ReceiptStatusCode {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptStatusExternal ReceiptStatusCode {
             get {
                 return this.ReceiptStatusCodeField;
             }
@@ -1865,7 +1865,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ArrayOfReferenceExternalBE References {
+        public EC_Endpoint_Client.IntermediaryInbound.ArrayOfReferenceExternalBE References {
             get {
                 return this.ReferencesField;
             }
@@ -1878,7 +1878,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalBE[] SubReceipts {
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE[] SubReceipts {
             get {
                 return this.SubReceiptsField;
             }
@@ -1980,7 +1980,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfReferenceExternalBE", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", ItemName="ReferenceBE")]
     [System.SerializableAttribute()]
-    public class ArrayOfReferenceExternalBE : System.Collections.Generic.List<EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceExternalBE> {
+    public class ArrayOfReferenceExternalBE : System.Collections.Generic.List<EC_Endpoint_Client.IntermediaryInbound.ReferenceExternalBE> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1995,7 +1995,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ReferenceValueField;
         
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceTypeExternal ReferenceTypeNameField;
+        private EC_Endpoint_Client.IntermediaryInbound.ReferenceTypeExternal ReferenceTypeNameField;
         
         private int ReporteeIDField;
         
@@ -2023,7 +2023,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReferenceTypeExternal ReferenceTypeName {
+        public EC_Endpoint_Client.IntermediaryInbound.ReferenceTypeExternal ReferenceTypeName {
             get {
                 return this.ReferenceTypeNameField;
             }
@@ -2114,7 +2114,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         
         private string ExternalShipmentReferenceField;
         
-        private EC_Endpoint_Client.Service_References.IntermediaryInbound.FormUpdateList FormUpdateListField;
+        private EC_Endpoint_Client.IntermediaryInbound.FormUpdateList FormUpdateListField;
         
         private int ReporteeElementIdField;
         
@@ -2142,7 +2142,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.FormUpdateList FormUpdateList {
+        public EC_Endpoint_Client.IntermediaryInbound.FormUpdateList FormUpdateList {
             get {
                 return this.FormUpdateListField;
             }
@@ -2182,7 +2182,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     [System.Runtime.Serialization.CollectionDataContractAttribute(Name="FormUpdateList", Namespace="http://schemas.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2018/" +
         "06", ItemName="FormUpdate")]
     [System.SerializableAttribute()]
-    public class FormUpdateList : System.Collections.Generic.List<EC_Endpoint_Client.Service_References.IntermediaryInbound.FormUpdate> {
+    public class FormUpdateList : System.Collections.Generic.List<EC_Endpoint_Client.IntermediaryInbound.FormUpdate> {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2297,40 +2297,40 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         
         // CODEGEN: Generating message contract since the wrapper namespace (http://www.altinn.no/services/2009/10) of message TestRequest does not match the default value (http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10)
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/Test", ReplyAction="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Service_References.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.TestResponse Test(EC_Endpoint_Client.Service_References.IntermediaryInbound.TestRequest request);
+        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/2009/10/IAltinnContractBase/TestAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
+        EC_Endpoint_Client.IntermediaryInbound.TestResponse Test(EC_Endpoint_Client.IntermediaryInbound.TestRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/CompleteAndSignShipmentEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/CompleteAndSignShipmentECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Service_References.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
+        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/CompleteAndSignShipmentECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECResponse CompleteAndSignShipmentEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequest request);
+        EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECResponse CompleteAndSignShipmentEC(EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/GetAltinnSubmissionStatusEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/GetAltinnSubmissionStatusECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Service_References.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
+        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/GetAltinnSubmissionStatusECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECResponse GetAltinnSubmissionStatusEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequest request);
+        EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECResponse GetAltinnSubmissionStatusEC(EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/SubmitFormTaskEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/SubmitFormTaskECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Service_References.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
+        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/SubmitFormTaskECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECResponse SubmitFormTaskEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequest request);
+        EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECResponse SubmitFormTaskEC(EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequest request);
         
         // CODEGEN: Generating message contract since element name userName from namespace http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10 is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/UpdateFormDataEC", ReplyAction="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/UpdateFormDataECResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.Service_References.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
+        [System.ServiceModel.FaultContractAttribute(typeof(EC_Endpoint_Client.IntermediaryInbound.AltinnFault), Action="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10/I" +
             "IntermediaryInboundExternalEC/UpdateFormDataECAltinnFaultFault", Name="AltinnFault", Namespace="http://www.altinn.no/services/common/fault/2009/10")]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECResponse UpdateFormDataEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequest request);
+        EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECResponse UpdateFormDataEC(EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2360,12 +2360,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class CompleteAndSignShipmentECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CompleteAndSignShipmentEC", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequestBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequestBody Body;
         
         public CompleteAndSignShipmentECRequest() {
         }
         
-        public CompleteAndSignShipmentECRequest(EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequestBody Body) {
+        public CompleteAndSignShipmentECRequest(EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2386,7 +2386,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         public int reporteeElementId;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.SignatureList signature;
+        public EC_Endpoint_Client.IntermediaryInbound.SignatureList signature;
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
         public int languageId;
@@ -2394,7 +2394,7 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         public CompleteAndSignShipmentECRequestBody() {
         }
         
-        public CompleteAndSignShipmentECRequestBody(string userName, string password, int reporteeElementId, EC_Endpoint_Client.Service_References.IntermediaryInbound.SignatureList signature, int languageId) {
+        public CompleteAndSignShipmentECRequestBody(string userName, string password, int reporteeElementId, EC_Endpoint_Client.IntermediaryInbound.SignatureList signature, int languageId) {
             this.userName = userName;
             this.password = password;
             this.reporteeElementId = reporteeElementId;
@@ -2410,12 +2410,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class CompleteAndSignShipmentECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="CompleteAndSignShipmentECResponse", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECResponseBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECResponseBody Body;
         
         public CompleteAndSignShipmentECResponse() {
         }
         
-        public CompleteAndSignShipmentECResponse(EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECResponseBody Body) {
+        public CompleteAndSignShipmentECResponse(EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2427,12 +2427,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class CompleteAndSignShipmentECResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentECResult;
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentECResult;
         
         public CompleteAndSignShipmentECResponseBody() {
         }
         
-        public CompleteAndSignShipmentECResponseBody(EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentECResult) {
+        public CompleteAndSignShipmentECResponseBody(EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentECResult) {
             this.CompleteAndSignShipmentECResult = CompleteAndSignShipmentECResult;
         }
     }
@@ -2444,12 +2444,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class GetAltinnSubmissionStatusECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAltinnSubmissionStatusEC", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody Body;
         
         public GetAltinnSubmissionStatusECRequest() {
         }
         
-        public GetAltinnSubmissionStatusECRequest(EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody Body) {
+        public GetAltinnSubmissionStatusECRequest(EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2482,12 +2482,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class GetAltinnSubmissionStatusECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAltinnSubmissionStatusECResponse", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECResponseBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECResponseBody Body;
         
         public GetAltinnSubmissionStatusECResponse() {
         }
         
-        public GetAltinnSubmissionStatusECResponse(EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECResponseBody Body) {
+        public GetAltinnSubmissionStatusECResponse(EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2516,12 +2516,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class SubmitFormTaskECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitFormTaskEC", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequestBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequestBody Body;
         
         public SubmitFormTaskECRequest() {
         }
         
-        public SubmitFormTaskECRequest(EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequestBody Body) {
+        public SubmitFormTaskECRequest(EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2539,12 +2539,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         public string password;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskShipmentBE formTaskShipment;
+        public EC_Endpoint_Client.IntermediaryInbound.FormTaskShipmentBE formTaskShipment;
         
         public SubmitFormTaskECRequestBody() {
         }
         
-        public SubmitFormTaskECRequestBody(string userName, string password, EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskShipmentBE formTaskShipment) {
+        public SubmitFormTaskECRequestBody(string userName, string password, EC_Endpoint_Client.IntermediaryInbound.FormTaskShipmentBE formTaskShipment) {
             this.userName = userName;
             this.password = password;
             this.formTaskShipment = formTaskShipment;
@@ -2558,12 +2558,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class SubmitFormTaskECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="SubmitFormTaskECResponse", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECResponseBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECResponseBody Body;
         
         public SubmitFormTaskECResponse() {
         }
         
-        public SubmitFormTaskECResponse(EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECResponseBody Body) {
+        public SubmitFormTaskECResponse(EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2575,12 +2575,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class SubmitFormTaskECResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskECResult;
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskECResult;
         
         public SubmitFormTaskECResponseBody() {
         }
         
-        public SubmitFormTaskECResponseBody(EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskECResult) {
+        public SubmitFormTaskECResponseBody(EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskECResult) {
             this.SubmitFormTaskECResult = SubmitFormTaskECResult;
         }
     }
@@ -2592,12 +2592,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class UpdateFormDataECRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateFormDataEC", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequestBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequestBody Body;
         
         public UpdateFormDataECRequest() {
         }
         
-        public UpdateFormDataECRequest(EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequestBody Body) {
+        public UpdateFormDataECRequest(EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -2615,12 +2615,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         public string password;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskUpdate formTaskUpdate;
+        public EC_Endpoint_Client.IntermediaryInbound.FormTaskUpdate formTaskUpdate;
         
         public UpdateFormDataECRequestBody() {
         }
         
-        public UpdateFormDataECRequestBody(string userName, string password, EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskUpdate formTaskUpdate) {
+        public UpdateFormDataECRequestBody(string userName, string password, EC_Endpoint_Client.IntermediaryInbound.FormTaskUpdate formTaskUpdate) {
             this.userName = userName;
             this.password = password;
             this.formTaskUpdate = formTaskUpdate;
@@ -2634,12 +2634,12 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class UpdateFormDataECResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateFormDataECResponse", Namespace="http://www.altinn.no/services/Intermediary/Shipment/IntermediaryInbound/2010/10", Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECResponseBody Body;
+        public EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECResponseBody Body;
         
         public UpdateFormDataECResponse() {
         }
         
-        public UpdateFormDataECResponse(EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECResponseBody Body) {
+        public UpdateFormDataECResponse(EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -2651,23 +2651,23 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
     public partial class UpdateFormDataECResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal UpdateFormDataECResult;
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal UpdateFormDataECResult;
         
         public UpdateFormDataECResponseBody() {
         }
         
-        public UpdateFormDataECResponseBody(EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal UpdateFormDataECResult) {
+        public UpdateFormDataECResponseBody(EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal UpdateFormDataECResult) {
             this.UpdateFormDataECResult = UpdateFormDataECResult;
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IIntermediaryInboundExternalECChannel : EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC, System.ServiceModel.IClientChannel {
+    public interface IIntermediaryInboundExternalECChannel : EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class IntermediaryInboundExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC>, EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC {
+    public partial class IntermediaryInboundExternalECClient : System.ServiceModel.ClientBase<EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC>, EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC {
         
         public IntermediaryInboundExternalECClient() {
         }
@@ -2689,73 +2689,73 @@ namespace EC_Endpoint_Client.Service_References.IntermediaryInbound {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.TestResponse EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC.Test(EC_Endpoint_Client.Service_References.IntermediaryInbound.TestRequest request) {
+        EC_Endpoint_Client.IntermediaryInbound.TestResponse EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC.Test(EC_Endpoint_Client.IntermediaryInbound.TestRequest request) {
             return base.Channel.Test(request);
         }
         
         public void Test() {
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.TestRequest inValue = new EC_Endpoint_Client.Service_References.IntermediaryInbound.TestRequest();
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.TestResponse retVal = ((EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).Test(inValue);
+            EC_Endpoint_Client.IntermediaryInbound.TestRequest inValue = new EC_Endpoint_Client.IntermediaryInbound.TestRequest();
+            EC_Endpoint_Client.IntermediaryInbound.TestResponse retVal = ((EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).Test(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECResponse EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC.CompleteAndSignShipmentEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequest request) {
+        EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECResponse EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC.CompleteAndSignShipmentEC(EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequest request) {
             return base.Channel.CompleteAndSignShipmentEC(request);
         }
         
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentEC(string userName, string password, int reporteeElementId, EC_Endpoint_Client.Service_References.IntermediaryInbound.SignatureList signature, int languageId) {
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequest inValue = new EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequest();
-            inValue.Body = new EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECRequestBody();
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal CompleteAndSignShipmentEC(string userName, string password, int reporteeElementId, EC_Endpoint_Client.IntermediaryInbound.SignatureList signature, int languageId) {
+            EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequest inValue = new EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequest();
+            inValue.Body = new EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.reporteeElementId = reporteeElementId;
             inValue.Body.signature = signature;
             inValue.Body.languageId = languageId;
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.CompleteAndSignShipmentECResponse retVal = ((EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).CompleteAndSignShipmentEC(inValue);
+            EC_Endpoint_Client.IntermediaryInbound.CompleteAndSignShipmentECResponse retVal = ((EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).CompleteAndSignShipmentEC(inValue);
             return retVal.Body.CompleteAndSignShipmentECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECResponse EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC.GetAltinnSubmissionStatusEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequest request) {
+        EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECResponse EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC.GetAltinnSubmissionStatusEC(EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequest request) {
             return base.Channel.GetAltinnSubmissionStatusEC(request);
         }
         
         public int GetAltinnSubmissionStatusEC(string userName, string password) {
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequest inValue = new EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequest();
-            inValue.Body = new EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody();
+            EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequest inValue = new EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequest();
+            inValue.Body = new EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.GetAltinnSubmissionStatusECResponse retVal = ((EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).GetAltinnSubmissionStatusEC(inValue);
+            EC_Endpoint_Client.IntermediaryInbound.GetAltinnSubmissionStatusECResponse retVal = ((EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).GetAltinnSubmissionStatusEC(inValue);
             return retVal.Body.GetAltinnSubmissionStatusECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECResponse EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC.SubmitFormTaskEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequest request) {
+        EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECResponse EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC.SubmitFormTaskEC(EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequest request) {
             return base.Channel.SubmitFormTaskEC(request);
         }
         
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskEC(string userName, string password, EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskShipmentBE formTaskShipment) {
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequest inValue = new EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequest();
-            inValue.Body = new EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECRequestBody();
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternalBE SubmitFormTaskEC(string userName, string password, EC_Endpoint_Client.IntermediaryInbound.FormTaskShipmentBE formTaskShipment) {
+            EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequest inValue = new EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequest();
+            inValue.Body = new EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.formTaskShipment = formTaskShipment;
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.SubmitFormTaskECResponse retVal = ((EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).SubmitFormTaskEC(inValue);
+            EC_Endpoint_Client.IntermediaryInbound.SubmitFormTaskECResponse retVal = ((EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).SubmitFormTaskEC(inValue);
             return retVal.Body.SubmitFormTaskECResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECResponse EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC.UpdateFormDataEC(EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequest request) {
+        EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECResponse EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC.UpdateFormDataEC(EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequest request) {
             return base.Channel.UpdateFormDataEC(request);
         }
         
-        public EC_Endpoint_Client.Service_References.IntermediaryInbound.ReceiptExternal UpdateFormDataEC(string userName, string password, EC_Endpoint_Client.Service_References.IntermediaryInbound.FormTaskUpdate formTaskUpdate) {
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequest inValue = new EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequest();
-            inValue.Body = new EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECRequestBody();
+        public EC_Endpoint_Client.IntermediaryInbound.ReceiptExternal UpdateFormDataEC(string userName, string password, EC_Endpoint_Client.IntermediaryInbound.FormTaskUpdate formTaskUpdate) {
+            EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequest inValue = new EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequest();
+            inValue.Body = new EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECRequestBody();
             inValue.Body.userName = userName;
             inValue.Body.password = password;
             inValue.Body.formTaskUpdate = formTaskUpdate;
-            EC_Endpoint_Client.Service_References.IntermediaryInbound.UpdateFormDataECResponse retVal = ((EC_Endpoint_Client.Service_References.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).UpdateFormDataEC(inValue);
+            EC_Endpoint_Client.IntermediaryInbound.UpdateFormDataECResponse retVal = ((EC_Endpoint_Client.IntermediaryInbound.IIntermediaryInboundExternalEC)(this)).UpdateFormDataEC(inValue);
             return retVal.Body.UpdateFormDataECResult;
         }
     }

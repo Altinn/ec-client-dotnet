@@ -4,7 +4,7 @@ using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Archive;
 using EC_Endpoint_Client.Functionality.EndPoints.Archive;
-using EC_Endpoint_Client.Service_References.ReporteeArchive;
+using EC_Endpoint_Client.ReporteeArchive;
 
 namespace EC_Endpoint_Client.Forms.Archive
 {

@@ -21,9 +21,10 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerService
         public string InitiateFileReferenceResult;
         public BrokerServiceAvailableFile[] GetAvailableFileListResult;
         public UploadFileStreamedResult UploadFileStreamedReceiptResult;
+        public BrokerServicePollShipment CheckNewFilesShipment;
         public byte[] DownloadFileStreamedResult;
         public string SavedFilePath { get; set; }
-
+        bool CheckNewFilesResult = false;
         public BrokerServiceFormEC2()
         {
             InitializeComponent();
@@ -38,9 +39,10 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerService
             GetAvailableFilesShipment = new GetAvailableFilesShipmentEC2();
             UploadFileStreamedShipment = new UploadFileStreamedShipment();
             DownloadFileStreamedShipment = new DownloadFileStreamedShipment();
-
-            UploadFileStreamedReceiptResult = new UploadFileStreamedResult();
+            CheckNewFilesShipment = new BrokerServicePollShipment();
             
+            UploadFileStreamedReceiptResult = new UploadFileStreamedResult();
+            SetUpCheckShipment();
             SetupObjForPropertyGrid();
         }
 
@@ -54,6 +56,21 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.BrokerService
             TypeDescriptor.AddAttributes(typeof(BrokerServiceSearch), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(StreamedPayloadECBE), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(BrokerServiceAvailableFile), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(BrokerServicePoll), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+        }
+
+        private void SetUpCheckShipment()
+        {
+            this.ach_pollNewFiles.AssignActions(
+                () =>
+                {
+                    InvokeService(_brokerServiceEpFunc.CheckForNewFiles, CheckNewFilesShipment, ref CheckNewFilesResult, "Poll for new files");
+                },
+                () => { SetViewedItem(CheckNewFilesShipment, "Poll for New Files"); },
+                () => { InvokeSaveShipment(CheckNewFilesShipment); },
+                () => { CheckNewFilesShipment = InvokeLoad<BrokerServicePollShipment>(); },
+                () => { SetViewedItem(CheckNewFilesResult, "Poll Result"); }
+                );
         }
         #region serviceInvocations
         private void Test()

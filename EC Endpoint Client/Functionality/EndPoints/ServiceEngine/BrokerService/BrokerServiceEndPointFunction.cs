@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService;
-using EC_Endpoint_Client.Service_References.BrokerService;
+using EC_Endpoint_Client.BrokerService;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService
 {

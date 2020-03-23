@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.IO;
 using System.Xml.Serialization;
-using EC_Endpoint_Client.Service_References.IntermediaryInbound;
+using EC_Endpoint_Client.IntermediaryInbound;
 
 namespace EC_Endpoint_Client.Classes.Shipments.Intermediary
 {

@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine;
-using EC_Endpoint_Client.Service_References.SubscriptionAgency;
+using EC_Endpoint_Client.SubscriptionAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine
 {

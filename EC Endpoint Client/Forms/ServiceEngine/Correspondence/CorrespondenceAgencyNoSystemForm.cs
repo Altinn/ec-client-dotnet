@@ -7,7 +7,7 @@ using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency;
 using EC_Endpoint_Client.Functionality;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence;
-using EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem;
+using EC_Endpoint_Client.CorrespondenceAgencyNoSystem;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 {

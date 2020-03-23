@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.altinn.no/services/serviceEntity/2015/06" elementFormDefault="qualified" targetNamespace="http://schemas.altinn.no/services/serviceEntity/2015/06" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="BrokerServiceAvailableFileStatus">
+    <xs:annotation>
+      <xs:appinfo />
+      <xs:documentation>&lt;summary&gt;
+            Defines the different status values for available broker service files.
+            &lt;/summary&gt;</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Uploaded">
+        <xs:annotation>
+          <xs:documentation>&lt;summary&gt;
+            Specifies that a new file is uploaded and ready for download.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Downloaded">
+        <xs:annotation>
+          <xs:documentation>&lt;summary&gt;
+            Specifies that a file has already been downloaded but is still available.
+            &lt;/summary&gt;</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="BrokerServiceAvailableFileStatus" nillable="true" type="tns:BrokerServiceAvailableFileStatus" />
+</xs:schema>

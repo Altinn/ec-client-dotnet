@@ -4,7 +4,7 @@ using System.ServiceModel.Security;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Functionality.EndPoints.Archive;
-using EC_Endpoint_Client.Service_References.ArchiveCommonAgency;
+using EC_Endpoint_Client.ArchiveCommonAgency;
 using EC_Endpoint_Client.UserControls;
 
 namespace EC_Endpoint_Client.Forms.Archive
