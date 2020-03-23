@@ -284,7 +284,7 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(417, 343);
             this.tabPage6.TabIndex = 8;
-            this.tabPage6.Text = "CheckForNewFiles";
+            this.tabPage6.Text = "CheckIfFilesAvailable";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // ach_pollNewFiles
