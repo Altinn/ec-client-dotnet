@@ -2,7 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Intermediary;
-using EC_Endpoint_Client.Service_References.IntermediaryInboundStreamed;
+using EC_Endpoint_Client.IntermediaryInboundStreamed;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {

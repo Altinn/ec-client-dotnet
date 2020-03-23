@@ -11,7 +11,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
         private CorrespondenceEndPointFunctionEC2 _cepFunc;
         public CorrespondenceShipmentBase ShipmentAc { get; set; }
         public CorrespondenceShipmentBase ShipmentSaveCorrConf { get; set; }
-        private Receipt ResultAc { get; set; }
+        private CorrespondenceEC2.Receipt ResultAc { get; set; }
         public GetCorrespondenceShipment ShipmentGetCorr { get; set; }
         private CorrespondenceForEndUserSystemV2 ResultGetCorr { get; set; }
         public CorrespondenceFormEC2()
@@ -27,7 +27,7 @@ namespace EC_Endpoint_Client.Forms.ServiceEngine.Correspondence
 
         private void SetupObjForPropGrid()
         {
-            TypeDescriptor.AddAttributes(typeof(Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(Receipt.Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(CorrespondenceForEndUserSystemV2), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
         }
 

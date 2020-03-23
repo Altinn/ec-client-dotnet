@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.ExtendedClasses.Archive;
 using EC_Endpoint_Client.Classes.Shipments;
-using EC_Endpoint_Client.Service_References.SOArchive;
-using EC_Endpoint_Client.Service_References.SOArchiveStreamed;
+using EC_Endpoint_Client.SOArchive;
+using EC_Endpoint_Client.SOArchiveStreamed;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {

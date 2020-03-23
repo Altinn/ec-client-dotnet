@@ -19,10 +19,18 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://at03.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="BrokerServiceExternalEC2SF.wsdl" MetadataType="Wsdl" ID="fae63932-7b01-4e72-931c-c77540de0262" SourceId="1" SourceUrl="https://at03.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?wsdl" />
+    <MetadataFile FileName="BrokerServiceExternalEC2.xsd" MetadataType="Schema" ID="21a9d252-f71f-4379-b842-231e7680fd50" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd3" />
+    <MetadataFile FileName="BrokerServiceExternalEC21.xsd" MetadataType="Schema" ID="9b8b57e7-170d-4816-93bb-e00827be7de2" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd6" />
+    <MetadataFile FileName="BrokerServiceExternalEC22.xsd" MetadataType="Schema" ID="1c1dd035-2204-4afc-aa49-ff8cce076ea0" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd1" />
+    <MetadataFile FileName="BrokerServiceExternalEC23.xsd" MetadataType="Schema" ID="64b03048-63ab-4774-9a2d-d598351c4b0d" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd4" />
+    <MetadataFile FileName="BrokerServiceExternalEC24.xsd" MetadataType="Schema" ID="bcfeab5e-cd24-4304-acd7-ae911db58a6a" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd2" />
+    <MetadataFile FileName="BrokerServiceExternalEC2SF1.wsdl" MetadataType="Wsdl" ID="a15f2d63-7b0e-475a-aaf9-52d398d7d8c3" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?wsdl" />
+    <MetadataFile FileName="BrokerServiceExternalEC25.xsd" MetadataType="Schema" ID="41b4e031-5985-4710-a558-c01d3c52767f" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd0" />
+    <MetadataFile FileName="BrokerServiceExternalEC26.xsd" MetadataType="Schema" ID="b8fa15fe-a853-45bc-8d2c-03e950ce722e" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd7" />
+    <MetadataFile FileName="BrokerServiceExternalEC27.xsd" MetadataType="Schema" ID="320f019c-0cc4-4a53-ba46-8aa0085cfba5" SourceId="1" SourceUrl="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd5" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

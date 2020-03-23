@@ -4,7 +4,7 @@ using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses;
 using EC_Endpoint_Client.Functionality.EndPoints.Intermediary;
-using EC_Endpoint_Client.Service_References.ReceiptAgency;
+using EC_Endpoint_Client.ReceiptAgency;
 
 namespace EC_Endpoint_Client.Forms.Intermediary
 {
@@ -12,9 +12,9 @@ namespace EC_Endpoint_Client.Forms.Intermediary
     {
         private ReceiptAgencyEndpointFunctionality RaeFunc { get; set; }
         public ReceiptExternal Receipt { get; set; }
-        public Receipt ReceiptV2 { get; set; }
+        public ReceiptAgency.Receipt ReceiptV2 { get; set; }
         public ReceiptExternal SaveReceipt { get; set; }
-        public Receipt UpdateReceipt { get; set; }
+        public ReceiptAgency.Receipt UpdateReceipt { get; set; }
         public ReceiptExternalList ReceiptList { get; set; }
         public ReceiptList ReceiptListV2 { get; set; }
         public ReceiptListSearchExternalShipment ReceiptListSearchShipment { get; set; }
@@ -30,7 +30,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
                 return ReceiptList.ToArray();
             }
         }
-        private Receipt[] ReceiptV2Array
+        private ReceiptAgency.Receipt[] ReceiptV2Array
         {
             get
             {
@@ -41,13 +41,13 @@ namespace EC_Endpoint_Client.Forms.Intermediary
         {
             InitializeComponent();
             Receipt = new ReceiptExternal();
-            ReceiptV2 = new Receipt();
+            ReceiptV2 = new ReceiptAgency.Receipt();
             ReceiptList = new ReceiptExternalList();
             ReceiptListV2 = new ReceiptList();
             RaeFunc = new ReceiptAgencyEndpointFunctionality();
             RaeFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             SaveReceipt = new ReceiptExternal();
-            UpdateReceipt = new Receipt();
+            UpdateReceipt = new ReceiptAgency.Receipt();
             SetupObjectsForPropertyGrid();
             ReceiptSearchShipment = new ReceiptSearchExternalShipment();
             ReceiptV2SearchShipment = new ReceiptV2SearchExternalShipment();
@@ -61,7 +61,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
         private void SetupObjectsForPropertyGrid()
         {
             TypeDescriptor.AddAttributes(typeof(ReceiptExternal), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
-            TypeDescriptor.AddAttributes(typeof(Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(Receipt.Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptExternalList), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptList), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptSaveExternal), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));

@@ -3,7 +3,7 @@ using System.ComponentModel;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.Authorization;
 using EC_Endpoint_Client.Functionality.EndPoints.Authorization;
-using EC_Endpoint_Client.Service_References.Administration;
+using EC_Endpoint_Client.Administration;
 
 namespace EC_Endpoint_Client.Forms.Authorization
 {

@@ -48,6 +48,15 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService
         }
     }
 
+    public class BrokerServicePollShipment : BaseShipment
+    {
+        public BrokerServicePoll Poll { get; set; }
+        public BrokerServicePollShipment()
+        {
+            Poll = new BrokerServicePoll();
+        }
+    }
+
     public class DownloadFileStreamedShipmentEC2 : BaseShipment
     {
         public string FileReference { get; set; }

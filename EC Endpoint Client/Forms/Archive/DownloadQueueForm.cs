@@ -3,7 +3,7 @@ using System.ComponentModel;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.Archive;
 using EC_Endpoint_Client.Functionality.EndPoints.Archive;
-using EC_Endpoint_Client.Service_References.DownloadQueue;
+using EC_Endpoint_Client.DownloadQueue;
 
 namespace EC_Endpoint_Client.Forms.Archive
 {

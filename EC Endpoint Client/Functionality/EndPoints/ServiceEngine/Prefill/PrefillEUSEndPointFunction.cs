@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillEUS;
-using EC_Endpoint_Client.Service_References.PrefillEUS;
+using EC_Endpoint_Client.PrefillEUS;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Prefill
 {

@@ -3,13 +3,13 @@
 // </copyright>
 // <author>Me</author>
 
-using EC_Endpoint_Client.Service_References.IntermediaryInbound;
-using EC_Endpoint_Client.Service_References.IntermediaryInboundStreamed;
-using EC_Endpoint_Client.Service_References.Receipt;
-using EC_Endpoint_Client.Service_References.ReceiptAgency;
-using ReceiptSaveExternal = EC_Endpoint_Client.Service_References.Receipt.ReceiptSaveExternal;
-using ReceiptSearchExternal = EC_Endpoint_Client.Service_References.Receipt.ReceiptSearchExternal;
-using ReceiptTypeEnum = EC_Endpoint_Client.Service_References.Receipt.ReceiptTypeEnum;
+using EC_Endpoint_Client.IntermediaryInbound;
+using EC_Endpoint_Client.IntermediaryInboundStreamed;
+using EC_Endpoint_Client.Receipt;
+using EC_Endpoint_Client.ReceiptAgency;
+using ReceiptSaveExternal = EC_Endpoint_Client.Receipt.ReceiptSaveExternal;
+using ReceiptSearchExternal = EC_Endpoint_Client.Receipt.ReceiptSearchExternal;
+using ReceiptTypeEnum = EC_Endpoint_Client.Receipt.ReceiptTypeEnum;
 
 namespace EC_Endpoint_Client.UserControls
 {
@@ -105,11 +105,11 @@ namespace EC_Endpoint_Client.UserControls
         private void TestReceiptAgency()
         {
             var client = new ReceiptAgencyExternalECClient("ST01");
-            var search = new Service_References.ReceiptAgency.ReceiptSearchExternal();
+            var search = new ReceiptAgency.ReceiptSearchExternal();
             search.ReceiptId = 10;
             var x = client.GetReceiptEC(_soaUser, _soaPass, search);
-            var y = client.GetReceiptListEC(_soaUser, _soaPass, Service_References.ReceiptAgency.ReceiptTypeEnum.Correspondence, DateTime.Parse("2009-01-01"), DateTime.Parse("2020-01-01"));
-            var save = new Service_References.ReceiptAgency.ReceiptSaveExternal();
+            var y = client.GetReceiptListEC(_soaUser, _soaPass, ReceiptAgency.ReceiptTypeEnum.Correspondence, DateTime.Parse("2009-01-01"), DateTime.Parse("2020-01-01"));
+            var save = new ReceiptAgency.ReceiptSaveExternal();
             save.ReceiptText = "test";
             save.ReceiptId = 10;
             var z = client.SaveReceiptEC(_soaUser, _soaPass, save);

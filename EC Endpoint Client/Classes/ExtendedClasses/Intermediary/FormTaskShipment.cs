@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Drawing.Design;
-using EC_Endpoint_Client.Service_References.IntermediaryInbound;
 
 namespace EC_Endpoint_Client.Classes.ExtendedClasses.Intermediary
 {
-    public class FormTaskShipment : FormTaskShipmentBE
+    public class FormTaskShipment : IntermediaryInbound.FormTaskShipmentBE
     {
         public FormTaskShipment()
         {
@@ -13,14 +12,14 @@ namespace EC_Endpoint_Client.Classes.ExtendedClasses.Intermediary
         }
     }
 
-    public class FormTask : Service_References.IntermediaryInbound.FormTask
+    public class FormTask : IntermediaryInbound.FormTask
     {
         public FormTask()
         {
         }
     }
 
-    public class Form : Service_References.IntermediaryInbound.Form
+    public class Form : IntermediaryInbound.Form
     {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string _formDataField;

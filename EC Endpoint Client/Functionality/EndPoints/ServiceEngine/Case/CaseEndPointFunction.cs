@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.Case;
-using EC_Endpoint_Client.Service_References.Case;
+using EC_Endpoint_Client.Case;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case
 {

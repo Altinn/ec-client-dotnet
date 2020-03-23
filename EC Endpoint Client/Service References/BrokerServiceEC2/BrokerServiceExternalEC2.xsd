@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.altinn.no/services/ServiceEngine/Broker/2015/06" elementFormDefault="qualified" targetNamespace="http://www.altinn.no/services/ServiceEngine/Broker/2015/06" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd4" namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06" />
+  <xs:import schemaLocation="https://at05.ai.basefarm.net/ServiceEngineExternal/BrokerServiceExternalEC2.svc?xsd=xsd6" namespace="http://schemas.altinn.no/services/ServiceEngine/Broker/2020/01" />
+  <xs:element name="InitiateBrokerServiceEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="userName" type="xs:string" />
+        <xs:element minOccurs="1" name="password" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06" minOccurs="1" name="brokerServiceInitiation" type="q1:BrokerServiceInitiation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InitiateBrokerServiceECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InitiateBrokerServiceECResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableFilesEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="userName" type="xs:string" />
+        <xs:element minOccurs="1" name="password" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06" minOccurs="1" name="searchParameters" type="q2:BrokerServiceSearch" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAvailableFilesECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.altinn.no/services/ServiceEngine/Broker/2015/06" minOccurs="0" name="GetAvailableFilesECResult" nillable="true" type="q3:BrokerServiceAvailableFileList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIfAvailableFilesEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="userName" type="xs:string" />
+        <xs:element minOccurs="1" name="password" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.altinn.no/services/ServiceEngine/Broker/2020/01" minOccurs="1" name="pollParameters" type="q4:BrokerServicePoll" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckIfAvailableFilesECResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckIfAvailableFilesECResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmDownloadedEC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" name="userName" type="xs:string" />
+        <xs:element minOccurs="1" name="password" type="xs:string" />
+        <xs:element minOccurs="0" name="fileReference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="reportee" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfirmDownloadedECResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

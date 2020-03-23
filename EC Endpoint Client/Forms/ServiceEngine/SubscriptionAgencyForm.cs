@@ -3,7 +3,7 @@ using System.ComponentModel;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine;
-using EC_Endpoint_Client.Service_References.SubscriptionAgency;
+using EC_Endpoint_Client.SubscriptionAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine
 {

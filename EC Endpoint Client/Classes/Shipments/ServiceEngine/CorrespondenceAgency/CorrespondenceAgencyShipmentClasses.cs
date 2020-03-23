@@ -1,9 +1,9 @@
-﻿using EC_Endpoint_Client.Service_References.CorrespondenceAgency;
-using EC_Endpoint_Client.Service_References.CorrespondenceAgencyNoSystem;
-using CorrespondenceStatusFilterV3 = EC_Endpoint_Client.Service_References.CorrespondenceAgency.CorrespondenceStatusFilterV3;
-using CorrespondenceStatusInformation = EC_Endpoint_Client.Service_References.CorrespondenceAgency.CorrespondenceStatusInformation;
-using InsertCorrespondenceV2 = EC_Endpoint_Client.Service_References.CorrespondenceAgency.InsertCorrespondenceV2;
-using SdpStatusInformation = EC_Endpoint_Client.Service_References.CorrespondenceAgency.SdpStatusInformation;
+﻿using EC_Endpoint_Client.CorrespondenceAgency;
+using EC_Endpoint_Client.CorrespondenceAgencyNoSystem;
+using CorrespondenceStatusFilterV3 = EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusFilterV3;
+using CorrespondenceStatusInformation = EC_Endpoint_Client.CorrespondenceAgency.CorrespondenceStatusInformation;
+using InsertCorrespondenceV2 = EC_Endpoint_Client.CorrespondenceAgency.InsertCorrespondenceV2;
+using SdpStatusInformation = EC_Endpoint_Client.CorrespondenceAgency.SdpStatusInformation;
 
 namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgency
 {
@@ -17,12 +17,12 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgenc
     public class InsertCorrespondenceShipmentAec : BaseShipment
     {
         public string ExternalShipmentReference { get; set; }
-        public Service_References.CorrespondenceAgencyNoSystem.InsertCorrespondenceV2 InsertCorrespondence { get; set; }
+        public CorrespondenceAgencyNoSystem.InsertCorrespondenceV2 InsertCorrespondence { get; set; }
     }
 
     public class GetCorrespondenceStatus : BaseShipment
     {
-        public Service_References.CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3 CorrespondenceStatusFilter { get; set; }
+        public CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3 CorrespondenceStatusFilter { get; set; }
     }
 
     public class GetCorrespondenceStatusDetailsShipment : BaseShipment
@@ -47,10 +47,10 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgenc
 
     public class CorrespondenceStatusHistoryResultEx
     {
-        public CorrespondenceStatusHistoryResultEx(CorrespondenceStatusHistoryResult input)
+        public CorrespondenceStatusHistoryResultEx(CorrespondenceStatusInformation input, SdpStatusInformation inputsdp)
         {
-            CorrespondenceStatusInformation = input.CorrespondenceStatusInformation;
-            SdpStatusInformation = input.SdpStatusInformation;
+            CorrespondenceStatusInformation = input;
+            SdpStatusInformation = inputsdp;
         }
 
         public CorrespondenceStatusHistoryResultEx()
@@ -67,10 +67,10 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgenc
     {
         public GetCorrespondenceStatusDetailsAecShipment()
         {
-            Request = new Service_References.CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3();
+            Request = new CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3();
         }
 
-        public Service_References.CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3 Request { get; set; }
+        public CorrespondenceAgencyNoSystem.CorrespondenceStatusFilterV3 Request { get; set; }
     }
 
     public class GetCorrespondenceStatusHistoryAecShipment : BaseShipment
@@ -84,13 +84,19 @@ namespace EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CorrespondenceAgenc
 
     public class CorrespondenceStatusHistoryAecResult
     {
+        public CorrespondenceStatusHistoryAecResult(CorrespondenceAgencyNoSystem.CorrespondenceStatusInformation corrInfo, CorrespondenceAgencyNoSystem.SdpStatusInformation sdpInfo)
+        {
+            CorrespondenceStatusInformation = corrInfo;
+            SdpStatusInformation = sdpInfo;
+        }
+
         public CorrespondenceStatusHistoryAecResult(
             CorrespondenceStatusHistoryResultExternalBE input)
         {
             CorrespondenceStatusInformation = input.CorrespondenceStatusInformation;
             SdpStatusInformation = input.SdpStatusInformation;
         }
-        public Service_References.CorrespondenceAgencyNoSystem.CorrespondenceStatusInformation CorrespondenceStatusInformation { get; set; }
-        public Service_References.CorrespondenceAgencyNoSystem.SdpStatusInformation SdpStatusInformation { get; set; }
+        public CorrespondenceAgencyNoSystem.CorrespondenceStatusInformation CorrespondenceStatusInformation { get; set; }
+        public CorrespondenceAgencyNoSystem.SdpStatusInformation SdpStatusInformation { get; set; }
     }
 }

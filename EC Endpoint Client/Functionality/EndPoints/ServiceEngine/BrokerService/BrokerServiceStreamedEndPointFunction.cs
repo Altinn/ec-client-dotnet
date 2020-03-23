@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.BrokerService;
-using EC_Endpoint_Client.Service_References.BrokerServiceStreamed;
+using EC_Endpoint_Client.BrokerServiceStreamed;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.BrokerService
 {

@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.LookUp;
-using EC_Endpoint_Client.Service_References.LookUp;
+using EC_Endpoint_Client.LookUp;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.LookUp
 {

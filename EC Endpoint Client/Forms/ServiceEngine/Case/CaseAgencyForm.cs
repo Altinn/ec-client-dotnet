@@ -4,7 +4,7 @@ using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.CaseAgency;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Case;
-using EC_Endpoint_Client.Service_References.CaseAgencySystem;
+using EC_Endpoint_Client.CaseAgencySystem;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Case
 {

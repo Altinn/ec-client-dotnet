@@ -20,7 +20,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondenc
             client.Test();
         }
 
-        public Receipt ArchiveCorrespondence(CorrespondenceShipmentBase shipment)
+        public CorrespondenceEC2.Receipt ArchiveCorrespondence(CorrespondenceShipmentBase shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = _context + "ArchiveCorrespondence";

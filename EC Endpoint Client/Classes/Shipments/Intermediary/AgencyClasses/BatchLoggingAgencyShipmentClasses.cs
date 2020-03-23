@@ -1,4 +1,4 @@
-﻿using EC_Endpoint_Client.Service_References.BatchLoggingAgency;
+﻿using EC_Endpoint_Client.BatchLoggingAgency;
 
 namespace EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses
 {

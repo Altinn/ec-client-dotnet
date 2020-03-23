@@ -11,12 +11,12 @@ namespace EC_Endpoint_Client.Forms.Intermediary
     public partial class ReceiptAgencyFormEC2 : AgencyBaseForm
     {
         private ReceiptAgencyEndpointFunctionalityEC2 RaeFunc { get; set; }
-        public ReceiptExternal Receipt { get; set; }
-        public Receipt ReceiptV2 { get; set; }
+        public ReceiptExternal ReceiptExt { get; set; }
+        public ReceiptAgencyEC2.Receipt ReceiptV2 { get; set; }
         public ReceiptExternal SaveReceipt { get; set; }
-        public Receipt UpdateReceipt { get; set; }
+        public ReceiptAgencyEC2.Receipt UpdateReceipt { get; set; }
         public ReceiptExternalList ReceiptList { get; set; }
-        public ReceiptList ReceiptListV2 { get; set; }
+        public ReceiptAgencyEC2.ReceiptList ReceiptListV2 { get; set; }
         public ReceiptListSearchExternalShipmentEC2 ReceiptListSearchShipment { get; set; }
         public ReceiptListV2SearchExternalShipmentEC2 ReceiptListV2SearchShipment { get; set; }
         public ReceiptSearchExternalShipmentEC2 ReceiptSearchShipment { get; set; }
@@ -30,7 +30,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
                 return ReceiptList.ToArray();
             }
         }
-        private Receipt[] ReceiptV2Array
+        private ReceiptAgencyEC2.Receipt[] ReceiptV2Array
         {
             get
             {
@@ -40,14 +40,14 @@ namespace EC_Endpoint_Client.Forms.Intermediary
         public ReceiptAgencyFormEC2()
         {
             InitializeComponent();
-            Receipt = new ReceiptExternal();
-            ReceiptV2 = new Receipt();
+            ReceiptExt = new ReceiptExternal();
+            ReceiptV2 = new ReceiptAgencyEC2.Receipt();
             ReceiptList = new ReceiptExternalList();
             ReceiptListV2 = new ReceiptList();
             RaeFunc = new ReceiptAgencyEndpointFunctionalityEC2();
             RaeFunc.ReturnMessageXml += ReturnMessageXmlHandler;
             SaveReceipt = new ReceiptExternal();
-            UpdateReceipt = new Receipt();
+            UpdateReceipt = new ReceiptAgencyEC2.Receipt();
             SetupObjectsForPropertyGrid();
             ReceiptSearchShipment = new ReceiptSearchExternalShipmentEC2();
             ReceiptV2SearchShipment = new ReceiptV2SearchExternalShipmentEC2();
@@ -61,7 +61,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
         private void SetupObjectsForPropertyGrid()
         {
             TypeDescriptor.AddAttributes(typeof(ReceiptExternal), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
-            TypeDescriptor.AddAttributes(typeof(Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
+            TypeDescriptor.AddAttributes(typeof(ReceiptAgencyEC2.Receipt), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptExternalList), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptList), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
             TypeDescriptor.AddAttributes(typeof(ReceiptSaveExternal), new TypeConverterAttribute(typeof(ExpandableObjectConverter)));
@@ -88,7 +88,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
         private void GetReceipt()
         {
             SetBasicShipmentSettings(ReceiptSearchShipment);
-            Receipt = RaeFunc.GetReceipt(ReceiptSearchShipment);
+            ReceiptExt = RaeFunc.GetReceipt(ReceiptSearchShipment);
         }
 
         private void GetReceiptV2()
@@ -116,7 +116,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
 
         private void ShowGetReceipt()
         {
-            SetViewedItem(Receipt, "Receipt from GetReceipt");
+            SetViewedItem(ReceiptExt, "Receipt from GetReceipt");
         }
 
         private void ShowGetReceiptV2Shipment()
@@ -204,7 +204,7 @@ namespace EC_Endpoint_Client.Forms.Intermediary
 
         private void btn_SaveGetReceipt_Click(object sender, EventArgs e)
         {
-            Functionality.IoFunctionality.GeneralizedSaveFile(Receipt);
+            Functionality.IoFunctionality.GeneralizedSaveFile(ReceiptExt);
         }
         #endregion
         #region GetReceiptV2Buttons

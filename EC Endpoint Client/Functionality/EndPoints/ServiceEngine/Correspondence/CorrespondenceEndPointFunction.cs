@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.Correspondence;
-using EC_Endpoint_Client.Service_References.Correspondence;
+using EC_Endpoint_Client.Correspondence;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondence
 {
@@ -20,7 +20,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Correspondenc
             client.Test();
         }
 
-        public Receipt ArchiveCorrespondence(CorrespondenceShipmentBase shipment)
+        public EC_Endpoint_Client.Correspondence.Receipt ArchiveCorrespondence(CorrespondenceShipmentBase shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = _context + "ArchiveCorrespondence";

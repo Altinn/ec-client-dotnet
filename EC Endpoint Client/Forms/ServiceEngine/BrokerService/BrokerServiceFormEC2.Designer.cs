@@ -46,6 +46,8 @@
             this.btn_GetAvailableFilesSaveShipment = new System.Windows.Forms.Button();
             this.btn_GetAvailableFilesInvokeService = new System.Windows.Forms.Button();
             this.btn_GetAvailableFilesShowShipment = new System.Windows.Forms.Button();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.ach_pollNewFiles = new EC_Endpoint_Client.UserControls.ActionHolderControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_UploadFileStreamedSaveResult = new System.Windows.Forms.Button();
@@ -66,6 +68,7 @@
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.SuspendLayout();
@@ -186,6 +189,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
@@ -271,6 +275,25 @@
             this.btn_GetAvailableFilesShowShipment.Text = "Show Shipment";
             this.btn_GetAvailableFilesShowShipment.UseVisualStyleBackColor = true;
             this.btn_GetAvailableFilesShowShipment.Click += new System.EventHandler(this.btn_GetAvailableFilesShowShipment_Click);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.ach_pollNewFiles);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(417, 343);
+            this.tabPage6.TabIndex = 8;
+            this.tabPage6.Text = "CheckForNewFiles";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // ach_pollNewFiles
+            // 
+            this.ach_pollNewFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ach_pollNewFiles.Location = new System.Drawing.Point(3, 3);
+            this.ach_pollNewFiles.Name = "ach_pollNewFiles";
+            this.ach_pollNewFiles.Size = new System.Drawing.Size(411, 337);
+            this.ach_pollNewFiles.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -447,6 +470,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -489,7 +513,7 @@
         private System.Windows.Forms.Button btn_DownloadFileStreamedInvokeService;
         private System.Windows.Forms.Button btn_DownloadFileStreamedShowShipment;
         private System.Windows.Forms.Button button1;
-
-
+        private System.Windows.Forms.TabPage tabPage6;
+        private UserControls.ActionHolderControl ach_pollNewFiles;
     }
 }

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Configuration;
 using System.ServiceModel.Configuration;
-using EC_Endpoint_Client.Service_References.ArchiveCommonAgency;
-using EC_Endpoint_Client.Service_References.DownloadQueue;
-using EC_Endpoint_Client.Service_References.KeyManagement;
-using EC_Endpoint_Client.Service_References.ReporteeArchive;
-using EC_Endpoint_Client.Service_References.ReporteeArchiveStreamed;
-using EC_Endpoint_Client.Service_References.SOArchive;
-using EC_Endpoint_Client.Service_References.SOArchiveStreamed;
+using EC_Endpoint_Client.ArchiveCommonAgency;
+using EC_Endpoint_Client.DownloadQueue;
+using EC_Endpoint_Client.KeyManagement;
+using EC_Endpoint_Client.ReporteeArchive;
+using EC_Endpoint_Client.ReporteeArchiveStreamed;
+using EC_Endpoint_Client.SOArchive;
+using EC_Endpoint_Client.SOArchiveStreamed;
 
 namespace EC_Endpoint_Client.UserControls
 {

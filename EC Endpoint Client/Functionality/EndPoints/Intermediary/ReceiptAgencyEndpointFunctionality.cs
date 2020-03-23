@@ -1,6 +1,6 @@
 ﻿using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Intermediary.AgencyClasses;
-using EC_Endpoint_Client.Service_References.ReceiptAgency;
+using EC_Endpoint_Client.ReceiptAgency;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
 {
@@ -25,7 +25,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.GetReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSearch);
         }
 
-        public Receipt GetReceiptV2(ReceiptV2SearchExternalShipment shipment)
+        public ReceiptAgency.Receipt GetReceiptV2(ReceiptV2SearchExternalShipment shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptAgencyGetReceiptV2";
@@ -53,7 +53,7 @@ namespace EC_Endpoint_Client.Functionality.EndPoints.Intermediary
             return client.SaveReceiptEC(shipment.Username, shipment.Password, shipment.ReceiptSave);
         }
 
-        public Receipt UpdateReceipt(ReceiptUpdateExternalShipment shipment)
+        public ReceiptAgency.Receipt UpdateReceipt(ReceiptUpdateExternalShipment shipment)
         {
             var client = GenerateProxy(shipment);
             OperationContext = "ReceiptAgencyUpdateReceipt";

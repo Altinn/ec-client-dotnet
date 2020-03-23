@@ -2,7 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Authorization;
-using EC_Endpoint_Client.Service_References.Administration;
+using EC_Endpoint_Client.Administration;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Authorization
 {

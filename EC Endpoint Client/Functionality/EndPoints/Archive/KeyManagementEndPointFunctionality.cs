@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using EC_Endpoint_Client.Classes.Shipments.Archive;
-using EC_Endpoint_Client.Service_References.KeyManagement;
+using EC_Endpoint_Client.KeyManagement;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Archive
 {

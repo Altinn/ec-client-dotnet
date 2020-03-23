@@ -4,7 +4,7 @@ using System.IdentityModel.Tokens;
 using EC_Endpoint_Client.Classes.Shipments;
 using EC_Endpoint_Client.Classes.Shipments.Authorization;
 using EC_Endpoint_Client.Forms.Authorization;
-using EC_Endpoint_Client.Service_References.Token;
+using EC_Endpoint_Client.Token;
 
 namespace EC_Endpoint_Client.Functionality.EndPoints.Authorization
 {

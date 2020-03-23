@@ -3,7 +3,7 @@ using System.ComponentModel;
 using EC_Endpoint_Client.BaseForms;
 using EC_Endpoint_Client.Classes.Shipments.ServiceEngine.PrefillAgency;
 using EC_Endpoint_Client.Functionality.EndPoints.ServiceEngine.Prefill;
-using EC_Endpoint_Client.Service_References.PrefillAgency;
+using EC_Endpoint_Client.PrefillAgency;
 
 namespace EC_Endpoint_Client.Forms.ServiceEngine.Prefill
 {
